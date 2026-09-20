@@ -21,15 +21,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 注意这里不能用 setup-node 的 cache: npm：它会在仓库目录里执行
+      # `npm config get cache`，而 runner 自带的 npm 版本低于 package.json
+      # 里 devEngines 要求的 12.0.2，那一下就会先报 EBADDEVENGINES。
+      # 所以先装 Node，再手动升级 npm，缓存用 actions/cache 单独做。
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: npm
 
-      # package.json 的 devEngines 要求 npm@12.0.2，runner 自带的版本更低，
-      # 不先升级的话 npm ci 会直接报 EBADDEVENGINES
-      - name: Install required npm
+      # 在仓库外执行，避免这条命令自己也去读 package.json 的 devEngines
+      - name: Install the npm version devEngines requires
+        working-directory: ${{ runner.temp }}
         run: npm i -g npm@12.0.2
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-${{ runner.os }}-
 
       - run: npm ci
 
