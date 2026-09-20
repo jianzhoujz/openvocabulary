@@ -1,5 +1,7 @@
 # openvocabulary
 
+> **如果你是 AI 或自动化代理，动手前请先阅读 [AGENTS.md](AGENTS.md)。**
+
 为加拿大移民语言考试准备的针对性词表，以及配套的背单词网页。
 
 |                    |                                                                                                                                                |
@@ -27,70 +29,9 @@ vp dev
 | 持久化      | localStorage（节流写入），支持导出/导入 JSON 备份 |
 | 测试        | Vitest + happy-dom + Testing Library              |
 
-## 工具链约定
-
-**这一节是硬约定，改动前先读。**
-
-### Node 与包管理器由 Vite+ 统一托管
-
-本机的 Node 通过 Vite+ 安装并托管，`node` / `npm` 等命令都是 `~\AppData\Local\vite-plus\bin` 下的 VP shim。不要另行安装 Node 或 nvm。
-
-```bash
-vp env doctor     # 体检，看 shim、PATH、版本解析
-vp env current    # 当前生效的 Node
-vp env list       # 本机已安装的运行时与包管理器
-vp env which npm  # 某个命令实际解析到哪个二进制
-```
-
-### 包管理器：npm，且只用脚手架配好的那个
-
-`package.json` 里的 `devEngines.packageManager`（`npm@12.0.2`，`onFail: "download"`）是 `vp create` 脚手架写入的默认配置。**保持原样，不要删、不要改、不要手动 pin。**
-
-不使用 pnpm / yarn / bun。理由：本项目是单包小应用，不是 monorepo，依赖数量很少，pnpm 的硬链接去重、严格 node_modules、workspace 三项优势一项都不成立，徒增一个全局工具。
-
-**装依赖走 `vp`，不要直接敲 `npm`：**
-
-```bash
-vp install              # 相当于 npm install
-vp add <pkg>            # 加依赖
-vp add -D <pkg>         # 加开发依赖
-vp remove <pkg>         # 删依赖
-```
-
-直接敲 `npm install` 会报 `EBADDEVENGINES`：
-
-```
-Invalid semver version "12.0.2" does not match "11.19.0" for "packageManager"
-```
-
-原因是裸 `npm` 命令解析到的是 Node 24 自带的 npm 11.19.0，而 `devEngines` 要求 12.0.2。`vp add` / `vp install` 会先解析出正确的 npm 再转发，所以不受影响。
-
-### 不要在本机留下同一工具的多个版本
-
-VP 的 shim 有一个行为需要注意：**敲一个当前没有选定版本的包管理器命令（例如 `pnpm -v`），VP 会直接从 registry 拉一个最新版装到 `~\AppData\Local\vite-plus\data\package_manager\` 下。** 探测环境时很容易误触发。
-
-发现多余的版本就清掉：
-
-```bash
-vp env list                      # 先看装了什么
-vp env uninstall pnpm@12.5.1     # 卸载指定版本
-vp env clean                     # 清理所有未使用的运行时与缓存
-```
-
-判断标准：**脚手架默认行为装的东西保留，自己误触发装的清掉。** 对照 `~\AppData\Local\vite-plus\data\package_manager\` 下各目录的时间戳可以区分。
-
-### 关于「npm 到底有没有」
-
-`vp env doctor` 在未选定包管理器时会显示 `Package manager: not selected`，`vp env list` 会显示 `npm — No versions installed`。这**不表示没有 npm**。VP 把 npm 分两种身份：
-
-|                 | 位置                              | 说明                                                    |
-| --------------- | --------------------------------- | ------------------------------------------------------- |
-| Node 自带的 npm | `data\js_runtime\node\<ver>\`     | 跟着 Node 运行时来，VP 不单独管理，`vp env list` 不显示 |
-| VP 托管的 npm   | `data\package_manager\npm\<ver>\` | 可被 pin / 独立安装，与 pnpm、yarn 平级                 |
-
-没有任何 pin 时，`npm` shim 回落到 Node 自带的那个。本项目因为 `devEngines.packageManager` 存在，`vp` 会解析到托管的 `npm@12.0.2`。
-
 ## 常用命令
+
+装依赖走 `vp add` / `vp install`，不要直接敲 `npm install`（原因见 [AGENTS.md](AGENTS.md)）。
 
 ```bash
 vp dev              # 开发服务器
@@ -163,8 +104,6 @@ src/
 bash vocab/tools/build.sh   # 重新生成 .tsv 与 .md
 vp run build:data           # 重新生成网页用的 .json
 ```
-
-`public/data/` 和 `vocab/` 都写进了 `.prettierignore`：前者刻意保持紧凑格式，被 `vp fmt` 美化后体积会涨三成（273 KB → 368 KB）；后者的 `*-vocab.md` 是生成物，README 里的分数对照表也不希望被重排。
 
 卡片 ID 取 `section|theme|词条` 三元组的 sha256 前 10 位（该三元组在两份词表中均唯一，生成时会校验冲突）。因此重排 `_src.psv` 或修改释义、用法要点、例句都不会丢失学习进度；只有改动词条本身才会重置那一条。
 
