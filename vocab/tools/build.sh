@@ -54,12 +54,12 @@ gen_tsv pte-core/_src.psv   pte-core/pte-core-vocab.tsv
 gen_tsv tcf-canada/_src.psv tcf-canada/tcf-canada-vocab.tsv
 
 gen_md pte-core/_src.psv pte-core/pte-core-vocab.md \
-  "PTE Core 核心词表（目标 CLB 9）" \
+  "PTE Core 核心词表" \
   "词条,词性,中文,用法要点,例句" \
   tools/sections-en.txt
 
 gen_md tcf-canada/_src.psv tcf-canada/tcf-canada-vocab.md \
-  "TCF Canada 核心词表（目标 NCLC 7+）" \
+  "TCF Canada 核心词表" \
   "français,词性,English,中文,用法要点,exemple" \
   tools/sections-fr.txt
 

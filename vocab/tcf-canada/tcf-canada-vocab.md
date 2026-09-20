@@ -1,4 +1,4 @@
-# TCF Canada 核心词表（目标 NCLC 7+）
+# TCF Canada 核心词表
 
 > 由 `_src.psv` 自动生成，请勿直接编辑本文件。修改源文件后运行 `tools/build.sh`。
 

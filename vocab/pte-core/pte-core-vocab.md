@@ -1,4 +1,4 @@
-# PTE Core 核心词表（目标 CLB 9）
+# PTE Core 核心词表
 
 > 由 `_src.psv` 自动生成，请勿直接编辑本文件。修改源文件后运行 `tools/build.sh`。
 
@@ -751,7 +751,7 @@
 | goodwill gesture | n. | 善意补偿 | 客服道歉邮件高分表达 | As a goodwill gesture, we have added a $20 credit. |
 | feedback form / survey | n. | 反馈表/问卷 | 服务闭环 | Please complete our short feedback survey. |
 
-## CIVIC · 主题：政府、移民与加拿大社会
+## CIVIC · 主题：政府与社会
 
 ### 政府服务
 
@@ -1823,7 +1823,7 @@
 | follow up within 48 hours | chunk | 48 小时内回复 | 承诺时限 | Someone will follow up within 48 hours. |
 | your patience is appreciated | chunk | 感谢您的耐心 | 机构通告结尾 | Your patience is appreciated during the upgrade. |
 
-## CIVIC · 主题：政府、移民与加拿大社会
+## CIVIC · 主题：政府与社会
 
 ### 三级政府
 
