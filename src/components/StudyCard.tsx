@@ -1,6 +1,7 @@
 import { Eye, Volume2 } from "lucide-react";
 import { useEffect } from "react";
 
+import { SpeechErrorToast } from "@/components/SpeechErrorToast";
 import { useSpeech } from "@/hooks/useSpeech";
 import { cn } from "@/lib/utils";
 import type { Card, Deck, Mode } from "@/types";
@@ -73,7 +74,7 @@ export function StudyCard({
   onReveal,
 }: Props) {
   const askingForGloss = mode === "front-to-gloss";
-  const { supported, say } = useSpeech(deck.lang);
+  const { supported, say, failure, dismissFailure } = useSpeech(deck.lang);
 
   // 看义猜词时，翻面前词条是答案，绝不能朗读出来
   const termVisible = askingForGloss || revealed;
@@ -89,91 +90,103 @@ export function StudyCard({
   );
 
   return (
-    <div
-      className={cn(
-        "bg-card flex h-full w-full flex-col rounded-2xl border p-5 sm:p-6",
-        !revealed && "cursor-pointer",
-      )}
-      onClick={!revealed ? onReveal : undefined}
-    >
-      <div className="text-muted-foreground flex shrink-0 items-center gap-2 text-xs">
-        <span className="bg-muted text-foreground/70 rounded px-1.5 py-0.5 font-medium">
-          {card.section}
-        </span>
-        <span className="truncate">{sectionLabel}</span>
-      </div>
-
-      <div className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto py-6">
-        {/* 题面 */}
-        {askingForGloss ? (
-          <TermBlock
-            card={card}
-            lang={deck.lang}
-            big
-            canSpeak={supported}
-            onSpeak={() => say(card.front)}
-          />
-        ) : (
-          <div className="text-2xl leading-snug font-semibold sm:text-3xl">{glosses}</div>
+    <>
+      <div
+        className={cn(
+          "bg-card flex h-full w-full flex-col rounded-2xl border p-5 sm:p-6",
+          !revealed && "cursor-pointer",
         )}
+        onClick={!revealed ? onReveal : undefined}
+      >
+        <div className="text-muted-foreground flex shrink-0 items-center gap-2 text-xs">
+          <span className="bg-muted text-foreground/70 rounded px-1.5 py-0.5 font-medium">
+            {card.section}
+          </span>
+          <span className="truncate">{sectionLabel}</span>
+        </div>
 
-        {card.pos && <div className="text-muted-foreground mt-2 text-sm italic">{card.pos}</div>}
+        <div className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto py-6">
+          {/* 题面 */}
+          {askingForGloss ? (
+            <TermBlock
+              card={card}
+              lang={deck.lang}
+              big
+              canSpeak={supported}
+              onSpeak={() => say(card.front)}
+            />
+          ) : (
+            <div className="text-2xl leading-snug font-semibold sm:text-3xl">{glosses}</div>
+          )}
 
-        {revealed && (
-          <div className="mt-6 flex flex-col gap-4 border-t pt-6">
-            {/* 答案 */}
-            {askingForGloss ? (
-              <div className="text-xl font-medium">{glosses}</div>
-            ) : (
-              <TermBlock
-                card={card}
-                lang={deck.lang}
-                big={false}
-                canSpeak={supported && termVisible}
-                onSpeak={() => say(card.front)}
-              />
-            )}
+          {card.pos && <div className="text-muted-foreground mt-2 text-sm italic">{card.pos}</div>}
 
-            {card.note && (
-              <div>
-                <div className="text-muted-foreground mb-1 text-xs font-medium">用法要点</div>
-                <p className="text-sm leading-relaxed">{card.note}</p>
-              </div>
-            )}
+          {revealed && (
+            <div className="mt-6 flex flex-col gap-4 border-t pt-6">
+              {/* 答案 */}
+              {askingForGloss ? (
+                <div className="text-xl font-medium">{glosses}</div>
+              ) : (
+                <TermBlock
+                  card={card}
+                  lang={deck.lang}
+                  big={false}
+                  canSpeak={supported && termVisible}
+                  onSpeak={() => say(card.front)}
+                />
+              )}
 
-            {card.example && (
-              <div>
-                <div className="text-muted-foreground mb-1 flex items-center gap-2 text-xs font-medium">
-                  例句
-                  {supported && (
-                    <button
-                      type="button"
-                      aria-label="朗读例句"
-                      onClick={() => say(card.example)}
-                      className="text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:ring-ring/50 rounded p-1 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
-                    >
-                      <Volume2 className="size-3.5" />
-                    </button>
-                  )}
+              {card.note && (
+                <div>
+                  <div className="text-muted-foreground mb-1 text-xs font-medium">用法要点</div>
+                  <p className="text-sm leading-relaxed">{card.note}</p>
                 </div>
-                <p lang={deck.lang} className="text-sm leading-relaxed italic">
-                  {card.example}
-                </p>
-              </div>
-            )}
+              )}
 
-            <div className="text-muted-foreground text-xs">{card.theme}</div>
+              {card.example && (
+                <div>
+                  <div className="text-muted-foreground mb-1 flex items-center gap-2 text-xs font-medium">
+                    例句
+                    {supported && (
+                      <button
+                        type="button"
+                        aria-label="朗读例句"
+                        onClick={() => say(card.example)}
+                        className="text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:ring-ring/50 rounded p-1 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
+                      >
+                        <Volume2 className="size-3.5" />
+                      </button>
+                    )}
+                  </div>
+                  <p lang={deck.lang} className="text-sm leading-relaxed italic">
+                    {card.example}
+                  </p>
+                </div>
+              )}
+
+              <div className="text-muted-foreground text-xs">{card.theme}</div>
+            </div>
+          )}
+        </div>
+
+        {!revealed && (
+          <div className="text-muted-foreground flex shrink-0 items-center justify-center gap-1.5 text-xs">
+            <Eye className="size-3.5" />
+            点一下看答案
+            <kbd className="bg-muted ml-1 hidden rounded px-1.5 py-0.5 font-mono sm:inline">
+              空格
+            </kbd>
           </div>
         )}
       </div>
 
-      {!revealed && (
-        <div className="text-muted-foreground flex shrink-0 items-center justify-center gap-1.5 text-xs">
-          <Eye className="size-3.5" />
-          点一下看答案
-          <kbd className="bg-muted ml-1 hidden rounded px-1.5 py-0.5 font-mono sm:inline">空格</kbd>
-        </div>
+      {failure && (
+        <SpeechErrorToast
+          key={failure.detail ?? failure.message}
+          failure={failure}
+          onDismiss={dismissFailure}
+        />
       )}
-    </div>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 // @vitest-environment happy-dom
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
 import App from "@/App";
@@ -183,28 +183,43 @@ describe("背诵页", () => {
 describe("音标与朗读", () => {
   const spoken: string[] = [];
 
-  function stubSpeech() {
+  /** 最后一次 speak 的 utterance，测试靠它手动触发 start/end/error */
+  let lastUtterance: FakeUtterance | null = null;
+
+  class FakeUtterance {
+    text: string;
+    lang = "";
+    rate = 1;
+    voice: unknown = null;
+    private listeners: Record<string, ((e: unknown) => void)[]> = {};
+    constructor(text: string) {
+      this.text = text;
+    }
+    addEventListener(type: string, fn: (e: unknown) => void) {
+      (this.listeners[type] ??= []).push(fn);
+    }
+    emit(type: string, event: unknown = {}) {
+      for (const fn of this.listeners[type] ?? []) fn(event);
+    }
+  }
+
+  function stubSpeech(speak?: (u: FakeUtterance) => void) {
     spoken.length = 0;
+    lastUtterance = null;
     vi.stubGlobal("speechSynthesis", {
+      speaking: false,
+      pending: false,
       getVoices: () => [{ lang: "en-CA", name: "Test Voice" }],
-      speak: (u: { text: string }) => spoken.push(u.text),
+      speak: (u: FakeUtterance) => {
+        lastUtterance = u;
+        spoken.push(u.text);
+        speak?.(u);
+      },
       cancel: () => {},
       addEventListener: () => {},
       removeEventListener: () => {},
     });
-    vi.stubGlobal(
-      "SpeechSynthesisUtterance",
-      class {
-        text: string;
-        lang = "";
-        rate = 1;
-        voice: unknown = null;
-        constructor(text: string) {
-          this.text = text;
-        }
-        addEventListener() {}
-      },
-    );
+    vi.stubGlobal("SpeechSynthesisUtterance", FakeUtterance);
   }
 
   it("有音标的词条会把音标显示出来", () => {
@@ -258,5 +273,68 @@ describe("音标与朗读", () => {
     expect(spoken).toEqual([]);
     fireEvent.click(screen.getByRole("button", { name: "看答案" }));
     expect(spoken).toEqual(["invoice"]);
+  });
+
+  it("引擎报错时把错误摆到气泡里，而不是默默什么都不发生", () => {
+    stubSpeech();
+    seed(studying(DECK.cards[2]));
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+    act(() => lastUtterance!.emit("error", { error: "synthesis-failed" }));
+
+    const alert = screen.getByRole("alert");
+    expect(alert.textContent).toContain("语音合成引擎处理这段文本时失败了");
+
+    // 详情里带错误码，远程排查时能直接问用户气泡上写了什么
+    fireEvent.click(screen.getByText("详情"));
+    expect(screen.getByRole("alert").textContent).toContain("synthesis-failed");
+
+    fireEvent.click(screen.getByRole("button", { name: "关闭提示" }));
+    expect(screen.queryByRole("alert")).toBeNull();
+  });
+
+  it("我们自己 cancel 造成的打断不算错误，不弹气泡", () => {
+    stubSpeech();
+    seed(studying(DECK.cards[2]));
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+    act(() => lastUtterance!.emit("error", { error: "interrupted" }));
+
+    expect(screen.queryByRole("alert")).toBeNull();
+  });
+
+  it("speak() 收下了请求却迟迟不出声，超时后也要报出来", () => {
+    vi.useFakeTimers();
+    try {
+      // speak 不抛错也不触发任何事件：iOS 上最常见的静默失败
+      stubSpeech();
+      seed(studying(DECK.cards[2]));
+      render(<App />);
+
+      fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+      expect(screen.queryByRole("alert")).toBeNull();
+
+      act(() => void vi.advanceTimersByTime(2000));
+      expect(screen.getByRole("alert").textContent).toContain("一直没有出声");
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("正常开播就不该再报超时", () => {
+    vi.useFakeTimers();
+    try {
+      stubSpeech((u) => u.emit("start"));
+      seed(studying(DECK.cards[2]));
+      render(<App />);
+
+      fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+      act(() => void vi.advanceTimersByTime(5000));
+      expect(screen.queryByRole("alert")).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });
