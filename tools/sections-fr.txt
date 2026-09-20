@@ -16,3 +16,6 @@ NUMERIQUE=主题：数字生活与媒体
 QUOTIDIEN=主题：日常生活（购物、餐饮、天气、休闲）
 VERBES=高频动词与介词搭配
 PIEGES=假朋友与语法陷阱
+CONJUG=动词变位与时态用法
+GENRE=名词阴阳性与复数规则
+ABSTRAIT=B2 抽象与议论词汇

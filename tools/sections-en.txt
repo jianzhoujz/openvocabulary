@@ -18,3 +18,5 @@ DICT=Write from Dictation 拼写易错
 SPELL=加拿大拼写规范
 CONFUSE=易混词辨析
 ASQ=Answer Short Question 常识词
+RA=Read Aloud 发音与节奏陷阱
+ABSTR=CLB 8-9 抽象与议论词汇

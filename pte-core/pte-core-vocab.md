@@ -1105,3 +1105,972 @@
 | go through | pv | 经历/仔细审阅 | go through a process / the documents | We went through a difficult period last year. |
 | hold off | pv | 推迟/暂缓 | hold off on a decision | Let us hold off on ordering until next week. |
 | weigh up | pv | 权衡 | weigh up the pros and cons | We need to weigh up the costs and benefits. |
+
+## RA · Read Aloud 发音与节奏陷阱
+
+### 重音位置
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| deVELop / deVELopment | v./n. | 发展 | 重音在第二音节，中国考生常错读成 DEV-elop | The city plans to develop the waterfront. |
+| COMfortable | adj. | 舒适的 | 读 KUMF-ter-bul 三音节，不读四音节 | The chairs are not very comfortable. |
+| VEGetable | n. | 蔬菜 | 读 VEJ-ta-bul 三音节，中间 e 吞掉 | Fresh vegetables are on sale. |
+| TEMperature | n. | 温度 | 读 TEM-pra-cher 三音节 | The temperature dropped overnight. |
+| inTERpret / inTERpreter | v./n. | 口译 | 重音第二音节，不读 IN-ter-pret | We hired an interpreter for the meeting. |
+| deVELop vs DEVelopment | n. | 发展 | 名词动词同重音，都在第二音节 | Recent developments have changed the plan. |
+| adMINister / adminisTRAtion | v./n. | 管理/行政 | 名词重音后移到第三音节，规律性考点 | The administration approved the budget. |
+| PHOtograph / phoTOGrapher / photoGRAPHic | n./n./adj. | 照片/摄影师/摄影的 | 三种形式重音全不同，典型重音漂移词族 | The photographer arrived early. |
+| ecoNOMic / ECOnomy | adj./n. | 经济的/经济 | 形容词重音在 NOM，名词在 CON | Economic growth has slowed. |
+| CERtificate (n.) / cerTIFicate | n. | 证书 | 名词重音在第二音节 cer-TIF-i-cat | Please bring your birth certificate. |
+| adVERtisement | n. | 广告 | 英式读 ad-VER-tis-ment，美式 AD-ver-TIZE-ment，加拿大两者都听得到 | I saw the advertisement online. |
+| CATegory / cateGORical | n./adj. | 类别 | 名词重音第一音节 | The form has four categories. |
+| neCESSity vs NECessary | n./adj. | 必需品/必要的 | 形容词重音第一，名词第二 | Winter tires are a necessity here. |
+| OPPortunity | n. | 机会 | 重音在第三音节 op-por-TU-ni-ty | This is a great opportunity. |
+| resPONsible / responsiBILity | adj./n. | 负责的/责任 | 名词重音移到 BIL | It is your responsibility to renew it. |
+| deTERmine / deterMInation | v./n. | 决定/决心 | 重音漂移 | We need to determine the cause. |
+| PREsent (n./adj.) / preSENT (v.) | n./v. | 礼物、目前的/呈现 | 名动异重，PTE 经典考点 | I will present the report to the present committee. |
+| RECord (n.) / reCORD (v.) | n./v. | 记录/录制 | 名动异重 | Please record the meeting for the record. |
+| INcrease (n.) / inCREASE (v.) | n./v. | 增长/增加 | 名动异重，Describe Image 高频 | The increase will increase costs. |
+| PERmit (n.) / perMIT (v.) | n./v. | 许可证/允许 | 名动异重，移民语境高频 | The city will permit you to renew the permit. |
+| CONtract (n.) / conTRACT (v.) | n./v. | 合同/收缩 | 名动异重 | We signed the contract yesterday. |
+| PROduce (n.) / proDUCE (v.) | n./v. | 农产品/生产 | 名动异重，超市语境 | Fresh produce is sold at the market. |
+
+### 静音字母
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| receipt | n. | 收据 | p 不发音，读 ri-SEET | Keep your receipt. |
+| debt / doubt | n. | 债务/怀疑 | b 不发音，读 det / dout | He paid off the debt. |
+| subtle | adj. | 微妙的 | b 不发音，读 SUT-tul | There is a subtle difference. |
+| island / aisle | n. | 岛/过道 | s 不发音，读 EYE-land / EYE-l | Use the centre aisle. |
+| salmon | n. | 三文鱼 | l 不发音，读 SAM-un | Salmon is popular on the west coast. |
+| Wednesday | n. | 星期三 | 第一个 d 不发音，读 WENZ-day | The class meets on Wednesday. |
+| knowledge / knee / knife | n. | 知识/膝盖/刀 | 词首 k 不发音 | She has a good knowledge of the system. |
+| comb / climb / tomb | n./v. | 梳子/攀爬/坟墓 | 词尾 b 不发音 | The costs continued to climb. |
+| castle / listen / fasten | n./v. | 城堡/听/系紧 | st 中的 t 不发音 | Please fasten your seatbelt. |
+| honest / hour / heir | adj./n. | 诚实的/小时/继承人 | 词首 h 不发音，冠词用 an | It takes an hour to get there. |
+| muscle | n. | 肌肉 | c 不发音，读 MUS-sul | Strength training builds muscle. |
+| foreign / sign / design | adj./n./v. | 外国的/标志/设计 | gn 中 g 不发音 | Foreign credentials must be assessed. |
+
+### 易错发音
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| determine | v. | 决定 | 结尾读 -min 不读 -mine（不押 mine） | We must determine the next step. |
+| genuine | adj. | 真正的 | 结尾读 -win 不读 -wine | This is a genuine concern. |
+| suite | n. | 套房/套件 | 读 sweet，不读 suit | The office is in suite 302. |
+| colonel | n. | 上校 | 读 KER-nul，与拼写完全不符 | The colonel addressed the crowd. |
+| archive / architect | n. | 档案/建筑师 | ch 读 k 音 | The architect submitted the drawings. |
+| chaos / character / chemistry | n. | 混乱/性格/化学 | ch 读 k 音 | The delay caused chaos at the airport. |
+| machine / chef / brochure | n. | 机器/厨师/宣传册 | ch 读 sh 音，与上一条相反 | Pick up a brochure at reception. |
+| thorough / through / though | adj./prep./conj. | 彻底的/穿过/尽管 | 三词读音全不同：THUR-oh / throo / thoh | A thorough inspection was carried out. |
+| clothes | n. | 衣服 | 读 klohz，th 几乎不出声，不读两音节 | Bring warm clothes for winter. |
+| month / months | n. | 月 | 复数 months 读 munts，不加额外音节 | It took three months. |
+| asked / worked / helped | v. | 过去式 | -ed 在清辅音后读 t，不读 id | I asked for a refund. |
+| needed / wanted / started | v. | 过去式 | -ed 在 t/d 后才读 id | The project started late. |
+| used / lived / opened | v. | 过去式 | -ed 在浊辅音元音后读 d | The office opened at nine. |
+| comfortable vs comparable | adj. | 舒适的/可比较的 | comparable 重音在第一音节 COM-pra-bul | The two figures are comparable. |
+| often | adv. | 经常 | t 可发可不发，OF-en 更常见 | Delays often occur in winter. |
+| schedule | n./v. | 日程 | 加拿大两读并存，SKED-jool 更常听到 | The schedule was revised. |
+| route | n. | 路线 | 加拿大多读 root，也听得到 rout | The bus route has changed. |
+| garage | n. | 车库 | 北美读 guh-RAHZH，重音在后 | The car is in the garage. |
+| niche | n. | 细分领域 | 读 neesh 或 nitch，前者更常见 | They serve a niche market. |
+| entrepreneur | n. | 创业者 | 读 on-truh-pruh-NUR，重音在最后 | She is a successful entrepreneur. |
+| colleague | n. | 同事 | 读 KOL-eeg，重音在第一音节 | My colleague will assist you. |
+
+### 连读节奏
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| a lot of / lots of | chunk | 许多 | 连读成 uh-LOT-uv，Read Aloud 流利度得分点 | There are a lot of options. |
+| want to / going to | chunk | 想要/将要 | 口语连读 wanna / gonna，但 Read Aloud 仍读全形 | I am going to review it. |
+| and 弱读 | conj. | 和 | 句中读 /ən/，不重读，是流利度关键 | bread and butter 读 bred-n-butter |
+| of / for / to 弱读 | prep. | 介词弱读 | 功能词弱读、实词重读，是 oral fluency 的核心 | a cup of tea 读 a cup-uv tea |
+| 意群停顿 | chunk | 按意群断句 | 在逗号和从句边界停，不在单词间停，PTE 扣 fluency 最多的就是乱停 | After the meeting, // we will review the budget. |
+
+## ABSTR · CLB 8-9 抽象与议论词汇
+
+### 评价程度
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| substantial | adj. | 大量的/实质性的 | 比 big 高级，修饰 increase/amount/evidence | There has been a substantial increase in demand. |
+| considerable | adj. | 相当大的 | 与 substantial 轮换，避免重复 | The project required considerable effort. |
+| significant / significantly | adj./adv. | 显著的 | 万能强化词，Describe Image 与议论通用 | Costs fell significantly after the change. |
+| marginal / marginally | adj./adv. | 微小的 | 与 significant 相对 | The difference was only marginal. |
+| negligible | adj. | 微不足道的 | 高分词，强调可忽略 | The impact on traffic was negligible. |
+| moderate | adj./v. | 适度的/缓和 | 中间程度 | A moderate amount of exercise is enough. |
+| extensive | adj. | 广泛的 | extensive research / damage / experience | The storm caused extensive damage. |
+| widespread | adj. | 普遍存在的 | 描述范围广 | There is widespread support for the plan. |
+| prevalent | adj. | 盛行的 | 比 common 高级 | Remote work is now prevalent in the sector. |
+| scarce / scarcity | adj./n. | 稀缺的/稀缺 | 资源议题高频 | Affordable housing is increasingly scarce. |
+| abundant | adj. | 充足的 | 与 scarce 相对 | The region has abundant water resources. |
+| adequate / inadequate | adj. | 充足的/不足的 | 比 enough 正式 | The funding proved inadequate. |
+| excessive | adj. | 过度的 | 带批评色彩 | Excessive screen time affects sleep. |
+| minimal | adj. | 极少的 | 正式表达"几乎没有" | The changes required minimal training. |
+
+### 可行价值
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| viable | adj. | 可行的 | commercially viable / a viable option | Solar power is now a viable alternative. |
+| feasible / feasibility | adj./n. | 可行的/可行性 | 技术与经济可行 | A feasibility study was commissioned. |
+| practical / impractical | adj. | 实际可行的/不切实际的 | 日常评价 | The proposal is impractical in winter. |
+| cost-effective | adj. | 划算的 | 议论结论高频 | Prevention is more cost-effective than treatment. |
+| sustainable | adj. | 可持续的 | 环境与财务双用 | The model is not financially sustainable. |
+| beneficial | adj. | 有益的 | be beneficial to / for | Regular feedback is beneficial to staff. |
+| detrimental | adj. | 有害的 | be detrimental to，高分反义词 | Long hours can be detrimental to health. |
+| counterproductive | adj. | 适得其反的 | 高分批评词 | Strict rules can be counterproductive. |
+| worthwhile | adj. | 值得的 | 一个词，不分写 | The investment proved worthwhile. |
+| redundant | adj. | 多余的/被裁员的 | 双义，职场语境注意 | The step was redundant and was removed. |
+
+### 因果条件
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| inevitable / inevitably | adj./adv. | 不可避免的 | 强因果 | Some delay is inevitable in winter. |
+| attributable to | adj. | 归因于 | 正式因果，比 because 高级 | The rise is attributable to higher fuel costs. |
+| stem from | pv | 源于 | 因果高分短语 | The problem stems from poor planning. |
+| give rise to | chunk | 引起 | 正式因果搭配 | The policy gave rise to widespread criticism. |
+| trigger | v./n. | 引发/诱因 | 突发因果 | The announcement triggered a wave of applications. |
+| underlying | adj. | 根本的/潜在的 | underlying cause / issue | We must address the underlying cause. |
+| contributing factor | n. | 促成因素 | 多因分析高分搭配 | Fatigue was a contributing factor. |
+| prerequisite | n. | 前提条件 | be a prerequisite for | Trust is a prerequisite for teamwork. |
+| provided that | conj. | 只要/前提是 | 条件从句，比 if 正式 | The plan will work, provided that funding continues. |
+| otherwise | adv. | 否则 | 结果连接 | Register early; otherwise you may lose your spot. |
+
+### 变化趋势
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| shift | n./v. | 转变 | a shift in attitudes / priorities | There has been a shift towards online services. |
+| transition | n./v. | 过渡 | transition to / from | The transition to renewable energy will take decades. |
+| emerge / emerging | v./adj. | 出现/新兴的 | emerging trend / market | Several emerging problems were identified. |
+| accelerate | v. | 加速 | 正式动词 | The pandemic accelerated the shift to remote work. |
+| reverse | v./n. | 扭转/相反 | reverse a trend / decision | The city reversed its decision. |
+| stagnate / stagnation | v./n. | 停滞 | 经济议题 | Wages have stagnated for a decade. |
+| deteriorate | v. | 恶化 | 与 improve 相对，高分 | Air quality deteriorated during the wildfires. |
+| evolve / evolution | v./n. | 演变 | 渐进变化 | The role has evolved considerably. |
+| persist / persistent | v./adj. | 持续存在/顽固的 | persistent problem / shortage | Labour shortages persist across the country. |
+| unprecedented | adj. | 前所未有的 | 强调罕见，高分 | The city faced unprecedented flooding. |
+
+### 观点态度
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| advocate | v./n. | 主张/倡导者 | advocate for something | Many experts advocate earlier intervention. |
+| oppose / opposition | v./n. | 反对 | 正式立场词 | Residents opposed the development. |
+| sceptical / scepticism | adj./n. | 持怀疑的 | 加拿大拼 sceptical | Some remain sceptical about the benefits. |
+| reluctant | adj. | 不情愿的 | be reluctant to do | Employers are reluctant to hire without local experience. |
+| controversial | adj. | 有争议的 | 议题描述高频 | The policy remains controversial. |
+| consensus | n. | 共识 | reach a consensus | There is no consensus on the issue. |
+| perception | n. | 看法/认知 | public perception | Public perception has shifted rapidly. |
+| bias / biased | n./adj. | 偏见/有偏见的 | 媒体与招聘议题 | The survey may be biased towards younger users. |
+| compelling | adj. | 有说服力的 | compelling argument / evidence | She made a compelling case for the change. |
+| questionable | adj. | 存疑的 | 温和质疑 | The reliability of the data is questionable. |
+| justify / justification | v./n. | 证明合理 | justify a decision | It is hard to justify the extra cost. |
+| acknowledge | v. | 承认 | 让步高分动词 | We must acknowledge the drawbacks. |
+
+### 问题解决
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| address | v. | 着手解决 | address an issue，比 solve 高级 | The city is addressing the shortage. |
+| tackle | v. | 应对（难题） | tackle a problem，口语书面通用 | We need to tackle the root cause. |
+| mitigate | v. | 缓解 | mitigate risk / impact，高分 | Measures were taken to mitigate the damage. |
+| alleviate | v. | 减轻 | alleviate pressure / poverty | The subsidy alleviates some of the pressure. |
+| implement / implementation | v./n. | 实施 | implement a policy | The new system will be implemented in phases. |
+| enforce / enforcement | v./n. | 执行（法规） | enforce a rule | The bylaw is rarely enforced. |
+| monitor | v. | 监测 | 持续观察 | Air quality is monitored continuously. |
+| assess / assessment | v./n. | 评估 | assess the impact | We will assess the results in June. |
+| evaluate | v. | 评价 | 与 assess 轮换 | The program will be evaluated annually. |
+| streamline | v. | 精简流程 | 职场高分词 | The process was streamlined to save time. |
+| allocate | v. | 分配 | allocate funds / resources | More funds were allocated to housing. |
+| compensate for | v. | 弥补 | 双义：补偿金钱或弥补不足 | Extra staff compensated for the delay. |
+| contingency plan | n. | 应急预案 | 职场正式词 | A contingency plan is in place. |
+
+### 社会制度
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| regulation / regulate | n./v. | 法规/监管 | 政策议题 | Stricter regulations came into force. |
+| legislation | n. | 立法/法律 | 不可数，比 law 正式 | New legislation protects tenants. |
+| infrastructure | n. | 基础设施 | 不可数 | The region needs investment in infrastructure. |
+| incentive | n. | 激励措施 | financial incentive | Tax incentives encourage green renovations. |
+| accountability | n. | 问责制 | 治理议题高分词 | There is little accountability in the process. |
+| transparency | n. | 透明度 | 与 accountability 配对 | Residents demanded greater transparency. |
+| equity / equitable | n./adj. | 公平/公平的 | 加拿大公共话语核心，与 equality 有别 | The policy aims for equitable access. |
+| disparity | n. | 差距 | regional disparity | There are wide disparities between provinces. |
+| marginalised | adj. | 边缘化的 | 加拿大社会议题标准表述 | Services often miss marginalised groups. |
+| advocacy group | n. | 倡导团体 | 公民社会 | An advocacy group challenged the decision. |
+| jurisdiction | n. | 管辖权 | 加拿大联邦省级划分必备 | Health care falls under provincial jurisdiction. |
+| mandate | n./v. | 授权/强制规定 | mandatory 的名词动词形式 | The province mandated winter tires. |
+| compliance / comply with | n./v. | 合规/遵守 | 正式搭配 | All units must comply with fire regulations. |
+| exemption / be exempt from | n./adj. | 豁免 | 税务与规章 | Students are exempt from the fee. |
+
+### 数据论证
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| evidence | n. | 证据 | 不可数，不说 an evidence | There is little evidence to support this. |
+| indicate / indicator | v./n. | 表明/指标 | 数据转述 | The figures indicate a steady recovery. |
+| correlation | n. | 相关性 | correlation between A and B | There is a correlation between income and health. |
+| estimate | v./n. | 估计 | conservative estimate | Officials estimate the cost at $2 million. |
+| on average | chunk | 平均而言 | 数据描述固定搭配 | On average, commuters spend an hour travelling. |
+| disproportionately | adv. | 不成比例地 | 社会议题高分副词 | The change affects seniors disproportionately. |
+| respectively | adv. | 分别地 | 列举对应关系，高分 | Sales rose 5 and 8 percent respectively. |
+| namely | adv. | 即/也就是 | 精确列举 | Two groups, namely students and seniors, qualify. |
+| notably | adv. | 尤其是 | 引出突出例子 | Several cities, notably Vancouver, saw sharp rises. |
+| arguably | adv. | 可以说 | 谨慎断言，高分 | This is arguably the most effective approach. |
+| presumably | adv. | 想必 | 推测 | The delay was presumably due to weather. |
+| to a certain extent | chunk | 在一定程度上 | 让步表达，高分 | This is true to a certain extent. |
+| by and large | idm | 总体而言 | 结论过渡 | By and large, the response has been positive. |
+
+### 人与行为
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| resilient / resilience | adj./n. | 有韧性的/韧性 | 加拿大公共话语高频 | The community proved remarkably resilient. |
+| adaptable | adj. | 适应力强的 | 求职与移民语境 | Newcomers must be adaptable. |
+| proactive | adj. | 主动的 | 与 reactive 相对，职场高分 | A proactive approach prevents problems. |
+| competent / competence | adj./n. | 称职的/能力 | 正式评价 | She is highly competent in her field. |
+| diligent | adj. | 勤勉的 | 正面评价 | He is a diligent and reliable employee. |
+| reluctance | n. | 不情愿 | 名词形式 | There is some reluctance to adopt the system. |
+| commitment | n. | 承诺/投入 | commitment to something | The company has a commitment to safety. |
+| integrity | n. | 正直 | 职业道德词 | The role requires honesty and integrity. |
+| initiative (show) | chunk | 展现主动性 | show/take initiative，面试高频 | She shows initiative without being asked. |
+| self-sufficient | adj. | 自给自足的 | 移民与经济议题 | The goal is to become self-sufficient. |
+| accountable for | adj. | 对……负责 | be held accountable | Managers are accountable for their decisions. |
+| overwhelmed | adj. | 不堪重负的 | 压力议题 | Many staff feel overwhelmed by the workload. |
+
+## WORK · 主题：职场与就业
+
+### 行业岗位
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| hospitality | n. | 酒店餐饮业 | 加拿大新移民高频入行行业 | She works in the hospitality industry. |
+| retail | n. | 零售业 | 常见入门岗位 | Retail jobs often involve evening shifts. |
+| manufacturing | n. | 制造业 | 经济议题与就业 | Manufacturing has declined in the region. |
+| construction | n. | 建筑业 | 加拿大技工需求大 | Construction slows down in winter. |
+| logistics / warehousing | n. | 物流/仓储 | 电商带动的高需求行业 | He found work in logistics. |
+| skilled trades | n. | 技术工种 | 加拿大移民政策重点类别 | Canada faces a shortage in the skilled trades. |
+| administrative assistant | n. | 行政助理 | 常见岗位名 | I applied for an administrative assistant role. |
+| customer service representative | n. | 客服代表 | 常见岗位名 | The team has six customer service representatives. |
+| supervisor / team lead | n. | 主管/组长 | 基层管理岗 | Report any issues to your team lead. |
+| contractor / subcontractor | n. | 承包商/分包商 | 建筑与自雇语境 | The work was done by a subcontractor. |
+| apprentice / journeyman | n. | 学徒/出师技工 | 加拿大技工晋级体系特有 | He became a journeyman electrician after four years. |
+
+### 办公设备
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| photocopier / printer | n. | 复印机/打印机 | 办公报修场景 | The photocopier is jammed again. |
+| supplies / stationery | n. | 办公用品/文具 | 采购场景 | We are running low on office supplies. |
+| workstation | n. | 工位 | 办公空间 | Each workstation has two monitors. |
+| boardroom / meeting room | n. | 会议室 | 预订场景 | The boardroom is booked until noon. |
+| book a room | chunk | 预订会议室 | 动词用 book | I have booked the meeting room for two hours. |
+| conference call / video call | n. | 电话会议/视频会议 | 远程办公高频 | Let us set up a video call instead. |
+| out of service | phr | 停止使用 | 设备故障通告 | The second elevator is out of service. |
+
+### 客户销售
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| client / account | n. | 客户/客户账户 | B2B 语境 | She manages five key accounts. |
+| quote / quotation | n. | 报价 | 采购与服务 | Could you send us a quote? |
+| proposal | n. | 提案 | 投标与项目 | We submitted the proposal on Friday. |
+| contract renewal | n. | 合同续签 | 客户管理 | The contract renewal is due next month. |
+| negotiate / negotiation | v./n. | 谈判 | 正式商务 | We negotiated a better rate. |
+| revenue | n. | 营收 | 与 profit 区分：收入总额 | Revenue grew by 12 percent. |
+| profit margin | n. | 利润率 | 经营指标 | The profit margin is very thin. |
+| turnover | n. | 营业额/人员流动率 | 双义，职场语境多指离职率 | Staff turnover has been high this year. |
+| target / quota | n. | 目标/定额 | 销售与绩效 | The team exceeded its quarterly target. |
+| referral | n. | 推荐/介绍 | 一词多义，此处指客户推荐 | Most of our business comes from referrals. |
+
+### 培训安全
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| orientation | n. | 入职培训 | 北美新员工第一天 | Orientation is held on your first day. |
+| onboarding | n. | 入职流程 | 现代 HR 词汇 | The onboarding process takes two weeks. |
+| safety protocol | n. | 安全规程 | 工厂与工地 | All workers must follow the safety protocol. |
+| hazard | n. | 危险源 | 职业安全术语 | Report any hazard to your supervisor. |
+| protective equipment (PPE) | n. | 个人防护装备 | 工地与实验室 | Protective equipment must be worn at all times. |
+| incident report | n. | 事故报告 | 职场安全流程 | An incident report must be filed within 24 hours. |
+| evacuation / fire drill | n. | 疏散/消防演习 | 职场通知类高频 | A fire drill is scheduled for Thursday. |
+| WHMIS | n. | 工作场所危险物质信息系统 | 加拿大特有的强制安全培训 | WHMIS training is required for all new hires. |
+
+### 团队协作
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| collaborate / collaboration | v./n. | 协作 | 求职与绩效高分词 | The two departments collaborated closely. |
+| coordinate | v. | 协调 | 项目与活动 | She coordinated the whole event. |
+| liaise with | v. | 与……联络 | 英式正式用词，加拿大职场也用 | I liaise with suppliers on a daily basis. |
+| keep someone in the loop | idm | 让某人知情 | 北美职场地道习语 | Please keep me in the loop on this. |
+| on the same page | idm | 达成共识 | 会议常用 | Let us make sure everyone is on the same page. |
+| take the lead on | chunk | 主导某事 | 主动承担 | I will take the lead on the client proposal. |
+| check in with | pv | 与某人确认进展 | 北美职场高频 | I will check in with the team tomorrow. |
+| circle back | idm | 稍后再讨论 | 北美会议用语 | Let us circle back to that next week. |
+| morale | n. | 士气 | 不可数，团队管理词 | The change improved staff morale. |
+| workplace culture | n. | 职场文化 | 求职与议论高频 | A positive workplace culture reduces turnover. |
+
+### 劳动法规
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| employment standards | n. | 劳动标准 | 加拿大省级劳动法术语 | Employment standards set the minimum notice period. |
+| minimum wage | n. | 最低工资 | 社会议题 | The minimum wage rose in October. |
+| statutory holiday | n. | 法定假日 | 加拿大特有说法，俗称 stat holiday | Monday is a statutory holiday. |
+| vacation entitlement | n. | 带薪年假额度 | 加拿大雇佣条款 | Vacation entitlement increases after five years. |
+| accommodation (workplace) | n. | 工作场所便利安排 | 加拿大人权法术语，与"住宿"同形不同义 | Employers must provide reasonable accommodation. |
+| union dues | n. | 工会会费 | 工会语境 | Union dues are deducted automatically. |
+| collective agreement | n. | 集体协议 | 加拿大工会制度核心 | The collective agreement expires in December. |
+| whistleblower | n. | 举报人 | 职业道德议题 | Whistleblower protections were strengthened. |
+| non-disclosure agreement (NDA) | n. | 保密协议 | 入职文件 | New staff must sign a non-disclosure agreement. |
+
+## HOME · 主题：住房与社区
+
+### 房屋结构
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| basement | n. | 地下室 | 加拿大住宅标配，出租常见 | They rent out the basement apartment. |
+| attic | n. | 阁楼 | 保温与储物 | The attic needs better insulation. |
+| driveway | n. | 私家车道 | 与 garage 区分 | Please do not block the driveway. |
+| balcony / patio | n. | 阳台/露台 | 租房广告卖点 | The unit has a south-facing balcony. |
+| storey / floor | n. | 楼层 | 加拿大拼 storey，复数 storeys | It is a three-storey building. |
+| hallway / corridor | n. | 走廊 | 公共区域 | The hallway light has burned out. |
+| laundry room | n. | 洗衣房 | 公寓共用设施 | The laundry room is in the basement. |
+| insulation | n. | 保温材料 | 加拿大冬季关键，不可数 | Poor insulation drives up heating bills. |
+| smoke detector / carbon monoxide detector | n. | 烟雾报警器/一氧化碳报警器 | 加拿大法律强制安装 | Smoke detectors must be tested monthly. |
+| circuit breaker / fuse box | n. | 断路器/配电箱 | 电路故障报修 | Check the circuit breaker in the basement. |
+| water heater | n. | 热水器 | 常见报修项 | The water heater needs replacing. |
+| appliance | n. | 家用电器 | 租房广告常提 | The kitchen appliances are included. |
+| fixtures | n. | 固定装置 | 租约条款用词 | Light fixtures are the landlord's responsibility. |
+
+### 家务生活
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| do the laundry | chunk | 洗衣服 | 动词固定用 do | I do the laundry on Sundays. |
+| take out the garbage | chunk | 倒垃圾 | 北美说 garbage 不说 rubbish | Remember to take out the garbage tonight. |
+| vacuum | v./n. | 吸尘/吸尘器 | 动词名词同形 | I need to vacuum the living room. |
+| declutter / tidy up | v./pv | 整理清空 | 生活类话题 | We spent the weekend decluttering. |
+| utilities bill | n. | 水电账单 | 每月固定支出 | The utilities bill doubled in January. |
+| thermostat | n. | 温控器 | 加拿大冬季生活必备 | Turn the thermostat down at night. |
+| draught / draughty | n./adj. | 穿堂风/漏风的 | 加拿大拼 draught，美式 draft | The old windows are very draughty. |
+
+### 租房流程
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| viewing | n. | 看房 | 租房流程 | We have a viewing scheduled for Saturday. |
+| credit check | n. | 信用审查 | 加拿大租房必经流程 | The landlord ran a credit check. |
+| first and last month's rent | chunk | 首月加末月房租 | 加拿大押金标准形式 | You need first and last month's rent up front. |
+| rent increase | n. | 涨租 | 受省级法规限制 | The rent increase is capped at 2.5 percent. |
+| eviction / evict | n./v. | 驱逐 | 租房纠纷严重情形 | Eviction requires a formal notice. |
+| notice to vacate | n. | 搬离通知 | 法律文件名 | She gave 60 days' notice to vacate. |
+| landlord and tenant board | n. | 房东租客委员会 | 加拿大省级仲裁机构 | The dispute went to the landlord and tenant board. |
+| rent-controlled | adj. | 受租金管制的 | 加拿大住房政策术语 | Older buildings are often rent-controlled. |
+| utilities included | chunk | 包水电 | 广告高频短语 | Rent is $1,750, utilities included. |
+
+### 社区设施
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| library branch | n. | 图书馆分馆 | 社区资源 | The local library branch offers free Wi-Fi. |
+| recreation centre | n. | 康乐中心 | 加拿大市政设施 | The recreation centre has a public pool. |
+| playground / park | n. | 游乐场/公园 | 家庭生活 | The new playground opens in May. |
+| sidewalk | n. | 人行道 | 北美说 sidewalk，英式 pavement | The sidewalk is icy this morning. |
+| crosswalk | n. | 人行横道 | 北美用词 | Use the crosswalk at the corner. |
+| transit stop | n. | 公交站 | 加拿大市政用词 | The nearest transit stop is two blocks away. |
+| snow route | n. | 除雪指定路线 | 加拿大冬季市政规定 | Parking is banned on snow routes during storms. |
+| residents' association | n. | 业主/居民协会 | 社区治理 | The residents' association meets monthly. |
+| town hall meeting | n. | 市民议事会 | 北美公共参与形式 | The city held a town hall meeting on the project. |
+| petition | n./v. | 请愿 | 社区行动 | Neighbours signed a petition against the closure. |
+| zoning | n. | 土地用途分区 | 城市规划术语 | Zoning rules limit building height. |
+
+## HEALTH · 主题：健康与医疗
+
+### 科室人员
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| nurse practitioner | n. | 执业护士 | 加拿大可独立看诊开药，缓解家庭医生短缺 | A nurse practitioner can renew your prescription. |
+| paramedic | n. | 急救员 | 救护车人员 | Paramedics arrived within ten minutes. |
+| physiotherapist / physiotherapy | n. | 理疗师/理疗 | 加拿大常见补充保险覆盖项 | He has physiotherapy twice a week. |
+| optometrist | n. | 验光师 | 与眼科医生 ophthalmologist 区分 | Book an eye exam with an optometrist. |
+| surgeon / surgery | n. | 外科医生/手术 | surgery 英式也指诊所 | She is waiting for knee surgery. |
+| caregiver | n. | 照护者 | 老龄化议题高频 | Family caregivers receive little support. |
+
+### 检查治疗
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| check-up | n. | 体检 | annual check-up | I am due for my annual check-up. |
+| blood test | n. | 血液检查 | 常见检查 | The doctor ordered a blood test. |
+| X-ray / scan | n. | X 光/扫描 | 影像检查 | The X-ray showed no fracture. |
+| diagnosis / diagnose | n./v. | 诊断 | 复数 diagnoses | An early diagnosis improves outcomes. |
+| treatment | n. | 治疗 | undergo treatment | The treatment lasted six weeks. |
+| dosage | n. | 剂量 | 用药说明 | Follow the dosage on the label. |
+| refill | n./v. | 续配药 | 北美药房用词 | I need a refill on my prescription. |
+| generic drug | n. | 仿制药 | 与品牌药相对，省钱 | Generic drugs cost far less. |
+| follow-up appointment | n. | 复诊 | 流程词 | Schedule a follow-up appointment in a month. |
+| recovery / rehabilitation | n. | 康复 | 术后阶段 | Rehabilitation takes several months. |
+
+### 急救突发
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| sprain / fracture | n./v. | 扭伤/骨折 | 常见伤情 | She sprained her ankle on the ice. |
+| allergic reaction | n. | 过敏反应 | 急诊常见 | He had an allergic reaction to the medication. |
+| concussion | n. | 脑震荡 | 运动与跌倒 | The player suffered a concussion. |
+| ambulance | n. | 救护车 | 加拿大救护车通常要自付部分费用 | An ambulance was called immediately. |
+| CPR | n. | 心肺复苏 | 急救培训 | All lifeguards are trained in CPR. |
+| triage | n. | 分诊 | 急诊流程词 | Triage determines who is seen first. |
+| urgent care | n. | 紧急护理中心 | 介于诊所与急诊之间，北美特有 | Urgent care is faster than the ER for minor injuries. |
+| frostbite / hypothermia | n. | 冻伤/体温过低 | 加拿大冬季健康风险 | Frostbite can occur within minutes at minus thirty. |
+| heatstroke | n. | 中暑 | 夏季对应风险 | Seniors are most at risk of heatstroke. |
+
+### 照护人群
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| senior / elderly | n./adj. | 老年人/年长的 | 加拿大用 senior 更中性 | Seniors receive a transit discount. |
+| long-term care home | n. | 长期护理院 | 加拿大养老制度核心词 | Long-term care homes face staffing shortages. |
+| home care | n. | 居家照护 | 老龄化政策 | Home care allows seniors to stay independent. |
+| assisted living | n. | 辅助生活住所 | 养老选项 | My parents moved into assisted living. |
+| disability | n. | 残障 | 加拿大法律与福利术语 | The building is accessible to people with disabilities. |
+| pediatrician | n. | 儿科医生 | 加拿大拼 pediatrician | The pediatrician sees children up to eighteen. |
+| immunisation schedule | n. | 免疫接种时间表 | 儿童保健 | Follow the childhood immunisation schedule. |
+| prenatal care | n. | 产前护理 | 孕产 | Prenatal care is covered by provincial health plans. |
+
+### 加拿大制度
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| universal health care | n. | 全民医保 | 加拿大制度标志，议论高频 | Canada is known for its universal health care. |
+| medically necessary | adj. | 医疗必需的 | 决定是否报销的关键标准 | Only medically necessary services are covered. |
+| not covered | phr | 不在保障范围内 | 牙科视力处方药通常不覆盖 | Dental work is not covered for most adults. |
+| wait time | n. | 等候时间 | 加拿大医疗体系主要批评点 | Wait times for specialists remain long. |
+| family health team | n. | 家庭健康团队 | 加拿大基层医疗组织形式 | A family health team includes nurses and dietitians. |
+| virtual care / telehealth | n. | 远程医疗 | 疫情后普及 | Virtual care reduced unnecessary visits. |
+| health authority | n. | 卫生管理局 | 省级机构 | The regional health authority issued an advisory. |
+| public health advisory | n. | 公共卫生提示 | 通知类高频 | A public health advisory was issued for the area. |
+| opioid crisis | n. | 阿片类药物危机 | 加拿大重大社会议题 | The opioid crisis has strained emergency services. |
+| harm reduction | n. | 减害策略 | 加拿大公共卫生政策术语 | Harm reduction programs remain controversial. |
+| mental health support | n. | 心理健康支持 | 职场与社区高频 | The employer expanded mental health support. |
+
+## MONEY · 主题：银行、消费与福利
+
+### 工资单
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| pay stub | n. | 工资条 | 加拿大说 pay stub | Check your pay stub for the deductions. |
+| gross pay / net pay | n. | 税前/税后工资 | 工资条两个关键数字 | Gross pay is $4,000; net pay is about $3,000. |
+| withholding | n. | 代扣税款 | 税务术语 | Income tax withholding appears on every stub. |
+| pay period | n. | 发薪周期 | biweekly 双周发是加拿大常态 | We are paid biweekly, so there are 26 pay periods. |
+| statutory deductions | n. | 法定扣款 | CPP、EI、所得税三项 | Statutory deductions are taken automatically. |
+| T4 slip | n. | T4 报税表 | 加拿大雇主年度发放的收入证明，特有术语 | Your employer must issue a T4 slip by the end of February. |
+| year-to-date (YTD) | n. | 年初至今累计 | 工资条常见缩写 | The year-to-date total is shown on the right. |
+
+### 购物零售
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| clearance / markdown | n. | 清仓/降价 | 零售促销词 | The winter coats are on clearance. |
+| price match | n./v. | 价格匹配 | 加拿大零售常见政策 | The store will price match a competitor's ad. |
+| loyalty points | n. | 积分 | 加拿大零售普遍 | I redeemed my loyalty points for groceries. |
+| cashier / self-checkout | n. | 收银员/自助结账 | 超市场景 | The self-checkout is faster at this hour. |
+| return policy | n. | 退货政策 | 消费维权核心 | Their return policy allows 30 days. |
+| proof of purchase | n. | 购买凭证 | 退货与保修必需 | You need proof of purchase for a refund. |
+| store credit | n. | store credit（店内代金） | 退款替代方案 | They offered store credit instead of cash. |
+| bulk / in bulk | n./phr | 大宗/批量地 | 省钱话题 | Buying in bulk reduces the unit cost. |
+| expiry date / best before | n. | 保质期/最佳食用期 | 加拿大食品标签 | Check the best before date. |
+
+### 房贷债务
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| amortisation | n. | 摊还期 | 加拿大房贷标准 25 年 | The amortisation period is 25 years. |
+| fixed rate / variable rate | n. | 固定利率/浮动利率 | 房贷选择 | We chose a five-year fixed rate. |
+| pre-approval | n. | 贷款预批 | 买房第一步 | We got a mortgage pre-approval last week. |
+| line of credit | n. | 信用额度 | 加拿大常见借贷产品 | A line of credit has a lower rate than a credit card. |
+| debt / in debt | n./phr | 债务/负债 | 个人理财 | Many households are deeply in debt. |
+| default on | pv | 违约拖欠 | 贷款风险 | Few borrowers default on their mortgage. |
+| consolidate debt | chunk | 债务整合 | 理财建议 | She consolidated her debts into one loan. |
+| collateral | n. | 抵押品 | 贷款术语 | The property serves as collateral. |
+
+### 退休理财
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| pension | n. | 养老金 | 加拿大三支柱之一 | He receives a company pension. |
+| Old Age Security (OAS) | n. | 老年保障金 | 加拿大 65 岁以上联邦福利，特有术语 | Old Age Security begins at 65. |
+| contribution room | n. | 供款额度 | RRSP/TFSA 特有概念 | Check your TFSA contribution room before depositing. |
+| invest / investment | v./n. | 投资 | 理财基础词 | She invests a portion of every paycheque. |
+| mutual fund | n. | 共同基金 | 常见投资产品 | Most of my savings are in mutual funds. |
+| compound interest | n. | 复利 | 理财概念 | Compound interest works best over decades. |
+| financial advisor | n. | 理财顾问 | 加拿大拼 advisor 或 adviser | I met with a financial advisor at the bank. |
+
+### 消费保护
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| scam / fraud | n. | 诈骗 | 加拿大公共提醒高频 | Seniors are frequent targets of phone scams. |
+| identity theft | n. | 身份盗用 | SIN 泄露风险 | Protect your SIN to prevent identity theft. |
+| dispute a charge | chunk | 对账单提出争议 | 信用卡维权 | I disputed a charge on my credit card. |
+| hidden fees | n. | 隐藏费用 | 投诉高频 | The contract was full of hidden fees. |
+| cooling-off period | n. | 冷静期/反悔期 | 加拿大消费者保护法特有 | There is a ten-day cooling-off period. |
+| consumer protection | n. | 消费者保护 | 省级法规领域 | Consumer protection laws vary by province. |
+| small claims court | n. | 小额法庭 | 加拿大民事维权途径 | He took the dispute to small claims court. |
+| Better Business Bureau | n. | 商业促进局 | 北美投诉机构 | She filed a complaint with the Better Business Bureau. |
+
+## TRAVEL · 主题：交通与出行
+
+### 路况天气
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| road closure | n. | 道路封闭 | 加拿大冬季通告高频 | A road closure is in effect on Highway 1. |
+| black ice | n. | 黑冰（路面暗冰） | 加拿大冬季驾车最大风险 | Black ice caused several collisions. |
+| snow tires / all-season tires | n. | 雪胎/四季胎 | 加拿大驾车必备知识 | All-season tires are not enough in Quebec. |
+| windshield / wipers | n. | 挡风玻璃/雨刮 | 加拿大拼 windshield | Clear the snow off your windshield. |
+| block heater | n. | 发动机预热器 | 加拿大严寒地区特有装置 | Plug in the block heater overnight. |
+| tow / towing | v./n. | 拖车 | 违停与故障 | The car was towed from a snow route. |
+| collision | n. | 碰撞事故 | 加拿大警方与保险用词，比 accident 正式 | Report the collision to your insurer. |
+| right of way | n. | 路权 | 交通规则 | Pedestrians have the right of way here. |
+| merge / yield | v. | 并线/让行 | 北美路标用词 | Yield to traffic on the main road. |
+| carpool lane / HOV lane | n. | 拼车专用道 | 北美高速设施 | The HOV lane requires two or more passengers. |
+
+### 机场航班
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| layover / stopover | n. | 经停 | 行程安排 | We have a three-hour layover in Toronto. |
+| connecting flight | n. | 转机航班 | 机场场景 | I missed my connecting flight. |
+| overbooked | adj. | 超售的 | 航班投诉高频 | The flight was overbooked. |
+| compensation for delay | chunk | 延误赔偿 | 加拿大航空旅客保护条例 | Passengers may claim compensation for long delays. |
+| baggage claim | n. | 行李提取处 | 机场指示牌 | Meet me at baggage claim. |
+| declare | v. | 申报 | 海关用词 | You must declare goods over $800. |
+| duty-free | adj. | 免税的 | 机场购物 | Duty-free limits apply on return. |
+| travel insurance | n. | 旅游保险 | 加拿大出境必备，医疗费极高 | Travel insurance is essential when visiting the US. |
+
+### 住宿旅游
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| check-in time | n. | 入住时间 | 酒店预订 | Check-in time is after three o'clock. |
+| vacancy / no vacancy | n. | 有空房/客满 | 汽车旅馆标牌 | The motel had no vacancy. |
+| amenities | n. | 配套设施 | 酒店与公寓广告 | The hotel amenities include a pool and gym. |
+| peak season / off-season | n. | 旺季/淡季 | 定价与旅游 | Prices drop sharply in the off-season. |
+| deposit / balance | n. | 定金/尾款 | 预订付款 | A deposit is due now and the balance on arrival. |
+| national park / provincial park | n. | 国家公园/省立公园 | 加拿大旅游特色 | A pass is required to enter the national park. |
+| campground / campsite | n. | 营地 | 加拿大夏季热门活动 | Campsites book up months in advance. |
+| hiking trail | n. | 徒步路线 | 户外活动 | The hiking trail is closed until June. |
+| wildlife | n. | 野生动物 | 不可数，加拿大户外提示 | Do not feed the wildlife. |
+| guided tour | n. | 导览游 | 旅游服务 | A guided tour leaves every hour. |
+| accessible parking | n. | 无障碍停车位 | 加拿大标准表述 | Accessible parking is available near the entrance. |
+
+### 通勤出行
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| commuter | n. | 通勤者 | 城市议题 | Commuters face longer travel times. |
+| park and ride | n. | 停车换乘 | 北美通勤设施 | There is a park and ride at the end of the line. |
+| bike lane | n. | 自行车道 | 城市规划议题 | The city added protected bike lanes. |
+| ride-hailing | n. | 网约车 | Uber 类服务的正式说法 | Ride-hailing has changed urban transport. |
+| fare evasion | n. | 逃票 | 公共交通议题 | Fare evasion costs the system millions. |
+
+## EDU · 主题：教育与培训
+
+### 加拿大学制
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| kindergarten | n. | 幼儿园 | 加拿大公立教育起点 | Kindergarten starts at age five. |
+| elementary school / high school | n. | 小学/中学 | 加拿大说 elementary，不说 primary | My son is in elementary school. |
+| grade | n. | 年级 | 加拿大说 Grade 9，不说 Year 9 | She is in Grade 11 this year. |
+| college vs university | n. | 学院/大学 | 加拿大 college 指应用型学院，非美式"大学" | He chose a college diploma over a university degree. |
+| diploma / certificate / degree | n. | 文凭/证书/学位 | 加拿大三级学历产出 | A two-year diploma can lead to a good job. |
+| co-op program | n. | 带薪实习项目 | 加拿大高校特色，就业导向 | The co-op program includes three work terms. |
+| full-time student | n. | 全日制学生 | 签证与资助关键身份 | You must be a full-time student to qualify. |
+| academic year | n. | 学年 | 通常九月到四月 | The academic year runs from September to April. |
+| reading week | n. | 阅读周（期中假） | 加拿大高校特有 | Reading week falls in late February. |
+| convocation / graduation | n. | 毕业典礼 | 加拿大常用 convocation | Convocation is held in June. |
+
+### 课程学习
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| syllabus / course outline | n. | 教学大纲 | 开课第一周发放 | The course outline lists all deadlines. |
+| lecture / seminar / tutorial | n. | 大课/研讨课/辅导课 | 三种课型 | Tutorials are limited to fifteen students. |
+| attendance | n. | 出勤 | 评分组成 | Attendance counts for ten percent of the grade. |
+| group project | n. | 小组作业 | 常见任务 | Our group project is due next week. |
+| presentation | n. | 演讲/展示 | 课堂任务 | Each student gives a ten-minute presentation. |
+| plagiarism | n. | 抄袭 | 学术诚信，后果严重 | Plagiarism can result in a failing grade. |
+| citation / reference list | n. | 引用/参考文献 | 学术规范 | Every source needs a proper citation. |
+| draft / revise | n./v. | 草稿/修改 | 写作流程 | I submitted a first draft for feedback. |
+| midterm / final exam | n. | 期中/期末考试 | 评估节点 | The midterm is worth 30 percent. |
+| pass / fail | v. | 通过/挂科 | 成绩结果 | You need 50 percent to pass. |
+| GPA | n. | 平均绩点 | 升学与申请 | A GPA of 3.0 is required for the program. |
+| registrar | n. | 教务处 | 加拿大高校机构名 | Contact the registrar about your enrolment. |
+| withdraw from a course | chunk | 退课 | 有截止日期 | You can withdraw without penalty before October 31. |
+| academic advisor | n. | 学业顾问 | 选课与规划 | Speak to your academic advisor about prerequisites. |
+
+### 资助费用
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| student loan | n. | 助学贷款 | 加拿大联邦与省级双轨 | Student loans are repaid after graduation. |
+| grant | n. | 助学金 | 不用偿还，与 loan 区分 | A grant does not have to be repaid. |
+| international student fees | n. | 国际生学费 | 通常是本地生三到四倍 | International student fees have risen sharply. |
+| work-study | n. | 勤工助学 | 校内打工项目 | She has a work-study job in the library. |
+| tuition waiver | n. | 学费减免 | 资助形式 | The scholarship includes a tuition waiver. |
+
+### 成人培训
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| night class / evening course | n. | 夜校课程 | 在职学习 | I take an evening course twice a week. |
+| online course / self-paced | n./adj. | 在线课程/自定进度的 | 远程学习 | The course is fully online and self-paced. |
+| workshop / seminar | n. | 工作坊/讲座 | 短期培训 | The library runs free job-search workshops. |
+| upgrading | n. | 学历补修 | 加拿大成人教育术语 | Academic upgrading prepares adults for college. |
+| bridging program | n. | 衔接项目 | 加拿大针对外国专业人士的特有项目 | A bridging program helps foreign-trained nurses. |
+| licensing exam | n. | 执业考试 | 专业准入 | He is studying for the licensing exam. |
+| regulated profession | n. | 受监管职业 | 加拿大特有概念，医生工程师等需执照 | Engineering is a regulated profession in Canada. |
+| foreign credential recognition | n. | 国外学历认证 | 移民就业核心障碍 | Foreign credential recognition can take years. |
+| prior learning assessment | n. | 已有学习成果认定 | 加拿大成人教育机制 | Prior learning assessment can shorten the program. |
+
+### 教育议题
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| class size | n. | 班级规模 | 教育政策议题 | Smaller class sizes improve outcomes. |
+| literacy / numeracy | n. | 读写能力/计算能力 | 教育评估术语 | Literacy rates vary widely across regions. |
+| dropout rate | n. | 辍学率 | 社会议题 | The dropout rate has fallen steadily. |
+| lifelong learning | n. | 终身学习 | 议论高分词 | Lifelong learning is essential in a changing economy. |
+| skills gap | n. | 技能缺口 | 就业与教育交叉议题 | Employers report a widening skills gap. |
+| early childhood education | n. | 幼儿教育 | 加拿大政策热点 | Affordable early childhood education supports working parents. |
+
+## SERVICE · 主题：消费者服务与投诉
+
+### 预约服务
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| walk-in / by appointment only | phr | 免预约/仅限预约 | 服务机构告示 | The clinic is by appointment only. |
+| reschedule an appointment | chunk | 改约 | 客服高频 | I need to reschedule my appointment. |
+| no-show | n. | 爽约 | 服务业术语 | A no-show fee applies after two misses. |
+| waitlist | n. | 候补名单 | 服务紧张时 | Put me on the waitlist, please. |
+| confirmation email | n. | 确认邮件 | 预订流程 | You will receive a confirmation email shortly. |
+| reminder | n. | 提醒 | 自动通知 | A reminder will be sent 24 hours in advance. |
+
+### 维修安装
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| service call | n. | 上门服务 | 家电与设备 | A service call costs $90 plus parts. |
+| technician | n. | 技术员 | 上门人员 | A technician will arrive between nine and noon. |
+| estimate / quote | n. | 估价 | 维修前必问 | Can you give me an estimate first? |
+| labour / parts | n. | 工时费/零件费 | 账单构成 | The bill includes labour and parts. |
+| under warranty | phr | 在保修期内 | 免费维修条件 | The repair is free because it is under warranty. |
+| installation | n. | 安装 | 服务项目 | Installation is included in the price. |
+| on-site / off-site | adj. | 上门的/送修的 | 服务方式 | On-site repairs cost more. |
+
+### 订阅账户
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| auto-renewal | n. | 自动续订 | 消费陷阱高频 | Turn off auto-renewal before the trial ends. |
+| cancel a subscription | chunk | 取消订阅 | 投诉邮件常见诉求 | I have tried three times to cancel my subscription. |
+| billing cycle | n. | 账单周期 | 订阅服务 | Your billing cycle starts on the first. |
+| prorated | adj. | 按比例计算的 | 退款计算方式 | You will receive a prorated refund. |
+| account holder | n. | 账户持有人 | 身份核实 | Only the account holder can make changes. |
+| terms and conditions | n. | 条款与条件 | 永远复数 | Please read the terms and conditions. |
+
+### 投诉升级
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| file a complaint | chunk | 提出正式投诉 | 动词用 file | I would like to file a formal complaint. |
+| reference number | n. | 受理编号 | 跟进投诉必需 | Please provide the reference number from your last call. |
+| supervisor / manager | n. | 主管/经理 | 投诉升级对象 | May I speak with a supervisor? |
+| unacceptable | adj. | 无法接受的 | 投诉措辞，正式而克制 | A three-week delay is simply unacceptable. |
+| below the standard advertised | chunk | 低于宣传标准 | 投诉高分表达 | The service was well below the standard advertised. |
+| seek compensation | chunk | 寻求赔偿 | 投诉诉求 | I am seeking compensation for the lost time. |
+| ombudsman | n. | 申诉专员 | 加拿大公共与金融机构申诉渠道 | The bank ombudsman reviewed the case. |
+| regulator | n. | 监管机构 | 投诉终极途径 | The regulator fined the company. |
+
+### 服务语言
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| How may I help you? | chunk | 请问需要什么帮助 | 客服标准开场 | Good morning, how may I help you? |
+| Bear with me for a moment | chunk | 请稍等片刻 | 查询时用 | Bear with me for a moment while I check. |
+| I will put you through to | chunk | 我帮您转接给 | 电话转接 | I will put you through to our billing department. |
+| Let me confirm that for you | chunk | 我帮您确认一下 | 核实信息 | Let me confirm that for you right away. |
+| Is there anything else I can help with? | chunk | 还有其他需要帮助的吗 | 客服收尾 | Is there anything else I can help with today? |
+| We apologise for the inconvenience | chunk | 对造成的不便致歉 | 机构道歉标准句 | We apologise for the inconvenience this has caused. |
+| within three to five business days | chunk | 三到五个工作日内 | 处理时限标准表达 | Your refund will be processed within three to five business days. |
+| at no additional cost | chunk | 不收取额外费用 | 服务承诺 | We will replace it at no additional cost. |
+| as a one-time exception | chunk | 作为一次性特例 | 客服让步用语 | As a one-time exception, we will waive the fee. |
+| waive a fee | chunk | 免除费用 | 客服解决方案 | The bank agreed to waive the fee. |
+| escalate to a specialist | chunk | 转交专员处理 | 投诉流程 | I will escalate this to a specialist. |
+| follow up within 48 hours | chunk | 48 小时内回复 | 承诺时限 | Someone will follow up within 48 hours. |
+| your patience is appreciated | chunk | 感谢您的耐心 | 机构通告结尾 | Your patience is appreciated during the upgrade. |
+
+## CIVIC · 主题：政府、移民与加拿大社会
+
+### 三级政府
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| Member of Parliament (MP) | n. | 联邦国会议员 | 联邦层级 | Contact your MP about federal issues. |
+| Member of Provincial Parliament (MPP/MLA) | n. | 省议员 | 省级层级，各省叫法不同 | Our MPP held a community meeting. |
+| city councillor | n. | 市议员 | 市级层级 | The city councillor supported the bylaw. |
+| mayor | n. | 市长 | 市政首长 | The mayor announced the budget. |
+| premier | n. | 省长 | 加拿大特有，不是 governor | The premier announced new health funding. |
+| Prime Minister | n. | 总理 | 联邦政府首脑 | The Prime Minister addressed the nation. |
+| riding | n. | 选区 | 加拿大特有说法，不说 district | There are 338 federal ridings. |
+| by-election | n. | 补选 | 选举制度 | A by-election was called for March. |
+| ballot / polling station | n. | 选票/投票站 | 选举流程 | Polling stations open at nine. |
+| eligible to vote | phr | 有投票资格 | 只有公民可投票，PR 不可 | Permanent residents are not eligible to vote. |
+
+### 公共服务
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| municipal services | n. | 市政服务 | 垃圾、除雪、供水 | Municipal services are funded by property taxes. |
+| public consultation | n. | 公众咨询 | 加拿大决策流程 | A public consultation runs until June. |
+| permit application | n. | 许可证申请 | 装修与营业 | A building permit application takes six weeks. |
+| inspection | n. | 检查/验收 | 建筑与食品安全 | The restaurant passed its health inspection. |
+| fine / penalty | n. | 罚款 | 违规后果 | The fine for illegal dumping is $500. |
+| appeal | n./v. | 上诉/申诉 | 行政救济 | You have 30 days to appeal the decision. |
+| deadline for submission | chunk | 提交截止日期 | 办事时限 | The deadline for submission is 31 March. |
+| in person / online / by mail | phr | 亲自/在线/邮寄 | 办事方式三选项 | Applications can be made in person or online. |
+
+### 移民流程
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| Express Entry | n. | 快速通道 | 加拿大技术移民主渠道 | Express Entry draws happen every two weeks. |
+| Comprehensive Ranking System (CRS) | n. | 综合排名系统 | EE 打分体系 | A higher CRS score improves your chances. |
+| Invitation to Apply (ITA) | n. | 申请邀请 | EE 流程节点 | She received an ITA in the last draw. |
+| Provincial Nominee Program (PNP) | n. | 省提名计划 | 移民另一主渠道 | The Provincial Nominee Program targets local labour needs. |
+| language test results | n. | 语言考试成绩 | 移民材料核心 | Language test results are valid for two years. |
+| biometrics | n. | 生物信息采集 | 移民流程步骤 | You will be asked to provide biometrics. |
+| landing | n. | 登陆（正式获得身份） | 加拿大移民特有用语 | We landed in Halifax in 2024. |
+| settlement agency | n. | 安置服务机构 | 新移民免费支持 | A settlement agency helped us find housing. |
+| citizenship test | n. | 入籍考试 | 考加拿大历史与制度 | The citizenship test covers history and government. |
+| oath of citizenship | n. | 入籍宣誓 | 入籍最后一步 | The oath of citizenship is taken at a ceremony. |
+| residency obligation | n. | 居住义务 | PR 每五年需住满两年 | Permanent residents must meet a residency obligation. |
+
+### 社会议题
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| reconciliation | n. | 和解 | 加拿大与原住民关系核心概念 | Reconciliation remains a national priority. |
+| land acknowledgement | n. | 土地致意 | 加拿大公共活动开场惯例 | The event began with a land acknowledgement. |
+| residential schools | n. | 寄宿学校（历史创伤） | 加拿大历史必须了解的议题 | The legacy of residential schools continues today. |
+| systemic racism | n. | 系统性种族主义 | 加拿大公共讨论高频 | The report identified systemic racism in hiring. |
+| official languages | n. | 官方语言 | 英法双语制度 | Canada has two official languages. |
+| francophone / anglophone | n. | 法语人群/英语人群 | 加拿大特有身份表述 | Francophone communities exist outside Quebec. |
+| refugee / asylum seeker | n. | 难民/寻求庇护者 | 移民类别区分 | Canada resettles thousands of refugees each year. |
+| labour shortage | n. | 劳动力短缺 | 驱动移民政策的核心因素 | A labour shortage drives immigration targets. |
+| immigration levels plan | n. | 移民配额计划 | 加拿大年度政策文件 | The immigration levels plan sets annual targets. |
+| public opinion | n. | 公众舆论 | 议论高频 | Public opinion on immigration has shifted. |
+| civic engagement | n. | 公民参与 | 社区议题 | Civic engagement is highest among older voters. |
+| charter rights | n. | 宪章权利 | 加拿大权利与自由宪章 | Charter rights protect freedom of expression. |
+| census | n. | 人口普查 | 每五年一次 | The census showed rapid growth in the suburbs. |
+| demographic | n./adj. | 人口结构（的） | 数据议题 | Demographic change is reshaping the workforce. |
+| urbanisation | n. | 城市化 | 社会趋势 | Urbanisation has accelerated in the past decade. |
+
+## TECH · 主题：科技与数字生活
+
+### 设备故障
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| freeze / frozen | v./adj. | 死机 | 设备问题 | My laptop keeps freezing. |
+| lag / lagging | n./adj. | 卡顿 | 网络与设备 | The video call was lagging badly. |
+| compatible / compatibility | adj./n. | 兼容的/兼容性 | 软硬件问题 | The file is not compatible with older versions. |
+| storage / run out of space | n./chunk | 存储/空间不足 | 常见问题 | I have run out of storage space. |
+| battery life | n. | 电池续航 | 设备评价 | The battery life is disappointing. |
+| charger / adapter | n. | 充电器/适配器 | 日常物品 | Can I borrow your charger? |
+| warranty claim | n. | 保修索赔 | 维修流程 | I submitted a warranty claim online. |
+| factory reset | n. | 恢复出厂设置 | 排障最后手段 | A factory reset will erase all your data. |
+
+### 网络账户
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| Wi-Fi network | n. | 无线网络 | 生活高频 | The Wi-Fi network is down again. |
+| bandwidth | n. | 带宽 | 网络性能 | Video streaming uses a lot of bandwidth. |
+| two-factor authentication | n. | 双重验证 | 账户安全 | Enable two-factor authentication on your account. |
+| username / credentials | n. | 用户名/登录凭据 | 账户术语 | Do not share your login credentials. |
+| verification code | n. | 验证码 | 登录流程 | A verification code was sent to your phone. |
+| account suspended | phr | 账户被冻结 | 客服场景 | My account has been suspended without explanation. |
+| opt in / opt out | pv | 选择加入/退出 | 隐私与订阅 | You can opt out of marketing emails. |
+| terms of service | n. | 服务条款 | 平台规则 | The terms of service were updated. |
+
+### 数据隐私
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| personal information | n. | 个人信息 | 加拿大隐私法术语 | Personal information must be stored securely. |
+| consent | n./v. | 同意/授权 | 隐私法核心概念 | Companies must obtain consent before collecting data. |
+| encryption | n. | 加密 | 安全技术 | The messages are protected by encryption. |
+| surveillance | n. | 监控 | 社会议题 | Workplace surveillance raises privacy concerns. |
+| algorithm | n. | 算法 | AI 议题基础词 | The algorithm decides what you see first. |
+| targeted advertising | n. | 定向广告 | 隐私议题 | Targeted advertising relies on browsing history. |
+| digital footprint | n. | 数字足迹 | 隐私教育高频 | Everything you post adds to your digital footprint. |
+
+### 媒体信息
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| headline | n. | 新闻标题 | 媒体素养 | The headline was misleading. |
+| source / credible source | n. | 来源/可信来源 | 信息判断 | Always check whether the source is credible. |
+| fact-check | v./n. | 事实核查 | 媒体议题 | Journalists fact-checked the claim. |
+| clickbait | n. | 标题党 | 网络现象 | Clickbait headlines exaggerate the story. |
+| echo chamber | n. | 信息茧房 | 社交媒体议题高分词 | Social media can create an echo chamber. |
+| viral / go viral | adj./chunk | 病毒式传播的 | 网络现象 | The video went viral overnight. |
+| influencer | n. | 网红/意见领袖 | 现代媒体生态 | Brands increasingly work with influencers. |
+| content moderation | n. | 内容审核 | 平台治理议题 | Content moderation is difficult at scale. |
+| freedom of expression | n. | 表达自由 | 加拿大宪章权利 | Freedom of expression has legal limits. |
+
+### AI与就业
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| machine learning | n. | 机器学习 | AI 基础概念 | Machine learning improves with more data. |
+| chatbot | n. | 聊天机器人 | 客服应用 | The company replaced its helpline with a chatbot. |
+| displace / displacement | v./n. | 取代/岗位流失 | 就业议题 | Automation may displace routine jobs. |
+| reskilling | n. | 技能再培训 | 就业政策应对 | Reskilling programs help displaced workers. |
+| productivity | n. | 生产率 | 经济议题 | Technology has boosted productivity. |
+| digital literacy | n. | 数字素养 | 教育与就业议题 | Digital literacy is now a basic job requirement. |
+| digital divide | n. | 数字鸿沟 | 加拿大农村与老年群体议题 | The digital divide affects rural communities. |
+| broadband access | n. | 宽带接入 | 加拿大农村基础设施议题 | Rural broadband access remains limited. |
+| e-government | n. | 电子政务 | 公共服务数字化 | E-government services reduce waiting times. |
+| paperless | adj. | 无纸化的 | 办公与环保 | The office went paperless last year. |
+
+## ENV · 主题：环境与公益
+
+### 日常环保
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| reusable | adj. | 可重复使用的 | reusable bag / bottle | Bring a reusable bag to the store. |
+| disposable | adj. | 一次性的 | 与 reusable 相对 | Disposable cups are no longer provided. |
+| biodegradable | adj. | 可生物降解的 | 产品标签用词 | The packaging is fully biodegradable. |
+| compostable | adj. | 可堆肥的 | 加拿大三分类标签 | Compostable containers go in the green bin. |
+| green bin / blue box | n. | 厨余桶/回收箱 | 加拿大市政垃圾分类容器，特有说法 | The blue box is collected every other week. |
+| curbside collection | n. | 路边收运 | 市政服务 | Curbside collection is delayed by the holiday. |
+| energy-efficient | adj. | 节能的 | 家电与建筑 | Energy-efficient appliances lower your hydro bill. |
+| LED bulb / insulation upgrade | n. | LED 灯泡/保温升级 | 家庭节能改造 | A government rebate covers insulation upgrades. |
+| rebate | n. | 返款补贴 | 加拿大绿色改造激励 | There is a rebate for heat pump installation. |
+| heat pump | n. | 热泵 | 加拿大取暖转型热点 | Heat pumps are replacing gas furnaces. |
+| electric vehicle (EV) | n. | 电动车 | 交通减排 | EV sales have doubled in two years. |
+| charging station | n. | 充电桩 | 基础设施 | More charging stations are being installed. |
+
+### 气候影响
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| greenhouse gas | n. | 温室气体 | 气候议题基础词 | Greenhouse gas emissions must fall sharply. |
+| carbon tax / carbon pricing | n. | 碳税/碳定价 | 加拿大核心政策争议 | The carbon tax remains politically divisive. |
+| net zero | n. | 净零排放 | 政策目标 | Canada aims for net zero by 2050. |
+| offset | v./n. | 抵消（碳排放） | 企业减排手段 | Airlines offer carbon offsets. |
+| flooding / flood risk | n. | 洪水/洪灾风险 | 加拿大气候灾害 | Flood risk has increased in coastal areas. |
+| drought | n. | 干旱 | 西部省份问题 | Prolonged drought affected the harvest. |
+| air quality index | n. | 空气质量指数 | 野火季高频 | The air quality index reached hazardous levels. |
+| permafrost | n. | 永久冻土 | 加拿大北部特有议题 | Melting permafrost damages northern roads. |
+| glacier / sea level rise | n. | 冰川/海平面上升 | 气候后果 | Glacier retreat has accelerated. |
+| adaptation vs mitigation | n. | 适应 vs 减缓 | 气候政策两条路径，概念区分是考点 | Adaptation prepares for impacts; mitigation reduces emissions. |
+
+### 自然资源
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| watershed | n. | 流域 | 水资源管理 | The watershed supplies drinking water to the region. |
+| deforestation | n. | 森林砍伐 | 全球议题 | Deforestation threatens biodiversity. |
+| biodiversity | n. | 生物多样性 | 环境议题高分词 | Wetlands support exceptional biodiversity. |
+| habitat loss | n. | 栖息地丧失 | 生态议题 | Habitat loss is the main threat to the species. |
+| endangered species | n. | 濒危物种 | 保护议题 | The caribou is listed as an endangered species. |
+| protected area | n. | 保护区 | 加拿大国土政策 | Canada aims to protect 30 percent of its land. |
+| natural resources | n. | 自然资源 | 加拿大经济支柱 | The economy depends heavily on natural resources. |
+| oil sands / pipeline | n. | 油砂/输油管道 | 加拿大能源争议核心 | Pipeline projects face strong opposition. |
+| hydroelectricity | n. | 水力发电 | 加拿大主要电源，魁北克尤甚 | Quebec exports hydroelectricity to the US. |
+| renewable vs non-renewable | adj. | 可再生/不可再生 | 能源分类 | Wind is renewable; natural gas is not. |
+
+### 社区行动
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| cleanup / community cleanup | n. | 清洁行动 | 社区活动，Write Email 题材 | Volunteers joined the annual shoreline cleanup. |
+| community garden | n. | 社区花园 | 加拿大城市常见 | The community garden has a waiting list. |
+| tree-planting | n. | 植树 | 市政倡议 | The city funded a tree-planting program. |
+| donation drive | n. | 募捐活动 | 社区组织 | The school is running a winter coat donation drive. |
+| sign up as a volunteer | chunk | 报名做志愿者 | 活动邮件高频 | You can sign up as a volunteer online. |
+| raise funds | chunk | 筹款 | 与 raise awareness 配对 | The event raised funds for the food bank. |
+| make a pledge | chunk | 作出承诺 | 公益活动 | Residents made a pledge to cut waste. |
+| grassroots | adj. | 草根的 | 社会运动用词 | The campaign began as a grassroots effort. |
+| stewardship | n. | 管护责任 | 环境与原住民语境高分词 | Environmental stewardship is a shared responsibility. |
+| collective effort | n. | 集体努力 | 议论结尾高分 | Real change requires a collective effort. |
+
+## TRAVEL · 主题：交通与出行
+
+### 住宿旅游
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| travel advisory | n. | 旅行提示 | 加拿大政府对外发布 | A travel advisory was issued for the region. |
+
+## EDU · 主题：教育与培训
+
+### 课程学习
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| office hours | n. | 答疑时间 | 北美高校特有安排 | Drop by during my office hours on Tuesday. |
+
+## MONEY · 主题：银行、消费与福利
+
+### 房贷债务
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| equity | n. | 房屋净值 | 加拿大置业理财核心概念 | Rising prices increased their home equity. |
+
+## ABSTR · CLB 8-9 抽象与议论词汇
+
+### 问题解决
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| delegate | v. | 授权分派 | 管理与效率 | Good managers delegate effectively. |
+
+### 社会制度
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| constituency | n. | 选民群体/选区 | 政治语境 | The policy appeals to a specific constituency. |
+| red tape | idm | 繁琐官僚手续 | 批评行政效率，高分习语 | Small businesses complain about red tape. |
+
+### 数据论证
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| margin of error | n. | 误差范围 | 民调数据必备 | The poll has a margin of error of three points. |
+
+## HEALTH · 主题：健康与医疗
+
+### 科室人员
+
+| 词条 | 词性 | 中文 | 用法要点 | 例句 |
+|---|---|---|---|---|
+| dietitian | n. | 注册营养师 | 加拿大受监管职业，医保团队成员 | A dietitian helped me plan my meals. |
