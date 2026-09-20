@@ -14,7 +14,7 @@
 | `pte-core-vocab.tsv` | 制表符分隔，直接导入 Anki / Excel / Quizlet |
 | `pte-core-vocab.md` | 按模块分组的阅读版，适合通读和打印 |
 
-改完 `_src.psv` 后在项目根目录跑 `bash tools/build.sh` 重新生成后两个文件。
+改完 `_src.psv` 后在仓库根目录跑 `bash vocab/tools/build.sh` 重新生成后两个文件，再跑 `vp run build:data` 同步到网页。
 
 ### 导入 Anki
 

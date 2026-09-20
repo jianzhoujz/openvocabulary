@@ -30,7 +30,7 @@
 | `tcf-canada-vocab.tsv` | 制表符分隔，直接导入 Anki / Excel |
 | `tcf-canada-vocab.md` | 按模块分组的阅读版 |
 
-改完 `_src.psv` 后在项目根目录跑 `bash tools/build.sh`。
+改完 `_src.psv` 后在仓库根目录跑 `bash vocab/tools/build.sh`，再跑 `vp run build:data` 同步到网页。
 
 字段顺序：`section / theme / fr / pos / en / zh / note / exemple`
 

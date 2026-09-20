@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <!-- iOS 只认 apple-touch-icon；没有它，加到主屏幕的图标会是页面截图 -->
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <!-- viewport-fit=cover：让 env(safe-area-inset-*) 在 iPhone 刘海/Home Indicator 上生效 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+    <!-- 添加到主屏幕后全屏运行，同时让 localStorage 免于 Safari ITP 的 7 天清理 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="openvocab" />
+    <title>openvocabulary</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
