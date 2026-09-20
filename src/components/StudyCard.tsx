@@ -1,5 +1,7 @@
-import { Eye } from "lucide-react";
+import { Eye, Volume2 } from "lucide-react";
+import { useEffect } from "react";
 
+import { useSpeech } from "@/hooks/useSpeech";
 import { cn } from "@/lib/utils";
 import type { Card, Deck, Mode } from "@/types";
 
@@ -9,13 +11,82 @@ type Props = {
   mode: Mode;
   revealed: boolean;
   sectionLabel: string;
+  autoSpeak: boolean;
   onReveal: () => void;
 };
 
-export function StudyCard({ card, deck, mode, revealed, sectionLabel, onReveal }: Props) {
+/** 词条本身：文本 + 音标 + 朗读按钮。只在该露出答案时才渲染 */
+function TermBlock({
+  card,
+  lang,
+  big,
+  canSpeak,
+  onSpeak,
+}: {
+  card: Card;
+  lang: string;
+  big: boolean;
+  canSpeak: boolean;
+  onSpeak: () => void;
+}) {
+  return (
+    <div>
+      <div className="flex items-start gap-2">
+        <div
+          lang={lang}
+          className={cn(
+            "min-w-0 flex-1 leading-snug font-semibold break-words",
+            big ? "text-2xl sm:text-3xl" : "text-xl font-medium",
+          )}
+        >
+          {card.front}
+        </div>
+        {canSpeak && (
+          <button
+            type="button"
+            aria-label="朗读"
+            onClick={(e) => {
+              e.stopPropagation();
+              onSpeak();
+            }}
+            className="text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:ring-ring/50 -mr-1 shrink-0 rounded-lg p-2 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
+          >
+            <Volume2 className="size-5" />
+          </button>
+        )}
+      </div>
+
+      {card.ipa && (
+        <div className="text-muted-foreground mt-1.5 text-sm tracking-wide">{card.ipa}</div>
+      )}
+    </div>
+  );
+}
+
+export function StudyCard({
+  card,
+  deck,
+  mode,
+  revealed,
+  sectionLabel,
+  autoSpeak,
+  onReveal,
+}: Props) {
   const askingForGloss = mode === "front-to-gloss";
-  // 正面考什么，背面就把另一侧作为答案重点呈现
-  const promptLang = askingForGloss ? deck.lang : "zh";
+  const { supported, say } = useSpeech(deck.lang);
+
+  // 看义猜词时，翻面前词条是答案，绝不能朗读出来
+  const termVisible = askingForGloss || revealed;
+
+  useEffect(() => {
+    if (autoSpeak && revealed && supported) say(card.front);
+  }, [autoSpeak, revealed, supported, say, card.front]);
+
+  const glosses = (
+    <div lang="zh" className="leading-snug break-words">
+      {card.glosses.join(" / ")}
+    </div>
+  );
 
   return (
     <div
@@ -34,24 +105,34 @@ export function StudyCard({ card, deck, mode, revealed, sectionLabel, onReveal }
 
       <div className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto py-6">
         {/* 题面 */}
-        <div
-          lang={promptLang}
-          className="text-2xl leading-snug font-semibold break-words sm:text-3xl"
-        >
-          {askingForGloss ? card.front : card.glosses.join(" / ")}
-        </div>
+        {askingForGloss ? (
+          <TermBlock
+            card={card}
+            lang={deck.lang}
+            big
+            canSpeak={supported}
+            onSpeak={() => say(card.front)}
+          />
+        ) : (
+          <div className="text-2xl leading-snug font-semibold sm:text-3xl">{glosses}</div>
+        )}
 
         {card.pos && <div className="text-muted-foreground mt-2 text-sm italic">{card.pos}</div>}
 
         {revealed && (
           <div className="mt-6 flex flex-col gap-4 border-t pt-6">
             {/* 答案 */}
-            <div
-              lang={askingForGloss ? "zh" : deck.lang}
-              className="text-xl leading-snug font-medium break-words"
-            >
-              {askingForGloss ? card.glosses.join(" / ") : card.front}
-            </div>
+            {askingForGloss ? (
+              <div className="text-xl font-medium">{glosses}</div>
+            ) : (
+              <TermBlock
+                card={card}
+                lang={deck.lang}
+                big={false}
+                canSpeak={supported && termVisible}
+                onSpeak={() => say(card.front)}
+              />
+            )}
 
             {card.note && (
               <div>
@@ -62,7 +143,19 @@ export function StudyCard({ card, deck, mode, revealed, sectionLabel, onReveal }
 
             {card.example && (
               <div>
-                <div className="text-muted-foreground mb-1 text-xs font-medium">例句</div>
+                <div className="text-muted-foreground mb-1 flex items-center gap-2 text-xs font-medium">
+                  例句
+                  {supported && (
+                    <button
+                      type="button"
+                      aria-label="朗读例句"
+                      onClick={() => say(card.example)}
+                      className="text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:ring-ring/50 rounded p-1 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
+                    >
+                      <Volume2 className="size-3.5" />
+                    </button>
+                  )}
+                </div>
                 <p lang={deck.lang} className="text-sm leading-relaxed italic">
                   {card.example}
                 </p>

@@ -1,6 +1,7 @@
 import { ChevronRight, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { InstallHint } from "@/components/InstallHint";
 import { Progress } from "@/components/ui/progress";
 import { isMastered, isNew } from "@/lib/scheduler";
 import { useStore } from "@/store";
@@ -24,7 +25,7 @@ export function DeckPicker() {
   }, []);
 
   return (
-    <div className="mx-auto flex h-dvh w-full max-w-xl flex-col px-4">
+    <div className="mx-auto flex min-h-dvh w-full max-w-xl flex-col px-4 pb-[calc(2rem+env(safe-area-inset-bottom))]">
       <header className="pt-[calc(3rem+env(safe-area-inset-top))] pb-8">
         <h1 className="text-3xl font-semibold tracking-tight">openvocabulary</h1>
         <p className="text-muted-foreground mt-2 text-sm">选一个词表开始</p>
@@ -80,6 +81,8 @@ export function DeckPicker() {
           );
         })}
       </div>
+
+      {decks && <InstallHint />}
     </div>
   );
 }

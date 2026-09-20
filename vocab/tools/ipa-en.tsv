@@ -1,0 +1,520 @@
+# ipa-en.tsv —— 由 scripts/build-ipa.ts 生成，可手工修正
+# 数据源：open-dict-data/ipa-dict en_US（MIT）
+# 只收能归约成单个词的条目，多词语块靠页面上的 TTS 朗读
+# 格式：<词条><TAB><音标>，词条须与 _src.psv 第 3 列完全一致
+compensation	/ˌkɑmpənˈseɪʃən/
+table	/ˈteɪbəɫ/
+poster / flyer	/ˈpoʊstɝ/ / /ˈfɫaɪɝ/
+rise / increase / grow	/ˈɹaɪz/ / /ˈɪnˌkɹis/ / /ˈɡɹoʊ/
+climb	/ˈkɫaɪm/
+surge	/ˈsɝdʒ/
+soar	/ˈsɔɹ/
+fall / decline / decrease	/ˈfɑɫ/ / /dɪˈkɫaɪn/ / /ˈdiˌkɹis/
+drop	/ˈdɹɑp/
+plummet	/ˈpɫəmət/
+dip	/ˈdɪp/
+plateau	/pɫæˈtoʊ/
+fluctuate	/ˈfɫəktʃəˌweɪt/
+sharply / dramatically	/ˈʃɑɹpɫi/ / /dɹəˈmætɪkəɫi/
+steadily / gradually	/ˈstɛdəɫi/ / /ˈɡɹædʒuəɫi/
+slightly / marginally	/ˈsɫaɪtɫi/ / /ˈmɑɹdʒənəɫi/
+significantly / considerably	/sɪɡˈnɪfɪkəntɫi/ / /kənˈsɪdɝəbɫi/
+the highest / the peak	/ˈhaɪəst/ / /ˈpik/
+outnumber	/aʊtˈnəmbɝ/
+whereas / while	/hwɛˈɹæz/ / /ˈhwaɪɫ/
+highlight	/ˈhaɪˌɫaɪt/
+outline	/ˈaʊtˌɫaɪn/
+propose	/pɹəˈpoʊz/
+examine / explore	/ɪɡˈzæmɪn/ / /ɪksˈpɫɔɹ/
+findings	/ˈfaɪndɪŋz/
+implications	/ˌɪmpɫəˈkeɪʃənz/
+drawbacks	/ˈdɹɔˌbæks/
+factors	/ˈfæktɝz/
+although … , …	/ˌɔɫˈðoʊ/
+moreover / furthermore	/mɔˈɹoʊvɝ/ / /ˈfɝðɝˌmɔɹ/
+however / nevertheless	/ˌhaʊˈɛvɝ/ / /ˌnɛvɝðəˈɫɛs/
+therefore / thus	/ˈðɛɹˌfɔɹ/ / /ˈðəs/
+vacancy / opening	/ˈveɪkənsi/ / /ˈoʊpənɪŋ/
+qualifications	/ˌkwɑɫəfəˈkeɪʃənz/
+credentials	/kɹəˈdɛnʃəɫz/
+references	/ˈɹɛfɝənsɪz/
+permanent / temporary	/ˈpɝmənənt/ / /ˈtɛmpɝˌɛɹi/
+overtime	/ˈoʊvɝˌtaɪm/
+salary / wage	/ˈsæɫɝi/ / /ˈweɪdʒ/
+colleague / coworker	/ˈkɑɫiɡ/ / /ˈkoʊˈwɝkɝ/
+staff	/ˈstæf/
+workload	/ˈwɝˌkɫoʊd/
+deadline	/ˈdɛdˌɫaɪn/
+agenda	/əˈdʒɛndə/
+minutes	/ˈmɪnəts/
+reschedule	/ɹiˈskɛdʒuɫ/
+attend	/əˈtɛnd/
+milestone	/ˈmaɪɫˌstoʊn/
+deliverable	/dɪˈɫɪvɝəbəɫ/
+stakeholder	/ˈsteɪkˌhoʊɫdɝ/
+delegate	/ˈdɛɫəˌɡeɪt/
+feedback	/ˈfidˌbæk/
+promotion	/pɝˈmoʊʃən/
+mentor	/ˈmɛnˌtɔɹ/
+dismiss / fire	/dɪsˈmɪs/ / /ˈfaɪɝ/
+grievance	/ˈɡɹivəns/
+harassment	/hɝˈæsmənt/
+discrimination	/dɪsˌkɹɪməˈneɪʃən/
+burnout	/ˈbɝˌnaʊt/
+commute	/kəmˈjut/
+landlord / landlady	/ˈɫændˌɫɔɹd/ / /ˈɫændˌɫeɪdi/
+tenant	/ˈtɛnənt/
+rent	/ˈɹɛnt/
+utilities	/juˈtɪɫətiz/
+hydro	/ˈhaɪˌdɹoʊ/
+superintendent / super	/ˌsupɝənˈtɛndənt/ / /ˈsupɝ/
+sublet	/ˈsəˌbɫɛt/
+leak	/ˈɫik/
+faulty	/ˈfɔɫti/
+repair / fix	/ɹɪˈpɛɹ/ / /ˈfɪks/
+heating / furnace	/ˈhitɪŋ/ / /ˈfɝnəs/
+plumbing	/ˈpɫəmɪŋ/
+infestation	/ˌɪnˈfɛsˈteɪʃən/
+mortgage	/ˈmɔɹɡədʒ/
+neighbour	/ˈneɪbɝ/
+garbage / recycling / compost	/ˈɡɑɹbɪdʒ/ / /ɹiˈsaɪkəɫɪŋ/ / /ˈkɑmpoʊst/
+bylaw	/ˈbaɪˌɫɔ/
+referral	/ɹɪˈfɝəɫ/
+specialist	/ˈspɛʃəɫəst/
+prescription	/pɹəsˈkɹɪpʃən/
+pharmacy / drugstore	/ˈfɑɹməsi/ / /ˈdɹəɡˌstɔɹ/
+coverage	/ˈkəvɝədʒ/
+symptom	/ˈsɪmptəm/
+screening	/ˈskɹinɪŋ/
+withdraw / deposit	/wɪðˈdɹɔ/ / /dəˈpɑzɪt/
+overdraft	/ˈoʊvɝˌdɹæft/
+deduction	/dɪˈdəkʃən/
+invoice	/ˈɪnvɔɪs/
+overdue	/ˈoʊvɝˈdu/
+receipt	/ɹiˈsit/
+warranty	/ˈwɔɹənti/
+refund	/ˈɹiˌfənd/
+exchange	/ɪksˈtʃeɪndʒ/
+reimbursement	/ˌɹiɪmˈbɝsmənt/
+surcharge	/ˈsɝˌtʃɑɹdʒ/
+tip / gratuity	/ˈtɪp/ / /ɡɹəˈtuɪti/
+budget	/ˈbədʒɪt/
+affordable	/əˈfɔɹdəbəɫ/
+premium	/ˈpɹimiəm/
+deductible	/dɪˈdəktəbəɫ/
+claim	/ˈkɫeɪm/
+policy	/ˈpɑɫəsi/
+liable / liability	/ˈɫaɪəbəɫ/ / /ˌɫaɪəˈbɪɫɪti/
+subsidy	/ˈsəbsɪdi/
+fare	/ˈfɛɹ/
+transfer	/ˈtɹænsfɝ/
+route	/ˈɹaʊt/
+detour	/ˈditʊɹ/
+accessible	/ækˈsɛsəbəɫ/
+insurance	/ˌɪnˈʃʊɹəns/
+speeding	/ˈspidɪŋ/
+book / reserve	/ˈbʊk/ / /ɹiˈzɝv/
+itinerary	/aɪˈtɪnɝˌɛɹi/
+accommodation	/əˌkɑməˈdeɪʃən/
+customs	/ˈkəstəmz/
+tuition	/tjuˈɪʃən/
+semester / term	/səˈmɛstɝ/ / /ˈtɝm/
+transcript	/ˈtɹænsˌkɹɪpt/
+prerequisite	/pɹiˈɹɛkwəzət/
+assignment	/əˈsaɪnmənt/
+extension	/ɪkˈstɛnʃən/
+workshop	/ˈwɝkˌʃɑp/
+certification	/ˌsɝtəfəˈkeɪʃən/
+apprenticeship	/əˈpɹɛntəsˌʃɪp/
+inquiry / enquiry	/ˌɪnˈkwaɪˌɹi/ / /ɪnˈkwaɪˌɹi/
+process	/ˈpɹɑˌsɛs/
+dispatch / ship	/dɪˈspætʃ/ / /ˈʃɪp/
+delivery / shipment	/dɪˈɫɪvɝi/ / /ˈʃɪpmənt/
+defective / damaged	/dɪˈfɛktɪv/ / /ˈdæmədʒd/
+replacement	/ɹɪˈpɫeɪsmənt/
+escalate	/ˈɛskəˌɫeɪt/
+province / provincial	/ˈpɹɑvəns/ / /pɹəˈvɪnʃəɫ/
+federal	/ˈfɛdɝəɫ/
+renew	/ɹɪˈnu/
+citizenship	/ˈsɪtɪzənˌʃɪp/
+newcomer	/ˈnuˌkəmɝ/
+sponsor	/ˈspɑnsɝ/
+multiculturalism	/ˌməɫtiˈkəɫtʃɝəˌɫɪzəm/
+inclusion / inclusive	/ˌɪnˈkɫuʒən/ / /ˌɪnˈkɫusɪv/
+volunteer	/ˌvɑɫənˈtɪɹ/
+charity / fundraiser	/ˈtʃɛɹɪti/ / /ˈfənˌdɹeɪzɝ/
+homelessness	/ˈhoʊmɫəsnəs/
+glitch	/ˈɡɫɪtʃ/
+crash	/ˈkɹæʃ/
+upgrade	/ˈəpˈɡɹeɪd/
+subscription	/səbsˈkɹɪpʃən/
+troubleshoot	/ˈtɹəbəɫˌʃut/
+scam / phishing	/ˈskæm/ / /ˈfɪʃɪŋ/
+automation	/ɔtəˈmeɪʃən/
+misinformation	/ˌmɪsɪnfɝˈmeɪʃən/
+streaming	/ˈstɹimɪŋ/
+emissions	/ɪˈmɪʃənz/
+sustainable / sustainability	/səˈsteɪnəbəɫ/ / /səˌsteɪnəˈbɪɫɪti/
+landfill	/ˈɫændˌfɪɫ/
+conservation	/ˌkɑnsɝˈveɪʃən/
+wildfire	/ˈwaɪɫdˌfaɪɝ/
+initiative	/ˌɪˈnɪʃətɪv/
+recommend	/ˌɹɛkəˈmɛnd/
+necessary	/ˈnɛsəˌsɛɹi/
+separate	/ˈsɛpɝˌeɪt/
+definitely	/ˈdɛfənətɫi/
+occurred / occurrence	/əˈkɝd/ / /əˈkɝəns/
+committee	/kəˈmɪti/
+equipment	/ɪˈkwɪpmənt/
+environment	/ɪnˈvaɪɹənmənt/
+government	/ˈɡəvɝmənt/
+maintenance	/ˈmeɪntənəns/
+schedule	/ˈskɛdʒuɫ/
+questionnaire	/ˌkwɛstʃəˈnɛɹ/
+bureaucracy	/bjʊˈɹɑkɹəsi/
+curriculum	/kɝˈɪkjəɫəm/
+assessment	/əˈsɛsmənt/
+professor	/pɹəˈfɛsɝ/
+laboratory	/ˈɫæbɹəˌtɔɹi/
+library / librarian	/ˈɫaɪbɹɛˌɹi/ / /ɫaɪˈbɹɛˌɹiən/
+February	/ˈfɛbjəˌwɛɹi/
+Wednesday	/ˈwɛnzˌdeɪ/
+receive / receipt	/ɹəˈsiv/ / /ɹiˈsit/
+achieve	/əˈtʃiv/
+independent	/ˌɪndɪˈpɛndənt/
+significant	/səɡˈnɪfɪkənt/
+available	/əˈveɪɫəbəɫ/
+responsible / responsibility	/ɹiˈspɑnsəbəɫ/ / /ɹiˌspɑnsəˈbɪɫəti/
+opportunity	/ˌɑpɝˈtunəti/
+immediately	/ˌɪˈmiˌdiətɫi/
+approximately	/əˈpɹɑksəmətɫi/
+particularly	/ˌpɑɹˈtɪkjəɫɝɫi/
+although / through / thorough	/ˌɔɫˈðoʊ/ / /ˈθɹu/ / /ˈθɝoʊ/
+conscious / conscientious	/ˈkɑnʃəs/ / /ˌkɑnʃiˈɛnʃəs/
+colleague	/ˈkɑɫiɡ/
+register / registration	/ˈɹɛdʒɪstɝ/ / /ˌɹɛdʒɪˈstɹeɪʃən/
+attendance	/əˈtɛndəns/
+appointment	/əˈpɔɪntmənt/
+guarantee	/ˌɡɛɹənˈti/
+purchase	/ˈpɝtʃəs/
+temperature	/ˈtɛmpɝətʃɝ/
+colour / favour / behaviour	/ˈkəɫɝ/ / /ˈfeɪvɝ/ / /bɪˈheɪvjɝ/
+centre / theatre / metre	/ˈsɛntɝ/ / /ˈθiətɝ/ / /ˈmitɝ/
+cheque	/ˈtʃɛk/
+travelled / cancelled / labelled	/ˈtɹævəɫd/ / /ˈkænsəɫd/ / /ˈɫeɪbəɫd/
+grey	/ˈɡɹeɪ/
+principal / principle	/ˈpɹɪnsəpəɫ/ / /ˈpɹɪnsəpəɫ/
+complement / compliment	/ˈkɑmpɫəmənt/ / /ˈkɑmpɫəmɛnt/
+assure / ensure / insure	/əˈʃʊɹ/ / /ɛnˈʃʊɹ/ / /ˌɪnˈʃʊɹ/
+lose / loose	/ˈɫuz/ / /ˈɫus/
+then / than	/ˈðɛn/ / /ˈðæn/
+economic / economical	/ˌɛkəˈnɑmɪk/ / /ˌɛkəˈnɑmɪkəɫ/
+historic / historical	/hɪˈstɔɹɪk/ / /hɪˈstɔɹɪkəɫ/
+sensitive / sensible	/ˈsɛnsətɪv/ / /ˈsɛnsəbəɫ/
+efficient / effective	/ɪˈfɪʃənt/ / /ˈifɛktɪv/
+raise / rise	/ˈɹeɪz/ / /ˈɹaɪz/
+lay / lie	/ˈɫeɪ/ / /ˈɫaɪ/
+borrow / lend	/ˈbɑˌɹoʊ/ / /ˈɫɛnd/
+bring / take	/ˈbɹɪŋ/ / /ˈteɪk/
+few / a few / little / a little	/ˈfju/ / /ˈfju/ / /ˈɫɪtəɫ/ / /ˈɫɪtəɫ/
+amount / number	/əˈmaʊnt/ / /ˈnəmbɝ/
+fewer / less	/ˈfjuɝ/ / /ˈɫɛs/
+among / between	/əˈməŋ/ / /bitˈwin/
+plumber	/ˈpɫəmɝ/
+electrician	/ɪɫɛkˈtɹɪʃən/
+mechanic	/məˈkænɪk/
+pharmacist	/ˈfɑɹməsɪst/
+dentist	/ˈdɛnɪst/
+veterinarian / vet	/ˌvɛtɝəˈnɛɹiən/ / /ˈvɛt/
+architect	/ˈɑɹkəˌtɛkt/
+accountant	/əˈkaʊntənt/
+receptionist	/ɹiˈsɛpʃənɪst/
+librarian	/ɫaɪˈbɹɛˌɹiən/
+tenant / landlord	/ˈtɛnənt/ / /ˈɫændˌɫɔɹd/
+customer / client	/ˈkəstəmɝ/ / /ˈkɫaɪənt/
+bakery	/ˈbeɪkɝi/
+greenhouse	/ˈɡɹinˌhaʊs/
+warehouse	/ˈwɛɹˌhaʊs/
+reception / lobby	/ɹiˈsɛpʃən/ / /ˈɫɑbi/
+platform	/ˈpɫætˌfɔɹm/
+intersection	/ˌɪntɝˈsɛkʃən/
+thermometer	/θɝˈmɑmətɝ/
+scales	/ˈskeɪɫz/
+compass	/ˈkəmpəs/
+calendar	/ˈkæɫəndɝ/
+ladder	/ˈɫædɝ/
+umbrella	/ˈəmˌbɹɛɫə/
+microscope	/ˈmaɪkɹəˌskoʊp/
+decade / century	/ˈdɛkeɪd/ / /ˈsɛntʃɝi/
+dozen	/ˈdəzən/
+quarter	/ˈkwɔɹtɝ/
+fortnight	/ˈfɔɹtˌnaɪt/
+bandage	/ˈbændɪdʒ/
+ankle / wrist / elbow	/ˈæŋkəɫ/ / /ˈɹɪst/ / /ˈɛɫˌboʊ/
+deVELop / deVELopment	/dɪˈvɛɫəp/ / /dɪˈvɛɫəpmənt/
+COMfortable	/ˈkəmfɝtəbəɫ/
+VEGetable	/ˈvɛdʒtəbəɫ/
+TEMperature	/ˈtɛmpɝətʃɝ/
+inTERpret / inTERpreter	/ˌɪnˈtɝpɹət/ / /ˌɪnˈtɝpɹətɝ/
+adMINister / adminisTRAtion	/ədˈmɪnəstɝ/ / /ædˌmɪnɪˈstɹeɪʃən/
+PHOtograph / phoTOGrapher / photoGRAPHic	/ˈfoʊtəˌɡɹæf/ / /fəˈtɑɡɹəfɝ/ / /ˌfoʊtəˈɡɹæfɪk/
+ecoNOMic / ECOnomy	/ˌɛkəˈnɑmɪk/ / /iˈkɑnəmi/
+adVERtisement	/ˌædvɝˈtaɪzmənt/
+CATegory / cateGORical	/ˈkætəˌɡɔɹi/ / /ˌkætəˈɡɑɹɪkəɫ/
+OPPortunity	/ˌɑpɝˈtunəti/
+resPONsible / responsiBILity	/ɹiˈspɑnsəbəɫ/ / /ɹiˌspɑnsəˈbɪɫəti/
+deTERmine / deterMInation	/dəˈtɝmən/ / /dɪˌtɝməˈneɪʃən/
+debt / doubt	/ˈdɛt/ / /ˈdaʊt/
+subtle	/ˈsətəɫ/
+island / aisle	/ˈaɪɫənd/ / /ˈaɪəɫ/
+salmon	/ˈsæmən/
+knowledge / knee / knife	/ˈnɑɫədʒ/ / /ˈni/ / /ˈnaɪf/
+comb / climb / tomb	/ˈkoʊm/ / /ˈkɫaɪm/ / /ˈtum/
+castle / listen / fasten	/ˈkæsəɫ/ / /ˈɫɪsən/ / /ˈfæsən/
+honest / hour / heir	/ˈɑnəst/ / /ˈaʊɝ/ / /ˈɛɹ/
+muscle	/ˈməsəɫ/
+foreign / sign / design	/ˈfɑɹən/ / /ˈsaɪn/ / /dɪˈzaɪn/
+determine	/dəˈtɝmən/
+genuine	/ˈdʒɛnˈjuˌwaɪn/
+suite	/ˈswit/
+colonel	/ˈkɝnəɫ/
+archive / architect	/ˈɑɹˌkaɪv/ / /ˈɑɹkəˌtɛkt/
+chaos / character / chemistry	/ˈkeɪɑs/ / /ˈkɛɹɪktɝ/ / /ˈkɛməstɹi/
+machine / chef / brochure	/məˈʃin/ / /ˈʃɛf/ / /bɹoʊˈʃʊɹ/
+thorough / through / though	/ˈθɝoʊ/ / /ˈθɹu/ / /ˈðoʊ/
+clothes	/ˈkɫoʊðz/
+month / months	/ˈmənθ/ / /ˈmənθs/
+asked / worked / helped	/ˈæskt/ / /ˈwɝkt/ / /ˈhɛɫpt/
+needed / wanted / started	/ˈnidəd/ / /ˈwɔntɪd/ / /ˈstɑɹtɪd/
+used / lived / opened	/ˈjuzd/ / /ˈɫaɪvd/ / /ˈoʊpənd/
+often	/ˈɔfən/
+garage	/ɡɝˈɑʒ/
+niche	/ˈnɪtʃ/
+entrepreneur	/ˌɑntɹəpɹəˈnɝ/
+substantial	/səbˈstænʃəɫ/
+considerable	/kənˈsɪdɝəbəɫ/
+significant / significantly	/səɡˈnɪfɪkənt/ / /sɪɡˈnɪfɪkəntɫi/
+marginal / marginally	/ˈmɑɹdʒənəɫ/ / /ˈmɑɹdʒənəɫi/
+negligible	/ˈnɛɡɫədʒəbəɫ/
+moderate	/ˈmɑdɝˌeɪt/
+extensive	/ɪkˈstɛnsɪv/
+widespread	/ˈwaɪdsˈpɹɛd/
+prevalent	/ˈpɹɛvəɫənt/
+scarce / scarcity	/ˈskɛɹs/ / /ˈskɛɹsɪti/
+abundant	/əˈbəndənt/
+adequate / inadequate	/ˈædəˌkweɪt/ / /ˌɪˈnædəˌkweɪt/
+excessive	/ɪkˈsɛsɪv/
+minimal	/ˈmɪnəməɫ/
+viable	/ˈvaɪəbəɫ/
+feasible / feasibility	/ˈfizəbəɫ/ / /ˌfizəˈbɪɫəti/
+practical / impractical	/ˈpɹæktəkəɫ/ / /ˌɪmˈpɹæktəkəɫ/
+sustainable	/səˈsteɪnəbəɫ/
+beneficial	/ˌbɛnəˈfɪʃəɫ/
+detrimental	/ˌdɛtɹəˈmɛnəɫ/
+counterproductive	/ˈkaʊntɝpɹəˌdəktɪv/
+worthwhile	/ˈwɝθˈwaɪɫ/
+redundant	/ɹɪˈdəndənt/
+inevitable / inevitably	/ˌɪˈnɛvətəbəɫ/ / /ˌɪˈnɛvətəbɫi/
+trigger	/ˈtɹɪɡɝ/
+underlying	/ˌəndɝˈɫaɪɪŋ/
+otherwise	/ˈəðɝˌwaɪz/
+shift	/ˈʃɪft/
+transition	/tɹænˈzɪʃən/
+emerge / emerging	/ˈimɝdʒ/ / /ˈimɝdʒɪŋ/
+accelerate	/ækˈsɛɫɝˌeɪt/
+reverse	/ɹiˈvɝs/
+stagnate / stagnation	/ˈstæɡˌneɪt/ / /stæɡˈneɪʃən/
+deteriorate	/dɪˈtɪɹiɝˌeɪt/
+evolve / evolution	/iˈvɑɫv/ / /ˌɛvəˈɫuʃən/
+persist / persistent	/pɝˈsɪst/ / /pɝˈsɪstənt/
+unprecedented	/ənˈpɹɛsɪˌdɛntɪd/
+advocate	/ˈædvəˌkeɪt/
+oppose / opposition	/əˈpoʊz/ / /ˌɑpəˈzɪʃən/
+reluctant	/ɹiˈɫəktənt/
+controversial	/ˌkɑntɹəˈvɝʃəɫ/
+consensus	/kənˈsɛnsəs/
+perception	/pɝˈsɛpʃən/
+bias / biased	/ˈbaɪəs/ / /ˈbaɪəst/
+compelling	/kəmˈpɛɫɪŋ/
+questionable	/ˈkwɛstʃənəbəɫ/
+justify / justification	/ˈdʒəstəˌfaɪ/ / /ˌdʒəstəfəˈkeɪʃən/
+acknowledge	/ækˈnɑɫɪdʒ/
+address	/ˈæˌdɹɛs/
+tackle	/ˈtækəɫ/
+mitigate	/ˈmɪtəˌɡeɪt/
+alleviate	/əˈɫiviˌeɪt/
+implement / implementation	/ˈɪmpɫəmənt/ / /ˌɪmpɫəmɛnˈteɪʃən/
+enforce / enforcement	/ɛnˈfɔɹs/ / /ɛnˈfɔɹsmənt/
+monitor	/ˈmɑnətɝ/
+assess / assessment	/əˈsɛs/ / /əˈsɛsmənt/
+evaluate	/iˈvæɫjuˌeɪt/
+streamline	/ˈstɹimˌɫaɪn/
+allocate	/ˈæɫəˌkeɪt/
+regulation / regulate	/ˌɹɛɡjəˈɫeɪʃən/ / /ˈɹɛɡjəˌɫeɪt/
+legislation	/ˌɫɛdʒəˈsɫeɪʃən/
+infrastructure	/ˌɪnfɹəˈstɹəktʃɝ/
+incentive	/ˌɪnˈsɛnɪv/
+accountability	/əˈkaʊnəbɪɫɪti/
+transparency	/tɹænˈspɛɹənsi/
+equity / equitable	/ˈɛkwəti/ / /ˈɛkwətəbəɫ/
+disparity	/dɪˈspɛɹəti/
+jurisdiction	/ˌdʒʊɹəsˈdɪkʃən/
+mandate	/ˈmænˌdeɪt/
+evidence	/ˈɛvədəns/
+indicate / indicator	/ˈɪndəˌkeɪt/ / /ˈɪndəˌkeɪtɝ/
+correlation	/ˌkɔɹəˈɫeɪʃən/
+estimate	/ˈɛstəˌmeɪt/
+disproportionately	/ˌdɪspɹəˈpɔɹʃənətɫi/
+respectively	/ɹɪˈspɛktɪvɫi/
+namely	/ˈneɪmɫi/
+notably	/ˈnoʊtəbɫi/
+arguably	/ˈɑɹɡjuəbɫi/
+presumably	/pɹəˈzuməbɫi/
+resilient / resilience	/ɹɪˈzɪɫjənt/ / /ɹɪˈzɪɫiəns/
+adaptable	/əˈdæptəbəɫ/
+proactive	/ˌpɹoʊˈæktɪv/
+competent / competence	/ˈkɑmpətɪnt/ / /ˈkɑmpətɪns/
+diligent	/ˈdɪɫɪdʒənt/
+reluctance	/ɹiˈɫəktəns/
+commitment	/kəˈmɪtmənt/
+integrity	/ˌɪnˈtɛɡɹəti/
+overwhelmed	/ˌoʊvɝˈwɛɫmd/
+hospitality	/ˌhɑspəˈtæɫəti/
+retail	/ˈɹiˌteɪɫ/
+manufacturing	/ˌmænjəˈfæktʃɝɪŋ/
+construction	/kənˈstɹəkʃən/
+logistics / warehousing	/ɫəˈdʒɪstɪks/ / /ˈwɛɹˌhaʊzɪŋ/
+contractor / subcontractor	/ˈkɑnˌtɹæktɝ/ / /səbˈkɑnˌtɹæktɝ/
+apprentice / journeyman	/əˈpɹɛntəs/ / /ˈdʒɝniˌmæn/
+photocopier / printer	/ˈfoʊtoʊˌkɑpiɝ/ / /ˈpɹɪnɝ/
+supplies / stationery	/səˈpɫaɪz/ / /ˈsteɪʃəˌnɛɹi/
+workstation	/ˈwɝkˌsteɪʃən/
+client / account	/ˈkɫaɪənt/ / /əˈkaʊnt/
+quote / quotation	/ˈkwoʊt/ / /kwoʊˈteɪʃən/
+proposal	/pɹəˈpoʊzəɫ/
+negotiate / negotiation	/nəˈɡoʊʃiˌeɪt/ / /nɪˌɡoʊʃiˈeɪʃən/
+revenue	/ˈɹɛvəˌnu/
+turnover	/ˈtɝˌnoʊvɝ/
+target / quota	/ˈtɑɹɡət/ / /ˈkwoʊtə/
+orientation	/ˌɔɹiɛnˈteɪʃən/
+hazard	/ˈhæzɝd/
+collaborate / collaboration	/kəˈɫæbɝˌeɪt/ / /kəˌɫæbɝˈeɪʃən/
+coordinate	/koʊˈɔɹdəˌneɪt/
+morale	/mɝˈæɫ/
+whistleblower	/ˈhwɪsəɫˌbɫoʊɝ/
+basement	/ˈbeɪsmənt/
+attic	/ˈætɪk/
+driveway	/ˈdɹaɪvˌweɪ/
+balcony / patio	/ˈbæɫkəni/ / /ˈpætiˌoʊ/
+storey / floor	/ˈstɔɹi/ / /ˈfɫɔɹ/
+hallway / corridor	/ˈhɔɫˌweɪ/ / /ˈkɔɹədɝ/
+insulation	/ˌɪnsəˈɫeɪʃən/
+appliance	/əˈpɫaɪəns/
+fixtures	/ˈfɪkstʃɝz/
+vacuum	/ˈvækjum/
+thermostat	/ˈθɝməˌstæt/
+viewing	/ˈvjuɪŋ/
+eviction / evict	/ɪˈvɪkʃən/ / /ɪˈvɪkt/
+playground / park	/ˈpɫeɪˌɡɹaʊn/ / /ˈpɑɹk/
+sidewalk	/ˈsaɪdˌwɔk/
+crosswalk	/ˈkɹɑˌswɑk/
+petition	/pəˈtɪʃən/
+zoning	/ˈzoʊnɪŋ/
+paramedic	/ˌpɛɹəˈmɛdɪk/
+optometrist	/ɑpˈtɑmətɹɪst/
+surgeon / surgery	/ˈsɝdʒən/ / /ˈsɝdʒɝi/
+caregiver	/ˈkɛɹˌɡɪvɝ/
+diagnosis / diagnose	/ˌdaɪəɡˈnoʊsəs/ / /ˌdaɪəɡˈnoʊs/
+treatment	/ˈtɹitmənt/
+dosage	/ˈdoʊsədʒ/
+refill	/ˈɹifɪɫ/
+recovery / rehabilitation	/ɹɪˈkəvɝi/ / /ˌɹiəˌbɪɫəˈteɪʃən/
+sprain / fracture	/ˈspɹeɪn/ / /ˈfɹækʃɝ/
+concussion	/kənˈkəʃən/
+ambulance	/ˈæmbjəɫəns/
+triage	/ˈtɹaɪɪdʒ/
+frostbite / hypothermia	/ˈfɹɔstˌbaɪt/ / /ˌhaɪpəˈθɝmiə/
+senior / elderly	/ˈsinjɝ/ / /ˈɛɫdɝɫi/
+disability	/ˌdɪsəˈbɪɫɪti/
+pediatrician	/ˌpidiəˈtɹɪʃən/
+withholding	/wɪθˈhoʊɫdɪŋ/
+clearance / markdown	/ˈkɫɪɹəns/ / /ˈmɑɹkˌdaʊn/
+collateral	/kəˈɫætɝəɫ/
+pension	/ˈpɛnʃən/
+invest / investment	/ˌɪnˈvɛst/ / /ˌɪnˈvɛsmənt/
+scam / fraud	/ˈskæm/ / /ˈfɹɔd/
+windshield / wipers	/ˈwɪndˌʃiɫd/ / /ˈwaɪpɝz/
+tow / towing	/ˈtoʊ/ / /ˈtoʊɪŋ/
+collision	/kəˈɫɪʒən/
+merge / yield	/ˈmɝdʒ/ / /ˈjiɫd/
+layover / stopover	/ˈɫeɪˌoʊvɝ/ / /ˈstɑˌpoʊvɝ/
+overbooked	/ˈoʊvɝˌbʊkt/
+declare	/dɪˈkɫɛɹ/
+amenities	/əˈmɛnətiz/
+deposit / balance	/dəˈpɑzɪt/ / /ˈbæɫəns/
+campground / campsite	/ˈkæmpˌɡɹaʊnd/ / /ˈkæmpˌsaɪt/
+wildlife	/ˈwaɪɫdˌɫaɪf/
+commuter	/kəmˈjutɝ/
+kindergarten	/ˈkɪndɝˌɡɑɹtən/
+grade	/ˈɡɹeɪd/
+diploma / certificate / degree	/dɪˈpɫoʊmɑ/ / /sɝˈtɪfɪkət/ / /dɪˈɡɹi/
+convocation / graduation	/ˌkɑnvəˈkeɪʃən/ / /ˌɡɹædʒəˈweɪʃən/
+lecture / seminar / tutorial	/ˈɫɛktʃɝ/ / /ˈsɛməˌnɑɹ/ / /tuˈtɔɹiəɫ/
+presentation	/ˌpɹɛzənˈteɪʃən/
+plagiarism	/ˈpɫeɪdʒɝˌɪzəm/
+draft / revise	/ˈdɹæft/ / /ɹiˈvaɪz/
+pass / fail	/ˈpæs/ / /ˈfeɪɫ/
+registrar	/ˈɹɛdʒɪˌstɹɑɹ/
+grant	/ˈɡɹænt/
+workshop / seminar	/ˈwɝkˌʃɑp/ / /ˈsɛməˌnɑɹ/
+upgrading	/ˈəpˌɡɹeɪdɪŋ/
+reminder	/ɹiˈmaɪndɝ/
+technician	/tɛkˈnɪʃən/
+estimate / quote	/ˈɛstəˌmeɪt/ / /ˈkwoʊt/
+labour / parts	/ˈɫeɪbɝ/ / /ˈpɑɹts/
+installation	/ˌɪnstəˈɫeɪʃən/
+prorated	/ˈpɹoʊˌɹeɪtɪd/
+supervisor / manager	/ˈsupɝˌvaɪzɝ/ / /ˈmænədʒɝ/
+unacceptable	/ˌənækˈsɛptəbəɫ/
+ombudsman	/ˈɑmbədzmən/
+regulator	/ˈɹɛɡjəˌɫeɪtɝ/
+mayor	/ˈmeɪɝ/
+premier	/pɹɛˈmɪɹ/
+riding	/ˈɹaɪdɪŋ/
+inspection	/ˌɪnˈspɛkʃən/
+fine / penalty	/ˈfaɪn/ / /ˈpɛnəɫti/
+appeal	/əˈpiɫ/
+landing	/ˈɫændɪŋ/
+reconciliation	/ˌɹɛkənˌsɪɫiˈeɪʃən/
+francophone / anglophone	/ˈfɹæŋkəˌfoʊn/ / /ˈænɡɫəˌfoʊn/
+census	/ˈsɛnsəs/
+demographic	/ˌdɛməˈɡɹæfɪk/
+freeze / frozen	/ˈfɹiz/ / /ˈfɹoʊzən/
+lag / lagging	/ˈɫæɡ/ / /ˈɫæɡɪŋ/
+compatible / compatibility	/kəmˈpætəbəɫ/ / /kəmˌpætəˈbɪɫəˌti/
+charger / adapter	/ˈtʃɑɹdʒɝ/ / /əˈdæptɝ/
+bandwidth	/ˈbændwɪdθ/
+username / credentials	/ˈjuzɝˌneɪm/ / /kɹəˈdɛnʃəɫz/
+consent	/kənˈsɛnt/
+encryption	/ɛnˈkɹɪpʃən/
+surveillance	/sɝˈveɪɫəns/
+algorithm	/ˈæɫɡɝˌɪðəm/
+headline	/ˈhɛdˌɫaɪn/
+clickbait	/ˈkɫɪkˌbeɪt/
+displace / displacement	/dɪsˈpɫeɪs/ / /dɪsˈpɫeɪsmənt/
+productivity	/ˌpɹoʊdəkˈtɪvəti/
+paperless	/ˈpeɪpɝɫəs/
+reusable	/ɹiˈuzəbəɫ/
+disposable	/dɪˈspoʊzəbəɫ/
+biodegradable	/ˌbaɪoʊdəˈɡɹeɪdəbəɫ/
+rebate	/ˈɹiˌbeɪt/
+offset	/ˈɔfˌsɛt/
+drought	/ˈdɹaʊt/
+watershed	/ˈwɑtɝˌʃɛd/
+deforestation	/dɪˌfɔɹɪˈsteɪʃən/
+biodiversity	/ˌbaɪoʊdaɪˈvɝsəti/
+grassroots	/ˈɡɹæsˈɹuts/
+stewardship	/ˈstuɝdˌʃɪp/
+equity	/ˈɛkwəti/
+constituency	/kənˈstɪtʃuənsi/
+dietitian	/ˌdaɪəˈtɪʃən/

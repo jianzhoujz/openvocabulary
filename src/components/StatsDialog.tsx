@@ -118,6 +118,20 @@ export function StatsDialog({ deck, open, onOpenChange }: Props) {
               </span>
             </label>
 
+            <label className="flex cursor-pointer items-start gap-3">
+              <Checkbox
+                checked={settings.autoSpeak}
+                onCheckedChange={(v) => updateSettings({ autoSpeak: v === true })}
+                className="mt-0.5"
+              />
+              <span>
+                <span className="text-sm font-medium">翻面时自动朗读</span>
+                <span className="text-muted-foreground block text-xs">
+                  用浏览器自带的语音合成朗读词条。卡片上的喇叭按钮随时可以手动触发
+                </span>
+              </span>
+            </label>
+
             <div>
               <div className="text-sm font-medium">新词节流</div>
               <p className="text-muted-foreground mt-0.5 mb-2 text-xs">

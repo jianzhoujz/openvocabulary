@@ -17,6 +17,7 @@ export function StudyView() {
   const revealed = useStore((s) => s.revealed);
   const session = useStore((s) => s.session);
   const mode = useStore((s) => s.settings.mode);
+  const autoSpeak = useStore((s) => s.settings.autoSpeak);
   const reveal = useStore((s) => s.reveal);
   const answer = useStore((s) => s.answer);
   const leaveDeck = useStore((s) => s.leaveDeck);
@@ -111,6 +112,7 @@ export function StudyView() {
             deck={deck}
             mode={mode}
             revealed={revealed}
+            autoSpeak={autoSpeak}
             sectionLabel={sectionLabels.get(current.section) ?? current.section}
             onReveal={reveal}
           />

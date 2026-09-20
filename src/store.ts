@@ -12,6 +12,7 @@ export const DEFAULT_SETTINGS: Settings = {
   sections: [],
   includeMastered: false,
   newCardLimit: 20,
+  autoSpeak: false,
   theme: "system",
 };
 

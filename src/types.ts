@@ -7,6 +7,8 @@ export type Card = {
   /** 卡片正面：PTE 的词条 / TCF 的法语词条 */
   front: string;
   pos: string;
+  /** 音标。只有能归约成单个词的条目才有，多词语块没有 */
+  ipa?: string;
   /** 释义，与 Deck.glossLabels 一一对应。PTE 为 [中文]，TCF 为 [English, 中文] */
   glosses: string[];
   note: string;
@@ -62,6 +64,8 @@ export type Settings = {
   includeMastered: boolean;
   /** 新词节流：同时最多放多少张没背过的卡进池子，0 表示不限 */
   newCardLimit: number;
+  /** 翻面时自动朗读词条 */
+  autoSpeak: boolean;
   theme: "system" | "light" | "dark";
 };
 

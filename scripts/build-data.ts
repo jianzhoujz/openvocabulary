@@ -21,6 +21,8 @@ type RawDeck = {
   lang: string;
   src: string;
   sectionMap: string;
+  /** 音标查找表，由 scripts/build-ipa.ts 生成 */
+  ipaTable: string;
   /** 释义列的表头，与 glosses 数组一一对应 */
   glossLabels: string[];
   /** 从 PSV 的一行取出各字段 */
@@ -41,6 +43,7 @@ const DECKS: RawDeck[] = [
     lang: "en",
     src: join(VOCAB_DIR, "pte-core", "_src.psv"),
     sectionMap: join(VOCAB_DIR, "tools", "sections-en.txt"),
+    ipaTable: join(VOCAB_DIR, "tools", "ipa-en.tsv"),
     glossLabels: ["中文"],
     // section|theme|term|pos|zh|note|example
     pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4]], note: f[5], example: f[6] }),
@@ -52,6 +55,7 @@ const DECKS: RawDeck[] = [
     lang: "fr",
     src: join(VOCAB_DIR, "tcf-canada", "_src.psv"),
     sectionMap: join(VOCAB_DIR, "tools", "sections-fr.txt"),
+    ipaTable: join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
     glossLabels: ["English", "中文"],
     // section|theme|fr|pos|en|zh|note|exemple
     pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4], f[5]], note: f[6], example: f[7] }),
@@ -78,6 +82,17 @@ function cardId(section: string, theme: string, front: string): string {
     .slice(0, 10);
 }
 
+/** 读音标表：<词条><TAB><音标>，# 开头是注释 */
+function readIpa(path: string): Map<string, string> {
+  const map = new Map<string, string>();
+  for (const line of readLines(path)) {
+    if (line.startsWith("#")) continue;
+    const tab = line.indexOf("	");
+    if (tab > 0) map.set(line.slice(0, tab), line.slice(tab + 1));
+  }
+  return map;
+}
+
 function buildDeck(deck: RawDeck) {
   const sectionLabels = new Map<string, string>();
   for (const line of readLines(deck.sectionMap)) {
@@ -85,10 +100,12 @@ function buildDeck(deck: RawDeck) {
     if (eq > 0) sectionLabels.set(line.slice(0, eq), line.slice(eq + 1));
   }
 
+  const ipaTable = readIpa(deck.ipaTable);
+
   const lines = readLines(deck.src);
   const expectedCols = lines[0].split("|").length;
 
-  const cards = [];
+  const cards: Record<string, unknown>[] = [];
   const seenIds = new Set<string>();
   /** section 首次出现的顺序即为建议背诵顺序，与 README 的模块表一致 */
   const sectionOrder: string[] = [];
@@ -111,7 +128,9 @@ function buildDeck(deck: RawDeck) {
     if (!sectionCounts.has(section)) sectionOrder.push(section);
     sectionCounts.set(section, (sectionCounts.get(section) ?? 0) + 1);
 
-    cards.push({ id, section, theme, front, pos, glosses, note, example });
+    // 只有能归约成单个词的条目有音标，多词语块靠页面 TTS 朗读
+    const ipa = ipaTable.get(front);
+    cards.push({ id, section, theme, front, pos, glosses, note, example, ...(ipa ? { ipa } : {}) });
   }
 
   return {
@@ -120,6 +139,7 @@ function buildDeck(deck: RawDeck) {
     subtitle: deck.subtitle,
     lang: deck.lang,
     glossLabels: deck.glossLabels,
+    ipaCount: cards.filter((c) => c.ipa).length,
     sections: sectionOrder.map((code) => ({
       code,
       label: sectionLabels.get(code) ?? code,
@@ -150,7 +170,7 @@ for (const deck of DECKS) {
 
   const kb = Math.round(Buffer.byteLength(json) / 1024);
   console.log(
-    `${deck.id.padEnd(12)} ${String(built.cards.length).padStart(5)} 条  ${built.sections.length} 个模块  ${kb} KB`,
+    `${deck.id.padEnd(12)} ${String(built.cards.length).padStart(5)} 条  ${built.sections.length} 个模块  ${String(built.ipaCount).padStart(4)} 条带音标  ${kb} KB`,
   );
 }
 

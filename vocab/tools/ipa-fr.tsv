@@ -1,0 +1,356 @@
+# ipa-fr.tsv —— 由 scripts/build-ipa.ts 生成，可手工修正
+# 数据源：open-dict-data/ipa-dict fr_FR（MIT）
+# 只收能归约成单个词的条目，多词语块靠页面上的 TTS 朗读
+# 格式：<词条><TAB><音标>，词条须与 _src.psv 第 3 列完全一致
+dénonce	/denɔ̃s/
+Toutefois / Néanmoins	/tutfwa/ / /neɑ̃mwɛ̃/
+Or	/ɔʁ/
+entraîner / provoquer	/ɑ̃tʁɛne/ / /pʁɔvɔke/
+Cordialement	/kɔʁdjalmɑ̃/
+Finalement	/finalmɑ̃/
+le courriel	/kuʁjɛl/
+le stationnement	/stasjɔnmɑ̃/
+magasiner / le magasinage	/magazine/ / /magazinaʒ/
+le dépanneur	/depanœʁ/
+le déjeuner / le dîner / le souper	/deʒœne/ / /dine/ / /supe/
+le char	/ʃaʁ/
+la job	/dʒɔb/
+le breuvage	/bʁœvaʒ/
+la traverse / le traversier	/tʁavɛʁs/ / /tʁavɛʁsje/
+le cellulaire	/selylɛʁ/
+présentement	/pʁezɑ̃tmɑ̃/
+la municipalité / la ville	/mynisipalite/ / /vil/
+le parrainage	/paʁɛnaʒ/
+l'intégration	/ɛ̃tegʁasjɔ̃/
+la poudrerie	/pudʁəʁi/
+le verglas	/vɛʁgla/
+la tuque / les mitaines	/tyk/ / /mitɛn/
+la canicule	/kanikyl/
+le pourboire	/puʁbwaʁ/
+le bilinguisme	/bilɛ̃gɥism/
+les compétences	/kɔ̃petɑ̃s/
+embaucher / recruter	/ɑ̃boʃe/ / /ʁəkʁyte/
+le préavis	/pʁeavi/
+le collègue / la collègue	/kɔlɛg/ / /kɔlɛg/
+la réunion	/ʁeynjɔ̃/
+le télétravail	/teletʁavaj/
+démissionner	/demisjɔne/
+le chômage	/ʃomaʒ/
+le harcèlement	/ʼaʁsɛlmɑ̃/
+le syndicat	/sɛ̃dika/
+le logement	/lɔʒmɑ̃/
+le loyer	/lwaje/
+le propriétaire / le locataire	/pʁɔpʁijetɛʁ/ / /lɔkatɛʁ/
+le bail	/baj/
+les charges	/ʃaʁʒ/
+le colocataire / la colocation	/kɔlɔkatɛʁ/ / /kɔlɔkasjɔ̃/
+emménager / déménager	/ɑ̃menaʒe/ / /demenaʒe/
+le chauffage	/ʃofaʒ/
+réparer / la réparation	/ʁepaʁe/ / /ʁepaʁasjɔ̃/
+la moisissure	/mwazisyʁ/
+l'infiltration	/ɛ̃filtʁasjɔ̃/
+le concierge	/kɔ̃sjɛʁʒ/
+le voisin / le voisinage	/vwazɛ̃/ / /vwazinaʒ/
+les ordures / le recyclage / le compost	/ɔʁdyʁ/ / /ʁəsiklaʒ/ / /kɔ̃pɔst/
+l'hypothèque	/ipɔtɛk/
+la banlieue	/bɑ̃ljø/
+l'embourgeoisement	/ɑ̃buʁʒwazmɑ̃/
+l'urgence / les urgences	/yʁʒɑ̃s/ / /yʁʒɑ̃s/
+le spécialiste	/spesjalist/
+l'ordonnance / la prescription	/ɔʁdɔnɑ̃s/ / /pʁɛskʁipsjɔ̃/
+la pharmacie / le pharmacien	/faʁmasi/ / /faʁmasjɛ̃/
+le rhume / la grippe	/ʁym/ / /gʁip/
+guérir / la guérison	/geʁiʁ/ / /geʁizɔ̃/
+le stress / stressant	/stʁɛs/ / /stʁɛsɑ̃/
+la sédentarité	/sedɑ̃taʁite/
+la facture	/faktyʁ/
+le reçu	/ʁəsy/
+la garantie	/gaʁɑ̃ti/
+le remboursement / rembourser	/ʁɑ̃buʁsəmɑ̃/ / /ʁɑ̃buʁse/
+l'échange	/eʃɑ̃ʒ/
+le rabais / la réduction	/ʁabɛ/ / /ʁedyksjɔ̃/
+les taxes	/taks/
+l'inflation	/ɛ̃flasjɔ̃/
+la prime / la franchise	/pʁim/ / /fʁɑ̃ʃiz/
+le métro / l'autobus	/metʁo/ / /otɔbys/
+la correspondance	/kɔʁɛspɔ̃dɑ̃s/
+l'arrêt / la station	/aʁɛ/ / /stasjɔ̃/
+l'horaire	/ɔʁɛʁ/
+la grève	/gʁɛv/
+l'immatriculation	/imatʁikylasjɔ̃/
+la contravention / le constat	/kɔ̃tʁavɑ̃sjɔ̃/ / /kɔ̃sta/
+le covoiturage	/kovwatyʁaʒ/
+les embouteillages / la congestion	/ɑ̃butɛjaʒ/ / /kɔ̃ʒɛstjɔ̃/
+réserver / la réservation	/ʁezɛʁve/ / /ʁezɛʁvasjɔ̃/
+annuler / l'annulation	/anyle/ / /anylasjɔ̃/
+le vol / le décollage / l'atterrissage	/vɔl/ / /dekɔlaʒ/ / /ateʁisaʒ/
+la douane	/dwan/
+l'université / la faculté	/ynivɛʁsite/ / /fakylte/
+la formation	/fɔʁmasjɔ̃/
+le stage / le stagiaire	/staʒ/ / /staʒjɛʁ/
+l'apprentissage	/apʁɑ̃tisaʒ/
+la société	/sɔsjete/
+l'inégalité / les inégalités	/inegalite/ / /inegalite/
+la pauvreté	/povʁəte/
+la diversité	/divɛʁsite/
+la laïcité	/laisite/
+le bénévolat / le bénévole	/benevɔla/ / /benevɔl/
+le conjoint / la conjointe	/kɔ̃ʒwɛ̃/ / /kɔ̃ʒwɛ̃t/
+l'environnement	/ɑ̃viʁɔnmɑ̃/
+la pollution / polluer	/pɔlysjɔ̃/ / /pɔlɥe/
+la sensibilisation / sensibiliser	/sɑ̃sibilizasjɔ̃/ / /sɑ̃sibilize/
+le numérique	/nymeʁik/
+télécharger	/teleʃaʁʒe/
+l'automatisation	/otɔmatizasjɔ̃/
+l'épicerie / le supermarché	/episʁi/ / /sypɛʁmaʁʃe/
+la caisse / le caissier	/kɛs/ / /kesje/
+la taille / la pointure	/taj/ / /pwɛ̃tyʁ/
+la livraison / livrer	/livʁɛzɔ̃/ / /livʁe/
+la commande / commander	/kɔmɑ̃d/ / /kɔmɑ̃de/
+le menu / la carte	/məny/ / /kaʁt/
+l'addition	/adisjɔ̃/
+la météo / les prévisions	/meteo/ / /pʁevizjɔ̃/
+la pluie / la neige / le vent	/plɥi/ / /nɛʒ/ / /vɑ̃/
+les loisirs	/lwaziʁ/
+la bibliothèque	/biblijɔtɛk/
+constater	/kɔ̃state/
+signaler	/siɲale/
+régler	/ʁegle/
+joindre	/ʒwɛ̃dʁ/
+favoriser	/favɔʁize/
+renforcer	/ʁɑ̃fɔʁse/
+réduire / diminuer	/ʁedɥiʁ/ / /diminɥe/
+augmenter / accroître	/ogmɑ̃te/ / /akʁwatʁ/
+actuellement	/aktɥɛlmɑ̃/
+éventuellement	/evɑ̃tɥɛlmɑ̃/
+sensible	/sɑ̃sibl/
+la librairie	/libʁɛʁi/
+le collège	/kɔlɛʒ/
+la monnaie	/mɔnɛ/
+demander	/dəmɑ̃de/
+le formulaire	/fɔʁmylɛʁ/
+le renouvellement / renouveler	/ʁənuvɛlmɑ̃/ / /ʁənuvle/
+être	/ɛtʁ/
+avoir	/avwaʁ/
+aller	/ale/
+faire	/fɛʁ/
+pouvoir	/puvwaʁ/
+vouloir	/vulwaʁ/
+devoir	/dəvwaʁ/
+savoir	/savwaʁ/
+connaître	/kɔnɛtʁ/
+venir	/vəniʁ/
+prendre	/pʁɑ̃dʁ/
+mettre	/mɛtʁ/
+dire	/diʁ/
+voir	/vwaʁ/
+croire	/kʁwaʁ/
+écrire	/ekʁiʁ/
+lire	/liʁ/
+recevoir	/ʁəsəvwaʁ/
+falloir	/falwaʁ/
+valoir	/valwaʁ/
+offrir / ouvrir	/ɔfʁiʁ/ / /uvʁiʁ/
+partir / sortir / dormir	/paʁtiʁ/ / /sɔʁtiʁ/ / /dɔʁmiʁ/
+suivre	/sɥivʁ/
+vivre	/vivʁ/
+imparfait	/ɛ̃paʁfɛ/
+en / y	/ɑ̃/ / /i/
+on	/ɔ̃/
+le problème	/pʁɔblɛm/
+le groupe	/gʁup/
+le domaine	/dɔmɛn/
+le salaire	/salɛʁ/
+le silence	/silɑ̃s/
+le musée	/myze/
+le magasin	/magazɛ̃/
+l'hôpital	/ɔpital/
+l'argent	/aʁʒɑ̃/
+l'emploi	/ɑ̃plwa/
+la fin	/fɛ̃/
+la part	/paʁ/
+la façon	/fasɔ̃/
+la fois	/fwa/
+la plupart	/plypaʁ/
+la santé	/sɑ̃te/
+l'eau	/o/
+l'entreprise	/ɑ̃tʁəpʁiz/
+l'année	/ane/
+l'expérience	/ɛkspeʁjɑ̃s/
+l'assurance	/asyʁɑ̃s/
+le livre / la livre	/livʁ/ / /livʁ/
+le poste / la poste	/pɔst/ / /pɔst/
+le tour / la tour	/tuʁ/ / /tuʁ/
+le mode / la mode	/mɔd/ / /mɔd/
+le critique / la critique	/kʁitik/ / /kʁitik/
+le manche / la manche	/mɑ̃ʃ/ / /mɑ̃ʃ/
+les gens	/ʒɑ̃/
+les vacances	/vakɑ̃s/
+les frais	/fʁɛ/
+les renseignements	/ʁɑ̃sɛɲəmɑ̃/
+important / considérable	/ɛ̃pɔʁtɑ̃/ / /kɔ̃sideʁabl/
+majeur / mineur	/maʒœʁ/ / /minœʁ/
+croissant	/kʁwasɑ̃/
+répandu	/ʁepɑ̃dy/
+fréquent / rare	/fʁekɑ̃/ / /ʁaʁ/
+suffisant / insuffisant	/syfizɑ̃/ / /ɛ̃syfizɑ̃/
+excessif	/ɛksesif/
+limité	/limite/
+nettement	/nɛtmɑ̃/
+largement	/laʁʒəmɑ̃/
+efficace / l'efficacité	/efikas/ / /efikasite/
+rentable	/ʁɑ̃tabl/
+réaliste / irréaliste	/ʁealist/ / /iʁealist/
+faisable / la faisabilité	/fəzabl/ / /fəzabilite/
+bénéfique	/benefik/
+nuisible / néfaste	/nɥizibl/ / /nefast/
+durable	/dyʁabl/
+prioritaire / la priorité	/pʁijɔʁitɛʁ/ / /pʁijɔʁite/
+indispensable	/ɛ̃dispɑ̃sabl/
+facultatif / obligatoire	/fakyltatif/ / /ɔbligatwaʁ/
+la cause / la conséquence	/koz/ / /kɔ̃sekɑ̃s/
+l'enjeu	/ɑ̃ʒø/
+inévitable	/inevitabl/
+sinon	/sinɔ̃/
+l'évolution / évoluer	/evɔlysjɔ̃/ / /evɔlɥe/
+la tendance	/tɑ̃dɑ̃s/
+la hausse / la baisse	/ʼos/ / /bɛs/
+le bouleversement	/bulvɛʁsəmɑ̃/
+l'argument	/aʁgymɑ̃/
+controversé	/kɔ̃tʁɔvɛʁse/
+le consensus	/kɔ̃sɛ̃sys/
+réticent / la réticence	/ʁetisɑ̃/ / /ʁetisɑ̃s/
+le préjugé	/pʁeʒyʒe/
+nuancé	/nɥɑ̃se/
+convaincant	/kɔ̃vɛ̃kɑ̃/
+discutable	/diskytabl/
+le défi	/defi/
+l'obstacle	/ɔpstakl/
+surmonter	/syʁmɔ̃te/
+résoudre / la résolution	/ʁezudʁ/ / /ʁezɔlysjɔ̃/
+réduire / limiter	/ʁedɥiʁ/ / /limite/
+un compromis	/kɔ̃pʁɔmi/
+une alternative	/altɛʁnativ/
+la politique	/pɔlitik/
+la loi / la réglementation	/lwa/ / /ʁɛgləmɑ̃tasjɔ̃/
+la subvention	/sybvɑ̃sjɔ̃/
+l'investissement	/ɛ̃vɛstismɑ̃/
+le budget / les fonds	/bydʒɛ/ / /fɔ̃/
+la transparence	/tʁɑ̃spaʁɑ̃s/
+l'équité	/ekite/
+l'accessibilité	/aksesibilite/
+les données / les chiffres	/dɔne/ / /ʃifʁ/
+une enquête / un sondage	/ɑ̃kɛt/ / /sɔ̃daʒ/
+le taux	/to/
+la proportion / la part	/pʁɔpɔʁsjɔ̃/ / /paʁ/
+représenter	/ʁəpʁezɑ̃te/
+notamment	/nɔtamɑ̃/
+le comportement	/kɔ̃pɔʁtəmɑ̃/
+la mentalité	/mɑ̃talite/
+la motivation	/mɔtivasjɔ̃/
+la persévérance	/pɛʁseveʁɑ̃s/
+la souplesse / flexible	/suplɛs/ / /flɛksibl/
+l'isolement	/izɔlmɑ̃/
+l'épanouissement	/epanwismɑ̃/
+surmené / le surmenage	/syʁməne/ / /syʁmənaʒ/
+le secteur	/sɛktœʁ/
+la restauration / l'hôtellerie	/ʁɛstɔʁasjɔ̃/ / /otɛlʁi/
+la construction	/kɔ̃stʁyksjɔ̃/
+le métier	/metje/
+le gestionnaire	/ʒɛstjɔnɛʁ/
+le bureau	/byʁo/
+la visioconférence	/vizjokɔ̃feʁɑ̃s/
+l'imprimante / le photocopieur	/ɛ̃pʁimɑ̃t/ / /fɔtɔkɔpjœʁ/
+le dossier	/dosje/
+classer / archiver	/klase/ / /aʁʃive/
+le client / la clientèle	/klijɑ̃/ / /klijɑ̃tɛl/
+la soumission	/sumisjɔ̃/
+le devis	/dəvi/
+la rentabilité	/ʁɑ̃tabilite/
+négocier / la négociation	/negɔsje/ / /negɔsjasjɔ̃/
+le partenariat	/paʁtənaʁja/
+le chantier	/ʃɑ̃tje/
+coordonner	/kɔɔʁdɔne/
+le balcon / la terrasse	/balkɔ̃/ / /tɛʁas/
+la buanderie	/byɑ̃dʁi/
+l'ascenseur	/asɑ̃sœʁ/
+l'isolation	/izɔlasjɔ̃/
+les électroménagers	/elɛktʁɔmenaʒe/
+le thermostat	/tɛʁmɔsta/
+l'éviction / expulser	/eviksjɔ̃/ / /ɛkspylse/
+le cautionnement / l'endosseur	/kosjɔnmɑ̃/ / /ɑ̃dosœʁ/
+le quartier	/kaʁtje/
+le trottoir	/tʁɔtwaʁ/
+l'arrondissement	/aʁɔ̃dismɑ̃/
+la pétition	/petisjɔ̃/
+le zonage	/zonaʒ/
+le chirurgien / la chirurgie	/ʃiʁyʁʒjɛ̃/ / /ʃiʁyʁʒi/
+la radiographie / l'échographie	/ʁadjɔgʁafi/ / /ekogʁafi/
+le diagnostic	/djagnɔstik/
+le traitement	/tʁɛtmɑ̃/
+la posologie	/pozɔlɔʒi/
+le suivi	/sɥivi/
+la convalescence	/kɔ̃valesɑ̃s/
+l'entorse / la fracture	/ɑ̃tɔʁs/ / /fʁaktyʁ/
+l'ambulance	/ɑ̃bylɑ̃s/
+le triage	/tʁijaʒ/
+les engelures / l'hypothermie	/ɑ̃ʒlyʁ/ / /ipɔtɛʁmi/
+le pédiatre	/pedjatʁ/
+la déduction	/dedyksjɔ̃/
+la circulaire	/siʁkylɛʁ/
+l'endettement	/ɑ̃dɛtmɑ̃/
+le placement / investir	/plasmɑ̃/ / /ɛ̃vɛstiʁ/
+la fraude / l'escroquerie	/fʁod/ / /ɛskʁɔkʁi/
+la collision / l'accrochage	/kɔlizjɔ̃/ / /akʁɔʃaʒ/
+le piéton / le cycliste	/pjetɔ̃/ / /siklist/
+l'escale	/ɛskal/
+l'enregistrement	/ɑ̃ʁəʒistʁəmɑ̃/
+l'indemnisation	/ɛ̃dɛmnizasjɔ̃/
+l'hébergement	/ebɛʁʒəmɑ̃/
+le forfait	/fɔʁfɛ/
+la faune	/fon/
+la maternelle	/matɛʁnɛl/
+le primaire / le secondaire	/pʁimɛʁ/ / /səgɔ̃dɛʁ/
+le secondaire 5	/səgɔ̃dɛʁ/
+le baccalauréat	/bakalɔʁea/
+la maîtrise / le doctorat	/metʁiz/ / /dɔktɔʁa/
+la session	/sesjɔ̃/
+le trimestre	/tʁimɛstʁ/
+le plagiat	/plaʒja/
+la bibliographie / la référence	/biblijɔgʁafi/ / /ʁefeʁɑ̃s/
+le brouillon / réviser	/bʁujɔ̃/ / /ʁevize/
+réussir / échouer	/ʁeysiʁ/ / /eʃwe/
+le registraire	/ʁeʒistʁɛʁ/
+l'atelier	/atəlje/
+le député	/depyte/
+la circonscription	/siʁkɔ̃skʁipsjɔ̃/
+les élections / le scrutin	/elɛksjɔ̃/ / /skʁytɛ̃/
+le recensement	/ʁəsɑ̃smɑ̃/
+la solidarité	/sɔlidaʁite/
+la xénophobie / le racisme	/gzenɔfɔbi/ / /ʁasism/
+la Loi 21	/lwa/
+le clivage	/klivaʒ/
+la déqualification	/dekalifikasjɔ̃/
+le jumelage	/ʒymlaʒ/
+le foyer / le ménage	/fwaje/ / /menaʒ/
+réutilisable / jetable	/ʁeytilizabl/ / /ʒətabl/
+la consigne	/kɔ̃siɲ/
+l'inondation	/inɔ̃dasjɔ̃/
+la sécheresse	/sɛʃʁɛs/
+l'adaptation / l'atténuation	/adaptasjɔ̃/ / /atenɥasjɔ̃/
+la déforestation	/defɔʁɛstasjɔ̃/
+l'hydroélectricité	/idʁɔelɛktʁisite/
+la surconsommation	/syʁkɔ̃sɔmasjɔ̃/
+planter / figer	/plɑ̃te/ / /fiʒe/
+la compatibilité	/kɔ̃patibilite/
+le chargeur	/ʃaʁʒœʁ/
+le consentement	/kɔ̃sɑ̃tmɑ̃/
+la surveillance	/syʁvɛjɑ̃s/
+l'algorithme	/algɔʁitm/
+le titre / la manchette	/titʁ/ / /mɑ̃ʃɛt/
+la productivité	/pʁɔdyktivite/
+le chariot / le panier	/ʃaʁjo/ / /panje/
+l'emballage	/ɑ̃balaʒ/
+les précipitations	/pʁesipitasjɔ̃/
+la motoneige	/mɔtɔnɛʒ/
+le festival	/fɛstival/

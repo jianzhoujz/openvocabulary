@@ -10,9 +10,10 @@ import type { Card, Deck } from "@/types";
  * 界面层的端到端冒烟测试：渲染整棵组件树并真的点按钮，
  * 覆盖「翻面 → 自评 → 进度落库 → 自动换卡」这条主链路。
  */
-function card(id: string, front: string, gloss: string): Card {
+function card(id: string, front: string, gloss: string, ipa?: string): Card {
   return {
     id,
+    ...(ipa ? { ipa } : {}),
     section: "EMAIL",
     theme: "开头-称呼",
     front,
@@ -33,6 +34,7 @@ const DECK: Deck = {
   cards: [
     card("c1", "Dear Mr./Ms. + 姓", "尊敬的……先生/女士"),
     card("c2", "To whom it may concern", "敬启者"),
+    card("c3", "invoice", "发票", "/ˈɪnvɔɪs/"),
   ],
 };
 
@@ -175,5 +177,86 @@ describe("背诵页", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "返回" }));
     expect(useStore.getState().status).toBe("idle");
+  });
+});
+
+describe("音标与朗读", () => {
+  const spoken: string[] = [];
+
+  function stubSpeech() {
+    spoken.length = 0;
+    vi.stubGlobal("speechSynthesis", {
+      getVoices: () => [{ lang: "en-CA", name: "Test Voice" }],
+      speak: (u: { text: string }) => spoken.push(u.text),
+      cancel: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+    });
+    vi.stubGlobal(
+      "SpeechSynthesisUtterance",
+      class {
+        text: string;
+        lang = "";
+        rate = 1;
+        voice: unknown = null;
+        constructor(text: string) {
+          this.text = text;
+        }
+        addEventListener() {}
+      },
+    );
+  }
+
+  it("有音标的词条会把音标显示出来", () => {
+    seed(studying(DECK.cards[2]));
+    render(<App />);
+    expect(screen.getByText("/ˈɪnvɔɪs/")).toBeTruthy();
+  });
+
+  it("看义猜词模式下，翻面前不显示音标——那等于泄露读音", () => {
+    seed({
+      ...studying(DECK.cards[2]),
+      settings: { ...DEFAULT_SETTINGS, mode: "gloss-to-front" },
+    });
+    render(<App />);
+
+    expect(screen.queryByText("/ˈɪnvɔɪs/")).toBeNull();
+    expect(screen.queryByRole("button", { name: "朗读" })).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "看答案" }));
+    expect(screen.getByText("/ˈɪnvɔɪs/")).toBeTruthy();
+  });
+
+  it("点喇叭朗读词条，翻面后还能单独朗读例句", () => {
+    stubSpeech();
+    seed(studying(DECK.cards[2]));
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+    expect(spoken).toEqual(["invoice"]);
+
+    fireEvent.click(screen.getByRole("button", { name: "看答案" }));
+    fireEvent.click(screen.getByRole("button", { name: "朗读例句" }));
+    expect(spoken).toEqual(["invoice", "Dear Ms. Carter,"]);
+  });
+
+  it("浏览器不支持语音合成时不渲染朗读按钮", () => {
+    vi.stubGlobal("speechSynthesis", undefined);
+    seed(studying(DECK.cards[2]));
+    render(<App />);
+    expect(screen.queryByRole("button", { name: "朗读" })).toBeNull();
+  });
+
+  it("开了自动朗读，翻面时自己读出来", () => {
+    stubSpeech();
+    seed({
+      ...studying(DECK.cards[2]),
+      settings: { ...DEFAULT_SETTINGS, autoSpeak: true },
+    });
+    render(<App />);
+
+    expect(spoken).toEqual([]);
+    fireEvent.click(screen.getByRole("button", { name: "看答案" }));
+    expect(spoken).toEqual(["invoice"]);
   });
 });

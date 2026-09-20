@@ -43,6 +43,7 @@ vp lint             # Oxlint（含 type-aware 规则与类型检查）
 vp test             # Vitest（--run 跑一次不进 watch）
 vp run build:data   # 从 vocab/*/_src.psv 重新生成 public/data/*.json
 vp run build:icons  # 重新生成 public/icon-*.png 与 favicon.svg
+vp run build:ipa    # 重新生成 vocab/tools/ipa-*.tsv（需联网）
 ```
 
 ## 目录结构
@@ -51,9 +52,11 @@ vp run build:icons  # 重新生成 public/icon-*.png 与 favicon.svg
 vocab/                     词表数据，唯一需要手动编辑的内容
   <exam>/_src.psv          数据源
   tools/build.sh           生成 .tsv 与 .md
+  tools/ipa-*.tsv          音标查找表，生成物但可手工修正
 
 scripts/build-data.ts      PSV → JSON 的数据管线
 scripts/build-icons.ts     生成主屏幕图标与 favicon（纯算术绘制，无图像库）
+scripts/build-ipa.ts       从 ipa-dict 生成音标查找表
 public/data/               生成的词库 JSON，已提交，勿手改
 src/
   types.ts                 共享类型
@@ -65,12 +68,14 @@ src/
   hooks/
     useTheme.ts            深浅色跟随系统 / 手动
     useAnswerKeys.ts       PC 键盘快捷键
+    useSpeech.ts           朗读能力探测与调用
   components/
     DeckPicker.tsx         选词表页
     StudyView.tsx          背诵页骨架
     StudyCard.tsx          卡片正反面
     SectionFilter.tsx      模块筛选（底部抽屉）
     StatsDialog.tsx        进度、设置与备份
+    InstallHint.tsx        iOS 添加到主屏幕指引
     ui/                    shadcn 组件，源码在仓库里，直接改
 ```
 
@@ -93,6 +98,27 @@ src/
 **新词节流**默认开启（20 张）：没背过的词按词表原始顺序只放前 20 个进池子，背熟一个补一个。不加这个限制的话，因为新词权重最高，前期抽到的几乎全是新词，上千条会一起涌上来。可在设置里调整或关闭。
 
 所有系数集中在 `SCHEDULER` 常量里，背一阵子后可以按手感调。改完跑 `vp test` —— 策略有 23 条单测覆盖。
+
+## 音标与朗读
+
+**音标**只给能归约成单个词的条目——英语 533 条、法语 353 条。多词语块刻意不标：
+逐词拼接出来的音标每个词都带主重音，法语还丢了联诵（`met en avant` 实际读
+/mɛt‿ɑ̃navɑ̃/ 而不是 /ma ɑ̃ avɑ̃/），读着是错的，还会把 PTE 的 `RA` 模块
+要练的弱读教反。那部分交给朗读。
+
+数据来自 [open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict)（MIT）：
+英语取 `en_US`（通用美音，音系上最接近加拿大英语），法语取 `fr_FR`。
+ipa-dict 也有 `fr_QC`，但那是窄式转写，带双元音化和塞擦化
+（`cordialement` 记成 /kɑɔ̯ʁd͡zjalmæ̃/），对照学习不便；
+魁北克特有的**词汇**已经由词表的 `CANADA` 模块覆盖。想换成魁北克读音，
+改 `scripts/build-ipa.ts` 里 `JOBS` 的 `dict` 字段即可。
+
+产物 `vocab/tools/ipa-*.tsv` 提交进仓库，**可以手工修正**。`vp run build:ipa`
+需要联网，日常构建不依赖它。
+
+**朗读**用浏览器自带的语音合成（Web Speech API），词条和例句各有一个喇叭按钮，
+设置里可以打开「翻面时自动朗读」。声音优先选 `en-CA` / `fr-CA`，没有再退回
+`en-US` / `fr-FR`。看义猜词模式下翻面前不显示音标、也没有朗读按钮——那等于直接给答案。
 
 ## 数据来源
 
