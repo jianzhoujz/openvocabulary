@@ -120,9 +120,8 @@ export function ShareDialog({ open, onOpenChange, stats }: Props) {
         className="max-h-[90svh] overflow-y-auto sm:max-w-md"
         aria-describedby={undefined}
       >
-        {/* 标题只留给读屏：Radix 要求 Dialog 有可访问名，界面上不占位置 */}
-        <DialogHeader className="sr-only">
-          <DialogTitle>分享今日打卡</DialogTitle>
+        <DialogHeader>
+          <DialogTitle>分享</DialogTitle>
         </DialogHeader>
 
         <SharePreview stats={stats} />

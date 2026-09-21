@@ -159,9 +159,9 @@ describe("选词表页", () => {
     await screen.findByText("学习统计");
     fireEvent.click(screen.getByRole("button", { name: /分享/ }));
 
-    // 对话框只有预览图和两个按钮，标题留给读屏，界面上不显示
+    // 对话框只有标题、预览图和两个按钮，没有多余文案
     expect(await screen.findByRole("button", { name: /保存图片/ })).toBeTruthy();
-    expect(screen.getByRole("dialog", { name: "分享今日打卡" })).toBeTruthy();
+    expect(screen.getByRole("dialog", { name: "分享" })).toBeTruthy();
   });
 
   it("分享只把图片交给系统面板，不带任何文字", async () => {
