@@ -33,8 +33,6 @@ export type ShareStats = {
   mastered: number;
   /** 近 7 天，画底部的小柱图 */
   week: Bucket[];
-  /** 页脚那行词表说明 */
-  footer: string;
 };
 
 function font(weight: number, size: number): string {
@@ -132,23 +130,21 @@ export function drawShareCard(canvas: HTMLCanvasElement, s: ShareStats): void {
   ctx.fillRect(0, 0, SHARE_W, SHARE_H);
 
   const d = new Date(s.at);
-  text(ctx, "openvocabulary", 96, 130, { size: 40, weight: 600 });
-  text(ctx, `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`, SHARE_W - 96, 130, {
+  text(ctx, `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`, 96, 130, {
     size: 36,
     color: MUTED,
-    align: "right",
   });
 
-  text(ctx, "今天背了", 96, 330, { size: 44, color: MUTED });
+  text(ctx, "今天背了", 96, 320, { size: 44, color: MUTED });
 
   ctx.font = font(700, 200);
   const hero = String(s.today.words);
   const heroW = ctx.measureText(hero).width;
-  text(ctx, hero, 96, 500, { size: 200, weight: 700, color: ACCENT });
-  text(ctx, "个词", 96 + heroW + 24, 500, { size: 56, weight: 500 });
+  text(ctx, hero, 96, 490, { size: 200, weight: 700, color: ACCENT });
+  text(ctx, "个词", 96 + heroW + 24, 490, { size: 56, weight: 500 });
 
   const third = (SHARE_W - 192) / 3;
-  const statY = 650;
+  const statY = 640;
   statColumn(ctx, 96 + third * 0.5, statY, formatDuration(s.today.ms), "学习时长");
   statColumn(ctx, 96 + third * 1.5, statY, `${accuracyOf(s.today)}%`, "正确率");
   statColumn(ctx, 96 + third * 2.5, statY, String(s.today.mastered), "新掌握");
@@ -159,23 +155,22 @@ export function drawShareCard(canvas: HTMLCanvasElement, s: ShareStats): void {
   const pillW = ctx.measureText(pill).width + 108;
   const pillX = (SHARE_W - pillW) / 2;
   ctx.fillStyle = "rgba(63, 207, 142, 0.16)";
-  roundRect(ctx, pillX, 790, pillW, 88, 44);
+  roundRect(ctx, pillX, 780, pillW, 88, 44);
   ctx.fill();
   ctx.fillStyle = ACCENT;
   ctx.beginPath();
-  ctx.arc(pillX + 44, 834, 12, 0, Math.PI * 2);
+  ctx.arc(pillX + 44, 824, 12, 0, Math.PI * 2);
   ctx.fill();
-  text(ctx, pill, pillX + 72, 848, { size: 38, weight: 600 });
+  text(ctx, pill, pillX + 72, 838, { size: 38, weight: 600 });
 
-  text(ctx, "近 7 天", 96, 990, { size: 34, color: MUTED });
-  drawWeekChart(ctx, s.week, 1015);
+  text(ctx, "近 7 天", 96, 975, { size: 34, color: MUTED });
+  drawWeekChart(ctx, s.week, 1000);
 
   ctx.fillStyle = FAINT;
   ctx.fillRect(96, 1270, SHARE_W - 192, 2);
 
   const summary = `累计打卡 ${s.days} 天 · 学习 ${s.totalWords} 词 · 已掌握 ${s.mastered} 词`;
-  text(ctx, summary, SHARE_W / 2, 1338, { size: 34, color: MUTED, align: "center" });
-  text(ctx, s.footer, SHARE_W / 2, 1396, { size: 32, color: MUTED, align: "center" });
+  text(ctx, summary, SHARE_W / 2, 1345, { size: 34, color: MUTED, align: "center" });
 }
 
 export function renderShareCard(s: ShareStats): Promise<Blob> {

@@ -1,5 +1,5 @@
 // @vitest-environment happy-dom
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
 import App from "@/App";
@@ -54,6 +54,39 @@ function seed(patch: Partial<ReturnType<typeof useStore.getState>> = {}) {
     activeAt: null,
     ...patch,
   });
+}
+
+/** happy-dom 没有 canvas，出图得自己顶上，否则分享按钮一直是禁用的 */
+function stubCanvas() {
+  const gradient = { addColorStop: () => {} };
+  const ctx = {
+    createLinearGradient: () => gradient,
+    createRadialGradient: () => gradient,
+    measureText: () => ({ width: 120 }),
+    fillRect: () => {},
+    fillText: () => {},
+    beginPath: () => {},
+    moveTo: () => {},
+    arcTo: () => {},
+    arc: () => {},
+    closePath: () => {},
+    fill: () => {},
+    font: "",
+    fillStyle: "",
+    textAlign: "",
+    textBaseline: "",
+  };
+  vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+    ctx as unknown as CanvasRenderingContext2D,
+  );
+  vi.spyOn(HTMLCanvasElement.prototype, "toBlob").mockImplementation((cb) => {
+    cb(new Blob(["png"], { type: "image/png" }));
+  });
+}
+
+/** navigator 上的属性是只读的，只能这样换掉 */
+function define(key: "share" | "canShare", value: unknown) {
+  Object.defineProperty(navigator, key, { value, configurable: true });
 }
 
 const studying = (current: Card) => ({
@@ -126,7 +159,37 @@ describe("选词表页", () => {
     await screen.findByText("学习统计");
     fireEvent.click(screen.getByRole("button", { name: /分享/ }));
 
-    expect(await screen.findByText("分享今日打卡")).toBeTruthy();
+    // 对话框只有预览图和两个按钮，标题留给读屏，界面上不显示
+    expect(await screen.findByRole("button", { name: /保存图片/ })).toBeTruthy();
+    expect(screen.getByRole("dialog", { name: "分享今日打卡" })).toBeTruthy();
+  });
+
+  it("分享只把图片交给系统面板，不带任何文字", async () => {
+    stubCanvas();
+    const calls: ShareData[] = [];
+    define("canShare", () => true);
+    define("share", (data: ShareData) => {
+      calls.push(data);
+      return Promise.resolve();
+    });
+
+    render(<App />);
+    await screen.findByText("学习统计");
+    fireEvent.click(screen.getByRole("button", { name: /分享/ }));
+
+    const dialog = await screen.findByRole("dialog");
+    const button = within(dialog).getByRole("button", { name: /分享/ }) as HTMLButtonElement;
+    // 图是异步画的，画完按钮才可用
+    await waitFor(() => expect(button.disabled).toBe(false));
+    fireEvent.click(button);
+    await waitFor(() => expect(calls).toHaveLength(1));
+
+    expect(calls[0].files?.[0].type).toBe("image/png");
+    // 带上 text 或 title，微信就只发那段文字，图片会被丢掉
+    expect(calls[0].text).toBeUndefined();
+    expect(calls[0].title).toBeUndefined();
+
+    vi.restoreAllMocks();
   });
 });
 

@@ -2,13 +2,7 @@ import { Download, Loader2, Share2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { dayKey } from "@/lib/activity";
 import { renderShareCard } from "@/lib/shareCard";
 import type { ShareStats } from "@/lib/shareCard";
@@ -72,11 +66,10 @@ function SharePreview({ stats }: { stats: ShareStats }) {
     const file = fileRef.current;
     if (!file) return;
 
-    const data = {
-      files: [file],
-      title: "openvocabulary 打卡",
-      text: `今天背了 ${stats.today.words} 个词，连续打卡 ${stats.streak} 天。`,
-    };
+    // 只放 files，绝对不要再塞 text / title：微信、QQ 这类接收方一旦看到
+    // payload 里有文字，就只取那段文字发出去，图片被整个丢掉——
+    // 表现是「点了分享却只发出去一句话」。想配文字让用户自己在聊天框里打。
+    const data = { files: [file] };
 
     if (typeof navigator.share === "function" && navigator.canShare?.(data) === true) {
       try {
@@ -123,12 +116,13 @@ function SharePreview({ stats }: { stats: ShareStats }) {
 export function ShareDialog({ open, onOpenChange, stats }: Props) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90svh] overflow-y-auto sm:max-w-md">
-        <DialogHeader>
+      <DialogContent
+        className="max-h-[90svh] overflow-y-auto sm:max-w-md"
+        aria-describedby={undefined}
+      >
+        {/* 标题只留给读屏：Radix 要求 Dialog 有可访问名，界面上不占位置 */}
+        <DialogHeader className="sr-only">
           <DialogTitle>分享今日打卡</DialogTitle>
-          <DialogDescription>
-            调起系统分享面板，可以直接发给微信好友、朋友圈或存进相册。
-          </DialogDescription>
         </DialogHeader>
 
         <SharePreview stats={stats} />

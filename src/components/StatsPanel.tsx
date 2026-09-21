@@ -81,9 +81,8 @@ export function StatsPanel({ decks }: { decks: DeckSummary[] }) {
       totalWords: sumDays(Object.values(daily)).words,
       mastered,
       week: bucketsFor(daily, "week", now),
-      footer: decks.map((d) => d.name).join(" · ") || "openvocabulary",
     }),
-    [now, today, streak, daily, mastered, decks],
+    [now, today, streak, daily, mastered],
   );
 
   return (
