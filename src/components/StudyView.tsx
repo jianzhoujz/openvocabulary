@@ -7,6 +7,7 @@ import { StudyCard } from "@/components/StudyCard";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useAnswerKeys } from "@/hooks/useAnswerKeys";
+import { useStudyClock } from "@/hooks/useStudyClock";
 import { useStore } from "@/store";
 import type { Mode } from "@/types";
 
@@ -32,6 +33,8 @@ export function StudyView() {
   );
 
   const onAnswer = useCallback((correct: boolean) => answer(correct), [answer]);
+
+  useStudyClock(status === "ready");
 
   useAnswerKeys({
     enabled: status === "ready" && current !== null && !filterOpen && !statsOpen,

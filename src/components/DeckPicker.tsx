@@ -2,6 +2,7 @@ import { ChevronRight, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { InstallHint } from "@/components/InstallHint";
+import { StatsPanel } from "@/components/StatsPanel";
 import { Progress } from "@/components/ui/progress";
 import { isMastered, isNew } from "@/lib/scheduler";
 import { useStore } from "@/store";
@@ -82,6 +83,7 @@ export function DeckPicker() {
         })}
       </div>
 
+      {decks && <StatsPanel decks={decks} />}
       {decks && <InstallHint />}
     </div>
   );

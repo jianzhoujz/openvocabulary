@@ -1,9 +1,10 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
-import { applyAnswer, candidates, emptyStat, pickNext } from "@/lib/scheduler";
+import { IDLE_GAP_MS, addDay, dayKey, emptyDay, pruneDaily } from "@/lib/activity";
+import { applyAnswer, candidates, emptyStat, isMastered, isNew, pickNext } from "@/lib/scheduler";
 import { STORAGE_KEY, throttledStorage } from "@/lib/storage";
-import type { Card, CardStat, Deck, DeckId, DeckProgress, Settings } from "@/types";
+import type { Card, CardStat, DayLog, Deck, DeckId, DeckProgress, Settings } from "@/types";
 
 export const DECK_IDS = ["pte-core", "tcf-canada"] as const;
 
@@ -23,6 +24,8 @@ const emptyProgress = (): Record<DeckId, DeckProgress> => ({
 
 type Persisted = {
   progress: Record<DeckId, DeckProgress>;
+  /** 按本地日期聚合的打卡日志，跨词表合并 */
+  daily: Record<string, DayLog>;
   settings: Settings;
   lastDeckId: DeckId | null;
 };
@@ -35,6 +38,8 @@ type Transient = {
   /** 最近出现过的卡片 id，最新的在末尾 */
   recent: string[];
   session: { ok: number; bad: number };
+  /** 学习时长的计时起点；null 表示当前没在背（页面切后台或已退出词表） */
+  activeAt: number | null;
 };
 
 type Actions = {
@@ -45,7 +50,10 @@ type Actions = {
   drawNext: () => void;
   updateSettings: (patch: Partial<Settings>) => void;
   resetDeck: (id: DeckId) => void;
+  resetDaily: () => void;
   statOf: (cardId: string) => CardStat;
+  tickActivity: () => void;
+  pauseActivity: () => void;
 };
 
 export type Store = Persisted & Transient & Actions;
@@ -58,10 +66,33 @@ function draw(state: Store): Card | null {
   return pickNext(pool, stats, state.recent, Date.now());
 }
 
+function bump(
+  daily: Record<string, DayLog>,
+  key: string,
+  patch: Partial<DayLog>,
+): Record<string, DayLog> {
+  return { ...daily, [key]: addDay(daily[key] ?? emptyDay(), patch) };
+}
+
+/**
+ * 把上次活动到 `now` 之间的时间计入当天，并把计时起点推到 `now`。
+ *
+ * 学习时长靠「操作之间的间隔」累加，而不是从进入词表到退出的墙上时间——
+ * 后者会把中途接个电话、切去微信的半小时全算成学习。间隔超过
+ * `IDLE_GAP_MS` 就整段丢掉，只重置起点。背诵页有个心跳定时器定期调用它，
+ * 所以正常翻卡时每段间隔都远小于这个上限。
+ */
+function touch(s: Store, now: number): Pick<Store, "daily" | "activeAt"> {
+  const gap = s.activeAt === null ? 0 : now - s.activeAt;
+  const daily = gap > 0 && gap <= IDLE_GAP_MS ? bump(s.daily, dayKey(now), { ms: gap }) : s.daily;
+  return { daily, activeAt: now };
+}
+
 export const useStore = create<Store>()(
   persist(
     (set, get) => ({
       progress: emptyProgress(),
+      daily: {},
       settings: DEFAULT_SETTINGS,
       lastDeckId: null,
 
@@ -71,6 +102,7 @@ export const useStore = create<Store>()(
       revealed: false,
       recent: [],
       session: { ok: 0, bad: 0 },
+      activeAt: null,
 
       statOf: (cardId) => get().progress[get().deck?.id ?? "pte-core"].stats[cardId] ?? emptyStat(),
 
@@ -87,31 +119,59 @@ export const useStore = create<Store>()(
             recent: [],
             session: { ok: 0, bad: 0 },
             revealed: false,
+            activeAt: Date.now(),
           });
           get().drawNext();
         } catch {
-          set({ status: "error" });
+          set({ status: "error", activeAt: null });
         }
       },
 
       leaveDeck: () =>
-        set({ deck: null, status: "idle", current: null, revealed: false, recent: [] }),
+        set((s) => ({
+          ...touch(s, Date.now()),
+          activeAt: null,
+          deck: null,
+          status: "idle",
+          current: null,
+          revealed: false,
+          recent: [],
+        })),
 
-      reveal: () => set({ revealed: true }),
+      reveal: () => set((s) => ({ ...touch(s, Date.now()), revealed: true })),
 
       drawNext: () => set((s) => ({ current: draw(s), revealed: false })),
+
+      tickActivity: () => set((s) => touch(s, Date.now())),
+
+      pauseActivity: () => set((s) => ({ ...touch(s, Date.now()), activeAt: null })),
 
       answer: (correct) => {
         const { deck, current } = get();
         if (!deck || !current) return;
 
         set((s) => {
+          const now = Date.now();
           const deckId = deck.id;
           const stats = s.progress[deckId].stats;
-          const next = applyAnswer(stats[current.id], correct, Date.now());
+          const prev = stats[current.id];
+          const next = applyAnswer(prev, correct, now);
+
+          // 同一个词当天反复出现只算一次「学习词数」，靠上次出现时间判断
+          const already = prev !== undefined && prev.n > 0 && dayKey(prev.at) === dayKey(now);
+          const ticked = touch(s, now);
 
           const updated: Store = {
             ...s,
+            ...ticked,
+            daily: bump(ticked.daily, dayKey(now), {
+              n: 1,
+              ok: correct ? 1 : 0,
+              words: already ? 0 : 1,
+              fresh: isNew(prev) ? 1 : 0,
+              // 只记「升上去」这个事件，之后答错掉级不回撤——当天确实掌握过
+              mastered: isMastered(next) && !isMastered(prev) ? 1 : 0,
+            }),
             progress: {
               ...s.progress,
               [deckId]: { stats: { ...stats, [current.id]: next } },
@@ -136,6 +196,7 @@ export const useStore = create<Store>()(
       },
 
       resetDeck: (id) => {
+        // 打卡日志是跨词表的，重置单个词表不动它
         set((s) => ({
           progress: { ...s.progress, [id]: { stats: {} } },
           recent: [],
@@ -143,6 +204,8 @@ export const useStore = create<Store>()(
         }));
         if (get().deck?.id === id) get().drawNext();
       },
+
+      resetDaily: () => set({ daily: {} }),
     }),
     {
       name: STORAGE_KEY,
@@ -150,6 +213,7 @@ export const useStore = create<Store>()(
       version: 1,
       partialize: (s): Persisted => ({
         progress: s.progress,
+        daily: s.daily,
         settings: s.settings,
         lastDeckId: s.lastDeckId,
       }),
@@ -160,6 +224,7 @@ export const useStore = create<Store>()(
           ...p,
           // 旧存档可能缺字段，用默认值补齐，避免升级后炸在 undefined 上
           progress: { ...emptyProgress(), ...p.progress },
+          daily: pruneDaily(p.daily ?? {}, Date.now()),
           settings: { ...DEFAULT_SETTINGS, ...p.settings },
         };
       },

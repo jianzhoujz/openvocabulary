@@ -3,6 +3,7 @@ import { act, cleanup, fireEvent, render, screen } from "@testing-library/react"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
 import App from "@/App";
+import { dayKey } from "@/lib/activity";
 import { DEFAULT_SETTINGS, useStore } from "@/store";
 import type { Card, Deck } from "@/types";
 
@@ -49,6 +50,8 @@ function seed(patch: Partial<ReturnType<typeof useStore.getState>> = {}) {
     revealed: false,
     recent: [],
     session: { ok: 0, bad: 0 },
+    daily: {},
+    activeAt: null,
     ...patch,
   });
 }
@@ -75,6 +78,55 @@ describe("选词表页", () => {
     render(<App />);
     expect(screen.getByText("openvocabulary")).toBeTruthy();
     expect(screen.getByText("选一个词表开始")).toBeTruthy();
+  });
+
+  it("词表列表下方给出今日数据与分享入口", async () => {
+    seed({
+      daily: {
+        [dayKey(Date.now())]: { ms: 65_000, n: 4, ok: 3, words: 3, fresh: 2, mastered: 1 },
+      },
+    });
+    render(<App />);
+
+    // 统计模块要等词表清单拉回来才渲染
+    expect(await screen.findByText("学习统计")).toBeTruthy();
+    expect(screen.getByText("1 分钟")).toBeTruthy();
+    expect(screen.getByText(/今日自评/).textContent).toContain("正确率 75%");
+    expect(screen.getByRole("button", { name: /分享/ })).toBeTruthy();
+  });
+
+  it("周月年三个区间都能切，柱子数量跟着变", async () => {
+    render(<App />);
+    await screen.findByText("学习统计");
+
+    expect(screen.getAllByRole("button", { name: /学习 \d+ 词/ })).toHaveLength(7);
+
+    fireEvent.click(screen.getByRole("radio", { name: "月" }));
+    expect(screen.getAllByRole("button", { name: /学习 \d+ 词/ })).toHaveLength(30);
+
+    fireEvent.click(screen.getByRole("radio", { name: "年" }));
+    expect(screen.getAllByRole("button", { name: /学习 \d+ 词/ })).toHaveLength(12);
+  });
+
+  it("点柱子把那一天的数字顶到图上方", async () => {
+    const key = dayKey(Date.now());
+    seed({ daily: { [key]: { ms: 65_000, n: 4, ok: 3, words: 3, fresh: 2, mastered: 1 } } });
+    render(<App />);
+    await screen.findByText("学习统计");
+
+    const bars = screen.getAllByRole("button", { name: /学习 \d+ 词/ });
+    fireEvent.click(bars[bars.length - 1]);
+
+    // 默认显示整个区间的合计，选中后换成这一天
+    expect(screen.getByText(/学习 3 词 · 1 分钟/)).toBeTruthy();
+  });
+
+  it("点分享给出预览对话框", async () => {
+    render(<App />);
+    await screen.findByText("学习统计");
+    fireEvent.click(screen.getByRole("button", { name: /分享/ }));
+
+    expect(await screen.findByText("分享今日打卡")).toBeTruthy();
   });
 });
 

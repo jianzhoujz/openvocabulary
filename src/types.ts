@@ -78,3 +78,23 @@ export type DeckSummary = {
   count: number;
   sectionCount: number;
 };
+
+/**
+ * 单日学习记录，按本地日期聚合，跨词表合并。
+ *
+ * 字段名同样刻意短——每天一条，两年就是七百多条，一起序列化进 localStorage。
+ */
+export type DayLog = {
+  /** 学习时长，毫秒 */
+  ms: number;
+  /** 自评次数 */
+  n: number;
+  /** 答对次数 */
+  ok: number;
+  /** 学习词数。同一个词当天反复出现只算一次 */
+  words: number;
+  /** 其中此前从没背过的新词 */
+  fresh: number;
+  /** 当天升到「已掌握」的词数 */
+  mastered: number;
+};

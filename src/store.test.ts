@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
+import { IDLE_GAP_MS, dayKey, emptyDay } from "@/lib/activity";
 import { isMastered } from "@/lib/scheduler";
 import { DEFAULT_SETTINGS, useStore } from "@/store";
 import type { Card, Deck } from "@/types";
@@ -32,6 +33,8 @@ function resetStore() {
     revealed: false,
     recent: [],
     session: { ok: 0, bad: 0 },
+    daily: {},
+    activeAt: null,
   });
 }
 
@@ -157,5 +160,61 @@ describe("连续作答", () => {
       useStore.getState().answer(true);
     }
     expect(new Set(seen).size).toBe(3);
+  });
+});
+
+describe("打卡日志", () => {
+  const today = () => useStore.getState().daily[dayKey(Date.now())] ?? emptyDay();
+
+  it("自评一次记一次，同时算作学过一个新词", () => {
+    useStore.getState().answer(true);
+    expect(today()).toMatchObject({ n: 1, ok: 1, words: 1, fresh: 1 });
+  });
+
+  it("同一个词当天反复出现，学习词数只算一次", () => {
+    useStore.setState({ current: card("a1") });
+    useStore.getState().answer(true);
+    useStore.setState({ current: card("a1") });
+    useStore.getState().answer(false);
+
+    expect(today()).toMatchObject({ n: 2, ok: 1, words: 1, fresh: 1 });
+  });
+
+  it("升到已掌握记一次，之后再答对不重复记", () => {
+    for (let i = 0; i < 7; i++) {
+      useStore.setState({ current: card("a1") });
+      useStore.getState().answer(true);
+    }
+    expect(today().mastered).toBe(1);
+  });
+
+  it("两次操作之间的间隔计入学习时长", () => {
+    useStore.setState({ activeAt: Date.now() - 5_000 });
+    useStore.getState().tickActivity();
+
+    expect(today().ms).toBeGreaterThanOrEqual(5_000);
+    expect(today().ms).toBeLessThan(6_000);
+  });
+
+  it("间隔过长视作中途走开，整段不计入但重新开表", () => {
+    useStore.setState({ activeAt: Date.now() - IDLE_GAP_MS - 1_000 });
+    useStore.getState().tickActivity();
+
+    expect(today().ms).toBe(0);
+    expect(useStore.getState().activeAt).not.toBeNull();
+  });
+
+  it("离开词表与切后台都停表", () => {
+    useStore.getState().pauseActivity();
+    expect(useStore.getState().activeAt).toBeNull();
+
+    useStore.getState().leaveDeck();
+    expect(useStore.getState().activeAt).toBeNull();
+  });
+
+  it("重置单个词表的进度不会抹掉打卡日志——日志是跨词表的", () => {
+    useStore.getState().answer(true);
+    useStore.getState().resetDeck("pte-core");
+    expect(today().n).toBe(1);
   });
 });

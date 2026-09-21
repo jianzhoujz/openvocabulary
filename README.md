@@ -12,6 +12,10 @@
 网页的用法：选词表 → 随机出词 → 可切换「看词猜义」/「看义猜词」→ 点开答案 → 自评 ✅/❌。
 自评结果会改变该词之后出现的概率：没背过的权重最高，答错的次之，已掌握的最低。
 
+首页词表列表下方是学习统计：今日时长 / 学习词数 / 掌握词数，以及周、月、年三个区间的历史柱图，
+点柱子能看那一天（那个月）的明细。旁边的「分享」会画一张打卡图，
+在手机上点分享调起系统面板，可以直接发给微信好友或朋友圈；不支持的浏览器退回保存图片。
+
 ```bash
 vp install
 vp dev
@@ -27,6 +31,7 @@ vp dev
 | UI          | Tailwind CSS v4 + shadcn/ui（Radix + vaul）       |
 | 状态        | zustand + persist                                 |
 | 持久化      | localStorage（节流写入），支持导出/导入 JSON 备份 |
+| 打卡分享    | Canvas 2D 出图 + Web Share API                    |
 | 测试        | Vitest + happy-dom + Testing Library              |
 
 ## 常用命令
@@ -63,18 +68,24 @@ src/
   store.ts                 zustand store，含持久化与抽词循环
   lib/
     scheduler.ts           抽词策略（纯函数，可单测）
+    activity.ts            打卡日志的日期切分与区间聚合（纯函数，可单测）
+    shareCard.ts           用 Canvas 画打卡分享图
     storage.ts             节流 localStorage、导出/导入
     utils.ts               cn()
   hooks/
     useTheme.ts            深浅色跟随系统 / 手动
     useAnswerKeys.ts       PC 键盘快捷键
     useSpeech.ts           朗读能力探测与调用
+    useStudyClock.ts       背诵页在场时累计学习时长
   components/
     DeckPicker.tsx         选词表页
     StudyView.tsx          背诵页骨架
     StudyCard.tsx          卡片正反面
     SectionFilter.tsx      模块筛选（底部抽屉）
     StatsDialog.tsx        进度、设置与备份
+    StatsPanel.tsx         首页的打卡统计模块
+    ActivityChart.tsx      学习词数柱图
+    ShareDialog.tsx        打卡图预览与系统分享
     InstallHint.tsx        iOS 添加到主屏幕指引
     ui/                    shadcn 组件，源码在仓库里，直接改
 ```
