@@ -6,7 +6,7 @@ import { applyAnswer, candidates, emptyStat, isMastered, isNew, pickNext } from 
 import { STORAGE_KEY, throttledStorage } from "@/lib/storage";
 import type { Card, CardStat, DayLog, Deck, DeckId, DeckProgress, Settings } from "@/types";
 
-export const DECK_IDS = ["pte-core", "tcf-canada"] as const;
+export const DECK_IDS = ["pte-core", "tcf-canada-mots", "tcf-canada-phrases"] as const;
 
 export const DEFAULT_SETTINGS: Settings = {
   mode: "front-to-gloss",
@@ -19,7 +19,8 @@ export const DEFAULT_SETTINGS: Settings = {
 
 const emptyProgress = (): Record<DeckId, DeckProgress> => ({
   "pte-core": { stats: {} },
-  "tcf-canada": { stats: {} },
+  "tcf-canada-mots": { stats: {} },
+  "tcf-canada-phrases": { stats: {} },
 });
 
 type Persisted = {
@@ -28,6 +29,14 @@ type Persisted = {
   daily: Record<string, DayLog>;
   settings: Settings;
   lastDeckId: DeckId | null;
+  /**
+   * 拆表前 "tcf-canada" 的进度，等待认领。
+   *
+   * 单词、短语两表的卡片 ID 与拆分前相同，但启动时还没载入词库，
+   * 不知道哪条进度属于哪张表。所以先原样放在这里，`openDeck` 载入某张表后
+   * 把属于它的条目搬过去；两张表都认领完就空了。
+   */
+  legacyStats: Record<string, CardStat>;
 };
 
 type Transient = {
@@ -66,6 +75,25 @@ function draw(state: Store): Card | null {
   return pickNext(pool, stats, state.recent, Date.now());
 }
 
+/** 把 `legacyStats` 里属于 `deck` 的条目搬进该词表的进度 */
+function claimLegacy(s: Store, deck: Deck): Partial<Pick<Store, "progress" | "legacyStats">> {
+  const legacyStats = { ...s.legacyStats };
+  const moved: Record<string, CardStat> = {};
+  for (const { id } of deck.cards) {
+    if (!(id in legacyStats)) continue;
+    moved[id] = legacyStats[id];
+    delete legacyStats[id];
+  }
+  if (Object.keys(moved).length === 0) return {};
+
+  const stats = s.progress[deck.id].stats;
+  return {
+    // 新表里已有的记录更新，优先保留
+    progress: { ...s.progress, [deck.id]: { stats: { ...moved, ...stats } } },
+    legacyStats,
+  };
+}
+
 function bump(
   daily: Record<string, DayLog>,
   key: string,
@@ -95,6 +123,7 @@ export const useStore = create<Store>()(
       daily: {},
       settings: DEFAULT_SETTINGS,
       lastDeckId: null,
+      legacyStats: {},
 
       deck: null,
       status: "idle",
@@ -112,7 +141,8 @@ export const useStore = create<Store>()(
           const res = await fetch(`${import.meta.env.BASE_URL}data/${id}.json`);
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const deck = (await res.json()) as Deck;
-          set({
+          set((s) => ({
+            ...claimLegacy(s, deck),
             deck,
             status: "ready",
             lastDeckId: id,
@@ -120,7 +150,7 @@ export const useStore = create<Store>()(
             session: { ok: 0, bad: 0 },
             revealed: false,
             activeAt: Date.now(),
-          });
+          }));
           get().drawNext();
         } catch {
           set({ status: "error", activeAt: null });
@@ -210,13 +240,28 @@ export const useStore = create<Store>()(
     {
       name: STORAGE_KEY,
       storage: createJSONStorage(() => throttledStorage),
-      version: 1,
+      version: 2,
       partialize: (s): Persisted => ({
         progress: s.progress,
         daily: s.daily,
         settings: s.settings,
         lastDeckId: s.lastDeckId,
+        legacyStats: s.legacyStats,
       }),
+      migrate: (persisted, version) => {
+        const p = { ...(persisted as Record<string, unknown>) };
+        if (version < 2) {
+          // v1 只有一张 "tcf-canada" 表，v2 拆成单词、短语两张，进度挪进 legacyStats 等认领
+          const { "tcf-canada": legacy, ...progress } = (p.progress ?? {}) as Record<
+            string,
+            DeckProgress
+          >;
+          p.progress = progress;
+          p.legacyStats = legacy?.stats ?? {};
+          if (p.lastDeckId === "tcf-canada") p.lastDeckId = "tcf-canada-phrases";
+        }
+        return p as Persisted;
+      },
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<Persisted>;
         return {
@@ -226,6 +271,10 @@ export const useStore = create<Store>()(
           progress: { ...emptyProgress(), ...p.progress },
           daily: pruneDaily(p.daily ?? {}, Date.now()),
           settings: { ...DEFAULT_SETTINGS, ...p.settings },
+          legacyStats: p.legacyStats ?? {},
+          lastDeckId: (DECK_IDS as readonly string[]).includes(p.lastDeckId ?? "")
+            ? (p.lastDeckId as DeckId)
+            : null,
         };
       },
     },

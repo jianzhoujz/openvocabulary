@@ -2,7 +2,8 @@
  * 从 `vocab/<exam>/_src.psv` 生成网页用的 JSON 词库。
  *
  * 运行：vp run build:data
- * 产物：public/data/pte-core.json、public/data/tcf-canada.json（生成物，勿手改）
+ * 产物：public/data/pte-core.json、public/data/tcf-canada-mots.json、
+ *   public/data/tcf-canada-phrases.json（生成物，勿手改）
  */
 import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -49,11 +50,23 @@ const DECKS: RawDeck[] = [
     pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4]], note: f[5], example: f[6] }),
   },
   {
-    id: "tcf-canada",
-    name: "TCF Canada",
+    id: "tcf-canada-mots",
+    name: "TCF Canada 单词",
     subtitle: "法语 · 目标 NCLC 7+",
     lang: "fr",
-    src: join(VOCAB_DIR, "tcf-canada", "_src.psv"),
+    src: join(VOCAB_DIR, "tcf-canada-mots", "_src.psv"),
+    sectionMap: join(VOCAB_DIR, "tools", "sections-fr.txt"),
+    ipaTable: join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
+    glossLabels: ["English", "中文"],
+    // section|theme|fr|pos|en|zh|note|exemple
+    pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4], f[5]], note: f[6], example: f[7] }),
+  },
+  {
+    id: "tcf-canada-phrases",
+    name: "TCF Canada 短语",
+    subtitle: "法语 · 目标 NCLC 7+",
+    lang: "fr",
+    src: join(VOCAB_DIR, "tcf-canada-phrases", "_src.psv"),
     sectionMap: join(VOCAB_DIR, "tools", "sections-fr.txt"),
     ipaTable: join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
     glossLabels: ["English", "中文"],
@@ -170,9 +183,9 @@ for (const deck of DECKS) {
 
   const kb = Math.round(Buffer.byteLength(json) / 1024);
   console.log(
-    `${deck.id.padEnd(12)} ${String(built.cards.length).padStart(5)} 条  ${built.sections.length} 个模块  ${String(built.ipaCount).padStart(4)} 条带音标  ${kb} KB`,
+    `${deck.id.padEnd(18)} ${String(built.cards.length).padStart(5)} 条  ${built.sections.length} 个模块  ${String(built.ipaCount).padStart(4)} 条带音标  ${kb} KB`,
   );
 }
 
 writeFileSync(join(OUT_DIR, "index.json"), JSON.stringify(manifest));
-console.log(`index.json    ${manifest.length} 个词表`);
+console.log(`${"index.json".padEnd(18)} ${String(manifest.length).padStart(5)} 个词表`);

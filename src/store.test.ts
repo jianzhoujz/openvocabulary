@@ -1,7 +1,9 @@
+// @vitest-environment happy-dom
 import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 
 import { IDLE_GAP_MS, dayKey, emptyDay } from "@/lib/activity";
 import { isMastered } from "@/lib/scheduler";
+import { STORAGE_KEY, flushStorage } from "@/lib/storage";
 import { DEFAULT_SETTINGS, useStore } from "@/store";
 import type { Card, Deck } from "@/types";
 
@@ -24,9 +26,14 @@ const DECK: Deck = {
 
 function resetStore() {
   useStore.setState({
-    progress: { "pte-core": { stats: {} }, "tcf-canada": { stats: {} } },
+    progress: {
+      "pte-core": { stats: {} },
+      "tcf-canada-mots": { stats: {} },
+      "tcf-canada-phrases": { stats: {} },
+    },
     settings: { ...DEFAULT_SETTINGS },
     lastDeckId: null,
+    legacyStats: {},
     deck: null,
     status: "idle",
     current: null,
@@ -62,7 +69,7 @@ describe("openDeck", () => {
       "fetch",
       vi.fn(() => Promise.resolve(new Response("", { status: 404 }))),
     );
-    await useStore.getState().openDeck("tcf-canada");
+    await useStore.getState().openDeck("tcf-canada-phrases");
     expect(useStore.getState().status).toBe("error");
   });
 });
@@ -216,5 +223,93 @@ describe("打卡日志", () => {
     useStore.getState().answer(true);
     useStore.getState().resetDeck("pte-core");
     expect(today().n).toBe(1);
+  });
+});
+
+describe("拆表迁移", () => {
+  const stat = (lv: number) => ({ lv, n: 5, ok: 5, bad: 0, streak: 5, at: 1, lastBad: false });
+
+  const tcfDeck = (id: Deck["id"], cards: Card[]): Deck => ({
+    ...DECK,
+    id,
+    lang: "fr",
+    glossLabels: ["English", "中文"],
+    cards,
+  });
+
+  async function hydrateFrom(state: unknown, version: number) {
+    flushStorage();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ state, version }));
+    await useStore.persist.rehydrate();
+  }
+
+  async function open(deck: Deck) {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => Promise.resolve(new Response(JSON.stringify(deck)))),
+    );
+    await useStore.getState().openDeck(deck.id);
+  }
+
+  it("v1 的 tcf-canada 进度先挂起，不直接算进任何一张新表", async () => {
+    await hydrateFrom(
+      {
+        progress: {
+          "pte-core": { stats: { p1: stat(1) } },
+          "tcf-canada": { stats: { m1: stat(6), f1: stat(6) } },
+        },
+        lastDeckId: "tcf-canada",
+      },
+      1,
+    );
+
+    const s = useStore.getState();
+    expect(s.legacyStats).toEqual({ m1: stat(6), f1: stat(6) });
+    expect(s.progress["tcf-canada-mots"].stats).toEqual({});
+    expect(s.progress["tcf-canada-phrases"].stats).toEqual({});
+    expect(s.progress["pte-core"].stats).toEqual({ p1: stat(1) });
+    expect(s.progress).not.toHaveProperty("tcf-canada");
+    expect(s.lastDeckId).toBe("tcf-canada-phrases");
+  });
+
+  it("打开新表时只认领属于它的进度，两表都打开后挂起的进度清空", async () => {
+    await hydrateFrom({ progress: { "tcf-canada": { stats: { m1: stat(6), f1: stat(2) } } } }, 1);
+
+    await open(tcfDeck("tcf-canada-mots", [card("m1"), card("m2")]));
+    expect(useStore.getState().progress["tcf-canada-mots"].stats).toEqual({ m1: stat(6) });
+    expect(useStore.getState().legacyStats).toEqual({ f1: stat(2) });
+
+    await open(tcfDeck("tcf-canada-phrases", [card("f1")]));
+    expect(useStore.getState().progress["tcf-canada-phrases"].stats).toEqual({ f1: stat(2) });
+    expect(useStore.getState().legacyStats).toEqual({});
+  });
+
+  it("新表里已有的记录优先于挂起的旧记录", async () => {
+    await hydrateFrom(
+      {
+        progress: {
+          "tcf-canada": { stats: { m1: stat(1) } },
+          "tcf-canada-mots": { stats: { m1: stat(4) } },
+        },
+      },
+      1,
+    );
+    await open(tcfDeck("tcf-canada-mots", [card("m1")]));
+    expect(useStore.getState().progress["tcf-canada-mots"].stats.m1).toEqual(stat(4));
+  });
+
+  it("v2 存档原样恢复，不再迁移", async () => {
+    await hydrateFrom(
+      {
+        progress: { "tcf-canada-mots": { stats: { m1: stat(3) } } },
+        legacyStats: { f1: stat(2) },
+        lastDeckId: "tcf-canada-mots",
+      },
+      2,
+    );
+    const s = useStore.getState();
+    expect(s.progress["tcf-canada-mots"].stats).toEqual({ m1: stat(3) });
+    expect(s.legacyStats).toEqual({ f1: stat(2) });
+    expect(s.lastDeckId).toBe("tcf-canada-mots");
   });
 });

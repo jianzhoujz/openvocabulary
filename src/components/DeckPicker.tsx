@@ -5,7 +5,7 @@ import { InstallHint } from "@/components/InstallHint";
 import { StatsPanel } from "@/components/StatsPanel";
 import { Progress } from "@/components/ui/progress";
 import { isMastered, isNew } from "@/lib/scheduler";
-import { useStore } from "@/store";
+import { DECK_IDS, useStore } from "@/store";
 import type { DeckSummary } from "@/types";
 
 export function DeckPicker() {
@@ -18,7 +18,8 @@ export function DeckPicker() {
     let alive = true;
     fetch(`${import.meta.env.BASE_URL}data/index.json`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((d: DeckSummary[]) => alive && setDecks(d))
+      // 浏览器可能缓存着拆表前的清单，里面的 "tcf-canada" 在 progress 里已经没有了
+      .then((d: DeckSummary[]) => alive && setDecks(d.filter((x) => DECK_IDS.includes(x.id))))
       .catch(() => alive && setFailed(true));
     return () => {
       alive = false;

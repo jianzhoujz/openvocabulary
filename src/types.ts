@@ -1,4 +1,4 @@
-export type DeckId = "pte-core" | "tcf-canada";
+export type DeckId = "pte-core" | "tcf-canada-mots" | "tcf-canada-phrases";
 
 export type Card = {
   id: string;
@@ -9,7 +9,7 @@ export type Card = {
   pos: string;
   /** 音标。只有能归约成单个词的条目才有，多词语块没有 */
   ipa?: string;
-  /** 释义，与 Deck.glossLabels 一一对应。PTE 为 [中文]，TCF 为 [English, 中文] */
+  /** 释义，与 Deck.glossLabels 一一对应。PTE 为 [中文]，TCF 两表为 [English, 中文] */
   glosses: string[];
   note: string;
   example: string;

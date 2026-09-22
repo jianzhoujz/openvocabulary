@@ -34,7 +34,8 @@ const SOURCE = "https://raw.githubusercontent.com/open-dict-data/ipa-dict/master
 type Job = {
   out: string;
   dict: string;
-  src: string;
+  /** 一个音标表可由多个 _src.psv 合并生成（法语单词、短语两表共用 ipa-fr.tsv） */
+  srcs: string[];
   /** _src.psv 里词条所在的列（0 起） */
   termCol: number;
   /** 查词前剥掉的冠词等前缀——词典按裸词收录 */
@@ -45,14 +46,17 @@ const JOBS: Job[] = [
   {
     out: "ipa-en.tsv",
     dict: "en_US",
-    src: join(VOCAB_DIR, "pte-core", "_src.psv"),
+    srcs: [join(VOCAB_DIR, "pte-core", "_src.psv")],
     termCol: 2,
     strip: /^(the|a|an)\s+/i,
   },
   {
     out: "ipa-fr.tsv",
     dict: "fr_FR",
-    src: join(VOCAB_DIR, "tcf-canada", "_src.psv"),
+    srcs: [
+      join(VOCAB_DIR, "tcf-canada-mots", "_src.psv"),
+      join(VOCAB_DIR, "tcf-canada-phrases", "_src.psv"),
+    ],
     termCol: 2,
     strip: /^(le|la|les|un|une|des|du)\s+|^l'/i,
   },
@@ -97,12 +101,14 @@ mkdirSync(OUT_DIR, { recursive: true });
 for (const job of JOBS) {
   const dict = await loadDict(job.dict);
 
-  const terms = readFileSync(job.src, "utf8")
-    .replace(/^﻿/, "")
-    .split(/\r?\n/)
-    .slice(1)
-    .filter(Boolean)
-    .map((line) => line.split("|")[job.termCol]);
+  const terms = job.srcs.flatMap((src) =>
+    readFileSync(src, "utf8")
+      .replace(/^﻿/, "")
+      .split(/\r?\n/)
+      .slice(1)
+      .filter(Boolean)
+      .map((line) => line.split("|")[job.termCol]),
+  );
 
   const rows: string[] = [];
   const seen = new Set<string>();

@@ -47,6 +47,7 @@ function Tile({ label, value }: { label: string; value: string }) {
 export function StatsPanel({ decks }: { decks: DeckSummary[] }) {
   const daily = useStore((s) => s.daily);
   const progress = useStore((s) => s.progress);
+  const legacyStats = useStore((s) => s.legacyStats);
 
   const [period, setPeriod] = useState<Period>("week");
   const [activeKey, setActiveKey] = useState<string | null>(null);
@@ -63,14 +64,16 @@ export function StatsPanel({ decks }: { decks: DeckSummary[] }) {
   const shown = active?.log ?? sumDays(buckets.map((b) => b.log));
 
   const mastered = useMemo(() => {
+    // 拆表前的 TCF 进度在两张新表都打开过之前还没认领完，也要算上
+    const all = [...decks.map((deck) => progress[deck.id].stats), legacyStats];
     let total = 0;
-    for (const deck of decks) {
-      for (const stat of Object.values(progress[deck.id].stats)) {
+    for (const stats of all) {
+      for (const stat of Object.values(stats)) {
         if (isMastered(stat)) total += 1;
       }
     }
     return total;
-  }, [decks, progress]);
+  }, [decks, progress, legacyStats]);
 
   const shareStats = useMemo<ShareStats>(
     () => ({

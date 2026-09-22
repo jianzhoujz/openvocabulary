@@ -41,9 +41,14 @@ const DECK: Deck = {
 
 function seed(patch: Partial<ReturnType<typeof useStore.getState>> = {}) {
   useStore.setState({
-    progress: { "pte-core": { stats: {} }, "tcf-canada": { stats: {} } },
+    progress: {
+      "pte-core": { stats: {} },
+      "tcf-canada-mots": { stats: {} },
+      "tcf-canada-phrases": { stats: {} },
+    },
     settings: { ...DEFAULT_SETTINGS },
     lastDeckId: null,
+    legacyStats: {},
     deck: null,
     status: "idle",
     current: null,
