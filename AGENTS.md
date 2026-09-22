@@ -158,7 +158,7 @@ vp test --run   # 81 项测试
 
 `.github/workflows/deploy.yml` 里有两处是踩坑换来的，改动前先看注释：
 
-1. **`setup-node` 不能用 `cache: npm`** —— 它会在仓库目录里执行 `npm config get cache`，用的是 runner 自带的旧版 npm，那一下就先撞 `EBADDEVENGINES`。缓存改用 `actions/cache` 单独做。
+1. **`setup-node` 不能用 `cache: npm`** —— 它会在仓库目录里执行 `npm config get cache`，用的是 runner 自带的旧版 npm，那一下就先撞 `EBADDEVENGINES`。缓存改用 `actions/cache` 单独做。`setup-node` v5 起检测到 `packageManager` 字段会自动开缓存，效果一样，所以还要显式写 `package-manager-cache: false`。
 2. **升级 npm 的那步要在仓库目录外执行**（`working-directory: ${{ runner.temp }}`），否则命令本身也会去读 `package.json` 的 `devEngines`。
 
 ## 部署
