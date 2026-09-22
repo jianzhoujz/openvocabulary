@@ -50,9 +50,12 @@ function TermBlock({
               e.stopPropagation();
               onSpeak();
             }}
-            className="text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:ring-ring/50 -mr-1 shrink-0 rounded-lg p-2 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
+            className={cn(
+              "text-muted-foreground hover:text-foreground hover:bg-accent active:bg-accent focus-visible:ring-ring/50 -my-1.5 -mr-2 shrink-0 rounded-xl transition-colors focus-visible:ring-[3px] focus-visible:outline-none",
+              big ? "p-3" : "p-2.5",
+            )}
           >
-            <Volume2 className="size-5" />
+            <Volume2 className={big ? "size-7" : "size-6"} />
           </button>
         )}
       </div>
@@ -79,9 +82,10 @@ export function StudyCard({
   // 看义猜词时，翻面前词条是答案，绝不能朗读出来
   const termVisible = askingForGloss || revealed;
 
+  // 词条一露面就读：看词猜义是换卡时，看义猜词要等翻面
   useEffect(() => {
-    if (autoSpeak && revealed && supported) say(card.front);
-  }, [autoSpeak, revealed, supported, say, card.front]);
+    if (autoSpeak && termVisible && supported) say(card.front, { quiet: true });
+  }, [autoSpeak, termVisible, supported, say, card.id, card.front]);
 
   const glosses = (
     <div lang="zh" className="leading-snug break-words">
@@ -152,9 +156,9 @@ export function StudyCard({
                         type="button"
                         aria-label="朗读例句"
                         onClick={() => say(card.example)}
-                        className="text-muted-foreground hover:text-foreground hover:bg-accent focus-visible:ring-ring/50 rounded p-1 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
+                        className="text-muted-foreground hover:text-foreground hover:bg-accent active:bg-accent focus-visible:ring-ring/50 -my-1.5 rounded-lg p-2 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
                       >
-                        <Volume2 className="size-3.5" />
+                        <Volume2 className="size-5" />
                       </button>
                     )}
                   </div>

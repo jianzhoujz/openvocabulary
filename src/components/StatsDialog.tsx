@@ -125,9 +125,9 @@ export function StatsDialog({ deck, open, onOpenChange }: Props) {
                 className="mt-0.5"
               />
               <span>
-                <span className="text-sm font-medium">翻面时自动朗读</span>
+                <span className="text-sm font-medium">自动朗读词条</span>
                 <span className="text-muted-foreground block text-xs">
-                  用浏览器自带的语音合成朗读词条。卡片上的喇叭按钮随时可以手动触发
+                  看词猜义时换到新词就读，看义猜词时翻面再读。卡片上的喇叭按钮随时可以手动触发
                 </span>
               </span>
             </label>

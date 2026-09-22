@@ -298,6 +298,11 @@ describe("拆表迁移", () => {
     expect(useStore.getState().progress["tcf-canada-mots"].stats.m1).toEqual(stat(4));
   });
 
+  it("v2 存档升级时把自动朗读打开", async () => {
+    await hydrateFrom({ settings: { ...DEFAULT_SETTINGS, autoSpeak: false } }, 2);
+    expect(useStore.getState().settings.autoSpeak).toBe(true);
+  });
+
   it("v2 存档原样恢复，不再迁移", async () => {
     await hydrateFrom(
       {

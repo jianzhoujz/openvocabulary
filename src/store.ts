@@ -13,7 +13,7 @@ export const DEFAULT_SETTINGS: Settings = {
   sections: [],
   includeMastered: false,
   newCardLimit: 20,
-  autoSpeak: false,
+  autoSpeak: true,
   theme: "system",
 };
 
@@ -240,7 +240,7 @@ export const useStore = create<Store>()(
     {
       name: STORAGE_KEY,
       storage: createJSONStorage(() => throttledStorage),
-      version: 2,
+      version: 3,
       partialize: (s): Persisted => ({
         progress: s.progress,
         daily: s.daily,
@@ -259,6 +259,10 @@ export const useStore = create<Store>()(
           p.progress = progress;
           p.legacyStats = legacy?.stats ?? {};
           if (p.lastDeckId === "tcf-canada") p.lastDeckId = "tcf-canada-phrases";
+        }
+        if (version < 3 && p.settings) {
+          // v3 起自动朗读默认打开。旧默认是关，存档里的 false 几乎都是没动过的默认值，一并翻成开
+          p.settings = { ...(p.settings as Settings), autoSpeak: true };
         }
         return p as Persisted;
       },

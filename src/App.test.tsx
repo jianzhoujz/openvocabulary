@@ -342,6 +342,12 @@ describe("音标与朗读", () => {
     vi.stubGlobal("SpeechSynthesisUtterance", FakeUtterance);
   }
 
+  /** 关掉自动朗读，只看手动点喇叭的效果 */
+  const manual = () => ({
+    ...studying(DECK.cards[2]),
+    settings: { ...DEFAULT_SETTINGS, autoSpeak: false },
+  });
+
   it("有音标的词条会把音标显示出来", () => {
     seed(studying(DECK.cards[2]));
     render(<App />);
@@ -364,7 +370,7 @@ describe("音标与朗读", () => {
 
   it("点喇叭朗读词条，翻面后还能单独朗读例句", () => {
     stubSpeech();
-    seed(studying(DECK.cards[2]));
+    seed(manual());
     render(<App />);
 
     fireEvent.click(screen.getByRole("button", { name: "朗读" }));
@@ -377,16 +383,26 @@ describe("音标与朗读", () => {
 
   it("浏览器不支持语音合成时不渲染朗读按钮", () => {
     vi.stubGlobal("speechSynthesis", undefined);
-    seed(studying(DECK.cards[2]));
+    seed(manual());
     render(<App />);
     expect(screen.queryByRole("button", { name: "朗读" })).toBeNull();
   });
 
-  it("开了自动朗读，翻面时自己读出来", () => {
+  it("看词猜义时一换到新词就自动读，翻面不再重读", () => {
+    stubSpeech();
+    seed(studying(DECK.cards[2]));
+    render(<App />);
+
+    expect(spoken).toEqual(["invoice"]);
+    fireEvent.click(screen.getByRole("button", { name: "看答案" }));
+    expect(spoken).toEqual(["invoice"]);
+  });
+
+  it("看义猜词时词条是答案，翻面后才自动读", () => {
     stubSpeech();
     seed({
       ...studying(DECK.cards[2]),
-      settings: { ...DEFAULT_SETTINGS, autoSpeak: true },
+      settings: { ...DEFAULT_SETTINGS, mode: "gloss-to-front" },
     });
     render(<App />);
 
@@ -395,9 +411,31 @@ describe("音标与朗读", () => {
     expect(spoken).toEqual(["invoice"]);
   });
 
-  it("引擎报错时把错误摆到气泡里，而不是默默什么都不发生", () => {
+  it("关掉自动朗读就不自己出声", () => {
+    stubSpeech();
+    seed(manual());
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: "看答案" }));
+    expect(spoken).toEqual([]);
+  });
+
+  it("自动朗读失败不弹气泡，手动点喇叭才报", () => {
     stubSpeech();
     seed(studying(DECK.cards[2]));
+    render(<App />);
+
+    act(() => lastUtterance!.emit("error", { error: "not-allowed" }));
+    expect(screen.queryByRole("alert")).toBeNull();
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+    act(() => lastUtterance!.emit("error", { error: "not-allowed" }));
+    expect(screen.getByRole("alert")).toBeTruthy();
+  });
+
+  it("引擎报错时把错误摆到气泡里，而不是默默什么都不发生", () => {
+    stubSpeech();
+    seed(manual());
     render(<App />);
 
     fireEvent.click(screen.getByRole("button", { name: "朗读" }));
@@ -416,7 +454,7 @@ describe("音标与朗读", () => {
 
   it("我们自己 cancel 造成的打断不算错误，不弹气泡", () => {
     stubSpeech();
-    seed(studying(DECK.cards[2]));
+    seed(manual());
     render(<App />);
 
     fireEvent.click(screen.getByRole("button", { name: "朗读" }));
@@ -430,7 +468,7 @@ describe("音标与朗读", () => {
     try {
       // speak 不抛错也不触发任何事件：iOS 上最常见的静默失败
       stubSpeech();
-      seed(studying(DECK.cards[2]));
+      seed(manual());
       render(<App />);
 
       fireEvent.click(screen.getByRole("button", { name: "朗读" }));
@@ -447,7 +485,7 @@ describe("音标与朗读", () => {
     vi.useFakeTimers();
     try {
       stubSpeech((u) => u.emit("start"));
-      seed(studying(DECK.cards[2]));
+      seed(manual());
       render(<App />);
 
       fireEvent.click(screen.getByRole("button", { name: "朗读" }));

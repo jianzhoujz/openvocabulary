@@ -19,13 +19,17 @@ export function useSpeech(lang: string) {
   // 离开页面时别让朗读继续
   useEffect(() => stopSpeaking, []);
 
+  /**
+   * quiet：失败不弹气泡。自动朗读不在用户手势里，iOS 上首张卡常被拦，
+   * 每换一张都报错只会烦人；用户点喇叭时再报。
+   */
   const say = useCallback(
-    (text: string) => {
+    (text: string, { quiet = false }: { quiet?: boolean } = {}) => {
       setFailure(null);
       setSpeaking(true);
       speak(text, lang, {
         onSettled: () => setSpeaking(false),
-        onError: setFailure,
+        onError: quiet ? undefined : setFailure,
       });
     },
     [lang],
