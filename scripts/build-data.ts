@@ -22,8 +22,11 @@ type RawDeck = {
   lang: string;
   src: string;
   sectionMap: string;
-  /** 音标查找表，由 scripts/build-ipa.ts 生成 */
-  ipaTable: string;
+  /**
+   * 音标查找表，后面的覆盖前面的：先读 build-ipa.ts 生成的词典表，
+   * 再读手写的 *-manual.tsv（词典查不到的词、所有多词语块）
+   */
+  ipaTables: string[];
   /** 释义列的表头，与 glosses 数组一一对应 */
   glossLabels: string[];
   /** 从 PSV 的一行取出各字段 */
@@ -44,7 +47,10 @@ const DECKS: RawDeck[] = [
     lang: "en",
     src: join(VOCAB_DIR, "pte-core", "_src.psv"),
     sectionMap: join(VOCAB_DIR, "tools", "sections-en.txt"),
-    ipaTable: join(VOCAB_DIR, "tools", "ipa-en.tsv"),
+    ipaTables: [
+      join(VOCAB_DIR, "tools", "ipa-en.tsv"),
+      join(VOCAB_DIR, "tools", "ipa-en-manual.tsv"),
+    ],
     glossLabels: ["中文"],
     // section|theme|term|pos|zh|note|example
     pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4]], note: f[5], example: f[6] }),
@@ -56,7 +62,10 @@ const DECKS: RawDeck[] = [
     lang: "fr",
     src: join(VOCAB_DIR, "tcf-canada-mots", "_src.psv"),
     sectionMap: join(VOCAB_DIR, "tools", "sections-fr.txt"),
-    ipaTable: join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
+    ipaTables: [
+      join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
+      join(VOCAB_DIR, "tools", "ipa-fr-manual.tsv"),
+    ],
     glossLabels: ["English", "中文"],
     // section|theme|fr|pos|en|zh|note|exemple
     pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4], f[5]], note: f[6], example: f[7] }),
@@ -68,7 +77,10 @@ const DECKS: RawDeck[] = [
     lang: "fr",
     src: join(VOCAB_DIR, "tcf-canada-phrases", "_src.psv"),
     sectionMap: join(VOCAB_DIR, "tools", "sections-fr.txt"),
-    ipaTable: join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
+    ipaTables: [
+      join(VOCAB_DIR, "tools", "ipa-fr.tsv"),
+      join(VOCAB_DIR, "tools", "ipa-fr-manual.tsv"),
+    ],
     glossLabels: ["English", "中文"],
     // section|theme|fr|pos|en|zh|note|exemple
     pick: (f) => ({ front: f[2], pos: f[3], glosses: [f[4], f[5]], note: f[6], example: f[7] }),
@@ -95,10 +107,10 @@ function cardId(section: string, theme: string, front: string): string {
     .slice(0, 10);
 }
 
-/** 读音标表：<词条><TAB><音标>，# 开头是注释 */
-function readIpa(path: string): Map<string, string> {
+/** 读音标表：<词条><TAB><音标>，# 开头是注释；多张表按顺序合并，后者覆盖前者 */
+function readIpa(paths: string[]): Map<string, string> {
   const map = new Map<string, string>();
-  for (const line of readLines(path)) {
+  for (const line of paths.flatMap(readLines)) {
     if (line.startsWith("#")) continue;
     const tab = line.indexOf("	");
     if (tab > 0) map.set(line.slice(0, tab), line.slice(tab + 1));
@@ -113,7 +125,7 @@ function buildDeck(deck: RawDeck) {
     if (eq > 0) sectionLabels.set(line.slice(0, eq), line.slice(eq + 1));
   }
 
-  const ipaTable = readIpa(deck.ipaTable);
+  const ipaTable = readIpa(deck.ipaTables);
 
   const lines = readLines(deck.src);
   const expectedCols = lines[0].split("|").length;
@@ -141,7 +153,6 @@ function buildDeck(deck: RawDeck) {
     if (!sectionCounts.has(section)) sectionOrder.push(section);
     sectionCounts.set(section, (sectionCounts.get(section) ?? 0) + 1);
 
-    // 只有能归约成单个词的条目有音标，多词语块靠页面 TTS 朗读
     const ipa = ipaTable.get(front);
     cards.push({ id, section, theme, front, pos, glosses, note, example, ...(ipa ? { ipa } : {}) });
   }

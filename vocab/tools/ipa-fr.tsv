@@ -1,6 +1,6 @@
 # ipa-fr.tsv —— 由 scripts/build-ipa.ts 生成，可手工修正
 # 数据源：open-dict-data/ipa-dict fr_FR（MIT）
-# 只收能归约成单个词的条目，多词语块靠页面上的 TTS 朗读
+# 只收能归约成单个词的条目，多词语块手写在 ipa-fr-manual.tsv
 # 格式：<词条><TAB><音标>，词条须与 _src.psv 第 3 列完全一致
 dénonce	/denɔ̃s/
 Toutefois / Néanmoins	/tutfwa/ / /neɑ̃mwɛ̃/

@@ -14,7 +14,7 @@
  * **只给能归约成单个词的条目标音标。** 多词语块一律跳过：逐词拼接出来的音标
  * 每个词都带主重音、法语还丢了联诵（`met en avant` 实际读 /mɛt‿ɑ̃navɑ̃/ 而不是
  * /ma ɑ̃ avɑ̃/），读着是错的，还会把 PTE 的 RA 模块要练的弱读教反。
- * 那部分交给页面上的 TTS 朗读。
+ * 那部分按实际读法手写在 vocab/tools/ipa-*-manual.tsv，本脚本不碰它。
  *
  * 词条写成 `enrol / enrolment` 这种并列变体时逐个查，音标也用 / 并列。
  *
@@ -132,7 +132,7 @@ for (const job of JOBS) {
   const header = [
     `# ${job.out} —— 由 scripts/build-ipa.ts 生成，可手工修正`,
     `# 数据源：open-dict-data/ipa-dict ${job.dict}（MIT）`,
-    `# 只收能归约成单个词的条目，多词语块靠页面上的 TTS 朗读`,
+    `# 只收能归约成单个词的条目，多词语块手写在 ${job.out.replace(".tsv", "-manual.tsv")}`,
     `# 格式：<词条><TAB><音标>，词条须与 _src.psv 第 ${job.termCol + 1} 列完全一致`,
   ].join("\n");
 

@@ -57,7 +57,8 @@ vp run build:ipa    # 重新生成 vocab/tools/ipa-*.tsv（需联网）
 vocab/                     词表数据，唯一需要手动编辑的内容
   <exam>/_src.psv          数据源
   tools/build.sh           生成 .tsv 与 .md
-  tools/ipa-*.tsv          音标查找表，生成物但可手工修正
+  tools/ipa-{en,fr}.tsv    词典音标表，生成物但可手工修正
+  tools/ipa-*-manual.tsv   手写音标表（短语、词典查不到的词），优先级更高
 
 scripts/build-data.ts      PSV → JSON 的数据管线
 scripts/build-icons.ts     生成主屏幕图标与 favicon（纯算术绘制，无图像库）
@@ -112,19 +113,25 @@ src/
 
 ## 音标与朗读
 
-**音标**只给能归约成单个词的条目——英语 533 条、法语 353 条。多词语块刻意不标：
-逐词拼接出来的音标每个词都带主重音，法语还丢了联诵（`met en avant` 实际读
-/mɛt‿ɑ̃navɑ̃/ 而不是 /ma ɑ̃ avɑ̃/），读着是错的，还会把 PTE 的 `RA` 模块
-要练的弱读教反。那部分交给朗读。
+**音标**覆盖了除纯中文语法卡以外的所有条目，分两张表，`build:data` 合并时手写表优先：
 
-数据来自 [open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict)（MIT）：
+- `vocab/tools/ipa-{en,fr}.tsv` —— `vp run build:ipa` 从词典查出来的单词
+- `vocab/tools/ipa-{en,fr}-manual.tsv` —— 手写：多词语块，以及词典查不到的词
+  （英式拼写、连字符词、省音、缩写、新词）。`build:ipa` 不碰这两份
+
+短语**不能逐词拼接**：那样每个词都带主重音，法语还丢了联诵（`met en avant` 实际读
+/mɛt‿ɑ̃n‿avɑ̃/ 而不是 /mɛ ɑ̃ avɑ̃/），会把 PTE 的 `RA` 模块要练的弱读教反。
+手写表按连读实际读法转写：英语只给实词标重音，功能词用弱读（to /tə/、of /əv/、and /ən/）；
+法语用 ‿ 标联诵。
+
+词典数据来自 [open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict)（MIT）：
 英语取 `en_US`（通用美音，音系上最接近加拿大英语），法语取 `fr_FR`。
 ipa-dict 也有 `fr_QC`，但那是窄式转写，带双元音化和塞擦化
 （`cordialement` 记成 /kɑɔ̯ʁd͡zjalmæ̃/），对照学习不便；
 魁北克特有的**词汇**已经由词表的 `CANADA` 模块覆盖。想换成魁北克读音，
 改 `scripts/build-ipa.ts` 里 `JOBS` 的 `dict` 字段即可。
 
-产物 `vocab/tools/ipa-*.tsv` 提交进仓库，**可以手工修正**。`vp run build:ipa`
+产物 `vocab/tools/ipa-{en,fr}.tsv` 提交进仓库，**可以手工修正**。`vp run build:ipa`
 需要联网，日常构建不依赖它。
 
 **朗读**用浏览器自带的语音合成（Web Speech API），词条和例句各有一个喇叭按钮，
