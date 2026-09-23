@@ -94,6 +94,18 @@ function define(key: "share" | "canShare", value: unknown) {
   Object.defineProperty(navigator, key, { value, configurable: true });
 }
 
+/** Radix 的下拉菜单在 pointerdown 时打开，不是 click */
+async function openMenuItem(name: string) {
+  // 上一次的菜单还在退场动画里时，点到的是那个正在关的菜单，选了不生效
+  await waitFor(() => expect(screen.queryByRole("menu")).toBeNull());
+  fireEvent.pointerDown(screen.getByRole("button", { name: "菜单" }), {
+    button: 0,
+    ctrlKey: false,
+    pointerType: "mouse",
+  });
+  fireEvent.click(await screen.findByRole("menuitem", { name }));
+}
+
 const studying = (current: Card) => ({
   deck: DECK,
   status: "ready" as const,
@@ -313,6 +325,36 @@ describe("背诵页", () => {
     expect(screen.queryByText("To whom it may concern")).toBeNull();
   });
 
+  it("右上角菜单分别打开学习进度和设置，两者不再挤在一个弹窗里", async () => {
+    seed(studying(DECK.cards[0]));
+    render(<App />);
+
+    await openMenuItem("学习进度");
+    const progress = await screen.findByRole("dialog", { name: /学习进度/ });
+    expect(within(progress).getByText(/重置 PTE Core 的进度/)).toBeTruthy();
+    expect(within(progress).queryByText("朗读语速")).toBeNull();
+    fireEvent.keyDown(progress, { key: "Escape" });
+    await waitFor(() => expect(screen.queryByRole("dialog")).toBeNull());
+
+    await openMenuItem("设置");
+    const settings = await screen.findByRole("dialog", { name: "设置" });
+    expect(within(settings).getByText("朗读语速")).toBeTruthy();
+    expect(within(settings).queryByText(/重置/)).toBeNull();
+
+    fireEvent.click(within(settings).getByRole("radio", { name: "正常" }));
+    expect(useStore.getState().settings.speechRate).toBe(1);
+  });
+
+  it("菜单里能切深色模式", async () => {
+    seed(studying(DECK.cards[0]));
+    render(<App />);
+
+    await openMenuItem("深色模式");
+    expect(useStore.getState().settings.theme).toBe("dark");
+    await openMenuItem("浅色模式");
+    expect(useStore.getState().settings.theme).toBe("light");
+  });
+
   it("抽不出卡时显示空状态而不是白屏", () => {
     seed({ deck: DECK, status: "ready", current: null });
     render(<App />);
@@ -412,11 +454,11 @@ describe("音标与朗读", () => {
 
   it("朗读用设置里的语速", () => {
     stubSpeech();
-    seed({ ...manual(), settings: { ...DEFAULT_SETTINGS, autoSpeak: false, speechRate: 0.5 } });
+    seed({ ...manual(), settings: { ...DEFAULT_SETTINGS, autoSpeak: false, speechRate: 0.85 } });
     render(<App />);
 
     fireEvent.click(screen.getByRole("button", { name: "朗读" }));
-    expect(lastUtterance!.rate).toBe(0.5);
+    expect(lastUtterance!.rate).toBe(0.85);
   });
 
   it("速查页右上角能切语速，下一次朗读就生效", async () => {
@@ -425,12 +467,12 @@ describe("音标与朗读", () => {
     render(<App />);
     await screen.findByRole("heading", { level: 1, name: "冠词" });
 
-    // 默认「慢」，点一下到「适中」
-    fireEvent.click(screen.getByRole("button", { name: /朗读语速：慢/ }));
-    expect(useStore.getState().settings.speechRate).toBe(0.85);
+    // 默认「很慢」，点一下到「慢」
+    fireEvent.click(screen.getByRole("button", { name: /朗读语速：很慢/ }));
+    expect(useStore.getState().settings.speechRate).toBe(0.7);
 
     fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
-    expect(lastUtterance!.rate).toBe(0.85);
+    expect(lastUtterance!.rate).toBe(0.7);
   });
 
   it("浏览器不支持语音合成时不渲染朗读按钮", () => {

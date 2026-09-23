@@ -211,10 +211,16 @@ export function CheatSheetView({ id }: { id: string }) {
     <div className="mx-auto flex min-h-dvh w-full max-w-xl flex-col px-4 pb-[calc(2rem+env(safe-area-inset-bottom))]">
       <header className="bg-background/95 sticky top-0 z-10 -mx-4 px-2 pt-[calc(0.5rem+env(safe-area-inset-top))] pb-2 backdrop-blur">
         <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" onClick={closeSheet} aria-label="返回首页">
+          <Button
+            variant="ghost"
+            size="nav"
+            className="-ml-1.5"
+            onClick={closeSheet}
+            aria-label="返回首页"
+          >
             <ChevronLeft />
           </Button>
-          <div className="flex-1 truncate text-sm font-medium">{title}</div>
+          <div className="min-w-0 flex-1 truncate text-lg font-semibold">{title}</div>
           {supported && <SpeechRateButton />}
           <ThemeToggle />
         </div>

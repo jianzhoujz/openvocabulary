@@ -16,6 +16,12 @@ type Props = {
   onReveal: () => void;
 };
 
+/**
+ * 超过这么多个字母的单词在手机上用大号字一行放不下（如 disproportionately、
+ * l'embourgeoisement），降一档字号，再配合按语言断词，别从随便哪个字母中间折行
+ */
+const LONG_WORD = 13;
+
 /** 词条本身：文本 + 音标 + 朗读按钮。只在该露出答案时才渲染 */
 function TermBlock({
   card,
@@ -30,14 +36,19 @@ function TermBlock({
   canSpeak: boolean;
   onSpeak: () => void;
 }) {
+  const longWord = card.front.split(/\s+/).some((w) => w.length > LONG_WORD);
   return (
     <div>
       <div className="flex items-start gap-2">
         <div
           lang={lang}
           className={cn(
-            "min-w-0 flex-1 leading-snug font-semibold break-words",
-            big ? "text-2xl sm:text-3xl" : "text-xl font-medium",
+            "min-w-0 flex-1 leading-snug font-semibold break-words hyphens-auto",
+            big
+              ? longWord
+                ? "text-2xl sm:text-4xl"
+                : "text-3xl sm:text-4xl"
+              : "text-2xl font-medium",
           )}
         >
           {card.front}
@@ -55,13 +66,14 @@ function TermBlock({
               big ? "p-3" : "p-2.5",
             )}
           >
-            <Volume2 className={big ? "size-7" : "size-6"} />
+            <Volume2 className={big ? "size-8" : "size-7"} />
           </button>
         )}
       </div>
 
       {card.ipa && (
-        <div className="text-muted-foreground mt-1.5 text-sm tracking-wide">{card.ipa}</div>
+        // 比正文浅一点区分层次，但不用 muted：那个灰度在手机上看不清
+        <div className="text-foreground/75 mt-2 text-lg tracking-wide">{card.ipa}</div>
       )}
     </div>
   );
@@ -120,16 +132,16 @@ export function StudyCard({
               onSpeak={() => say(card.front)}
             />
           ) : (
-            <div className="text-2xl leading-snug font-semibold sm:text-3xl">{glosses}</div>
+            <div className="text-3xl leading-snug font-semibold sm:text-4xl">{glosses}</div>
           )}
 
-          {card.pos && <div className="text-muted-foreground mt-2 text-sm italic">{card.pos}</div>}
+          {card.pos && <div className="text-foreground/70 mt-2 text-base italic">{card.pos}</div>}
 
           {revealed && (
             <div className="mt-6 flex flex-col gap-4 border-t pt-6">
               {/* 答案 */}
               {askingForGloss ? (
-                <div className="text-xl font-medium">{glosses}</div>
+                <div className="text-2xl font-medium">{glosses}</div>
               ) : (
                 <TermBlock
                   card={card}

@@ -1,11 +1,29 @@
-import { BarChart3, Check, ChevronLeft, Loader2, SlidersHorizontal, X } from "lucide-react";
+import {
+  BarChart3,
+  Check,
+  ChevronLeft,
+  Loader2,
+  Menu,
+  Moon,
+  Settings,
+  SlidersHorizontal,
+  Sun,
+  X,
+} from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 
-import { ThemeToggle } from "@/components/HeaderControls";
+import { ProgressDialog } from "@/components/ProgressDialog";
 import { SectionFilter } from "@/components/SectionFilter";
-import { StatsDialog } from "@/components/StatsDialog";
+import { SettingsDialog } from "@/components/SettingsDialog";
 import { StudyCard } from "@/components/StudyCard";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useAnswerKeys } from "@/hooks/useAnswerKeys";
 import { useStudyClock } from "@/hooks/useStudyClock";
@@ -20,13 +38,15 @@ export function StudyView() {
   const session = useStore((s) => s.session);
   const mode = useStore((s) => s.settings.mode);
   const autoSpeak = useStore((s) => s.settings.autoSpeak);
+  const theme = useStore((s) => s.settings.theme);
   const reveal = useStore((s) => s.reveal);
   const answer = useStore((s) => s.answer);
   const leaveDeck = useStore((s) => s.leaveDeck);
   const updateSettings = useStore((s) => s.updateSettings);
 
   const [filterOpen, setFilterOpen] = useState(false);
-  const [statsOpen, setStatsOpen] = useState(false);
+  const [progressOpen, setProgressOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const sectionLabels = useMemo(
     () => new Map(deck?.sections.map((s) => [s.code, s.label]) ?? []),
@@ -38,7 +58,8 @@ export function StudyView() {
   useStudyClock(status === "ready");
 
   useAnswerKeys({
-    enabled: status === "ready" && current !== null && !filterOpen && !statsOpen,
+    enabled:
+      status === "ready" && current !== null && !filterOpen && !progressOpen && !settingsOpen,
     revealed,
     onReveal: reveal,
     onAnswer,
@@ -71,32 +92,51 @@ export function StudyView() {
     <div className="mx-auto flex h-dvh w-full max-w-xl flex-col px-3 sm:px-4">
       <header className="shrink-0 pt-[calc(0.5rem+env(safe-area-inset-top))] pb-2">
         <div className="flex items-center gap-1">
-          <Button variant="ghost" size="icon" onClick={leaveDeck} aria-label="返回词表列表">
+          <Button
+            variant="ghost"
+            size="nav"
+            className="-ml-1.5"
+            onClick={leaveDeck}
+            aria-label="返回词表列表"
+          >
             <ChevronLeft />
           </Button>
-          <div className="flex-1 truncate text-sm font-medium">{deck.name}</div>
+          <div className="min-w-0 flex-1 truncate text-lg font-semibold">{deck.name}</div>
           {answered > 0 && (
-            <span className="text-muted-foreground mr-1 text-xs tabular-nums">
+            <span className="text-muted-foreground mr-1 shrink-0 text-sm tabular-nums">
               {answered} 题 · {rate}%
             </span>
           )}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setFilterOpen(true)}
-            aria-label="选择模块"
-          >
-            <SlidersHorizontal />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setStatsOpen(true)}
-            aria-label="进度与设置"
-          >
-            <BarChart3 />
-          </Button>
-          <ThemeToggle />
+
+          {/* modal={false}：菜单项打开弹窗时，别让菜单的焦点锁和弹窗的抢在一起卡住页面 */}
+          <DropdownMenu modal={false}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="nav" className="-mr-1.5" aria-label="菜单">
+                <Menu />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onSelect={() => setFilterOpen(true)}>
+                <SlidersHorizontal />
+                选择模块
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setProgressOpen(true)}>
+                <BarChart3 />
+                学习进度
+              </DropdownMenuItem>
+              <DropdownMenuItem onSelect={() => setSettingsOpen(true)}>
+                <Settings />
+                设置
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                onSelect={() => updateSettings({ theme: theme === "dark" ? "light" : "dark" })}
+              >
+                {theme === "dark" ? <Sun /> : <Moon />}
+                {theme === "dark" ? "浅色模式" : "深色模式"}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         <ToggleGroup
@@ -157,7 +197,8 @@ export function StudyView() {
       </footer>
 
       <SectionFilter deck={deck} open={filterOpen} onOpenChange={setFilterOpen} />
-      <StatsDialog deck={deck} open={statsOpen} onOpenChange={setStatsOpen} />
+      <ProgressDialog deck={deck} open={progressOpen} onOpenChange={setProgressOpen} />
+      <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
     </div>
   );
 }

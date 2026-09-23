@@ -87,7 +87,9 @@ src/
     StudyView.tsx          背诵页骨架
     StudyCard.tsx          卡片正反面
     SectionFilter.tsx      模块筛选（底部抽屉）
-    StatsDialog.tsx        进度、设置与备份
+    ProgressDialog.tsx     当前词表的学习进度、备份与重置
+    SettingsDialog.tsx     背诵设置（朗读、语速、新词节流）
+    PanelDialog.tsx        上面两个弹窗的可滚动外壳
     StatsPanel.tsx         首页的打卡统计模块
     ActivityChart.tsx      学习词数柱图
     ShareDialog.tsx        打卡图预览与系统分享

@@ -15,7 +15,7 @@ export const DEFAULT_SETTINGS: Settings = {
   newCardLimit: 20,
   autoSpeak: true,
   theme: "light",
-  speechRate: 0.7,
+  speechRate: 0.5,
 };
 
 /** 朗读语速档位。各家引擎对同一个 rate 的实际快慢不一样，所以只给相对档位 */
@@ -249,7 +249,7 @@ export const useStore = create<Store>()(
     {
       name: STORAGE_KEY,
       storage: createJSONStorage(() => throttledStorage),
-      version: 4,
+      version: 5,
       partialize: (s): Persisted => ({
         progress: s.progress,
         daily: s.daily,
@@ -277,6 +277,12 @@ export const useStore = create<Store>()(
           // v4 起主题改为手动切换、默认浅色。「跟随系统」一律落到浅色，只保留明确选了深色的
           const settings = p.settings as Settings & { theme: string };
           p.settings = { ...settings, theme: settings.theme === "dark" ? "dark" : "light" };
+        }
+        if (version < 5 && p.settings) {
+          // v5 起默认语速从「慢」(0.7) 改成「很慢」(0.5)。0.7 是 v4 的默认值、上线才几小时，
+          // 存档里的 0.7 几乎都是没动过的默认值，一并改掉；主动选了别的档位的不动
+          const settings = p.settings as Settings;
+          if (settings.speechRate === 0.7) p.settings = { ...settings, speechRate: 0.5 };
         }
         return p as Persisted;
       },

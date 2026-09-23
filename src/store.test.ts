@@ -317,6 +317,14 @@ describe("拆表迁移", () => {
     expect(useStore.getState().settings.speechRate).toBe(DEFAULT_SETTINGS.speechRate);
   });
 
+  it("v4 存档里没动过的默认语速「慢」改成新默认「很慢」，主动选的保留", async () => {
+    await hydrateFrom({ settings: { ...DEFAULT_SETTINGS, speechRate: 0.7 } }, 4);
+    expect(useStore.getState().settings.speechRate).toBe(0.5);
+
+    await hydrateFrom({ settings: { ...DEFAULT_SETTINGS, speechRate: 1 } }, 4);
+    expect(useStore.getState().settings.speechRate).toBe(1);
+  });
+
   it("v2 存档原样恢复，不再迁移", async () => {
     await hydrateFrom(
       {

@@ -26,6 +26,8 @@ const buttonVariants = cva(
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
+        /* 标题栏的返回、菜单按钮：拇指好点，图标也大一号 */
+        nav: "size-11 rounded-lg [&_svg:not([class*='size-'])]:size-6",
         /* 手机拇指区：足够大的点击目标 */
         answer: "h-16 flex-1 rounded-xl text-base [&_svg:not([class*='size-'])]:size-6",
       },

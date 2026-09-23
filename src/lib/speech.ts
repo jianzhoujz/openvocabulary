@@ -40,7 +40,7 @@ const ERROR_MESSAGES: Record<string, string> = {
 const BENIGN_ERRORS = new Set(["interrupted", "canceled"]);
 
 /** 没指定语速时用的默认值。背单词要听清音节，比引擎默认慢一些 */
-const DEFAULT_RATE = 0.7;
+const DEFAULT_RATE = 0.5;
 
 /** 点了没声音时，多久算「引擎吞了这次请求」 */
 const START_TIMEOUT_MS = 2000;

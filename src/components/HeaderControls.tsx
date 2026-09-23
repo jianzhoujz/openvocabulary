@@ -12,7 +12,7 @@ export function ThemeToggle() {
   return (
     <Button
       variant="ghost"
-      size="icon"
+      size="nav"
       onClick={() => updateSettings({ theme: dark ? "light" : "dark" })}
       aria-label={dark ? "切换到浅色模式" : "切换到深色模式"}
     >
@@ -34,10 +34,9 @@ export function SpeechRateButton() {
   return (
     <Button
       variant="ghost"
-      size="sm"
+      className="text-muted-foreground h-11 px-3 text-base tabular-nums"
       onClick={() => updateSettings({ speechRate: next.value })}
       aria-label={`朗读语速：${label}，点一下切换到${next.label}`}
-      className="text-muted-foreground tabular-nums"
     >
       语速 {label}
     </Button>
