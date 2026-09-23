@@ -68,7 +68,12 @@ export function StatsDialog({ deck, open, onOpenChange }: Props) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[85svh] gap-0 overflow-hidden p-0">
+      {/*
+        DialogContent 默认是 grid：内容行按内容撑高再被 overflow-hidden 裁掉，
+        下面的滚动区拿不到高度上限，于是整页滚不动、底部设置项看不见。换成 flex 列，
+        滚动区（min-h-0）才会被压到剩余高度里、自己出滚动条
+      */}
+      <DialogContent className="flex max-h-[85svh] flex-col gap-0 overflow-hidden p-0">
         <DialogHeader className="p-6 pb-4">
           <DialogTitle>{deck.name} · 进度与设置</DialogTitle>
           <DialogDescription>
