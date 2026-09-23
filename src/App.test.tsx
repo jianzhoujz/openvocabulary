@@ -593,7 +593,7 @@ describe("音标与朗读", () => {
   it("首页的语法速查点进去能点读，返回回到首页", async () => {
     stubSpeech();
     render(<App />);
-    fireEvent.click(screen.getByRole("button", { name: /^3\s*冠词/ }));
+    fireEvent.click(screen.getByRole("button", { name: /^4\s*冠词/ }));
 
     expect(await screen.findByRole("heading", { level: 1, name: "冠词" })).toBeTruthy();
     fireEvent.click(screen.getAllByRole("button", { name: "朗读 J'aime le café." })[0]);

@@ -8,6 +8,7 @@ import type { Sheet, SheetMeta } from "@/cheatsheets/types";
  */
 export const SHEETS: SheetMeta[] = [
   { id: "prononciation", title: "发音规则", summary: "看到生词也能读出来" },
+  { id: "accents", title: "字母上的符号", summary: "é è ê ç 各管什么" },
   { id: "noms", title: "名词的阴阳性与单复数", summary: "le 还是 la，怎么加 s" },
   { id: "articles", title: "冠词", summary: "le / un / du 三种“帽子”怎么选" },
   { id: "etre-avoir", title: "人称代词与 être、avoir", summary: "我你他，“是”和“有”" },
