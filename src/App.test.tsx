@@ -109,7 +109,11 @@ beforeEach(() => {
     vi.fn(() => Promise.resolve(new Response(JSON.stringify([])))),
   );
 });
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  // 速查页的路由在 hash 上，别漏到下一个测试
+  window.history.replaceState(null, "", window.location.pathname);
+});
 
 describe("选词表页", () => {
   it("渲染标题与引导语", () => {
@@ -494,5 +498,51 @@ describe("音标与朗读", () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it("首页的语法速查点进去能点读，返回回到首页", async () => {
+    stubSpeech();
+    render(<App />);
+    fireEvent.click(screen.getByRole("button", { name: /^3\s*冠词/ }));
+
+    expect(await screen.findByRole("heading", { level: 1, name: "冠词" })).toBeTruthy();
+    fireEvent.click(screen.getAllByRole("button", { name: "朗读 J'aime le café." })[0]);
+    // 表格里整列是法语的格子也能点
+    fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
+    expect(spoken).toEqual(["J'aime le café.", "au"]);
+
+    fireEvent.click(screen.getByRole("button", { name: "返回首页" }));
+    expect(await screen.findByText("选一个词表开始")).toBeTruthy();
+  });
+
+  it("翻速查页不算学习时长", async () => {
+    vi.useFakeTimers({ toFake: ["Date", "setInterval"] });
+    try {
+      window.location.hash = "#/grammar/present";
+      render(<App />);
+      await screen.findByRole("heading", { level: 1, name: "动词现在时" });
+
+      act(() => void vi.advanceTimersByTime(120_000));
+      expect(useStore.getState().daily).toEqual({});
+      expect(useStore.getState().activeAt).toBeNull();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("直接打开某一页的链接，返回也能回到首页", async () => {
+    window.location.hash = "#/grammar/nombres";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "数字、日期与时间" });
+
+    fireEvent.click(screen.getByRole("button", { name: "返回首页" }));
+    expect(await screen.findByText("选一个词表开始")).toBeTruthy();
+    expect(window.location.hash).toBe("");
+  });
+
+  it("不存在的页给出返回入口而不是白屏", async () => {
+    window.location.hash = "#/grammar/nope";
+    render(<App />);
+    expect(await screen.findByText("没有找到这一页。")).toBeTruthy();
   });
 });

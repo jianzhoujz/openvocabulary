@@ -1,6 +1,8 @@
 import { ChevronRight, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { takeHomeScroll } from "@/cheatsheets/route";
+import { CheatSheetList } from "@/components/CheatSheetList";
 import { InstallHint } from "@/components/InstallHint";
 import { StatsPanel } from "@/components/StatsPanel";
 import { Progress } from "@/components/ui/progress";
@@ -25,6 +27,13 @@ export function DeckPicker() {
       alive = false;
     };
   }, []);
+
+  // 从速查页返回时回到原来的滚动位置。列表要等清单载入才有高度，所以挂在 decks 上
+  useEffect(() => {
+    if (!decks) return;
+    const y = takeHomeScroll();
+    if (y > 0) window.scrollTo(0, y);
+  }, [decks]);
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-xl flex-col px-4 pb-[calc(2rem+env(safe-area-inset-bottom))]">
@@ -84,6 +93,7 @@ export function DeckPicker() {
         })}
       </div>
 
+      <CheatSheetList />
       {decks && <StatsPanel decks={decks} />}
       {decks && <InstallHint />}
     </div>

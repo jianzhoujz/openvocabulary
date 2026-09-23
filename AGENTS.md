@@ -142,10 +142,18 @@ Safari 会认为不在用户手势里而拒绝。
 
 ```bash
 vp check        # 格式 + lint + 类型检查
-vp test --run   # 81 项测试
+vp test --run   # 全部单测与界面测试
 ```
 
 改了 `src/lib/scheduler.ts` 的系数，测试会告诉你有没有破坏「新词 > 错词 > 熟词」的权重关系。
+
+## 语法速查页
+
+内容在 `src/cheatsheets/sheets/<id>.ts`，目录和顺序在 `src/cheatsheets/index.ts` 的 `SHEETS`，
+两处的 `id`、`title`、`summary` 必须一致（有测试核对）。文本里 `[[法语]]` 或 `[[显示|朗读]]` 是可点读的片段，
+`**…**` 是强调；表格里整列都是法语时用 `fr` 列号，不必逐格写 `[[ ]]`。
+
+速查页**刻意不接 `useStudyClock`**：翻资料不算学习时长，别为了“统一”把它加上。
 
 ## 打卡日志的两条约束
 

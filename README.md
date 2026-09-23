@@ -16,6 +16,10 @@
 点柱子能看那一天（那个月）的明细。旁边的「分享」会画一张打卡图，
 在手机上点分享调起系统面板，可以直接发给微信好友或朋友圈；不支持的浏览器退回保存图片。
 
+词表列表下方还有 10 篇**法语语法速查**，给零基础准备，按学习顺序排：发音、名词、冠词、
+être/avoir、现在时、否定、疑问、形容词、过去与将来、数字日期。纯展示，法语例句和表格都能点读，
+不计入学习时长。每一页有自己的链接（`#/grammar/<id>`），可以直接发给别人。
+
 ```bash
 vp install
 vp dev
@@ -88,6 +92,11 @@ src/
     ActivityChart.tsx      学习词数柱图
     ShareDialog.tsx        打卡图预览与系统分享
     InstallHint.tsx        iOS 添加到主屏幕指引
+    CheatSheetList.tsx     首页的语法速查入口
+    CheatSheetView.tsx     速查页（纯展示 + 点读）
+  cheatsheets/
+    index.ts               速查页目录与懒加载
+    sheets/*.ts            每页的内容，格式见 types.ts
     ui/                    shadcn 组件，源码在仓库里，直接改
 ```
 
