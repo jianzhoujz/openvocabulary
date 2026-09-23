@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { takeHomeScroll } from "@/cheatsheets/route";
 import { CheatSheetList } from "@/components/CheatSheetList";
+import { ThemeToggle } from "@/components/HeaderControls";
 import { InstallHint } from "@/components/InstallHint";
 import { StatsPanel } from "@/components/StatsPanel";
 import { Progress } from "@/components/ui/progress";
@@ -37,9 +38,14 @@ export function DeckPicker() {
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-xl flex-col px-4 pb-[calc(2rem+env(safe-area-inset-bottom))]">
-      <header className="pt-[calc(3rem+env(safe-area-inset-top))] pb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">openvocabulary</h1>
-        <p className="text-muted-foreground mt-2 text-sm">选一个词表开始</p>
+      <header className="flex items-start justify-between gap-3 pt-[calc(3rem+env(safe-area-inset-top))] pb-8">
+        <div className="min-w-0">
+          <h1 className="text-3xl font-semibold tracking-tight">openvocabulary</h1>
+          <p className="text-muted-foreground mt-2 text-sm">选一个词表开始</p>
+        </div>
+        <div className="-mr-2 shrink-0">
+          <ThemeToggle />
+        </div>
       </header>
 
       <div className="flex flex-col gap-3">

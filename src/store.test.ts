@@ -303,6 +303,20 @@ describe("拆表迁移", () => {
     expect(useStore.getState().settings.autoSpeak).toBe(true);
   });
 
+  it("v3 存档升级时「跟随系统」改成浅色，明确选了深色的保留", async () => {
+    await hydrateFrom({ settings: { ...DEFAULT_SETTINGS, theme: "system" } }, 3);
+    expect(useStore.getState().settings.theme).toBe("light");
+
+    await hydrateFrom({ settings: { ...DEFAULT_SETTINGS, theme: "dark" } }, 3);
+    expect(useStore.getState().settings.theme).toBe("dark");
+  });
+
+  it("旧存档没有语速字段时用默认语速", async () => {
+    const { speechRate: _, ...old } = DEFAULT_SETTINGS;
+    await hydrateFrom({ settings: old }, 3);
+    expect(useStore.getState().settings.speechRate).toBe(DEFAULT_SETTINGS.speechRate);
+  });
+
   it("v2 存档原样恢复，不再迁移", async () => {
     await hydrateFrom(
       {

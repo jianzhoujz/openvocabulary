@@ -14,8 +14,17 @@ export const DEFAULT_SETTINGS: Settings = {
   includeMastered: false,
   newCardLimit: 20,
   autoSpeak: true,
-  theme: "system",
+  theme: "light",
+  speechRate: 0.7,
 };
+
+/** 朗读语速档位。各家引擎对同一个 rate 的实际快慢不一样，所以只给相对档位 */
+export const SPEECH_RATES = [
+  { value: 0.5, label: "很慢" },
+  { value: 0.7, label: "慢" },
+  { value: 0.85, label: "适中" },
+  { value: 1, label: "正常" },
+] as const;
 
 const emptyProgress = (): Record<DeckId, DeckProgress> => ({
   "pte-core": { stats: {} },
@@ -240,7 +249,7 @@ export const useStore = create<Store>()(
     {
       name: STORAGE_KEY,
       storage: createJSONStorage(() => throttledStorage),
-      version: 3,
+      version: 4,
       partialize: (s): Persisted => ({
         progress: s.progress,
         daily: s.daily,
@@ -263,6 +272,11 @@ export const useStore = create<Store>()(
         if (version < 3 && p.settings) {
           // v3 起自动朗读默认打开。旧默认是关，存档里的 false 几乎都是没动过的默认值，一并翻成开
           p.settings = { ...(p.settings as Settings), autoSpeak: true };
+        }
+        if (version < 4 && p.settings) {
+          // v4 起主题改为手动切换、默认浅色。「跟随系统」一律落到浅色，只保留明确选了深色的
+          const settings = p.settings as Settings & { theme: string };
+          p.settings = { ...settings, theme: settings.theme === "dark" ? "dark" : "light" };
         }
         return p as Persisted;
       },

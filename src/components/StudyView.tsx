@@ -1,6 +1,7 @@
 import { BarChart3, Check, ChevronLeft, Loader2, SlidersHorizontal, X } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 
+import { ThemeToggle } from "@/components/HeaderControls";
 import { SectionFilter } from "@/components/SectionFilter";
 import { StatsDialog } from "@/components/StatsDialog";
 import { StudyCard } from "@/components/StudyCard";
@@ -95,6 +96,7 @@ export function StudyView() {
           >
             <BarChart3 />
           </Button>
+          <ThemeToggle />
         </div>
 
         <ToggleGroup

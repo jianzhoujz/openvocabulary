@@ -78,7 +78,7 @@ src/
     storage.ts             节流 localStorage、导出/导入
     utils.ts               cn()
   hooks/
-    useTheme.ts            深浅色跟随系统 / 手动
+    useTheme.ts            深浅色（手动切换，默认浅色）
     useAnswerKeys.ts       PC 键盘快捷键
     useSpeech.ts           朗读能力探测与调用
     useStudyClock.ts       背诵页在场时累计学习时长

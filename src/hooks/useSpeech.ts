@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 
 import type { SpeechFailure } from "@/lib/speech";
 import { primeVoices, speak, speechSupported, stopSpeaking } from "@/lib/speech";
+import { useStore } from "@/store";
 
 /**
  * 朗读能力。supported 为 false 时调用方应隐藏朗读按钮。
@@ -11,6 +12,7 @@ import { primeVoices, speak, speechSupported, stopSpeaking } from "@/lib/speech"
  */
 export function useSpeech(lang: string) {
   const [supported] = useState(speechSupported);
+  const rate = useStore((s) => s.settings.speechRate);
   const [speaking, setSpeaking] = useState(false);
   const [failure, setFailure] = useState<SpeechFailure | null>(null);
 
@@ -28,11 +30,12 @@ export function useSpeech(lang: string) {
       setFailure(null);
       setSpeaking(true);
       speak(text, lang, {
+        rate,
         onSettled: () => setSpeaking(false),
         onError: quiet ? undefined : setFailure,
       });
     },
-    [lang],
+    [lang, rate],
   );
 
   const dismissFailure = useCallback(() => setFailure(null), []);

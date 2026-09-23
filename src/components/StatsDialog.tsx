@@ -14,7 +14,7 @@ import { Progress } from "@/components/ui/progress";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { isMastered, isNew, masteryOf } from "@/lib/scheduler";
 import { downloadProgress, importProgress } from "@/lib/storage";
-import { useStore } from "@/store";
+import { SPEECH_RATES, useStore } from "@/store";
 import type { Deck } from "@/types";
 
 type Props = {
@@ -28,12 +28,6 @@ const NEW_CARD_LIMITS = [
   { value: "10", label: "10" },
   { value: "20", label: "20" },
   { value: "50", label: "50" },
-];
-
-const THEMES = [
-  { value: "system", label: "跟随系统" },
-  { value: "light", label: "浅色" },
-  { value: "dark", label: "深色" },
 ];
 
 export function StatsDialog({ deck, open, onOpenChange }: Props) {
@@ -152,17 +146,18 @@ export function StatsDialog({ deck, open, onOpenChange }: Props) {
             </div>
 
             <div>
-              <div className="mb-2 text-sm font-medium">主题</div>
+              <div className="text-sm font-medium">朗读语速</div>
+              <p className="text-muted-foreground mt-0.5 mb-2 text-xs">
+                不同浏览器的语音引擎快慢不一样，挑一档听着舒服的
+              </p>
               <ToggleGroup
                 type="single"
                 className="w-full"
-                value={settings.theme}
-                onValueChange={(v) =>
-                  v && updateSettings({ theme: v as "system" | "light" | "dark" })
-                }
+                value={String(settings.speechRate)}
+                onValueChange={(v) => v && updateSettings({ speechRate: Number(v) })}
               >
-                {THEMES.map((opt) => (
-                  <ToggleGroupItem key={opt.value} value={opt.value}>
+                {SPEECH_RATES.map((opt) => (
+                  <ToggleGroupItem key={opt.value} value={String(opt.value)}>
                     {opt.label}
                   </ToggleGroupItem>
                 ))}

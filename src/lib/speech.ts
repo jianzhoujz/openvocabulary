@@ -39,6 +39,9 @@ const ERROR_MESSAGES: Record<string, string> = {
 /** 我们自己调 cancel() 造成的，属于正常打断，不该弹错误 */
 const BENIGN_ERRORS = new Set(["interrupted", "canceled"]);
 
+/** 没指定语速时用的默认值。背单词要听清音节，比引擎默认慢一些 */
+const DEFAULT_RATE = 0.7;
+
 /** 点了没声音时，多久算「引擎吞了这次请求」 */
 const START_TIMEOUT_MS = 2000;
 
@@ -93,6 +96,8 @@ function diagnostics(lang: string, voice: SpeechSynthesisVoice | undefined): str
 }
 
 type SpeakHandlers = {
+  /** 语速，1 为引擎默认。不传用 DEFAULT_RATE */
+  rate?: number;
   /** 念完、或者出错收尾时都会调一次，用来复位「正在朗读」状态 */
   onSettled?: () => void;
   onError?: (failure: SpeechFailure) => void;
@@ -100,7 +105,7 @@ type SpeakHandlers = {
 
 /** 朗读一段文本。lang 用 "en" / "fr" 这样的基础语言码 */
 export function speak(text: string, lang: string, handlers: SpeakHandlers = {}): void {
-  const { onSettled, onError } = handlers;
+  const { rate = DEFAULT_RATE, onSettled, onError } = handlers;
 
   const fail = (failure: SpeechFailure) => {
     clearWatchdog();
@@ -130,8 +135,7 @@ export function speak(text: string, lang: string, handlers: SpeakHandlers = {}):
   const voice = pickVoice(lang);
   if (voice) utterance.voice = voice;
   utterance.lang = voice?.lang ?? LANG_PREFERENCE[lang]?.[0] ?? lang;
-  // 背单词略放慢一点，听清音节
-  utterance.rate = 0.9;
+  utterance.rate = rate;
 
   utterance.addEventListener("start", clearWatchdog);
   utterance.addEventListener("end", () => {

@@ -202,6 +202,31 @@ describe("选词表页", () => {
   });
 });
 
+describe("深浅色", () => {
+  afterEach(() => document.documentElement.classList.remove("dark"));
+
+  it("默认浅色，右上角按钮切到深色并记住", () => {
+    render(<App />);
+    expect(document.documentElement.classList.contains("dark")).toBe(false);
+
+    fireEvent.click(screen.getByRole("button", { name: "切换到深色模式" }));
+    expect(document.documentElement.classList.contains("dark")).toBe(true);
+    expect(useStore.getState().settings.theme).toBe("dark");
+
+    fireEvent.click(screen.getByRole("button", { name: "切换到浅色模式" }));
+    expect(document.documentElement.classList.contains("dark")).toBe(false);
+  });
+
+  it("系统是深色时也不自动变深", () => {
+    vi.spyOn(window, "matchMedia").mockImplementation(
+      (query) => ({ matches: true, media: query }) as MediaQueryList,
+    );
+    render(<App />);
+    expect(document.documentElement.classList.contains("dark")).toBe(false);
+    vi.restoreAllMocks();
+  });
+});
+
 describe("背诵页", () => {
   it("未翻面时只给题面，不泄露答案", () => {
     seed(studying(DECK.cards[0]));
@@ -383,6 +408,29 @@ describe("音标与朗读", () => {
     fireEvent.click(screen.getByRole("button", { name: "看答案" }));
     fireEvent.click(screen.getByRole("button", { name: "朗读例句" }));
     expect(spoken).toEqual(["invoice", "Dear Ms. Carter,"]);
+  });
+
+  it("朗读用设置里的语速", () => {
+    stubSpeech();
+    seed({ ...manual(), settings: { ...DEFAULT_SETTINGS, autoSpeak: false, speechRate: 0.5 } });
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读" }));
+    expect(lastUtterance!.rate).toBe(0.5);
+  });
+
+  it("速查页右上角能切语速，下一次朗读就生效", async () => {
+    stubSpeech();
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    // 默认「慢」，点一下到「适中」
+    fireEvent.click(screen.getByRole("button", { name: /朗读语速：慢/ }));
+    expect(useStore.getState().settings.speechRate).toBe(0.85);
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
+    expect(lastUtterance!.rate).toBe(0.85);
   });
 
   it("浏览器不支持语音合成时不渲染朗读按钮", () => {

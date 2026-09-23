@@ -66,7 +66,10 @@ export type Settings = {
   newCardLimit: number;
   /** 翻面时自动朗读词条 */
   autoSpeak: boolean;
-  theme: "system" | "light" | "dark";
+  /** 手动切换，默认浅色。v4 以前还有「跟随系统」，迁移时并入浅色 */
+  theme: "light" | "dark";
+  /** 朗读语速，传给 SpeechSynthesisUtterance.rate，1 为引擎默认语速 */
+  speechRate: number;
 };
 
 /** 选词表页用的轻量元信息，来自 public/data/index.json */

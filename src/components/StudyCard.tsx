@@ -51,7 +51,7 @@ function TermBlock({
               onSpeak();
             }}
             className={cn(
-              "text-muted-foreground hover:text-foreground hover:bg-accent active:bg-accent focus-visible:ring-ring/50 -my-1.5 -mr-2 shrink-0 rounded-xl transition-colors focus-visible:ring-[3px] focus-visible:outline-none",
+              "text-muted-foreground hover:text-foreground hover:bg-accent active:bg-accent focus-visible:ring-ring/50 -my-1.5 shrink-0 rounded-xl transition-colors focus-visible:ring-[3px] focus-visible:outline-none",
               big ? "p-3" : "p-2.5",
             )}
           >
