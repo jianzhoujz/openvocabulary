@@ -181,17 +181,24 @@ export function StudyView() {
             <Button variant="bad" size="answer" onClick={() => onAnswer(false)}>
               <X />
               没记住
-              <kbd className="ml-1 hidden font-mono text-xs opacity-70 sm:inline">←</kbd>
+              <kbd aria-hidden className="ml-1 hidden font-mono text-xs opacity-70 sm:inline">
+                ←
+              </kbd>
             </Button>
             <Button variant="ok" size="answer" onClick={() => onAnswer(true)}>
               <Check />
               记住了
-              <kbd className="ml-1 hidden font-mono text-xs opacity-70 sm:inline">→</kbd>
+              <kbd aria-hidden className="ml-1 hidden font-mono text-xs opacity-70 sm:inline">
+                →
+              </kbd>
             </Button>
           </div>
         ) : (
           <Button size="answer" className="w-full" disabled={!current} onClick={reveal}>
             看答案
+            <kbd aria-hidden className="ml-1 hidden font-mono text-xs opacity-70 sm:inline">
+              空格
+            </kbd>
           </Button>
         )}
       </footer>

@@ -1,7 +1,8 @@
-import { Eye, Volume2 } from "lucide-react";
+import { Volume2 } from "lucide-react";
 import { useEffect } from "react";
 
 import { SpeechErrorToast } from "@/components/SpeechErrorToast";
+import { useFitWords } from "@/hooks/useFitWords";
 import { useSpeech } from "@/hooks/useSpeech";
 import { cn } from "@/lib/utils";
 import type { Card, Deck, Mode } from "@/types";
@@ -15,12 +16,6 @@ type Props = {
   autoSpeak: boolean;
   onReveal: () => void;
 };
-
-/**
- * 超过这么多个字母的单词在手机上用大号字一行放不下（如 disproportionately、
- * l'embourgeoisement），降一档字号，再配合按语言断词，别从随便哪个字母中间折行
- */
-const LONG_WORD = 13;
 
 /** 词条本身：文本 + 音标 + 朗读按钮。只在该露出答案时才渲染 */
 function TermBlock({
@@ -36,19 +31,18 @@ function TermBlock({
   canSpeak: boolean;
   onSpeak: () => void;
 }) {
-  const longWord = card.front.split(/\s+/).some((w) => w.length > LONG_WORD);
+  // 超长单词（disproportionately、l'embourgeoisement）按比例缩小字号放进一行，不折断
+  const termRef = useFitWords<HTMLDivElement>(card.front);
   return (
     <div>
       <div className="flex items-start gap-2">
         <div
+          ref={termRef}
           lang={lang}
           className={cn(
-            "min-w-0 flex-1 leading-snug font-semibold break-words hyphens-auto",
-            big
-              ? longWord
-                ? "text-2xl sm:text-4xl"
-                : "text-3xl sm:text-4xl"
-              : "text-2xl font-medium",
+            // break-words 只是兜底：缩到下限还放不下的极端情况才会在词中间折行
+            "min-w-0 flex-1 leading-snug font-semibold break-words",
+            big ? "text-3xl sm:text-4xl" : "text-2xl font-medium",
           )}
         >
           {card.front}
@@ -184,16 +178,6 @@ export function StudyCard({
             </div>
           )}
         </div>
-
-        {!revealed && (
-          <div className="text-muted-foreground flex shrink-0 items-center justify-center gap-1.5 text-xs">
-            <Eye className="size-3.5" />
-            点一下看答案
-            <kbd className="bg-muted ml-1 hidden rounded px-1.5 py-0.5 font-mono sm:inline">
-              空格
-            </kbd>
-          </div>
-        )}
       </div>
 
       {failure && (

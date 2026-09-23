@@ -36,7 +36,7 @@ export function SettingsDialog({ open, onOpenChange }: Props) {
         <span>
           <span className="text-sm font-medium">已掌握的词也出现</span>
           <span className="text-muted-foreground block text-xs">
-            默认不再出现；打开后仍以最低权重偶尔复习
+            以最低权重偶尔出现，顺带复习。关掉后已掌握的词就不再出现
           </span>
         </span>
       </label>

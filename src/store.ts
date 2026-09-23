@@ -11,8 +11,8 @@ export const DECK_IDS = ["pte-core", "tcf-canada-mots", "tcf-canada-phrases"] as
 export const DEFAULT_SETTINGS: Settings = {
   mode: "front-to-gloss",
   sections: [],
-  includeMastered: false,
-  newCardLimit: 20,
+  includeMastered: true,
+  newCardLimit: 50,
   autoSpeak: true,
   theme: "light",
   speechRate: 0.5,
@@ -249,7 +249,7 @@ export const useStore = create<Store>()(
     {
       name: STORAGE_KEY,
       storage: createJSONStorage(() => throttledStorage),
-      version: 5,
+      version: 6,
       partialize: (s): Persisted => ({
         progress: s.progress,
         daily: s.daily,
@@ -283,6 +283,16 @@ export const useStore = create<Store>()(
           // 存档里的 0.7 几乎都是没动过的默认值，一并改掉；主动选了别的档位的不动
           const settings = p.settings as Settings;
           if (settings.speechRate === 0.7) p.settings = { ...settings, speechRate: 0.5 };
+        }
+        if (version < 6 && p.settings) {
+          // v6 起默认让已掌握的词也出现、新词节流放宽到 50。存档里的旧默认值（不出现 / 20）
+          // 几乎都是没动过的，一并改成新默认；主动选了别的值的不动
+          const settings = p.settings as Settings;
+          p.settings = {
+            ...settings,
+            includeMastered: true,
+            newCardLimit: settings.newCardLimit === 20 ? 50 : settings.newCardLimit,
+          };
         }
         return p as Persisted;
       },

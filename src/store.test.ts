@@ -325,6 +325,18 @@ describe("拆表迁移", () => {
     expect(useStore.getState().settings.speechRate).toBe(1);
   });
 
+  it("v5 存档升级：已掌握的词默认也出现，新词节流的旧默认 20 改成 50", async () => {
+    await hydrateFrom(
+      { settings: { ...DEFAULT_SETTINGS, includeMastered: false, newCardLimit: 20 } },
+      5,
+    );
+    expect(useStore.getState().settings).toMatchObject({ includeMastered: true, newCardLimit: 50 });
+
+    // 主动选过的节流值不动
+    await hydrateFrom({ settings: { ...DEFAULT_SETTINGS, newCardLimit: 10 } }, 5);
+    expect(useStore.getState().settings.newCardLimit).toBe(10);
+  });
+
   it("v2 存档原样恢复，不再迁移", async () => {
     await hydrateFrom(
       {
