@@ -8,15 +8,22 @@ import type { Sheet, SheetMeta } from "@/cheatsheets/types";
  */
 export const SHEETS: SheetMeta[] = [
   { id: "vs-anglais", title: "对照英语学法语", summary: "哪些照搬英语，哪些要重新学" },
+  { id: "politesse", title: "打招呼与礼貌用语", summary: "见面、道谢、道歉、告别" },
   { id: "prononciation", title: "发音规则", summary: "看到生词也能读出来" },
   { id: "accents", title: "字母上的符号", summary: "é è ê ç 各管什么" },
   { id: "noms", title: "名词的阴阳性与单复数", summary: "le 还是 la，怎么加 s" },
   { id: "articles", title: "冠词", summary: "le / un / du 三种“帽子”怎么选" },
+  {
+    id: "prepositions",
+    title: "介词：在哪儿、去哪儿、什么时候",
+    summary: "à、en、au、chez，城市国家怎么搭",
+  },
   { id: "etre-avoir", title: "être 与 avoir 入门", summary: "我你他，“是”和“有”" },
   { id: "present", title: "动词现在时", summary: "-er 动词和 9 个必背不规则动词" },
   { id: "conjugaison", title: "动词变位规律", summary: "三组动词、词尾和词干怎么变" },
   { id: "negation", title: "否定句", summary: "ne … pas 这个“夹子”" },
   { id: "questions", title: "疑问句", summary: "三种问法和 8 个疑问词" },
+  { id: "connecteurs", title: "连接词", summary: "把短句串成一段话" },
   { id: "adjectifs", title: "形容词与物主", summary: "配合、位置、我的你的" },
   { id: "pronoms", title: "人称代词全表", summary: "主语、宾语、重读，还有 y 和 en" },
   { id: "passe-futur", title: "过去和将来", summary: "复合过去时与最近将来时" },
