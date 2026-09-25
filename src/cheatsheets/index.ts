@@ -12,12 +12,15 @@ export const SHEETS: SheetMeta[] = [
   { id: "accents", title: "字母上的符号", summary: "é è ê ç 各管什么" },
   { id: "noms", title: "名词的阴阳性与单复数", summary: "le 还是 la，怎么加 s" },
   { id: "articles", title: "冠词", summary: "le / un / du 三种“帽子”怎么选" },
-  { id: "etre-avoir", title: "人称代词与 être、avoir", summary: "我你他，“是”和“有”" },
+  { id: "etre-avoir", title: "être 与 avoir 入门", summary: "我你他，“是”和“有”" },
   { id: "present", title: "动词现在时", summary: "-er 动词和 9 个必背不规则动词" },
+  { id: "conjugaison", title: "动词变位规律", summary: "三组动词、词尾和词干怎么变" },
   { id: "negation", title: "否定句", summary: "ne … pas 这个“夹子”" },
   { id: "questions", title: "疑问句", summary: "三种问法和 8 个疑问词" },
   { id: "adjectifs", title: "形容词与物主", summary: "配合、位置、我的你的" },
+  { id: "pronoms", title: "人称代词全表", summary: "主语、宾语、重读，还有 y 和 en" },
   { id: "passe-futur", title: "过去和将来", summary: "复合过去时与最近将来时" },
+  { id: "etre", title: "être 的全部变位", summary: "从现在时到虚拟式，一页看全" },
   { id: "nombres", title: "数字、日期与时间", summary: "70、80、90 的怪数法" },
 ];
 

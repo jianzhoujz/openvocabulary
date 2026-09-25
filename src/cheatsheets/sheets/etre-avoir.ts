@@ -2,7 +2,7 @@ import type { Sheet } from "@/cheatsheets/types";
 
 const sheet: Sheet = {
   id: "etre-avoir",
-  title: "人称代词与 être、avoir",
+  title: "être 与 avoir 入门",
   summary: "我你他，“是”和“有”",
   lead: "[[être]]（是）和 [[avoir]]（有）是法语里用得最多的两个动词，后面讲过去时还要靠它们当“零件”。先把这两张表念熟。",
   sections: [
