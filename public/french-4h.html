@@ -91,7 +91,7 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        padding-block: 12px 10px;
+        padding-block: 6px 4px;
         max-width: 1400px;
         width: 100%;
         margin-inline: auto;
@@ -126,11 +126,13 @@
         min-height: 0;
         display: grid;
         place-items: center;
+        /* 让画面按实际剩余的宽高取 16:9 的最大尺寸，不靠写死的高度估算 */
+        container-type: size;
       }
       .stage {
         container-type: inline-size;
         position: relative;
-        width: min(100%, calc((100dvh - 132px) * 16 / 9));
+        width: min(100cqw, 100cqh * 16 / 9);
         aspect-ratio: 16/9;
         background: var(--surface);
         border: 1px solid var(--line);
@@ -140,11 +142,12 @@
       .slide {
         position: absolute;
         inset: 0;
-        padding: 4.6cqw 6cqw 4cqw;
-        overflow: auto;
+        padding: 2.6cqw 3.6cqw 2.4cqw;
+        /* 幻灯片不滚动：放不下时由 fitSlide() 整页等比缩小字号 */
+        overflow: hidden;
         display: none;
         flex-direction: column;
-        gap: 1.6cqw;
+        gap: 1.3cqw;
         font-size: clamp(14px, 1.62cqw, 26px);
         line-height: 1.6;
       }
@@ -183,7 +186,7 @@
         line-height: 1.25;
       }
       h2 {
-        font-size: clamp(22px, 3.1cqw, 50px);
+        font-size: 1.9em;
         font-weight: 900;
       }
       h3 {
@@ -317,13 +320,13 @@
         gap: 2.2cqw;
       }
       .cover h1 {
-        font-size: clamp(34px, 6.6cqw, 110px);
+        font-size: 4em;
         font-weight: 900;
         letter-spacing: 0.01em;
       }
       .cover .fr-title {
         font-family: var(--fr);
-        font-size: clamp(18px, 2.6cqw, 42px);
+        font-size: 1.6em;
         color: var(--accent);
       }
       .howto {
@@ -390,12 +393,12 @@
       .divider .big {
         font-family: var(--fr);
         font-weight: 600;
-        font-size: clamp(48px, 11cqw, 180px);
+        font-size: 6.8em;
         line-height: 0.9;
         color: var(--accent);
       }
       .divider h2 {
-        font-size: clamp(26px, 4.4cqw, 72px);
+        font-size: 2.7em;
       }
       .divider .meta {
         display: flex;
@@ -430,7 +433,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding-block: 10px 14px;
+        padding-block: 6px 8px;
         max-width: 1400px;
         width: 100%;
         margin-inline: auto;
@@ -551,6 +554,7 @@
         }
         .stage-wrap {
           display: block;
+          container-type: normal;
         }
         .stage {
           width: 100%;
@@ -562,6 +566,16 @@
           padding: 22px 18px 26px;
           gap: 14px;
           font-size: 15px;
+          overflow: visible;
+        }
+        .cover h1 {
+          font-size: 2.3em;
+        }
+        .divider .big {
+          font-size: 3.5em;
+        }
+        .divider h2 {
+          font-size: 1.9em;
         }
         .chip {
           display: none;
@@ -2157,6 +2171,7 @@
           const s = slides[cur];
           s.classList.add("on");
           s.scrollTop = 0;
+          fitSlide(s);
           chip.innerHTML = "<b>" + s.dataset.sec + "</b>";
           count.textContent = cur + 1 + " / " + slides.length;
           prog.style.width = ((cur + 1) / slides.length) * 100 + "%";
@@ -2168,6 +2183,31 @@
           store.set("fr4h-page", String(cur));
           if (window.innerWidth <= 760) window.scrollTo(0, 0);
         }
+
+        // 内容放不下 16:9 画面时，整页等比缩小字号直到放下，而不是出滚动条。
+        // 标题、释义都用 em，跟着一起缩。手机布局是纵向流式排版，不需要。
+        const mobile = window.matchMedia("(max-width: 760px)");
+        function fitSlide(s) {
+          s.style.fontSize = "";
+          if (mobile.matches) return;
+          let size = parseFloat(getComputedStyle(s).fontSize);
+          for (let i = 0; i < 40 && s.scrollHeight > s.clientHeight + 1; i++) {
+            size *= 0.96;
+            s.style.fontSize = size + "px";
+          }
+        }
+        let fitQueued = false;
+        const refit = () => {
+          if (fitQueued) return;
+          fitQueued = true;
+          requestAnimationFrame(() => {
+            fitQueued = false;
+            fitSlide(slides[cur]);
+          });
+        };
+        window.addEventListener("resize", refit);
+        // 网页字体晚到会改变行高，到了再量一次
+        if (document.fonts) document.fonts.ready.then(refit);
 
         $("prev").onclick = () => go(cur - 1);
         $("next").onclick = () => go(cur + 1);
