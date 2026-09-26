@@ -3,19 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <style>
-      body {
-        margin: 0;
-      }
-      img {
-        max-width: 100%;
-      }
-      [hidden] {
-        display: none !important;
-      }
-    </style>
-  </head>
-  <body>
     <title>法语四小时</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,616 +10,19 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap"
     />
-    <style>
-      :root {
-        --bg: #eef0f5;
-        --surface: #fbfbfd;
-        --ink: #1a1f3a;
-        --muted: #5b6179;
-        --line: #d9dce7;
-        --accent: #2446c7;
-        --accent-soft: #e3e8fb;
-        --mark: #b87a0b;
-        --mark-soft: #fbefd2;
-        --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-        --serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
-        --fr: "Literata", Georgia, "Times New Roman", serif;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) {
-          color-scheme: dark;
-          --bg: #0e1120;
-          --surface: #171b2e;
-          --ink: #e7e9f4;
-          --muted: #9ba1bb;
-          --line: #2a3050;
-          --accent: #93a8ff;
-          --accent-soft: #232c52;
-          --mark: #e9b54c;
-          --mark-soft: #3a3018;
-        }
-      }
-      :root[data-theme="dark"] {
-        color-scheme: dark;
-        --bg: #0e1120;
-        --surface: #171b2e;
-        --ink: #e7e9f4;
-        --muted: #9ba1bb;
-        --line: #2a3050;
-        --accent: #93a8ff;
-        --accent-soft: #232c52;
-        --mark: #e9b54c;
-        --mark-soft: #3a3018;
-      }
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        background: var(--bg);
-        color: var(--ink);
-        font-family: var(--sans);
-        font-size: 15px;
-        display: flex;
-        flex-direction: column;
-        padding-inline: 16px;
-        box-sizing: border-box;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      button {
-        font: inherit;
-        color: inherit;
-      }
-
-      .top {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding-block: 6px 4px;
-        max-width: 1400px;
-        width: 100%;
-        margin-inline: auto;
-      }
-      .brand {
-        font-family: var(--serif);
-        font-weight: 900;
-        font-size: 17px;
-        letter-spacing: 0.02em;
-      }
-      .brand span {
-        font-family: var(--fr);
-        font-weight: 400;
-        color: var(--muted);
-        font-size: 14px;
-        margin-left: 8px;
-      }
-      .chip {
-        font-size: 13px;
-        color: var(--muted);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .chip b {
-        color: var(--accent);
-        font-weight: 500;
-      }
-
-      .stage-wrap {
-        flex: 1;
-        min-height: 0;
-        display: grid;
-        place-items: center;
-        /* 让画面按实际剩余的宽高取 16:9 的最大尺寸，不靠写死的高度估算 */
-        container-type: size;
-      }
-      .stage {
-        container-type: inline-size;
-        position: relative;
-        width: min(100cqw, 100cqh * 16 / 9);
-        aspect-ratio: 16/9;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        overflow: hidden;
-      }
-      .slide {
-        position: absolute;
-        inset: 0;
-        padding: 2.6cqw 3.6cqw 2.4cqw;
-        /* 幻灯片不滚动：放不下时由 fitSlide() 整页等比缩小字号 */
-        overflow: hidden;
-        display: none;
-        flex-direction: column;
-        gap: 1.3cqw;
-        font-size: clamp(14px, 1.62cqw, 26px);
-        line-height: 1.6;
-      }
-      .slide.on {
-        display: flex;
-        animation: in 0.28s ease-out;
-      }
-      @keyframes in {
-        from {
-          opacity: 0.4;
-          transform: translateX(8px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .slide.on {
-          animation: none;
-        }
-      }
-
-      .eyebrow {
-        font-size: 0.78em;
-        letter-spacing: 0.14em;
-        color: var(--muted);
-        text-transform: uppercase;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: var(--serif);
-        margin: 0;
-        text-wrap: balance;
-        line-height: 1.25;
-      }
-      h2 {
-        font-size: 1.9em;
-        font-weight: 900;
-      }
-      h3 {
-        font-size: 1.08em;
-        font-weight: 600;
-        color: var(--ink);
-      }
-      p {
-        margin: 0;
-      }
-      .lead {
-        color: var(--muted);
-        max-width: 44em;
-      }
-      .note {
-        color: var(--muted);
-        font-size: 0.9em;
-      }
-      .cols {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
-        gap: 1.4em 2.2em;
-        align-content: start;
-      }
-      .cols.two {
-        grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-      }
-      .block {
-        display: flex;
-        flex-direction: column;
-        gap: 0.35em;
-      }
-      ul.plain {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.35em;
-      }
-      .hl {
-        color: var(--mark);
-        font-weight: 700;
-      }
-      .key {
-        background: var(--mark-soft);
-        padding: 0.05em 0.35em;
-        border-radius: 4px;
-      }
-
-      /* speakable French */
-      i {
-        font-style: normal;
-        font-family: var(--fr);
-        color: var(--accent);
-        cursor: pointer;
-        border-bottom: 1.5px dotted currentColor;
-        border-radius: 3px;
-        padding: 0 0.08em;
-        transition: background 0.15s;
-      }
-      i:hover {
-        background: var(--accent-soft);
-        border-bottom-style: solid;
-      }
-      i:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-      }
-      i.speaking {
-        background: var(--mark-soft);
-        color: var(--ink);
-        border-bottom-color: var(--mark);
-      }
-      /* 带中文释义的法语：法语在上，释义小字在下 */
-      i.g {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: flex-start;
-        max-width: 100%;
-        border-bottom: none;
-        line-height: 1.35;
-        padding-bottom: 0.1em;
-      }
-      i.g.short {
-        align-items: center;
-      }
-      i.g .w {
-        border-bottom: 1.5px dotted currentColor;
-      }
-      i.g:hover .w {
-        border-bottom-style: solid;
-      }
-      i.g .zh {
-        font-family: var(--sans);
-        font-size: 0.66em;
-        font-weight: 400;
-        color: var(--muted);
-        line-height: 1.3;
-        margin-top: 0.15em;
-      }
-      i.g.speaking .w {
-        border-bottom-color: var(--mark);
-      }
-
-      .tbl {
-        overflow-x: auto;
-      }
-      /* 幻灯片是纵向 flex：子元素默认会被压扁，带 overflow 的表格被压扁后会自己出滚动条。
-         不许压，放不下就让整页超出，交给 fitSlide() 缩字号 */
-      .slide > * {
-        flex-shrink: 0;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        font-variant-numeric: tabular-nums;
-      }
-      th,
-      td {
-        text-align: left;
-        padding: 0.42em 0.8em 0.42em 0;
-        border-bottom: 1px solid var(--line);
-        vertical-align: top;
-      }
-      th {
-        font-size: 0.8em;
-        font-weight: 500;
-        color: var(--muted);
-        letter-spacing: 0.04em;
-      }
-
-      /* cover */
-      .cover {
-        justify-content: center;
-        gap: 2.2cqw;
-      }
-      .cover h1 {
-        font-size: 4em;
-        font-weight: 900;
-        letter-spacing: 0.01em;
-      }
-      .cover .fr-title {
-        font-family: var(--fr);
-        font-size: 1.6em;
-        color: var(--accent);
-      }
-      .howto {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6em 2em;
-        color: var(--muted);
-        font-size: 0.92em;
-        border-top: 1px solid var(--line);
-        padding-top: 1.2em;
-        max-width: 52em;
-      }
-      kbd {
-        font-family: var(--sans);
-        font-size: 0.85em;
-        border: 1px solid var(--line);
-        border-bottom-width: 2px;
-        border-radius: 4px;
-        padding: 0 0.4em;
-        background: var(--bg);
-      }
-
-      /* route */
-      .route {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-        gap: 0 2.4em;
-      }
-      .route button {
-        all: unset;
-        cursor: pointer;
-        display: grid;
-        grid-template-columns: 2.2em 6.2em 1fr;
-        gap: 0.6em;
-        align-items: baseline;
-        padding: 0.55em 0;
-        border-bottom: 1px solid var(--line);
-      }
-      .route button:hover .t {
-        color: var(--accent);
-      }
-      .route button:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-      }
-      .route .n {
-        font-family: var(--fr);
-        font-weight: 600;
-        color: var(--accent);
-      }
-      .route .tm {
-        font-size: 0.85em;
-        color: var(--muted);
-        font-variant-numeric: tabular-nums;
-      }
-
-      /* section divider */
-      .divider {
-        justify-content: center;
-        gap: 1.4cqw;
-        background: linear-gradient(var(--accent-soft), var(--accent-soft)) left/1.1cqw 100%
-          no-repeat;
-      }
-      .divider .big {
-        font-family: var(--fr);
-        font-weight: 600;
-        font-size: 6.8em;
-        line-height: 0.9;
-        color: var(--accent);
-      }
-      .divider h2 {
-        font-size: 2.7em;
-      }
-      .divider .meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4em 2em;
-        color: var(--muted);
-      }
-
-      /* script sentences */
-      .script {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-        font-size: 1.12em;
-      }
-      .script i {
-        line-height: 1.5;
-      }
-      .dialog {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.4em 0.9em;
-        align-items: baseline;
-      }
-      .dialog .who {
-        font-size: 0.8em;
-        color: var(--muted);
-      }
-
-      /* bottom bar */
-      .bar {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding-block: 6px 8px;
-        max-width: 1400px;
-        width: 100%;
-        margin-inline: auto;
-        flex-wrap: wrap;
-      }
-      .btn {
-        border: 1px solid var(--line);
-        background: var(--surface);
-        border-radius: 999px;
-        padding: 7px 14px;
-        cursor: pointer;
-        font-size: 14px;
-        line-height: 1.2;
-      }
-      .btn:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-      }
-      .btn:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-      }
-      .btn.primary {
-        background: var(--accent);
-        border-color: var(--accent);
-        color: var(--surface);
-      }
-      .btn.primary:hover {
-        color: var(--surface);
-        filter: brightness(1.08);
-      }
-      .btn[aria-pressed="true"] {
-        background: var(--mark-soft);
-        border-color: var(--mark);
-        color: var(--ink);
-      }
-      .progress {
-        flex: 1;
-        min-width: 80px;
-        height: 4px;
-        background: var(--line);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-      .progress div {
-        height: 100%;
-        background: var(--accent);
-        width: 0;
-        transition: width 0.25s;
-      }
-      .count {
-        font-size: 13px;
-        color: var(--muted);
-        font-variant-numeric: tabular-nums;
-        min-width: 4.5em;
-        text-align: center;
-      }
-      .novoice {
-        max-width: 1400px;
-        width: 100%;
-        margin-inline: auto;
-        margin-bottom: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        padding: 12px 16px;
-        border: 1px solid var(--mark);
-        border-radius: 10px;
-        background: var(--mark-soft);
-        font-size: 14px;
-        line-height: 1.6;
-      }
-      .novoice ul {
-        margin: 0;
-        padding-left: 1.2em;
-      }
-      .novoice .btn {
-        align-self: flex-start;
-      }
-      .voice {
-        font: inherit;
-        font-size: 13px;
-        color: var(--ink);
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 6px 10px;
-        max-width: min(20em, 100%);
-        text-overflow: ellipsis;
-        cursor: pointer;
-      }
-      .voice:disabled {
-        color: var(--muted);
-        cursor: default;
-      }
-      .voice:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-      }
-      .toast {
-        position: fixed;
-        left: 50%;
-        bottom: calc(76px + env(safe-area-inset-bottom, 0px));
-        transform: translateX(-50%);
-        max-width: min(92vw, 560px);
-        background: var(--ink);
-        color: var(--surface);
-        padding: 10px 16px;
-        border-radius: 10px;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 760px) {
-        html,
-        body {
-          height: auto;
-        }
-        .stage-wrap {
-          display: block;
-          container-type: normal;
-        }
-        .stage {
-          width: 100%;
-          aspect-ratio: auto;
-        }
-        .slide {
-          position: static;
-          min-height: 70vh;
-          padding: 22px 18px 26px;
-          gap: 14px;
-          font-size: 15px;
-          overflow: visible;
-        }
-        .cover h1 {
-          font-size: 2.3em;
-        }
-        .divider .big {
-          font-size: 3.5em;
-        }
-        .divider h2 {
-          font-size: 1.9em;
-        }
-        .chip {
-          display: none;
-        }
-        .route button {
-          grid-template-columns: 2em 5.6em 1fr;
-        }
-        .bar {
-          position: sticky;
-          bottom: 0;
-          background: var(--bg);
-          padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-        }
-        .btn {
-          padding: 7px 11px;
-        }
-      }
-    </style>
-
+    <link rel="stylesheet" href="course/deck.css" />
+  </head>
+  <body data-deck="fr4h">
     <header class="top">
       <div class="brand">法语四小时<span>Le français en quatre heures</span></div>
       <div class="chip" id="chip"></div>
     </header>
 
-    <aside class="novoice" id="noVoice" hidden>
-      <div>
-        <b>这台设备没有法语语音，所以暂时不朗读。</b>
-        没有法语语音时，浏览器会用中文或英语的声音去念，<em>table</em>
-        这类词就会被读成英语，跟着学会学错。可以这样解决：
-      </div>
-      <ul>
-        <li>
-          <b>最省事：</b>用 Microsoft Edge 打开本页，它自带加拿大法语在线语音（Sylvie、Antoine
-          等）。 Chrome 的在线语音只有一个“Google français”，是法国口音。
-        </li>
-        <li>
-          <b>Windows：</b>设置 → 时间和语言 → 语音 → 添加语音 →
-          选“法语（加拿大）”，装好后重启浏览器。Edge 能用上，Chrome 不一定认得。
-        </li>
-        <li>
-          <b>手机：</b>iPhone 在“设置 → 辅助功能 → 朗读内容 → 声音 →
-          法语”里下载加拿大法语声音，增强音质更自然；安卓在系统的“文字转语音”设置里下载法语语音包。
-        </li>
-      </ul>
-      <button class="btn" id="noVoiceClose">知道了</button>
-    </aside>
-
     <main class="stage-wrap">
       <div class="stage" id="stage">
         <!-- 封面 -->
         <section class="slide cover" data-sec="开始">
-          <div class="eyebrow">零基础 · 中文母语 · 有英语底子</div>
+          <div class="eyebrow">第 1 册 · 零基础 · 中文母语 · 有英语底子</div>
           <h1>4 小时法语入门</h1>
           <p class="fr-title"><i>Le français en quatre heures</i></p>
           <p class="lead">
@@ -1677,650 +1067,297 @@
               <ul class="plain">
                 <li>1. 每天背 20 个词，连冠词一起背</li>
                 <li>2. 背熟 être、avoir、aller、faire 和另外几个不规则动词的现在时</li>
-                <li>3. 先不学宾语代词（le / lui / y / en），等现在时说顺了再学</li>
+                <li>3. 先不学宾语代词（le / lui / y / en），等现在时说顺了再学，第 3 册会讲</li>
               </ul>
               <p style="margin-top: 0.8em"><i>Bon courage!</i>　加油！</p>
             </div>
+          </div>
+          <div class="block">
+            <h3>整套课程：第 2 册接着讲日常生活里的动词、时间和过去时</h3>
+            <nav data-series aria-label="系列课程"></nav>
           </div>
         </section>
       </div>
     </main>
 
-    <nav class="bar" aria-label="翻页">
-      <button class="btn" id="prev" aria-label="上一页">← 上一页</button>
-      <span class="count" id="count"></span>
-      <div class="progress" aria-hidden="true"><div id="prog"></div></div>
-      <select class="voice" id="voice" aria-label="朗读用的声音"></select>
-      <button class="btn" id="rate" title="切换朗读速度">语速：最慢</button>
-      <button class="btn primary" id="readAll">朗读本页</button>
-      <button class="btn" id="next" aria-label="下一页">下一页 →</button>
-    </nav>
-    <div class="toast" id="toast" hidden></div>
-
     <script>
-      (() => {
-        const slides = [...document.querySelectorAll(".slide")];
-        const $ = (id) => document.getElementById(id);
-        const chip = $("chip"),
-          count = $("count"),
-          prog = $("prog"),
-          readBtn = $("readAll"),
-          rateBtn = $("rate");
-        const synth = window.speechSynthesis;
-        let cur = 0,
-          voice = null,
-          frVoices = [],
-          speed = 0,
-          reading = false,
-          toastTimer;
-
-        const store = {
-          get(k) {
-            try {
-              return localStorage.getItem(k);
-            } catch {
-              return null;
-            }
-          },
-          set(k, v) {
-            try {
-              localStorage.setItem(k, v);
-            } catch {}
-          },
-        };
-
-        // 法语下方的中文释义。后面已经紧跟中文解释的（“　”+ 汉字）不重复标注；
-        // 写了 data-zh 的以 data-zh 为准。
-        const ZH = {
-          "Le français en quatre heures": "四小时学法语",
-          petit: "小的",
-          grand: "大的",
-          poutine: "肉汁奶酪薯条（魁北克国菜）",
-          dimanche: "星期日",
-          papa: "爸爸",
-          trois: "三",
-          beaucoup: "很多",
-          parler: "说",
-          avec: "和……一起",
-          bonjour: "你好",
-          neuf: "九；新的",
-          animal: "动物",
-          France: "法国",
-          brun: "棕色的",
-          brin: "一根",
-          lundi: "星期一",
-          patte: "爪子",
-          pâte: "面团",
-          faite: "做好的（阴性）",
-          dire: "说",
-          musique: "音乐",
-          route: "路",
-          table: "桌子",
-          rouge: "红色的",
-          hôtel: "酒店",
-          homme: "男人",
-          histoire: "历史；故事",
-          tu: "你",
-          rue: "街道",
-          du: "一些（阳性）",
-          vous: "您；你们",
-          jour: "天",
-          moi: "我（重读）",
-          voiture: "汽车",
-          eau: "水",
-          chaud: "热的",
-          beau: "美的",
-          lait: "牛奶",
-          mère: "母亲",
-          fête: "节日",
-          deux: "二",
-          bleu: "蓝色的",
-          chat: "猫",
-          chocolat: "巧克力",
-          montagne: "山",
-          champagne: "香槟",
-          qui: "谁",
-          quatre: "四",
-          enfant: "孩子",
-          temps: "时间；天气",
-          bon: "好的",
-          nom: "名字",
-          maison: "房子",
-          vin: "葡萄酒",
-          pain: "面包",
-          jardin: "花园",
-          toi: "你（重读）",
-          café: "咖啡；咖啡馆",
-          merci: "谢谢",
-          je: "我",
-          orange: "橙子",
-          ça: "这个",
-          garçon: "男孩",
-          restaurant: "餐厅",
-          université: "大学",
-          "les amis": "朋友们",
-          "vous avez": "你们有",
-          "un hôtel": "一家酒店",
-          "C'est un ami.": "这是一个朋友。",
-          été: "夏天",
-          très: "很",
-          forêt: "森林",
-          à: "在；到",
-          a: "有",
-          français: "法语；法国的",
-          Bonjour: "你好",
-          "Bonjour!": "你好！",
-          Pardon: "对不起",
-          "Et toi?": "你呢？",
-          "Bonjour, madame. Comment allez-vous?": "您好，女士。您好吗？",
-          "Très bien, merci. Et vous?": "很好，谢谢。您呢？",
-          "Bien, merci.": "挺好，谢谢。",
-          "Salut! Ça va?": "嗨！还好吗？",
-          "Oui, ça va. Et toi?": "嗯，还好。你呢？",
-          "Ça va. À tantôt!": "还行。待会儿见！",
-          "la table": "桌子",
-          "la nation": "国家；民族",
-          "la liberté": "自由",
-          "la voiture": "汽车",
-          "le moment": "时刻",
-          "le fromage": "奶酪",
-          "le bateau": "船",
-          "le livre": "书",
-          "les livres": "书（复数）",
-          "les bateaux": "船（复数）",
-          "un animal": "一只动物",
-          "des animaux": "一些动物",
-          "la plage": "海滩",
-          "l'eau": "水",
-          le: "定冠词（阳性）",
-          la: "定冠词（阴性）",
-          les: "定冠词（复数）",
-          un: "一（阳性）",
-          une: "一（阴性）",
-          des: "一些（复数）",
-          "de la": "一些（阴性）",
-          "J'aime le café.": "我喜欢咖啡。",
-          "J'ai un frère et une sœur.": "我有一个哥哥（弟弟）和一个姐姐（妹妹）。",
-          "Je mange du pain.": "我吃面包。",
-          "Je bois de l'eau.": "我喝水。",
-          "Je mange de la soupe.": "我喝汤。",
-          "l'ami": "朋友",
-          "l'école": "学校",
-          "l'hôtel": "酒店",
-          "Je vais au cinéma.": "我去电影院。",
-          "le livre du professeur": "老师的书",
-          "Je vais à la plage.": "我去海滩。",
-          "à Montréal": "在蒙特利尔",
-          "à Shanghai": "在上海",
-          "en France": "在法国",
-          "en Chine": "在中国",
-          "au Canada": "在加拿大",
-          "au Québec": "在魁北克",
-          "aux États-Unis": "在美国",
-          "j'": "我",
-          il: "他",
-          elle: "她",
-          on: "人们；我们",
-          nous: "我们",
-          ils: "他们",
-          elles: "她们",
-          "On y va!": "咱们走吧！",
-          "je suis": "我是",
-          "tu es": "你是",
-          "il est": "他是",
-          "nous sommes": "我们是",
-          "vous êtes": "你们是",
-          "ils sont": "他们是",
-          "j'ai": "我有",
-          "tu as": "你有",
-          "il a": "他有",
-          "nous avons": "我们有",
-          "ils ont": "他们有",
-          "Je suis étudiant.": "我是学生。",
-          "Elle est chinoise.": "她是中国人。",
-          "Nous avons un chat.": "我们有一只猫。",
-          "je parle": "我说",
-          "tu parles": "你说",
-          "il parle": "他说",
-          "nous parlons": "我们说",
-          "vous parlez": "你们说",
-          "ils parlent": "他们说",
-          "J'habite à Shanghai.": "我住在上海。",
-          "Tu aimes le thé?": "你喜欢茶吗？",
-          "Nous travaillons ici.": "我们在这里工作。",
-          "Ils regardent la télé.": "他们在看电视。",
-          "je vais": "我去",
-          "tu vas": "你去",
-          "il va": "他去",
-          "nous allons": "我们去",
-          "vous allez": "你们去",
-          "ils vont": "他们去",
-          "je fais": "我做",
-          "tu fais": "你做",
-          "il fait": "他做",
-          "nous faisons": "我们做",
-          "vous faites": "你们做",
-          "ils font": "他们做",
-          "je veux": "我想要",
-          "tu veux": "你想要",
-          "il veut": "他想要",
-          "nous voulons": "我们想要",
-          "vous voulez": "你们想要",
-          "ils veulent": "他们想要",
-          "Je vais à Montréal.": "我去蒙特利尔。",
-          "Je fais du sport.": "我做运动。",
-          "Je voudrais un café, s'il vous plaît.": "请给我一杯咖啡。",
-          "J'ai vingt-cinq ans.": "我 25 岁。",
-          "J'ai faim.": "我饿了。",
-          "J'ai soif.": "我渴了。",
-          "J'ai froid.": "我冷。",
-          "Il fait beau.": "天气很好。",
-          "Il y a un café ici.": "这里有一家咖啡馆。",
-          "Je ne comprends pas.": "我不明白。",
-          "Vous pouvez répéter, s'il vous plaît?": "请您再说一遍好吗？",
-          "Je ne parle pas français.": "我不说法语。",
-          "Je n'aime pas le café.": "我不喜欢咖啡。",
-          "J'ai un chat.": "我有一只猫。",
-          "Je n'ai pas de chat.": "我没有猫。",
-          "Je sais pas.": "我不知道。",
-          "Qui est-ce?": "这是谁？",
-          "Qu'est-ce que c'est?": "这是什么？",
-          "Où est la gare?": "火车站在哪儿？",
-          "Quand est-ce que tu arrives?": "你什么时候到？",
-          "Comment tu t'appelles?": "你叫什么名字？",
-          "Pourquoi tu apprends le français?": "你为什么学法语？",
-          "Combien ça coûte?": "这个多少钱？",
-          "Quel âge as-tu?": "你多大了？",
-          "un livre intéressant": "一本有趣的书",
-          "une robe rouge": "一条红裙子",
-          "le vin blanc": "白葡萄酒",
-          "un petit café": "一杯小咖啡",
-          "un bon restaurant": "一家好餐厅",
-          "une belle maison": "一栋漂亮的房子",
-          "une vieille ville": "一座古城",
-          petite: "小的（阴性）",
-          petits: "小的（阳性复数）",
-          petites: "小的（阴性复数）",
-          chinois: "中国人；中文",
-          chinoise: "中国人（阴性）",
-          "mon père": "我的父亲",
-          "ma mère": "我的母亲",
-          "mes parents": "我的父母",
-          "ton livre": "你的书",
-          "ta voiture": "你的车",
-          "tes amis": "你的朋友们",
-          "son frère": "他／她的兄弟",
-          "sa sœur": "他／她的姐妹",
-          "ses enfants": "他／她的孩子们",
-          "notre maison": "我们的房子",
-          "nos amis": "我们的朋友们",
-          "votre nom": "您的名字",
-          "vos billets": "你们的票",
-          "leur fils": "他们的儿子",
-          "leurs enfants": "他们的孩子们",
-          "sa mère": "他／她的母亲",
-          "mon amie": "我的（女性）朋友",
-          cinq: "五",
-          six: "六",
-          sept: "七",
-          huit: "八",
-          dix: "十",
-          onze: "十一",
-          douze: "十二",
-          treize: "十三",
-          quatorze: "十四",
-          quinze: "十五",
-          seize: "十六",
-          "dix-sept": "十七",
-          "dix-huit": "十八",
-          "dix-neuf": "十九",
-          vingt: "二十",
-          "vingt et un": "二十一",
-          trente: "三十",
-          quarante: "四十",
-          cinquante: "五十",
-          soixante: "六十",
-          "soixante-dix": "七十",
-          "quatre-vingts": "八十",
-          "quatre-vingt-dix": "九十",
-          "quatre-vingt-dix-sept": "九十七",
-          "Je vais manger.": "我要去吃饭了。",
-          "Ce soir, je vais regarder un film.": "今晚我要看一部电影。",
-          "Demain, nous allons visiter le Vieux-Québec.": "明天我们要去逛魁北克老城。",
-          "J'ai mangé.": "我吃过了。",
-          "Hier, j'ai regardé un film.": "昨天我看了一部电影。",
-          "J'ai fait du sport.": "我做过运动了。",
-          fait: "做了",
-          vu: "看见了",
-          pris: "拿了",
-          "Je suis allé(e) à Québec.": "我去过魁北克城。",
-          "Elle est arrivée hier.": "她昨天到的。",
-          "Bonjour! Je m'appelle Li Ming.": "你好！我叫李明。",
-          "Je suis chinois et j'habite à Shanghai.": "我是中国人，住在上海。",
-          "J'ai vingt-huit ans.": "我 28 岁。",
-          "Je parle chinois et anglais, et j'apprends le français.": "我说中文和英语，正在学法语。",
-          "J'aime la musique, mais je n'aime pas le sport.": "我喜欢音乐，但不喜欢运动。",
-          "La fin de semaine dernière, j'ai regardé un film.": "上周末我看了一部电影。",
-          "Demain, je vais travailler.": "明天我要上班。",
-          "Et vous, comment vous appelez-vous?": "您呢，您叫什么名字？",
-          "J'ai un frère.": "我有一个兄弟。",
-          "Bon courage!": "加油！",
-        };
-        const hasGlossAfter = (el) => {
-          const n = el.nextSibling;
-          return n && n.nodeType === 3 && /^　[一-鿿]/.test(n.textContent);
-        };
-        document.querySelectorAll(".slide i").forEach((el) => {
-          el.tabIndex = 0;
-          el.setAttribute("role", "button");
-          el.title = "点击朗读";
-          const text = el.textContent.replace(/\s+/g, " ").trim();
-          const zh = el.dataset.zh ?? (hasGlossAfter(el) ? null : ZH[text]);
-          if (!zh) return;
-          if (!el.dataset.say) el.dataset.say = text;
-          const w = document.createElement("span");
-          w.className = "w";
-          w.textContent = text;
-          const z = document.createElement("span");
-          z.className = "zh";
-          z.textContent = zh;
-          el.replaceChildren(w, z);
-          el.classList.add("g");
-          if (text.length <= 14) el.classList.add("short");
-        });
-
-        function toast(msg, ms = 4000) {
-          const t = $("toast");
-          t.textContent = msg;
-          t.hidden = false;
-          clearTimeout(toastTimer);
-          toastTimer = setTimeout(() => {
-            t.hidden = true;
-          }, ms);
-        }
-
-        function pickVoice() {
-          if (!synth) return;
-          const vs = synth.getVoices();
-          const fr = vs.filter((v) => /^fr/i.test(v.lang));
-          // 排序：加拿大法语优先，其次法国法语；同一地区里在线（通常更自然）在前，
-          // 离线的高级音质排在标准音质前
-          // 多语言声音会自己猜语言，排到同口音的最后
-          const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 16 : 32);
-          const score = (v) =>
-            region(v) +
-            (isMultilingual(v) ? 8 : 0) +
-            (v.localService ? 4 : 0) +
-            (3 - qualityRank(v));
-          // 同一个声音报两遍（voiceURI 完全相同）才合并；同名不同标识的都留着，显示时附上标识
-          const seen = new Set();
-          frVoices = fr
-            .sort((a, b) => score(a) - score(b))
-            .filter((v) => {
-              if (seen.has(v.voiceURI)) return false;
-              seen.add(v.voiceURI);
-              return true;
-            });
-          const saved = store.get("fr4h-voice");
-          voice = frVoices.find((v) => v.voiceURI === saved) || frVoices[0] || null;
-          showVoice(vs.length > 0);
-        }
-        // 苹果系统同一个声音有几种音质，名字一样，只能从 voiceURI 看出来：
-        // super-compact（精简，最差）、compact（标准）、enhanced（增强）、premium（高级）
-        function qualityRank(v) {
-          const id = v.voiceURI + " " + v.name;
-          if (/premium|高级/i.test(id)) return 3;
-          if (/enhanced|增强|优化/i.test(id)) return 2;
-          if (/super-compact/i.test(id)) return 0;
-          return 1;
-        }
-        function qualityLabel(v) {
-          if (/\((enhanced|premium|增强|高级|优化)\)/i.test(v.name)) return "";
-          const known =
-            ["super-compact", "compact", "enhanced", "premium"].some((q) =>
-              v.voiceURI.includes("." + q + "."),
-            ) || /增强|高级/.test(v.name);
-          return known ? ["精简", "标准", "增强", "高级"][qualityRank(v)] : "";
-        }
-        // Edge 名字带 Multilingual 的声音自动识别文本语言、不认 lang：table、grand 这种
-        // 英法同形的单词常被判成英语。按名字里的通用标识判断，不列具体声音名
-        function isMultilingual(v) {
-          return /multilingual/i.test(v.name);
-        }
-        const REGIONS = { FR: "法国", CA: "加拿大", BE: "比利时", CH: "瑞士" };
-        // 声音名原样显示，后面补上口音、在线／离线，以及名字里看不出来的音质
-        function describeVoice(v) {
-          const region = REGIONS[v.lang.split(/[-_]/)[1]?.toUpperCase()] || v.lang;
-          return [
-            v.name,
-            region + "法语",
-            v.localService ? "离线" : "在线",
-            qualityLabel(v),
-            isMultilingual(v) ? "多语言，单词可能读成英语" : "",
-          ]
-            .filter(Boolean)
-            .join(" · ");
-        }
-        // 在翻页栏列出本机可用的法语声音，可以切换。
-        // localService 为 false 的是浏览器联网合成的声音（Edge 的 Online、Chrome 的 Google）
-        function showVoice(loaded) {
-          const sel = $("voice");
-          sel.replaceChildren();
-          if (!frVoices.length) {
-            sel.add(new Option(loaded || !synth ? "没有法语语音" : "正在加载语音…", ""));
-            sel.disabled = true;
-            sel.title = "";
-            return;
-          }
-          // 显示文字撞车时（iOS 上两个一样的 Amélie）附上完整 voiceURI 区分
-          const labels = frVoices.map(describeVoice);
-          frVoices.forEach((v, i) => {
-            const dup = labels.filter((l) => l === labels[i]).length > 1;
-            sel.add(new Option(dup ? labels[i] + " · " + v.voiceURI : labels[i], v.voiceURI));
-          });
-          sel.disabled = false;
-          sel.value = voice.voiceURI;
-          sel.title = voice.name + "（" + voice.lang + "）";
-          $("noVoice").hidden = true;
-        }
-        $("voice").onchange = (e) => {
-          voice = frVoices.find((v) => v.voiceURI === e.target.value) || voice;
-          e.target.title = voice.name + "（" + voice.lang + "）";
-          store.set("fr4h-voice", voice.voiceURI);
-          stop();
-        };
-        $("noVoiceClose").onclick = () => {
-          $("noVoice").hidden = true;
-        };
-        if (synth) {
-          pickVoice();
-          synth.onvoiceschanged = pickVoice;
-        } else {
-          showVoice(true);
-        }
-
-        function clearMarks() {
-          document.querySelectorAll("i.speaking").forEach((e) => e.classList.remove("speaking"));
-        }
-        function stop() {
-          if (synth) synth.cancel();
-          clearMarks();
-          reading = false;
-          readBtn.textContent = "朗读本页";
-        }
-
-        function speak(list) {
-          if (!synth) {
-            toast("这个浏览器不支持朗读，请换用 Chrome、Edge 或 Safari。");
-            return false;
-          }
-          stop();
-          if (!voice) pickVoice();
-          // 没有法语声音时浏览器会退回系统默认声音（常见是中文或英语），
-          // 按那种语言的规则念法语，table 会被读成英语。宁可不读也不教错。
-          if (!voice) {
-            $("noVoice").hidden = false;
-            return false;
-          }
-          list.forEach((el, idx) => {
-            const u = new SpeechSynthesisUtterance(el.dataset.say || el.textContent);
-            // lang 跟所选声音一致；写死 fr-CA 会和法国法语的声音互相矛盾
-            if (voice) u.voice = voice;
-            u.lang = voice ? voice.lang : "fr-CA";
-            u.rate = SPEEDS[speed].rate;
-            u.onstart = () => {
-              clearMarks();
-              el.classList.add("speaking");
-            };
-            u.onend = u.onerror = () => {
-              el.classList.remove("speaking");
-              if (idx === list.length - 1) {
-                reading = false;
-                readBtn.textContent = "朗读本页";
-              }
-            };
-            synth.speak(u);
-          });
-          return true;
-        }
-
-        function go(n) {
-          n = Math.max(0, Math.min(slides.length - 1, n));
-          stop();
-          slides[cur].classList.remove("on");
-          cur = n;
-          const s = slides[cur];
-          s.classList.add("on");
-          s.scrollTop = 0;
-          fitSlide(s);
-          chip.innerHTML = "<b>" + s.dataset.sec + "</b>";
-          count.textContent = cur + 1 + " / " + slides.length;
-          prog.style.width = ((cur + 1) / slides.length) * 100 + "%";
-          $("prev").disabled = cur === 0;
-          $("next").disabled = cur === slides.length - 1;
-          try {
-            history.replaceState(null, "", "#p" + (cur + 1));
-          } catch {}
-          store.set("fr4h-page", String(cur));
-          if (window.innerWidth <= 760) window.scrollTo(0, 0);
-        }
-
-        // 内容放不下 16:9 画面时，整页等比缩小字号直到放下，而不是出滚动条。
-        // 标题、释义都用 em，跟着一起缩。手机布局是纵向流式排版，不需要。
-        const mobile = window.matchMedia("(max-width: 760px)");
-        function fitSlide(s) {
-          s.style.fontSize = "";
-          if (mobile.matches) return;
-          let size = parseFloat(getComputedStyle(s).fontSize);
-          // 除了整页，也查页内能滚动的容器（表格外层）有没有被撑出滚动条
-          const overflows = () =>
-            s.scrollHeight > s.clientHeight + 1 ||
-            [...s.querySelectorAll(".tbl")].some((t) => t.scrollHeight > t.clientHeight + 1);
-          for (let i = 0; i < 40 && overflows(); i++) {
-            size *= 0.96;
-            s.style.fontSize = size + "px";
-          }
-        }
-        let fitQueued = false;
-        const refit = () => {
-          if (fitQueued) return;
-          fitQueued = true;
-          requestAnimationFrame(() => {
-            fitQueued = false;
-            fitSlide(slides[cur]);
-          });
-        };
-        window.addEventListener("resize", refit);
-        // 网页字体晚到会改变行高，到了再量一次
-        if (document.fonts) document.fonts.ready.then(refit);
-
-        $("prev").onclick = () => go(cur - 1);
-        $("next").onclick = () => go(cur + 1);
-        readBtn.onclick = () => {
-          if (reading) {
-            stop();
-            return;
-          }
-          const list = [...slides[cur].querySelectorAll("i")];
-          if (!list.length) {
-            toast("这一页没有法语。");
-            return;
-          }
-          if (speak(list)) {
-            reading = true;
-            readBtn.textContent = "停止";
-          }
-        };
-        // 默认最慢；0.5 以下浏览器语音会明显失真，所以不再往下调
-        const SPEEDS = [
-          { rate: 0.5, label: "最慢" },
-          { rate: 0.75, label: "较慢" },
-          { rate: 1, label: "正常" },
-        ];
-        const showSpeed = () => {
-          rateBtn.textContent = "语速：" + SPEEDS[speed].label;
-        };
-        rateBtn.onclick = () => {
-          speed = (speed + 1) % SPEEDS.length;
-          showSpeed();
-          store.set("fr4h-rate", String(speed));
-        };
-        const savedSpeed = parseInt(store.get("fr4h-rate") || "0", 10);
-        if (SPEEDS[savedSpeed]) speed = savedSpeed;
-        showSpeed();
-
-        $("stage").addEventListener("click", (e) => {
-          const el = e.target.closest("i");
-          if (el) {
-            speak([el]);
-            return;
-          }
-          const g = e.target.closest("[data-goto]");
-          if (g) go(slides.indexOf(document.getElementById(g.dataset.goto)));
-        });
-        $("stage").addEventListener("keydown", (e) => {
-          if (e.key === "Enter" && e.target.matches(".slide i")) {
-            e.preventDefault();
-            speak([e.target]);
-          }
-        });
-        document.addEventListener("keydown", (e) => {
-          if (e.target.closest && e.target.closest("button, i")) {
-            if (e.key === " " || e.key === "Enter") return;
-          }
-          if (["ArrowRight", "PageDown", " "].includes(e.key)) {
-            e.preventDefault();
-            go(cur + 1);
-          } else if (["ArrowLeft", "PageUp"].includes(e.key)) {
-            e.preventDefault();
-            go(cur - 1);
-          } else if (e.key === "Home") go(0);
-          else if (e.key === "End") go(slides.length - 1);
-        });
-
-        let sx = null,
-          sy = null;
-        $("stage").addEventListener(
-          "touchstart",
-          (e) => {
-            sx = e.touches[0].clientX;
-            sy = e.touches[0].clientY;
-          },
-          { passive: true },
-        );
-        $("stage").addEventListener("touchend", (e) => {
-          if (sx === null) return;
-          const dx = e.changedTouches[0].clientX - sx,
-            dy = e.changedTouches[0].clientY - sy;
-          if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(cur + (dx < 0 ? 1 : -1));
-          sx = null;
-        });
-
-        const m = /^#p(\d+)$/.exec(location.hash);
-        const saved = parseInt(store.get("fr4h-page") || "0", 10);
-        slides[0].classList.add("on");
-        go(m ? parseInt(m[1], 10) - 1 : isNaN(saved) ? 0 : saved);
-      })();
+      // 法语下方的中文释义；后面已经紧跟中文解释的不用写在这里
+      window.DECK_ZH = {
+        "Le français en quatre heures": "四小时学法语",
+        petit: "小的",
+        grand: "大的",
+        poutine: "肉汁奶酪薯条（魁北克国菜）",
+        dimanche: "星期日",
+        papa: "爸爸",
+        trois: "三",
+        beaucoup: "很多",
+        parler: "说",
+        avec: "和……一起",
+        bonjour: "你好",
+        neuf: "九；新的",
+        animal: "动物",
+        France: "法国",
+        brun: "棕色的",
+        brin: "一根",
+        lundi: "星期一",
+        patte: "爪子",
+        pâte: "面团",
+        faite: "做好的（阴性）",
+        dire: "说",
+        musique: "音乐",
+        route: "路",
+        table: "桌子",
+        rouge: "红色的",
+        hôtel: "酒店",
+        homme: "男人",
+        histoire: "历史；故事",
+        tu: "你",
+        rue: "街道",
+        du: "一些（阳性）",
+        vous: "您；你们",
+        jour: "天",
+        moi: "我（重读）",
+        voiture: "汽车",
+        eau: "水",
+        chaud: "热的",
+        beau: "美的",
+        lait: "牛奶",
+        mère: "母亲",
+        fête: "节日",
+        deux: "二",
+        bleu: "蓝色的",
+        chat: "猫",
+        chocolat: "巧克力",
+        montagne: "山",
+        champagne: "香槟",
+        qui: "谁",
+        quatre: "四",
+        enfant: "孩子",
+        temps: "时间；天气",
+        bon: "好的",
+        nom: "名字",
+        maison: "房子",
+        vin: "葡萄酒",
+        pain: "面包",
+        jardin: "花园",
+        toi: "你（重读）",
+        café: "咖啡；咖啡馆",
+        merci: "谢谢",
+        je: "我",
+        orange: "橙子",
+        ça: "这个",
+        garçon: "男孩",
+        restaurant: "餐厅",
+        université: "大学",
+        "les amis": "朋友们",
+        "vous avez": "你们有",
+        "un hôtel": "一家酒店",
+        "C'est un ami.": "这是一个朋友。",
+        été: "夏天",
+        très: "很",
+        forêt: "森林",
+        à: "在；到",
+        a: "有",
+        français: "法语；法国的",
+        Bonjour: "你好",
+        "Bonjour!": "你好！",
+        Pardon: "对不起",
+        "Et toi?": "你呢？",
+        "Bonjour, madame. Comment allez-vous?": "您好，女士。您好吗？",
+        "Très bien, merci. Et vous?": "很好，谢谢。您呢？",
+        "Bien, merci.": "挺好，谢谢。",
+        "Salut! Ça va?": "嗨！还好吗？",
+        "Oui, ça va. Et toi?": "嗯，还好。你呢？",
+        "Ça va. À tantôt!": "还行。待会儿见！",
+        "la table": "桌子",
+        "la nation": "国家；民族",
+        "la liberté": "自由",
+        "la voiture": "汽车",
+        "le moment": "时刻",
+        "le fromage": "奶酪",
+        "le bateau": "船",
+        "le livre": "书",
+        "les livres": "书（复数）",
+        "les bateaux": "船（复数）",
+        "un animal": "一只动物",
+        "des animaux": "一些动物",
+        "la plage": "海滩",
+        "l'eau": "水",
+        le: "定冠词（阳性）",
+        la: "定冠词（阴性）",
+        les: "定冠词（复数）",
+        un: "一（阳性）",
+        une: "一（阴性）",
+        des: "一些（复数）",
+        "de la": "一些（阴性）",
+        "J'aime le café.": "我喜欢咖啡。",
+        "J'ai un frère et une sœur.": "我有一个哥哥（弟弟）和一个姐姐（妹妹）。",
+        "Je mange du pain.": "我吃面包。",
+        "Je bois de l'eau.": "我喝水。",
+        "Je mange de la soupe.": "我喝汤。",
+        "l'ami": "朋友",
+        "l'école": "学校",
+        "l'hôtel": "酒店",
+        "Je vais au cinéma.": "我去电影院。",
+        "le livre du professeur": "老师的书",
+        "Je vais à la plage.": "我去海滩。",
+        "à Montréal": "在蒙特利尔",
+        "à Shanghai": "在上海",
+        "en France": "在法国",
+        "en Chine": "在中国",
+        "au Canada": "在加拿大",
+        "au Québec": "在魁北克",
+        "aux États-Unis": "在美国",
+        "j'": "我",
+        il: "他",
+        elle: "她",
+        on: "人们；我们",
+        nous: "我们",
+        ils: "他们",
+        elles: "她们",
+        "On y va!": "咱们走吧！",
+        "je suis": "我是",
+        "tu es": "你是",
+        "il est": "他是",
+        "nous sommes": "我们是",
+        "vous êtes": "你们是",
+        "ils sont": "他们是",
+        "j'ai": "我有",
+        "tu as": "你有",
+        "il a": "他有",
+        "nous avons": "我们有",
+        "ils ont": "他们有",
+        "Je suis étudiant.": "我是学生。",
+        "Elle est chinoise.": "她是中国人。",
+        "Nous avons un chat.": "我们有一只猫。",
+        "je parle": "我说",
+        "tu parles": "你说",
+        "il parle": "他说",
+        "nous parlons": "我们说",
+        "vous parlez": "你们说",
+        "ils parlent": "他们说",
+        "J'habite à Shanghai.": "我住在上海。",
+        "Tu aimes le thé?": "你喜欢茶吗？",
+        "Nous travaillons ici.": "我们在这里工作。",
+        "Ils regardent la télé.": "他们在看电视。",
+        "je vais": "我去",
+        "tu vas": "你去",
+        "il va": "他去",
+        "nous allons": "我们去",
+        "vous allez": "你们去",
+        "ils vont": "他们去",
+        "je fais": "我做",
+        "tu fais": "你做",
+        "il fait": "他做",
+        "nous faisons": "我们做",
+        "vous faites": "你们做",
+        "ils font": "他们做",
+        "je veux": "我想要",
+        "tu veux": "你想要",
+        "il veut": "他想要",
+        "nous voulons": "我们想要",
+        "vous voulez": "你们想要",
+        "ils veulent": "他们想要",
+        "Je vais à Montréal.": "我去蒙特利尔。",
+        "Je fais du sport.": "我做运动。",
+        "Je voudrais un café, s'il vous plaît.": "请给我一杯咖啡。",
+        "J'ai vingt-cinq ans.": "我 25 岁。",
+        "J'ai faim.": "我饿了。",
+        "J'ai soif.": "我渴了。",
+        "J'ai froid.": "我冷。",
+        "Il fait beau.": "天气很好。",
+        "Il y a un café ici.": "这里有一家咖啡馆。",
+        "Je ne comprends pas.": "我不明白。",
+        "Vous pouvez répéter, s'il vous plaît?": "请您再说一遍好吗？",
+        "Je ne parle pas français.": "我不说法语。",
+        "Je n'aime pas le café.": "我不喜欢咖啡。",
+        "J'ai un chat.": "我有一只猫。",
+        "Je n'ai pas de chat.": "我没有猫。",
+        "Je sais pas.": "我不知道。",
+        "Qui est-ce?": "这是谁？",
+        "Qu'est-ce que c'est?": "这是什么？",
+        "Où est la gare?": "火车站在哪儿？",
+        "Quand est-ce que tu arrives?": "你什么时候到？",
+        "Comment tu t'appelles?": "你叫什么名字？",
+        "Pourquoi tu apprends le français?": "你为什么学法语？",
+        "Combien ça coûte?": "这个多少钱？",
+        "Quel âge as-tu?": "你多大了？",
+        "un livre intéressant": "一本有趣的书",
+        "une robe rouge": "一条红裙子",
+        "le vin blanc": "白葡萄酒",
+        "un petit café": "一杯小咖啡",
+        "un bon restaurant": "一家好餐厅",
+        "une belle maison": "一栋漂亮的房子",
+        "une vieille ville": "一座古城",
+        petite: "小的（阴性）",
+        petits: "小的（阳性复数）",
+        petites: "小的（阴性复数）",
+        chinois: "中国人；中文",
+        chinoise: "中国人（阴性）",
+        "mon père": "我的父亲",
+        "ma mère": "我的母亲",
+        "mes parents": "我的父母",
+        "ton livre": "你的书",
+        "ta voiture": "你的车",
+        "tes amis": "你的朋友们",
+        "son frère": "他／她的兄弟",
+        "sa sœur": "他／她的姐妹",
+        "ses enfants": "他／她的孩子们",
+        "notre maison": "我们的房子",
+        "nos amis": "我们的朋友们",
+        "votre nom": "您的名字",
+        "vos billets": "你们的票",
+        "leur fils": "他们的儿子",
+        "leurs enfants": "他们的孩子们",
+        "sa mère": "他／她的母亲",
+        "mon amie": "我的（女性）朋友",
+        cinq: "五",
+        six: "六",
+        sept: "七",
+        huit: "八",
+        dix: "十",
+        onze: "十一",
+        douze: "十二",
+        treize: "十三",
+        quatorze: "十四",
+        quinze: "十五",
+        seize: "十六",
+        "dix-sept": "十七",
+        "dix-huit": "十八",
+        "dix-neuf": "十九",
+        vingt: "二十",
+        "vingt et un": "二十一",
+        trente: "三十",
+        quarante: "四十",
+        cinquante: "五十",
+        soixante: "六十",
+        "soixante-dix": "七十",
+        "quatre-vingts": "八十",
+        "quatre-vingt-dix": "九十",
+        "quatre-vingt-dix-sept": "九十七",
+        "Je vais manger.": "我要去吃饭了。",
+        "Ce soir, je vais regarder un film.": "今晚我要看一部电影。",
+        "Demain, nous allons visiter le Vieux-Québec.": "明天我们要去逛魁北克老城。",
+        "J'ai mangé.": "我吃过了。",
+        "Hier, j'ai regardé un film.": "昨天我看了一部电影。",
+        "J'ai fait du sport.": "我做过运动了。",
+        fait: "做了",
+        vu: "看见了",
+        pris: "拿了",
+        "Je suis allé(e) à Québec.": "我去过魁北克城。",
+        "Elle est arrivée hier.": "她昨天到的。",
+        "Bonjour! Je m'appelle Li Ming.": "你好！我叫李明。",
+        "Je suis chinois et j'habite à Shanghai.": "我是中国人，住在上海。",
+        "J'ai vingt-huit ans.": "我 28 岁。",
+        "Je parle chinois et anglais, et j'apprends le français.": "我说中文和英语，正在学法语。",
+        "J'aime la musique, mais je n'aime pas le sport.": "我喜欢音乐，但不喜欢运动。",
+        "La fin de semaine dernière, j'ai regardé un film.": "上周末我看了一部电影。",
+        "Demain, je vais travailler.": "明天我要上班。",
+        "Et vous, comment vous appelez-vous?": "您呢，您叫什么名字？",
+        "J'ai un frère.": "我有一个兄弟。",
+        "Bon courage!": "加油！",
+      };
     </script>
+    <script src="course/deck.js"></script>
   </body>
 </html>
