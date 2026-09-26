@@ -652,18 +652,18 @@ describe("音标与朗读", () => {
     expect((lastUtterance!.voice as { voiceURI: string }).voiceURI).toBe("fr-paul");
   });
 
-  it("同一个声音报两遍只列一次；同名不同标识的两个声音都列出，并附上标识区分", async () => {
-    const amelie = (voiceURI: string, name = "Amélie") => ({
+  it("iOS 同一个声音的几种音质标成中文，好的排前面；真重复的只列一次", async () => {
+    const amelie = (voiceURI: string) => ({
       lang: "fr-CA",
-      name,
+      name: "Amélie",
       voiceURI,
       localService: true,
     });
     stubSpeech(undefined, [
+      amelie("com.apple.voice.super-compact.fr-CA.Amelie"),
       amelie("com.apple.voice.compact.fr-CA.Amelie"),
       amelie("com.apple.voice.compact.fr-CA.Amelie"),
-      amelie("com.apple.speech.synthesis.voice.Amelie"),
-      amelie("com.apple.voice.enhanced.fr-CA.Amelie", "Amélie (Enhanced)"),
+      amelie("com.apple.voice.enhanced.fr-CA.Amelie"),
       {
         lang: "fr-FR",
         name: "Thomas",
@@ -677,10 +677,29 @@ describe("音标与朗读", () => {
 
     const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
     expect(options.map((o) => o.text)).toEqual([
-      "Amélie (Enhanced) · 加拿大法语 · 离线",
-      "Amélie · 加拿大法语 · 离线 · com.apple.voice.compact.fr-CA.Amelie",
-      "Amélie · 加拿大法语 · 离线 · com.apple.speech.synthesis.voice.Amelie",
-      "Thomas · 法国法语 · 离线",
+      "Amélie · 加拿大法语 · 离线 · 增强",
+      "Amélie · 加拿大法语 · 离线 · 标准",
+      "Amélie · 加拿大法语 · 离线 · 精简",
+      "Thomas · 法国法语 · 离线 · 标准",
+    ]);
+  });
+
+  it("同名同音质、标识不同的两个声音附上标识区分", async () => {
+    const amelie = (voiceURI: string) => ({
+      lang: "fr-CA",
+      name: "Amélie",
+      voiceURI,
+      localService: true,
+    });
+    stubSpeech(undefined, [amelie("amelie-a"), amelie("amelie-b")]);
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
+    expect(options.map((o) => o.text)).toEqual([
+      "Amélie · 加拿大法语 · 离线 · amelie-a",
+      "Amélie · 加拿大法语 · 离线 · amelie-b",
     ]);
   });
 

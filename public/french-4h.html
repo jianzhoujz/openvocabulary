@@ -2011,7 +2011,7 @@
           // 排序：加拿大法语优先，其次法国法语；同一地区里在线（通常更自然）在前，
           // 离线的高级音质排在标准音质前
           const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 8 : 16);
-          const score = (v) => region(v) + (v.localService ? 4 : 0) + (2 - qualityRank(v));
+          const score = (v) => region(v) + (v.localService ? 4 : 0) + (3 - qualityRank(v));
           // 同一个声音报两遍（voiceURI 完全相同）才合并；同名不同标识的都留着，显示时附上标识
           const seen = new Set();
           frVoices = fr
@@ -2025,21 +2025,28 @@
           voice = frVoices.find((v) => v.voiceURI === saved) || frVoices[0] || null;
           showVoice(vs.length > 0);
         }
-        // 苹果系统同一个声音有几种音质，名字一样，只能从 voiceURI 看出来。0 标准，1 增强，2 高级
+        // 苹果系统同一个声音有几种音质，名字一样，只能从 voiceURI 看出来：
+        // super-compact（精简，最差）、compact（标准）、enhanced（增强）、premium（高级）
         function qualityRank(v) {
           const id = v.voiceURI + " " + v.name;
-          if (/premium|高级/i.test(id)) return 2;
-          if (/enhanced|增强|优化/i.test(id)) return 1;
-          return 0;
+          if (/premium|高级/i.test(id)) return 3;
+          if (/enhanced|增强|优化/i.test(id)) return 2;
+          if (/super-compact/i.test(id)) return 0;
+          return 1;
+        }
+        function qualityLabel(v) {
+          if (/\((enhanced|premium|增强|高级|优化)\)/i.test(v.name)) return "";
+          const known =
+            ["super-compact", "compact", "enhanced", "premium"].some((q) =>
+              v.voiceURI.includes("." + q + "."),
+            ) || /增强|高级/.test(v.name);
+          return known ? ["精简", "标准", "增强", "高级"][qualityRank(v)] : "";
         }
         const REGIONS = { FR: "法国", CA: "加拿大", BE: "比利时", CH: "瑞士" };
         // 声音名原样显示，后面补上口音、在线／离线，以及名字里看不出来的音质
         function describeVoice(v) {
           const region = REGIONS[v.lang.split(/[-_]/)[1]?.toUpperCase()] || v.lang;
-          const quality = /\((enhanced|premium|增强|高级|优化)\)/i.test(v.name)
-            ? ""
-            : ["", "增强", "高级"][qualityRank(v)];
-          return [v.name, region + "法语", v.localService ? "离线" : "在线", quality]
+          return [v.name, region + "法语", v.localService ? "离线" : "在线", qualityLabel(v)]
             .filter(Boolean)
             .join(" · ");
         }

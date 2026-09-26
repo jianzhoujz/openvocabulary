@@ -136,9 +136,9 @@ export function voicesFor(lang: string): SpeechSynthesisVoice[] {
   const prefs = LANG_PREFERENCE[lang] ?? [];
   const rank = (v: SpeechSynthesisVoice) => {
     const i = prefs.indexOf(v.lang.replace("_", "-"));
-    // 地区 > 在线 > 音质：同一口音里在线的在前，离线的高级音质排在标准音质前
+    // 地区 > 在线 > 音质：同一口音里在线的在前，离线的按音质从高到低
     return (
-      (i < 0 ? prefs.length : i) * 8 + (v.localService === false ? 0 : 4) + (2 - qualityRank(v))
+      (i < 0 ? prefs.length : i) * 8 + (v.localService === false ? 0 : 4) + (3 - qualityRank(v))
     );
   };
   // 同一个声音被报两遍（voiceId 完全相同）才合并。名字相同、标识不同的不合并——
@@ -156,14 +156,28 @@ export function voicesFor(lang: string): SpeechSynthesisVoice[] {
 }
 
 /**
- * 苹果系统的同一个声音有几种音质，名字一样，只能从 voiceURI（…compact / enhanced /
- * premium…）或名字后缀「(Enhanced)」看出来。0 标准，1 增强，2 高级
+ * 苹果系统的同一个声音有几种音质，名字一样，只能从 voiceURI 看出来：
+ * com.apple.voice.super-compact.fr-CA.Amelie（精简，最差）、…compact…（标准）、
+ * …enhanced…（增强）、…premium…（高级）。iOS 上 super-compact 和 compact 会同时出现。
  */
+const APPLE_QUALITIES = ["super-compact", "compact", "enhanced", "premium"];
+const QUALITY_LABELS = ["精简", "标准", "增强", "高级"];
+
+/** 音质档 0–3；看不出来的（非苹果声音）按标准算 */
 function qualityRank(voice: SpeechSynthesisVoice): number {
   const id = `${voice.voiceURI} ${voice.name}`;
-  if (/premium|高级/i.test(id)) return 2;
-  if (/enhanced|增强|优化/i.test(id)) return 1;
-  return 0;
+  if (/premium|高级/i.test(id)) return 3;
+  if (/enhanced|增强|优化/i.test(id)) return 2;
+  if (/super-compact/i.test(id)) return 0;
+  return 1;
+}
+
+/** 要显示的音质。名字里已经写了 (Enhanced) 的不重复标；看不出音质的不标 */
+function qualityLabel(voice: SpeechSynthesisVoice): string {
+  if (/\((enhanced|premium|增强|高级|优化)\)/i.test(voice.name)) return "";
+  const known =
+    APPLE_QUALITIES.some((q) => voice.voiceURI.includes(`.${q}.`)) || /增强|高级/.test(voice.name);
+  return known ? QUALITY_LABELS[qualityRank(voice)] : "";
 }
 
 /** 用户选过就用选的那个（还在的话），否则按推荐顺序取第一个 */
@@ -177,7 +191,7 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
   name: string;
   accent: string;
   online: boolean;
-  /** 苹果系统声音的音质档：「增强」「高级」，标准音质为空 */
+  /** 苹果系统声音的音质：精简 / 标准 / 增强 / 高级；看不出来的为空 */
   quality: string;
 } {
   const [base = "", region = ""] = voice.lang.split(/[-_]/);
@@ -189,10 +203,7 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
     accent: regionName ? regionName + langName(base.toLowerCase()) : voice.lang,
     // localService 为 false 是浏览器联网合成的声音，朗读的文字会发到它的服务器
     online: voice.localService === false,
-    // 名字里已经写了 (Enhanced) 之类的，就不再重复标
-    quality: /\((enhanced|premium|增强|高级|优化)\)/i.test(voice.name)
-      ? ""
-      : ["", "增强", "高级"][qualityRank(voice)],
+    quality: qualityLabel(voice),
   };
 }
 
