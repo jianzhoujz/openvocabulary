@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vite-plus/test";
 
 import deckJs from "../public/course/deck.js?raw";
-import { COURSES } from "@/courses";
+import { COURSES, ENGLISH_COURSES } from "@/courses";
 
 const pages = import.meta.glob<string>("../public/french-4h*.html", {
   query: "?raw",
@@ -32,5 +32,19 @@ describe("法语四小时课件", () => {
   it("每一册的页码存储键不重复", () => {
     const ids = COURSES.map((c) => /<body data-deck="([^"]+)"/.exec(page(c.href))?.[1]);
     expect(new Set(ids).size).toBe(COURSES.length);
+  });
+});
+
+const englishPages = import.meta.glob<string>("../public/pte-*.html", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
+
+describe("英语课件", () => {
+  it("首页列出的每一份都有对应的页面，没有漏列的", () => {
+    expect(Object.keys(englishPages).sort()).toEqual(
+      ENGLISH_COURSES.map((c) => `../public/${c.href}`).sort(),
+    );
   });
 });

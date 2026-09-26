@@ -1,0 +1,2354 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>PTE Core 四小时 · 冲刺 CLB 9</title>
+    <meta
+      name="description"
+      content="从雅思 6.5 冲 PTE Core CLB 9（听 82 读 78 说 84 写 88）的四小时速成课件"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      :root {
+        --bg: #eef1f3;
+        --surface: #fcfcfb;
+        --ink: #17232b;
+        --muted: #56656f;
+        --line: #d6dde1;
+        --accent: #0d6b5f;
+        --accent-soft: #dcefeb;
+        --mark: #b4540f;
+        --mark-soft: #fbe9da;
+        --bad: #b3261e;
+        --good: #1b7a3a;
+        --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        --serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+        --en: "Source Serif 4", Georgia, "Times New Roman", serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          color-scheme: dark;
+          --bg: #0d1417;
+          --surface: #162024;
+          --ink: #e4ecee;
+          --muted: #97a8ae;
+          --line: #2a3a40;
+          --accent: #6fd0bf;
+          --accent-soft: #173a36;
+          --mark: #f0a25c;
+          --mark-soft: #3d2a18;
+          --bad: #ff8a80;
+          --good: #7ddc97;
+        }
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0d1417;
+        --surface: #162024;
+        --ink: #e4ecee;
+        --muted: #97a8ae;
+        --line: #2a3a40;
+        --accent: #6fd0bf;
+        --accent-soft: #173a36;
+        --mark: #f0a25c;
+        --mark-soft: #3d2a18;
+        --bad: #ff8a80;
+        --good: #7ddc97;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 16px;
+        padding-top: calc(10px + env(safe-area-inset-top));
+      }
+      .brand {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 16px;
+      }
+      .brand a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .brand span {
+        font-family: var(--en);
+        font-weight: 400;
+        font-style: italic;
+        color: var(--muted);
+        margin-left: 10px;
+        font-size: 14px;
+      }
+      .chip {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .chip b {
+        color: var(--accent);
+        font-weight: 500;
+      }
+      .stage-wrap {
+        flex: 1;
+        min-height: 0;
+        container-type: size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 12px;
+      }
+      .stage {
+        position: relative;
+        width: min(100cqw, 100cqh * 16 / 9);
+        height: min(100cqh, 100cqw * 9 / 16);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: 0 10px 40px -20px rgb(0 0 0 / 0.25);
+        overflow: hidden;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        padding: 3.2% 4.2%;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        font-size: clamp(12px, 1.9cqh, 20px);
+        line-height: 1.55;
+      }
+      .slide.on {
+        display: flex;
+      }
+      .eyebrow {
+        font-size: 0.8em;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        font-weight: 500;
+        margin-bottom: 0.3em;
+      }
+      .slide h1 {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 3em;
+        line-height: 1.15;
+        margin: 0.2em 0 0.3em;
+      }
+      .slide h2 {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 1.75em;
+        line-height: 1.25;
+        margin: 0 0 0.55em;
+      }
+      .slide h3 {
+        font-size: 1.02em;
+        margin: 0 0 0.35em;
+        font-weight: 700;
+      }
+      .slide p {
+        margin: 0 0 0.6em;
+      }
+      .slide ul,
+      .slide ol {
+        margin: 0 0 0.6em;
+        padding-left: 1.3em;
+      }
+      .slide li {
+        margin: 0.18em 0;
+      }
+      .lead {
+        font-size: 1.12em;
+        color: var(--muted);
+        max-width: 46em;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .small {
+        font-size: 0.86em;
+      }
+      .en-title {
+        font-family: var(--en);
+        font-style: italic;
+        font-size: 1.4em;
+        color: var(--muted);
+        margin: 0 0 0.8em;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: repeat(var(--n, 2), minmax(0, 1fr));
+        gap: 1em 1.4em;
+        align-items: start;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.75em 0.95em;
+        background: color-mix(in srgb, var(--surface) 70%, var(--bg));
+      }
+      .card > :last-child {
+        margin-bottom: 0;
+      }
+      .tip {
+        border-left: 3px solid var(--mark);
+        background: var(--mark-soft);
+        padding: 0.5em 0.85em;
+        border-radius: 0 8px 8px 0;
+        margin: 0.4em 0 0.6em;
+      }
+      .key {
+        border-left: 3px solid var(--accent);
+        background: var(--accent-soft);
+        padding: 0.5em 0.85em;
+        border-radius: 0 8px 8px 0;
+        margin: 0.4em 0 0.6em;
+      }
+      .tip > :last-child,
+      .key > :last-child {
+        margin-bottom: 0;
+      }
+      b.hl,
+      .hl {
+        color: var(--mark);
+      }
+      .big {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 2.2em;
+        line-height: 1.1;
+        color: var(--accent);
+      }
+      .tbl {
+        overflow: hidden;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 0.92em;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 0.32em 0.6em;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        color: var(--muted);
+        font-weight: 500;
+        font-size: 0.92em;
+      }
+      td.c,
+      th.c {
+        text-align: center;
+      }
+      tr.me td {
+        background: var(--accent-soft);
+        font-weight: 700;
+      }
+      .dot {
+        color: var(--accent);
+        font-weight: 700;
+      }
+      /* 可点读的英语 */
+      .slide i {
+        font-family: var(--en);
+        font-style: normal;
+        color: var(--accent);
+        cursor: pointer;
+        border-bottom: 1px dashed color-mix(in srgb, var(--accent) 45%, transparent);
+        border-radius: 2px;
+      }
+      .slide i:hover,
+      .slide i:focus-visible {
+        background: var(--accent-soft);
+        outline: none;
+      }
+      .slide i.speaking {
+        background: var(--mark-soft);
+        color: var(--mark);
+      }
+      .tpl {
+        font-family: var(--en);
+        line-height: 1.6;
+      }
+      .tpl .slot {
+        font-family: var(--sans);
+        color: var(--mark);
+        font-size: 0.86em;
+      }
+      .passage {
+        font-family: var(--en);
+        font-size: 1.04em;
+        line-height: 1.75;
+      }
+      .passage .br {
+        color: var(--mark);
+        font-weight: 700;
+        padding: 0 0.15em;
+      }
+      .passage u {
+        text-decoration-color: var(--mark);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+      .route {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.55em 1.2em;
+      }
+      .route button {
+        all: unset;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 2em 7.2em 1fr;
+        align-items: baseline;
+        gap: 0.4em;
+        padding: 0.55em 0.8em;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+      }
+      .route button:hover,
+      .route button:focus-visible {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+      .route .n {
+        font-family: var(--serif);
+        font-weight: 900;
+        color: var(--accent);
+        font-size: 1.3em;
+      }
+      .route .tm {
+        color: var(--muted);
+        font-size: 0.86em;
+        font-variant-numeric: tabular-nums;
+      }
+      .howto {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+        margin-top: auto;
+      }
+      .howto span {
+        font-size: 0.85em;
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 0.25em 0.8em;
+        color: var(--muted);
+      }
+      .howto b {
+        color: var(--ink);
+      }
+      kbd {
+        font-family: inherit;
+        border: 1px solid var(--line);
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        padding: 0 0.3em;
+        font-size: 0.9em;
+      }
+      .cover {
+        justify-content: center;
+      }
+      .sec-open {
+        justify-content: center;
+      }
+      .sec-open .num {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 5em;
+        line-height: 1;
+        color: var(--accent);
+      }
+      .targets {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8em;
+        margin: 0.4em 0 1em;
+        max-width: 40em;
+      }
+      .targets div {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.55em 0.8em;
+      }
+      .targets span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.85em;
+      }
+      .targets b {
+        font-family: var(--serif);
+        font-size: 2em;
+        color: var(--accent);
+      }
+      .targets .worst b {
+        color: var(--mark);
+      }
+      /* 听写练习 */
+      .dict {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.5em;
+        align-items: center;
+        margin: 0.35em 0;
+      }
+      .dict input {
+        font: inherit;
+        font-family: var(--en);
+        padding: 0.35em 0.6em;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        color: var(--ink);
+        min-width: 0;
+      }
+      .dict .res {
+        grid-column: 2 / 4;
+        font-family: var(--en);
+        font-size: 0.95em;
+        min-height: 0;
+      }
+      .dict .res:empty {
+        display: none;
+      }
+      .res .ok {
+        color: var(--good);
+      }
+      .res .miss {
+        color: var(--bad);
+        text-decoration: underline wavy;
+      }
+      .res .score {
+        font-family: var(--sans);
+        color: var(--muted);
+        font-size: 0.86em;
+        margin-left: 0.5em;
+      }
+      .mini {
+        font: inherit;
+        font-size: 0.86em;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        border-radius: 8px;
+        padding: 0.3em 0.7em;
+        cursor: pointer;
+      }
+      .mini:hover {
+        border-color: var(--accent);
+      }
+      .mini.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--surface);
+      }
+      details.ans {
+        margin-top: 0.4em;
+      }
+      details.ans summary {
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 0.9em;
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+        flex-wrap: wrap;
+      }
+      .btn {
+        font: inherit;
+        font-size: 14px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        border-radius: 9px;
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+      .btn:hover:not(:disabled) {
+        border-color: var(--accent);
+      }
+      .btn:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      .btn.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--surface);
+      }
+      .count {
+        font-variant-numeric: tabular-nums;
+        color: var(--muted);
+        font-size: 13px;
+        min-width: 4.5em;
+        text-align: center;
+      }
+      .progress {
+        flex: 1;
+        min-width: 60px;
+        height: 4px;
+        background: var(--line);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .progress div {
+        height: 100%;
+        background: var(--accent);
+        width: 0;
+        transition: width 0.2s;
+      }
+      .voice {
+        font: inherit;
+        font-size: 13px;
+        max-width: 16em;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        color: var(--ink);
+        border-radius: 9px;
+        padding: 6px 8px;
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: 80px;
+        transform: translateX(-50%);
+        background: var(--ink);
+        color: var(--surface);
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        max-width: min(90vw, 36em);
+        z-index: 9;
+      }
+      .novoice {
+        margin: 0 16px 8px;
+        border: 1px solid var(--mark);
+        background: var(--mark-soft);
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+      .novoice ul {
+        margin: 6px 0;
+        padding-left: 1.2em;
+      }
+      /* 手机：纵向流式排版 */
+      @media (max-width: 760px) {
+        body {
+          height: auto;
+          min-height: 100%;
+        }
+        .brand span {
+          display: none;
+        }
+        .stage-wrap {
+          container-type: normal;
+          display: block;
+          padding: 0 8px;
+        }
+        .stage {
+          width: auto;
+          height: auto;
+        }
+        .slide {
+          position: static;
+          padding: 20px 16px;
+          font-size: 15px;
+        }
+        .slide h1 {
+          font-size: 2.1em;
+        }
+        .slide h2 {
+          font-size: 1.45em;
+        }
+        .cols,
+        .route {
+          grid-template-columns: 1fr;
+        }
+        .targets {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .tbl {
+          overflow-x: auto;
+        }
+        .bar {
+          position: sticky;
+          bottom: 0;
+          background: var(--bg);
+          border-top: 1px solid var(--line);
+        }
+        .progress,
+        .voice {
+          display: none;
+        }
+        .howto {
+          margin-top: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <a href="./">PTE Core 四小时</a><span>Target: CLB 9 in every skill</span>
+      </div>
+      <div class="chip" id="chip"></div>
+    </header>
+
+    <aside class="novoice" id="noVoice" hidden>
+      <b>这台设备没有英语语音，所以暂时不朗读。</b>
+      浏览器没有目标语言的声音时会拿中文声音硬念，听了反而教错。可以这样解决：
+      <ul>
+        <li>用 Microsoft Edge 或 Chrome 打开本页，二者都自带英语在线语音。</li>
+        <li>Windows：设置 → 时间和语言 → 语音 → 添加语音 → 英语（美国 / 英国 / 加拿大）。</li>
+        <li>
+          手机：iPhone 在“设置 → 辅助功能 → 朗读内容 → 声音 →
+          英语”里下载；安卓在系统“文字转语音”里下载英语包。
+        </li>
+      </ul>
+      <button class="btn" id="noVoiceClose">知道了</button>
+    </aside>
+
+    <main class="stage-wrap">
+      <div class="stage" id="stage">
+        <!-- ============ 开始 ============ -->
+        <section class="slide cover" data-sec="开始">
+          <div class="eyebrow">雅思 6.5 → PTE Core · 加拿大移民 · 四小时速成</div>
+          <h1>PTE Core 冲刺 CLB 9</h1>
+          <p class="en-title">Listening 82 · Reading 78 · Speaking 84 · Writing 88</p>
+          <p class="lead">
+            学完以后：知道 PTE Core 每道题怎么计分、哪些题最值分；手里有口语和写作的现成模板；
+            会用固定流程做阅读、听力；能按两周计划自己练到考场。
+          </p>
+          <div class="howto">
+            <span>点<b>绿色英文</b>听发音（示范句可当跟读、听写材料）</span>
+            <span><b>朗读本页</b>：把整页英文依次读出来</span>
+            <span><kbd>←</kbd> <kbd>→</kbd> 翻页，手机上左右滑动</span>
+            <span>考试细节以 Pearson 官网为准</span>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="开始">
+          <div class="eyebrow">课程安排 · 点任意一节跳过去</div>
+          <h2>6 节课，按“先抢分、后补短”的顺序排</h2>
+          <div class="route">
+            <button data-goto="s1">
+              <span class="n">1</span><span class="tm">0:00–0:25</span
+              ><span class="t">目标：CLB 9 的分数线和计分规律</span>
+            </button>
+            <button data-goto="s2">
+              <span class="n">2</span><span class="tm">0:25–1:30</span
+              ><span class="t">口语：5 种题，模板 + 流利度</span>
+            </button>
+            <button data-goto="s3">
+              <span class="n">3</span><span class="tm">1:30–2:15</span
+              ><span class="t">写作：总结、邮件，写作 88 怎么来</span>
+            </button>
+            <button data-goto="s4">
+              <span class="n">4</span><span class="tm">2:15–2:55</span
+              ><span class="t">阅读：填空搭配、排序、选择</span>
+            </button>
+            <button data-goto="s5">
+              <span class="n">5</span><span class="tm">2:55–3:35</span
+              ><span class="t">听力：听写、总结、找错词</span>
+            </button>
+            <button data-goto="s6">
+              <span class="n">6</span><span class="tm">3:35–4:00</span
+              ><span class="t">考场策略与两周计划</span>
+            </button>
+          </div>
+          <div class="key" style="margin-top: 1em">
+            <p>
+              时间是建议值：每节讲完就<b>按页面上的练习动口、动手</b>。只看不练，四小时之后分数不会变。
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ 第 1 节 ============ -->
+        <section class="slide sec-open" id="s1" data-sec="1 · 目标">
+          <div class="num">1</div>
+          <h2>目标：CLB 9 到底要多少分</h2>
+          <p class="lead">
+            先弄清楚分数线和 PTE 的计分方式。PTE 是机器评分、一题计多项，
+            “哪种题值分”和雅思完全不一样——这决定了后面四小时的时间怎么花。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="1 · 目标">
+          <div class="eyebrow">IRCC 公布的对照（PTE Core，满分 90）</div>
+          <h2>CLB 9 = 听 82、读 78、说 84、写 88</h2>
+          <div class="tbl">
+            <table>
+              <thead>
+                <tr>
+                  <th>CLB</th>
+                  <th class="c">听力 Listening</th>
+                  <th class="c">阅读 Reading</th>
+                  <th class="c">口语 Speaking</th>
+                  <th class="c">写作 Writing</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10</td>
+                  <td class="c">89–90</td>
+                  <td class="c">88–90</td>
+                  <td class="c">89–90</td>
+                  <td class="c">90</td>
+                </tr>
+                <tr class="me">
+                  <td>9 ← 目标</td>
+                  <td class="c">82–88</td>
+                  <td class="c">78–87</td>
+                  <td class="c">84–88</td>
+                  <td class="c">88–89</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="c">71–81</td>
+                  <td class="c">69–77</td>
+                  <td class="c">76–83</td>
+                  <td class="c">79–87</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="c">60–70</td>
+                  <td class="c">60–68</td>
+                  <td class="c">68–75</td>
+                  <td class="c">69–78</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cols" style="margin-top: 0.8em">
+            <div class="tip">
+              <p>
+                <b>四科分开算，不取平均。</b>Express Entry 按你最低的那一科定级：三科 CLB 9、一科 87
+                分的写作， 在“全科 CLB 9”这类门槛上仍然只算 CLB 8。
+              </p>
+            </div>
+            <div class="key">
+              <p>
+                <b>写作 88 是最窄的门：</b>只有 88–89 两分的区间。后面会看到，写作分大半来自
+                <b>听写和阅读填空</b>，而不是作文本身。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="1 · 目标">
+          <div class="eyebrow">你的起点</div>
+          <h2>雅思 6.5 大约在 CLB 7–8，差的是“稳”</h2>
+          <div class="cols">
+            <div>
+              <div class="tbl">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>雅思 G 类</th>
+                      <th class="c">听</th>
+                      <th class="c">读</th>
+                      <th class="c">说</th>
+                      <th class="c">写</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="me">
+                      <td>CLB 9 要求</td>
+                      <td class="c">8.0</td>
+                      <td class="c">7.0</td>
+                      <td class="c">7.0</td>
+                      <td class="c">7.0</td>
+                    </tr>
+                    <tr>
+                      <td>CLB 8 要求</td>
+                      <td class="c">7.5</td>
+                      <td class="c">6.5</td>
+                      <td class="c">6.5</td>
+                      <td class="c">6.5</td>
+                    </tr>
+                    <tr>
+                      <td>CLB 7 要求</td>
+                      <td class="c">6.0</td>
+                      <td class="c">6.0</td>
+                      <td class="c">6.0</td>
+                      <td class="c">6.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="small muted" style="margin-top: 0.5em">
+                IRCC 只认雅思 G 类；若你考的是 A 类，这张表只能作水平参考。
+              </p>
+            </div>
+            <div>
+              <p>各科 6.5 的话，折算下来阅读、口语、写作约 CLB 8，<b>听力 6.5 只到 CLB 7</b>。</p>
+              <p>好消息：PTE 对雅思考生有三个天然优势——</p>
+              <ul>
+                <li><b>没有考官</b>：口语对着麦克风，不怕紧张冷场</li>
+                <li><b>题目短而多</b>：一题失误影响小，靠方法能稳定拿分</li>
+                <li><b>模板有效</b>：机器看内容覆盖、流利度、发音和格式，套路能直接转化成分数</li>
+              </ul>
+              <div class="tip">
+                <p>坏处：机器不懂“意思差不多”。漏读、停顿、拼错、超字数，都是实打实扣分。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="1 · 目标">
+          <div class="eyebrow">考试结构 · 全程约 2 小时，机考，中间不休息</div>
+          <h2>三个部分，19 种题（题数每场在一定范围内浮动）</h2>
+          <div class="tbl">
+            <table>
+              <thead>
+                <tr>
+                  <th>部分</th>
+                  <th>题型</th>
+                  <th>时长</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Part 1</b><br />口语与写作</td>
+                  <td>
+                    Personal Introduction（不计分）· Read Aloud · Repeat Sentence · Describe Image ·
+                    <b class="hl">Respond to a Situation</b> · Answer Short Question · Summarize
+                    Written Text ·
+                    <b class="hl">Write Email</b>
+                  </td>
+                  <td>约 50 分钟</td>
+                </tr>
+                <tr>
+                  <td><b>Part 2</b><br />阅读</td>
+                  <td>
+                    Reading &amp; Writing Fill in the Blanks（下拉）· Multiple Choice, Multiple
+                    Answers · Re-order Paragraphs · Fill in the Blanks（拖拽）· Multiple Choice,
+                    Single Answer
+                  </td>
+                  <td>约 30 分钟</td>
+                </tr>
+                <tr>
+                  <td><b>Part 3</b><br />听力</td>
+                  <td>
+                    Summarize Spoken Text · Multiple Choice, Multiple Answers · Fill in the Blanks ·
+                    Multiple Choice, Single Answer · Select Missing Word · Highlight Incorrect Words
+                    · Write from Dictation
+                  </td>
+                  <td>约 30 分钟</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top: 0.6em">
+            标橙的两题是 Core 独有（Academic 没有）；Core 也没有 Academic 的大作文和 Retell
+            Lecture。 网上题库很多是 Academic 的，练的时候注意区分。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="1 · 目标">
+          <div class="eyebrow">PTE 最重要的规律</div>
+          <h2>一道题同时给两科打分</h2>
+          <div class="tbl">
+            <table>
+              <thead>
+                <tr>
+                  <th>题型</th>
+                  <th class="c">听</th>
+                  <th class="c">读</th>
+                  <th class="c">说</th>
+                  <th class="c">写</th>
+                  <th>值不值得重点练</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Read Aloud 朗读</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td>★★★ 口语 + 阅读</td>
+                </tr>
+                <tr>
+                  <td>Repeat Sentence 复述</td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td>★★★ 题多，口语 + 听力</td>
+                </tr>
+                <tr>
+                  <td>Describe Image / Respond to a Situation</td>
+                  <td></td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td>★★ 靠模板稳住</td>
+                </tr>
+                <tr>
+                  <td>Answer Short Question 简答</td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td>★ 常识题，快答</td>
+                </tr>
+                <tr>
+                  <td>Summarize Written Text 读后总结</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td>★★ 格式对就稳</td>
+                </tr>
+                <tr>
+                  <td>Write Email 写邮件</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td>★★ 模板 + 零错误</td>
+                </tr>
+                <tr>
+                  <td>Reading &amp; Writing Fill in the Blanks 下拉填空</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td>★★★ 阅读 + 写作</td>
+                </tr>
+                <tr>
+                  <td>Summarize Spoken Text 听后总结</td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td>★★ 听力 + 写作</td>
+                </tr>
+                <tr>
+                  <td>Listening Fill in the Blanks 听力填空</td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td>★★ 拼写要对</td>
+                </tr>
+                <tr>
+                  <td>Write from Dictation 听写</td>
+                  <td class="c dot">●</td>
+                  <td></td>
+                  <td></td>
+                  <td class="c dot">●</td>
+                  <td>★★★ 写作分的大头</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top: 0.4em">
+            其余阅读、听力选择题、排序、选词、找错词只计单科，且多选题倒扣分，性价比最低。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="1 · 目标">
+          <div class="eyebrow">机器怎么打分</div>
+          <h2>四条规则，记住就少丢一半冤枉分</h2>
+          <div class="cols">
+            <div class="card">
+              <h3>① 流利度 &gt; 完美</h3>
+              <p>
+                口语看内容、<b>流利度</b>、<b>发音</b>。卡住、重读、“um…
+                sorry”都扣流利度。读错一个词别回头，接着往下说。
+              </p>
+            </div>
+            <div class="card">
+              <h3>② 字数是硬门槛</h3>
+              <p>
+                总结 25–50 词、邮件 80–120 词、听后总结 20–30
+                词。超出或不足先扣“形式”分，严重时<b>整题零分</b>。
+              </p>
+            </div>
+            <div class="card">
+              <h3>③ 拼写一个字母都算</h3>
+              <p>
+                填空、听写里拼错就是错；写作题拼写单独计分。美式、英式拼法都可以，但同一篇里要统一。
+              </p>
+            </div>
+            <div class="card">
+              <h3>④ 多选题会倒扣</h3>
+              <p>
+                阅读和听力的 <b>Multiple Answers</b>、听力的
+                <b>Highlight Incorrect Words</b>：选错一个扣一分，最低零分。
+                <b>没把握就只选一个。</b>
+              </p>
+            </div>
+          </div>
+          <div class="key">
+            <p>麦克风：开始录音后约 3 秒不出声，录音会自动结束。所以宁可说得慢，也不能停。</p>
+          </div>
+        </section>
+
+        <!-- ============ 第 2 节 口语 ============ -->
+        <section class="slide sec-open" id="s2" data-sec="2 · 口语">
+          <div class="num">2</div>
+          <h2>口语：目标 84</h2>
+          <p class="lead">
+            Read Aloud 和 Repeat Sentence
+            同时给口语和另一科加分，题量又大，是整场考试最值得练的两题。 Describe Image 和 Respond
+            to a Situation 用模板保证不冷场。
+          </p>
+          <div class="tip" style="max-width: 44em">
+            <p>练习方法：点绿色英文听一遍，再<b>用手机录音跟读</b>，回放对比停顿和重音。</p>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">口语评分</div>
+          <h2>机器听的是“节奏”，不是“口音”</h2>
+          <div class="cols">
+            <div>
+              <h3>流利度 Oral fluency</h3>
+              <ul>
+                <li>匀速，<b>按意群停顿</b>，逗号、句号处稍停</li>
+                <li>不要一个词一个词地蹦，也不要为了快而吞音</li>
+                <li>没有自我纠正、没有 “uh / um”、没有长停顿</li>
+              </ul>
+              <h3>发音 Pronunciation</h3>
+              <ul>
+                <li>单词重音放对位置，比“美音还是英音”重要得多</li>
+                <li>词尾辅音念清楚：-s、-ed、-t、-d</li>
+                <li>中国口音没关系，只要清晰、一致</li>
+              </ul>
+            </div>
+            <div>
+              <h3>对着麦克风的习惯</h3>
+              <ul>
+                <li>麦克风放在嘴角侧下方约两指，不对着嘴吹气</li>
+                <li>音量正常偏大，像跟对面一米远的人说话</li>
+                <li>等录音提示（Recording）出现再开口</li>
+                <li>说完就点 Next，别等时间走完</li>
+              </ul>
+              <div class="tip">
+                <p>考场里别人会同时说话。练习时开着电视或背景噪音练，考场上就不会被带偏。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Read Aloud · 准备 30–40 秒，文本最长 60 词</div>
+          <h2>朗读：准备时间里做三件事</h2>
+          <div class="cols" style="--n: 2">
+            <div>
+              <ol>
+                <li><b>画停顿</b>：标点处停；长句在介词、从句、and/but 前切开，每段 3–6 个词</li>
+                <li><b>找难词</b>：长词、专有名词先在心里默念一遍重音</li>
+                <li><b>第一句就用正常语速</b>：机器从头打流利度，开头慢了很难补</li>
+              </ol>
+              <div class="tip">
+                <p>读错一个词：<b>不要回读</b>，按原节奏继续。回读扣的流利度比错一个词多。</p>
+              </div>
+            </div>
+            <div class="card passage">
+              <i>Many cities are now planting trees along busy streets.</i>
+              <span class="br">/</span> <i>Research suggests that shade from trees</i>
+              <span class="br">/</span> <i>can lower summer temperatures by several degrees,</i>
+              <span class="br">/</span> <i>which reduces the need for air conditioning</i>
+              <span class="br">/</span> <i>and improves the health of residents</i>
+              <span class="br">/</span>
+              <i>who spend long hours outdoors.</i>
+            </div>
+          </div>
+          <p class="small muted">
+            右边是示范：一行就是一个意群。点每一段听节奏，再用“朗读本页”听整段连起来。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Read Aloud · 中国考生最常念错的地方</div>
+          <h2>重音、数字和词尾</h2>
+          <div class="cols" style="--n: 3">
+            <div class="card">
+              <h3>重音位置</h3>
+              <p>
+                <i>deTERmine</i> · <i>enVIronment</i> · <i>COMfortable</i> · <i>parTICularly</i> ·
+                <i>sigNIFicant</i> · <i>aNAlysis</i> · <i>CAtegory</i> · <i>deVElopment</i> ·
+                <i>eCOnomy</i> ·
+                <i>ecoNOmic</i>
+              </p>
+            </div>
+            <div class="card">
+              <h3>数字和年份</h3>
+              <p>
+                <i>1998</i> nineteen ninety-eight<br />
+                <i>2015</i> twenty fifteen<br />
+                <i>3.5%</i> three point five percent<br />
+                <i>1/4</i> a quarter<br />
+                <i>the 1960s</i> the nineteen sixties
+              </p>
+            </div>
+            <div class="card">
+              <h3>-ed 的三种读法</h3>
+              <p>
+                /t/ <i>helped</i> <i>worked</i><br />
+                /d/ <i>moved</i> <i>planned</i><br />
+                /ɪd/ <i>needed</i> <i>started</i><br />
+                <span class="small muted">只有 t、d 结尾的词才多一个音节</span>
+              </p>
+            </div>
+          </div>
+          <div class="key">
+            <p>
+              连读让句子听起来更流利：<i>a lot of</i>、<i>turn it off</i>、<i>as a result</i>、<i
+                >in an effort to</i
+              >。 不用刻意模仿，但别在每个词之间停。
+            </p>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Repeat Sentence · 录音 3–9 秒，听一遍后复述</div>
+          <h2>复述：记“意思块”，不记单词</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li>听的时候把句子切成 2–3 块：谁 / 做什么 / 在哪、什么时候</li>
+                <li>提示音后<b>马上开口</b>，模仿原句的语调和速度</li>
+                <li>中间有一块没记住：用一个意思相近的词带过，<b>保持不停</b></li>
+                <li>完全没听清：至少把听到的开头和结尾说出来，别沉默</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  这是全场题量最多的题之一，也同时计听力。每天 30 句跟读，是提口语分最快的办法。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3>练一练：点一句，听完不看原文复述</h3>
+              <p><i>The library will be closed on Monday for maintenance.</i></p>
+              <p><i>Please submit your assignment before the end of the week.</i></p>
+              <p><i>Most of the students found the final exam easier than expected.</i></p>
+              <p><i>The meeting has been moved to the second floor conference room.</i></p>
+              <p><i>Applicants must provide proof of language ability with their documents.</i></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Describe Image · 准备 25 秒，说 40 秒</div>
+          <h2>看图：一套模板说所有图</h2>
+          <div class="cols" style="--n: 2">
+            <div class="card tpl">
+              <p><i>This image shows</i> <span class="slot">[标题 / 主题]</span>.</p>
+              <p>
+                <i>The highest value is</i> <span class="slot">[最高项]</span>, <i>at about</i>
+                <span class="slot">[数值]</span>.
+              </p>
+              <p>
+                <i>The lowest is</i> <span class="slot">[最低项]</span>, <i>at around</i>
+                <span class="slot">[数值]</span>.
+              </p>
+              <p><i>In addition,</i> <span class="slot">[再说一个明显的数据或趋势]</span>.</p>
+              <p>
+                <i>Overall, this image clearly shows how</i> <span class="slot">[主题]</span>
+                <i>changes or compares.</i>
+              </p>
+            </div>
+            <div>
+              <h3>25 秒准备顺序</h3>
+              <ol>
+                <li>读标题 → 第一句</li>
+                <li>找最高、最低 → 第二、三句</li>
+                <li>再挑一个趋势或对比 → 第四句</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  说满 30–35
+                  秒就结束，不需要把图说完。<b>数字可以说大概</b>，流利和结构比准确度更值分。
+                </p>
+              </div>
+              <p class="small muted">
+                雅思 Task 1 的词汇都能用，但 PTE 只要 5 句话，别展开分析原因。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Describe Image · 示范（柱状图：某市四种通勤方式占比）</div>
+          <h2>照着模板说一遍</h2>
+          <div class="card passage" style="margin-bottom: 0.8em">
+            <i>This bar chart shows how people in a city travel to work.</i>
+            <i>The highest value is driving, at about forty-five percent.</i>
+            <i>The lowest is cycling, at around eight percent.</i>
+            <i
+              >In addition, public transit is the second most common option, at roughly thirty
+              percent.</i
+            >
+            <i
+              >Overall, this chart clearly shows that most people still depend on cars to get to
+              work.</i
+            >
+          </div>
+          <div class="cols" style="--n: 3">
+            <div class="card">
+              <h3>折线图</h3>
+              <p>
+                <i>increased steadily</i> · <i>peaked at</i> · <i>dropped sharply</i> ·
+                <i>remained stable</i>
+              </p>
+            </div>
+            <div class="card">
+              <h3>饼图 / 表格</h3>
+              <p><i>accounts for</i> · <i>the largest share</i> · <i>the smallest proportion</i></p>
+            </div>
+            <div class="card">
+              <h3>流程图 / 地图 / 照片</h3>
+              <p>
+                <i>the first stage is</i> · <i>it is located in</i> · <i>in the foreground</i> ·
+                <i>in the background</i>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Respond to a Situation · Core 独有 · 准备 20 秒，说 40 秒</div>
+          <h2>情景回应：四步说完一件事</h2>
+          <div class="cols">
+            <div>
+              <p>
+                屏幕上给一段不超过 60
+                词的情景（同时朗读），你要<b>直接对情景里的人说话</b>，不是描述情景。
+              </p>
+              <ol>
+                <li><b>打招呼 + 表明来意</b></li>
+                <li><b>说明情况</b>：用情景里的关键信息，一两句</li>
+                <li><b>提出请求或方案</b>：最重要，给一个具体办法</li>
+                <li><b>礼貌结尾</b>：感谢、期待回复</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  情景里提到的每个要点都要回应到（内容分）。语气要礼貌：多用 <i>Could you</i>、<i
+                    >Would it be possible to</i
+                  >。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small muted">
+                情景：你报名了社区中心周六的烹饪课，但那天要加班。打电话给课程负责人 Ms. Lee。
+              </p>
+              <p class="passage" style="font-size: 1em">
+                <i>Hi Ms. Lee, this is Wei calling about the cooking class on Saturday.</i>
+                <i
+                  >Unfortunately, my manager has asked me to work that day, so I won't be able to
+                  attend.</i
+                >
+                <i>Would it be possible to move me to the Sunday session instead?</i>
+                <i>If that's full, I'd be happy to join the next course.</i>
+                <i>Thank you for your help, and sorry for the short notice.</i>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Respond to a Situation · 句型库</div>
+          <h2>五类情景，各背一句开头</h2>
+          <div class="tbl">
+            <table>
+              <thead>
+                <tr>
+                  <th>情景</th>
+                  <th>开口句</th>
+                  <th>方案句</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>请假 / 改时间</td>
+                  <td><i>I'm afraid I can't make it to…</i></td>
+                  <td><i>Would it be possible to reschedule for…?</i></td>
+                </tr>
+                <tr>
+                  <td>投诉 / 反映问题</td>
+                  <td><i>I'm calling about a problem with…</i></td>
+                  <td><i>Could you please send someone to look at it?</i></td>
+                </tr>
+                <tr>
+                  <td>道歉</td>
+                  <td><i>I'm really sorry about…</i></td>
+                  <td><i>To make up for it, I'd be glad to…</i></td>
+                </tr>
+                <tr>
+                  <td>拒绝邀请</td>
+                  <td><i>Thank you so much for inviting me.</i></td>
+                  <td><i>Unfortunately I have another commitment, but maybe next time?</i></td>
+                </tr>
+                <tr>
+                  <td>建议 / 劝说</td>
+                  <td><i>I understand how you feel.</i></td>
+                  <td><i>Why don't we… ? I think it would really help.</i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top: 0.5em">
+            情景都来自工作、学习、社区、邻里这类加拿大日常生活，所以练的时候就把自己当成已经在加拿大生活。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="2 · 口语">
+          <div class="eyebrow">Answer Short Question · 录音 3–9 秒，答题 10 秒</div>
+          <h2>简答：一个词或一个短语就够</h2>
+          <div class="cols">
+            <div>
+              <ul>
+                <li>答案通常是常识词，<b>直接说答案</b>，不必说完整句</li>
+                <li>不会也要猜一个，空着一定零分</li>
+                <li>这题分值小，别为它紧张</li>
+              </ul>
+              <div class="tip">
+                <p>
+                  高频话题：身体部位、时间日历、天气季节、职业、交通、学校、形状、方位、常用工具。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <p>
+                <i>What do we call the person who flies an airplane?</i><br /><span
+                  class="muted small"
+                  >→ a pilot</span
+                >
+              </p>
+              <p>
+                <i>How many days are there in a leap year?</i><br /><span class="muted small"
+                  >→ 366</span
+                >
+              </p>
+              <p>
+                <i>Which organ do we use to breathe?</i><br /><span class="muted small"
+                  >→ the lungs</span
+                >
+              </p>
+              <p>
+                <i>What is the opposite of "import"?</i><br /><span class="muted small"
+                  >→ export</span
+                >
+              </p>
+              <p>
+                <i>What do you call a book of maps?</i><br /><span class="muted small"
+                  >→ an atlas</span
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 第 3 节 写作 ============ -->
+        <section class="slide sec-open" id="s3" data-sec="3 · 写作">
+          <div class="num">3</div>
+          <h2>写作：目标 88</h2>
+          <p class="lead">
+            写作分由 Summarize Written Text、Write Email
+            两道“真写作”，加上读写填空、听后总结、听力填空、听写共同决定。
+            作文按模板写到零失误，剩下的分靠后面两节的填空和听写。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="3 · 写作">
+          <div class="eyebrow">Summarize Written Text · 原文最长 200 词，10 分钟，写 25–50 词</div>
+          <h2>读后总结：主旨 + 两个要点</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li>快速读一遍，找<b>主题句</b>（常在首段或末段）</li>
+                <li>每段挑一个关键信息，<b>用原文的关键词</b>，不必改写</li>
+                <li>写成 1–2 句，控制在 <b>35–45 词</b>，离上下限都有余量</li>
+                <li>留 2 分钟检查：拼写、冠词、单复数、句号</li>
+              </ol>
+              <div class="card tpl">
+                <p>
+                  <i>The passage explains that</i> <span class="slot">[主旨]</span>,
+                  <i>mainly because</i> <span class="slot">[要点 1]</span>,
+                  <i>and it also points out that</i> <span class="slot">[要点 2]</span>.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small muted">
+                原文大意（节选）：远程办公省去通勤、员工满意度提高；但新人缺少面对面指导，团队协作变难；很多公司因此采用每周到岗几天的混合模式。
+              </p>
+              <p class="passage" style="font-size: 0.98em">
+                <i
+                  >The passage explains that remote work saves commuting time and makes employees
+                  more satisfied, but it can weaken training and teamwork, so many companies now use
+                  a hybrid model that combines office days and home days.</i
+                >
+              </p>
+              <p class="small muted">39 词，一句话，覆盖正反两面和结论。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="3 · 写作">
+          <div class="eyebrow">Write Email · Core 独有 · 9 分钟，写 80–120 词</div>
+          <h2>写邮件：五段固定结构</h2>
+          <div class="cols">
+            <div>
+              <p>
+                题目给收件人、原因和<b>三个要点</b>（bullet
+                points）。评分看：要点是否全覆盖、格式、语气、语法、词汇、拼写。
+              </p>
+              <ol>
+                <li><b>称呼</b>：认识的人用 <i>Dear Sam,</i>，不认识的用 <i>Dear Mr. Brown,</i></li>
+                <li><b>目的</b>：第一句说为什么写信</li>
+                <li><b>三个要点各一两句</b>，顺序跟题目一致</li>
+                <li><b>行动 + 感谢</b>：希望对方做什么</li>
+                <li><b>落款</b>：<i>Best regards,</i> + 名字</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  目标 <b>100–110 词</b>。题目给的 bullet
+                  一个都不能漏——漏一个要点，内容分直接掉一档。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <h3>万能句</h3>
+              <p><i>I am writing to let you know that…</i></p>
+              <p><i>I am writing to ask whether…</i></p>
+              <p><i>First of all, …</i> · <i>In addition, …</i> · <i>Finally, …</i></p>
+              <p><i>I would really appreciate it if you could…</i></p>
+              <p><i>Please let me know if you need any further information.</i></p>
+              <p><i>I look forward to hearing from you.</i></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="3 · 写作">
+          <div class="eyebrow">Write Email · 示范</div>
+          <h2>题目：给房东写信，说热水器坏了</h2>
+          <div class="cols" style="grid-template-columns: 1fr 1.9fr">
+            <div>
+              <p class="small muted">要求覆盖：</p>
+              <ul class="small">
+                <li>问题是什么、从什么时候开始</li>
+                <li>对你生活的影响</li>
+                <li>希望房东怎么处理</li>
+              </ul>
+              <div class="key small">
+                <p>107 词。每段对应一个要点，开头结尾全是模板句，考场上真正要想的只有中间三段。</p>
+              </div>
+            </div>
+            <div class="card passage" style="font-size: 0.95em; line-height: 1.6">
+              <p><i>Dear Mr. Brown,</i></p>
+              <p>
+                <i
+                  >I am writing to let you know that the water heater in my apartment has stopped
+                  working.</i
+                >
+              </p>
+              <p>
+                <i
+                  >First of all, the problem started last Thursday morning. Since then, there has
+                  been no hot water at all, even after I reset the switch.</i
+                >
+              </p>
+              <p>
+                <i
+                  >In addition, this has made daily life quite difficult. I have to boil water to
+                  wash dishes, and I have been showering at the gym.</i
+                >
+              </p>
+              <p>
+                <i
+                  >Finally, I would really appreciate it if you could send a technician this week. I
+                  am available every day after 5 p.m.</i
+                >
+              </p>
+              <p><i>Thank you for your help. I look forward to hearing from you.</i></p>
+              <p><i>Best regards,</i><br /><i>Wei Zhang</i></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="3 · 写作">
+          <div class="eyebrow">两道作文的检查清单</div>
+          <h2>写作 88 最怕的是小错，不是词汇不够高级</h2>
+          <div class="cols" style="--n: 3">
+            <div class="card">
+              <h3>语法四查</h3>
+              <ul>
+                <li>冠词 a / an / the</li>
+                <li>主谓一致：<i>The number of students has</i></li>
+                <li>名词单复数</li>
+                <li>时态前后一致</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>高频拼错词</h3>
+              <p>
+                <i>accommodation</i> · <i>necessary</i> · <i>environment</i> · <i>government</i> ·
+                <i>separate</i> · <i>definitely</i> · <i>receive</i> · <i>recommend</i> ·
+                <i>business</i> · <i>occurred</i> · <i>convenient</i> · <i>schedule</i>
+              </p>
+            </div>
+            <div class="card">
+              <h3>格式</h3>
+              <ul>
+                <li>句首大写、句末句号</li>
+                <li>不用缩写符号、不用 &amp;、不列 bullet</li>
+                <li>邮件分段，段与段之间空一行</li>
+                <li>考试界面有字数统计，交之前看一眼</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tip">
+            <p>用你<b>百分之百会拼</b>的词。一个拼错的高级词，比一个简单词丢的分多。</p>
+          </div>
+        </section>
+
+        <!-- ============ 第 4 节 阅读 ============ -->
+        <section class="slide sec-open" id="s4" data-sec="4 · 阅读">
+          <div class="num">4</div>
+          <h2>阅读：目标 78</h2>
+          <p class="lead">
+            78 是四科里最低的线。阅读分还有一部分来自口语第一题 Read
+            Aloud。本节重点是读写下拉填空——它同时给写作加分。 整个部分共用一个倒计时，约 30
+            分钟，要自己控时间。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="4 · 阅读">
+          <div class="eyebrow">Reading &amp; Writing Fill in the Blanks · 下拉选择</div>
+          <h2>下拉填空：先看语法，再看搭配，最后看意思</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li><b>词性</b>：空前是 the → 名词；空前是 be / has → 形容词或分词</li>
+                <li>
+                  <b>搭配</b>：空后是介词时最容易判断（<i>depend on</i>、<i>responsible for</i>）
+                </li>
+                <li><b>逻辑</b>：however / therefore / although 看前后句是转折还是因果</li>
+              </ol>
+              <div class="tip">
+                <p>每题控制在 <b>2 分钟</b>内。整段读一遍再选，比逐空硬选更快也更准。</p>
+              </div>
+            </div>
+            <div class="card passage" style="font-size: 0.98em">
+              <p>
+                Regular exercise plays an important <u>&nbsp;role&nbsp;</u> in mental health.
+                <span class="small muted">（role / effect / action / impact）</span>
+              </p>
+              <p>
+                Researchers found that the benefits <u>&nbsp;depend&nbsp;</u> on how often people
+                exercise.
+                <span class="small muted">（depend / consist / insist / result）</span>
+              </p>
+              <p>
+                <u>&nbsp;However&nbsp;</u>, too much training can lead to injury.
+                <span class="small muted">（Therefore / However / Moreover / Thus）</span>
+              </p>
+              <p class="small muted">
+                第一空：固定搭配 play a role in，其他三个词都不跟 play 连用；第二空：“取决于”是
+                depend on，consist of、insist on、result in
+                意思都不对；第三空：前面说好处、后面说受伤，是转折。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="4 · 阅读">
+          <div class="eyebrow">下拉填空、拖拽填空都靠它</div>
+          <h2>30 个高频学术搭配</h2>
+          <div class="cols" style="--n: 3">
+            <div class="card">
+              <p>
+                <i>play a role in</i><br /><i>have an impact on</i><br /><i>take into account</i
+                ><br /><i>pay attention to</i><br /><i>make a decision</i><br /><i
+                  >conduct research</i
+                ><br /><i>raise awareness of</i><br /><i>reach a conclusion</i><br /><i
+                  >draw attention to</i
+                ><br /><i>meet the needs of</i>
+              </p>
+            </div>
+            <div class="card">
+              <p>
+                <i>be responsible for</i><br /><i>be aware of</i><br /><i>be associated with</i
+                ><br /><i>be based on</i><br /><i>be capable of</i><br /><i>contribute to</i
+                ><br /><i>lead to</i><br /><i>result in</i><br /><i>result from</i><br /><i
+                  >depend on</i
+                >
+              </p>
+            </div>
+            <div class="card">
+              <p>
+                <i>in terms of</i><br /><i>as a result of</i><br /><i>in contrast to</i><br /><i
+                  >in response to</i
+                ><br /><i>with regard to</i><br /><i>on the other hand</i><br /><i
+                  >a wide range of</i
+                ><br /><i>a significant increase in</i><br /><i>at the same time</i><br /><i
+                  >in order to</i
+                >
+              </p>
+            </div>
+          </div>
+          <div class="tip">
+            <p>
+              <i>result in</i>（导致结果）和
+              <i>result from</i>（由……引起）方向相反，是最常见的陷阱。
+            </p>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="4 · 阅读">
+          <div class="eyebrow">Re-order Paragraphs · 按相邻两段是否排对给分</div>
+          <h2>排序：先找开头，再找“连接线索”</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li>
+                  <b>开头句</b>：能独立成立，没有代词、没有 however / this / these，常是一个大主题
+                </li>
+                <li><b>代词回指</b>：<i>he</i>、<i>this method</i> 前面一定出现过对应的人或事</li>
+                <li><b>冠词</b>：先 <i>a study</i> 后 <i>the study</i></li>
+                <li><b>连接词和时间</b>：first → then → finally；in 2010 → a decade later</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  按“相邻两段顺序对”计分：就算整体排不对，把能确定的<b>两两配对</b>排好，也能拿部分分。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small muted">打乱的四句：</p>
+              <p class="small">
+                A. <i>This led her to design a simple water filter made from sand and charcoal.</i
+                ><br />
+                B.
+                <i
+                  >In 2012, an engineering student visited a village without clean drinking
+                  water.</i
+                ><br />
+                C. <i>Today, the filter is used by thousands of families in the region.</i><br />
+                D. <i>She noticed that many children there were often sick.</i>
+              </p>
+              <details class="ans">
+                <summary>看答案</summary>
+                <p class="small">
+                  <b>B → D → A → C</b>。B 有时间、有完整主语，是开头；D 的 she、there 指 B
+                  里的学生和村子；A 的 This 指 D 的发现；C 的 Today 和 the filter 收尾。
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="4 · 阅读">
+          <div class="eyebrow">Fill in the Blanks（拖拽）· Multiple Choice</div>
+          <h2>剩下三种题：快做，别恋战</h2>
+          <div class="cols" style="--n: 3">
+            <div class="card">
+              <h3>拖拽填空</h3>
+              <p>
+                选项比空多。先填最有把握的，<b>用排除法缩小选项</b>。方法同下拉填空：词性 → 搭配 →
+                意思。
+              </p>
+            </div>
+            <div class="card">
+              <h3>单选</h3>
+              <p>
+                先读题，带着问题回原文定位。不倒扣，<b>一定要选</b>。选项里照抄原文大段词语的往往是陷阱。
+              </p>
+            </div>
+            <div class="card">
+              <h3>多选</h3>
+              <p>
+                选错倒扣。<b>只选一个最有把握的</b>，能证明第二个才选第二个。文章长、分值低，放在最后兜底。
+              </p>
+            </div>
+          </div>
+          <div class="key">
+            <p>
+              <b>时间分配参考：</b>下拉填空每题 ≤2 分钟、排序每题 ≤2 分钟、拖拽 ≤1.5
+              分钟、单选多选各 ≤1.5 分钟。剩最后 2 分钟时，没做的题全部先随便选上（多选除外）。
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ 第 5 节 听力 ============ -->
+        <section class="slide sec-open" id="s5" data-sec="5 · 听力">
+          <div class="num">5</div>
+          <h2>听力：目标 82</h2>
+          <p class="lead">
+            雅思听力 6.5 是你最大的短板，但 PTE 的听力分有很大一部分来自口语的复述和简答。
+            本节重点是 Write from Dictation：它在最后，题短、分值高，同时是写作分的主要来源。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="5 · 听力">
+          <div class="eyebrow">Summarize Spoken Text · 录音 45–75 秒，8 分钟，写 20–30 词</div>
+          <h2>听后总结：边听边记关键词</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li>草稿纸（可擦白板）分三栏：<b>主题 / 要点 / 结论</b></li>
+                <li>只记名词和数字，记 10–15 个关键词</li>
+                <li>写成 1–2 句，目标 <b>25 词左右</b></li>
+                <li>少于 20 或多于 30 词都会扣形式分，少于 5 或超过 40 词整题零分</li>
+              </ol>
+              <div class="card tpl">
+                <p>
+                  <i>The speaker discussed</i> <span class="slot">[主题]</span>,
+                  <i>explaining that</i> <span class="slot">[要点]</span> <i>and suggesting that</i>
+                  <span class="slot">[结论]</span>.
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small muted">点下面的录音稿当听力材料（先别看文字）：</p>
+              <p class="passage" style="font-size: 0.96em">
+                <i
+                  >Many new immigrants find that their foreign work experience is not fully
+                  recognized. As a result, they often accept jobs below their skill level. Experts
+                  say that volunteering and local certification can help newcomers build Canadian
+                  references more quickly.</i
+                >
+              </p>
+              <details class="ans">
+                <summary>参考答案（26 词）</summary>
+                <p class="passage" style="font-size: 0.96em">
+                  The speaker discussed how immigrants' foreign experience is often not recognized,
+                  explaining that they take lower jobs and suggesting volunteering and local
+                  certification to build references.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="5 · 听力">
+          <div class="eyebrow">Write from Dictation · 录音 3–5 秒，听一遍，打出整句</div>
+          <h2>听写：按单词给分，每个词都算</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li>听的时候默念一遍，<b>先记意思块</b>，跟复述是同一种能力</li>
+                <li>立刻打出来，能打多少打多少，最后再补</li>
+                <li>检查三样：<b>单复数 -s</b>、<b>时态 -ed</b>、<b>冠词</b></li>
+                <li>句首大写、句末句号（格式不扣分，但养成习惯）</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  <b>给听写留时间</b
+                  >：听力部分共用一个倒计时，听写在最后。前面的选择题做不出来就先选一个过，
+                  别让听写来不及。
+                </p>
+              </div>
+              <p class="small muted">
+                听写句子和 Repeat Sentence 的素材风格一样，很多题库两边共用，可以一份材料练两题。
+              </p>
+            </div>
+            <div class="card">
+              <h3>练一练：点 ▶ 听，打出来再点“对照”</h3>
+              <div
+                class="dict"
+                data-text="Students are required to attend at least eighty percent of the classes."
+              >
+                <button class="mini primary" type="button">▶</button>
+                <input type="text" aria-label="听写 1" autocomplete="off" spellcheck="false" />
+                <button class="mini chk" type="button">对照</button>
+                <div class="res"></div>
+              </div>
+              <div class="dict" data-text="The results of the survey will be published next month.">
+                <button class="mini primary" type="button">▶</button>
+                <input type="text" aria-label="听写 2" autocomplete="off" spellcheck="false" />
+                <button class="mini chk" type="button">对照</button>
+                <div class="res"></div>
+              </div>
+              <div
+                class="dict"
+                data-text="Public transportation has become more popular in recent years."
+              >
+                <button class="mini primary" type="button">▶</button>
+                <input type="text" aria-label="听写 3" autocomplete="off" spellcheck="false" />
+                <button class="mini chk" type="button">对照</button>
+                <div class="res"></div>
+              </div>
+              <div
+                class="dict"
+                data-text="The professor explained the theory with several practical examples."
+              >
+                <button class="mini primary" type="button">▶</button>
+                <input type="text" aria-label="听写 4" autocomplete="off" spellcheck="false" />
+                <button class="mini chk" type="button">对照</button>
+                <div class="res"></div>
+              </div>
+              <div
+                class="dict"
+                data-text="All applications must be submitted online before the deadline."
+              >
+                <button class="mini primary" type="button">▶</button>
+                <input type="text" aria-label="听写 5" autocomplete="off" spellcheck="false" />
+                <button class="mini chk" type="button">对照</button>
+                <div class="res"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="5 · 听力">
+          <div class="eyebrow">Highlight Incorrect Words · 录音 20–70 秒</div>
+          <h2>找错词：指着屏幕跟读</h2>
+          <div class="cols">
+            <div>
+              <ol>
+                <li>录音开始前扫一眼文字</li>
+                <li>录音一开始，<b>用鼠标指针跟着读到的位置走</b></li>
+                <li>听到和屏幕不同的词，立刻点一下，继续跟</li>
+                <li>跟丢了：抬头听下一个清楚的词，马上找回位置</li>
+              </ol>
+              <div class="tip">
+                <p>
+                  点错一个扣一分（最低零分）。不确定的<b>不点</b>。错词通常是意思相近或发音相近的词。
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="small muted">屏幕上的文字（点“听录音”，找出 3 个不同的词）：</p>
+              <p class="passage" style="font-size: 0.98em">
+                The city council has approved a new plan to build more affordable housing near the
+                river. Construction will begin next spring and is expected to take three years.
+              </p>
+              <p>
+                <button
+                  class="mini primary"
+                  type="button"
+                  data-say="The city council has approved a new plan to build more affordable housing near the station. Construction will begin next summer and is expected to take two years."
+                >
+                  ▶ 听录音
+                </button>
+              </p>
+              <details class="ans">
+                <summary>看答案</summary>
+                <p class="small">
+                  river → <b>station</b>；spring → <b>summer</b>；three → <b>two</b>。
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="5 · 听力">
+          <div class="eyebrow">Fill in the Blanks · Select Missing Word · Multiple Choice</div>
+          <h2>其余四种题的做法</h2>
+          <div class="cols">
+            <div class="card">
+              <h3>听力填空（计听力 + 写作）</h3>
+              <p>
+                边听边打每个空的<b>前两三个字母</b>，录音结束后补全。拼写必须完全正确。注意单复数：
+                <i>several studies</i>。
+              </p>
+            </div>
+            <div class="card">
+              <h3>选择缺失词</h3>
+              <p>
+                录音最后一个词被“哔”掉。<b>听整段的主题和最后一句的走向</b>，选最符合逻辑的结尾。
+              </p>
+            </div>
+            <div class="card">
+              <h3>单选</h3>
+              <p>录音前先读题干和选项，记下关键词。不倒扣，必选。</p>
+            </div>
+            <div class="card">
+              <h3>多选</h3>
+              <p>倒扣分。<b>只选听到明确依据的</b>，通常一个就够。</p>
+            </div>
+          </div>
+          <div class="key">
+            <p>
+              提高听力的底层办法只有一个：每天 20 句 Repeat Sentence + 20 句听写。
+              两种题练的是同一种“短句记忆”，一份时间换三科（听、说、写）的分。
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ 第 6 节 冲刺 ============ -->
+        <section class="slide sec-open" id="s6" data-sec="6 · 冲刺">
+          <div class="num">6</div>
+          <h2>考场策略与两周计划</h2>
+          <p class="lead">
+            最后 25 分钟：考试当天的流程、容易踩的坑，以及学完这四小时后，每天该练什么。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="6 · 冲刺">
+          <div class="eyebrow">考试当天</div>
+          <h2>十条考场规则</h2>
+          <div class="cols">
+            <ol>
+              <li>带<b>有效护照</b>，名字和报名信息完全一致</li>
+              <li>提前 30 分钟到，拍照、掌静脉、签保密协议</li>
+              <li>戴好耳机后先<b>调麦克风位置</b>，试音时正常音量说话</li>
+              <li>Personal Introduction 不计分，当热身</li>
+              <li>口语题出现 Recording 后再开口，说完就 Next</li>
+            </ol>
+            <ol start="6">
+              <li>两道作文题<b>各自计时</b>，写完即可提交，剩余时间不会留给下一题</li>
+              <li>阅读、听力各自共用一个倒计时，看着右上角时间</li>
+              <li>多选、找错词：没把握不选</li>
+              <li>听写前留出至少 <b>6 分钟</b></li>
+              <li>成绩通常 2 个工作日左右出，偶尔更久</li>
+            </ol>
+          </div>
+          <div class="tip">
+            <p>中间没有休息。考前别喝太多水，考前一晚早睡，比临时再刷十道题有用。</p>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="6 · 冲刺">
+          <div class="eyebrow">学完之后</div>
+          <h2>两周计划：每天 90 分钟</h2>
+          <div class="tbl">
+            <table>
+              <thead>
+                <tr>
+                  <th>每天都做（60 分钟）</th>
+                  <th>第 1 周轮换（30 分钟）</th>
+                  <th>第 2 周轮换（30 分钟）</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Repeat Sentence 跟读 30 句（15 分钟）</td>
+                  <td>周一、四：Describe Image 10 张</td>
+                  <td>周一：官方模考一套，找最低分科目</td>
+                </tr>
+                <tr>
+                  <td>Write from Dictation 听写 30 句（15 分钟）</td>
+                  <td>周二、五：Respond to a Situation 8 题</td>
+                  <td>周二至周四：只练最低分科目对应的题</td>
+                </tr>
+                <tr>
+                  <td>Read Aloud 录音 10 段（15 分钟）</td>
+                  <td>周三、六：Write Email 1 篇 + SWT 2 篇</td>
+                  <td>周五：官方模考第二套</td>
+                </tr>
+                <tr>
+                  <td>下拉填空 5 篇 + 拼写复习（15 分钟）</td>
+                  <td>周日：排序、听后总结各 5 题</td>
+                  <td>周末：复习错题和模板，考前一天休息</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="key" style="margin-top: 0.7em">
+            <p>
+              <b>什么时候报名：</b>官方模考（Pearson 的 PTE Core Scored Practice Test）四科都比 CLB
+              9 线高出 3–5 分时再报。机器评分稳定，模考分数的参考价值比雅思模考高。
+            </p>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="6 · 冲刺">
+          <div class="eyebrow">收尾</div>
+          <h2>记住这五件事就够了</h2>
+          <div class="cols" style="--n: 1">
+            <p>
+              <span class="big">1</span>　四科各自过线：<b>听 82、读 78、说 84、写 88</b
+              >，最低分决定 CLB。
+            </p>
+            <p><span class="big">2</span>　口语不停、不回读；流利度比完美更值分。</p>
+            <p>
+              <span class="big">3</span>　写作分大半来自<b>听写和下拉填空</b>，作文按模板写零失误。
+            </p>
+            <p>
+              <span class="big">4</span>　字数卡在安全区间：总结 35–45、邮件 100–110、听后总结约
+              25。
+            </p>
+            <p><span class="big">5</span>　多选题和找错词会倒扣，没把握就少选。</p>
+          </div>
+          <p class="small muted" style="margin-top: auto">
+            考试格式和分数对照来自 Pearson、IRCC 公开信息（2026 年），考前请到 pearsonpte.com 和
+            canada.ca 核对最新说明。 回到
+            <a href="./" style="color: var(--accent)">openvocabulary</a> 背 PTE Core 词表。
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <nav class="bar" aria-label="翻页">
+      <button class="btn" id="prev" aria-label="上一页">← 上一页</button>
+      <span class="count" id="count"></span>
+      <div class="progress" aria-hidden="true"><div id="prog"></div></div>
+      <select class="voice" id="voice" aria-label="朗读用的声音"></select>
+      <button class="btn" id="rate" title="切换朗读速度">语速：正常</button>
+      <button class="btn primary" id="readAll">朗读本页</button>
+      <button class="btn" id="next" aria-label="下一页">下一页 →</button>
+    </nav>
+    <div class="toast" id="toast" hidden></div>
+
+    <script>
+      (() => {
+        const $ = (id) => document.getElementById(id);
+        const slides = [...document.querySelectorAll(".slide")];
+        const synth = window.speechSynthesis;
+        const readBtn = $("readAll"),
+          rateBtn = $("rate");
+        let cur = 0,
+          voice = null,
+          enVoices = [],
+          speed = 1,
+          reading = false,
+          toastTimer;
+
+        const store = {
+          get(k) {
+            try {
+              return localStorage.getItem(k);
+            } catch {
+              return null;
+            }
+          },
+          set(k, v) {
+            try {
+              localStorage.setItem(k, v);
+            } catch {}
+          },
+        };
+        const KEY_VOICE = "pte4h-voice",
+          KEY_RATE = "pte4h-rate",
+          KEY_PAGE = "pte4h-page";
+
+        document.querySelectorAll(".slide i").forEach((el) => {
+          el.tabIndex = 0;
+          el.setAttribute("role", "button");
+          el.title = "点击朗读";
+        });
+
+        function toast(msg, ms = 4000) {
+          const t = $("toast");
+          t.textContent = msg;
+          t.hidden = false;
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => (t.hidden = true), ms);
+        }
+
+        // 英语声音排序：加拿大、美国、英国、澳大利亚优先；在线声音通常更自然；
+        // Edge 名字带 Multilingual 的声音会自己猜语言，排到最后
+        const REGION_ORDER = ["CA", "US", "GB", "AU"];
+        const REGIONS = {
+          CA: "加拿大",
+          US: "美国",
+          GB: "英国",
+          AU: "澳大利亚",
+          IN: "印度",
+          IE: "爱尔兰",
+          NZ: "新西兰",
+        };
+        const regionOf = (v) => (v.lang.split(/[-_]/)[1] || "").toUpperCase();
+        const isMultilingual = (v) => /multilingual/i.test(v.name);
+        function pickVoice() {
+          if (!synth) return;
+          const vs = synth.getVoices();
+          const score = (v) => {
+            const r = REGION_ORDER.indexOf(regionOf(v));
+            return (r < 0 ? 4 : r) * 10 + (isMultilingual(v) ? 5 : 0) + (v.localService ? 2 : 0);
+          };
+          const seen = new Set();
+          enVoices = vs
+            .filter((v) => /^en/i.test(v.lang))
+            .sort((a, b) => score(a) - score(b))
+            .filter((v) => (seen.has(v.voiceURI) ? false : seen.add(v.voiceURI)));
+          const saved = store.get(KEY_VOICE);
+          voice = enVoices.find((v) => v.voiceURI === saved) || enVoices[0] || null;
+          showVoice(vs.length > 0);
+        }
+        function describeVoice(v) {
+          return [
+            v.name,
+            (REGIONS[regionOf(v)] || v.lang) + "英语",
+            v.localService ? "离线" : "在线",
+            isMultilingual(v) ? "多语言" : "",
+          ]
+            .filter(Boolean)
+            .join(" · ");
+        }
+        function showVoice(loaded) {
+          const sel = $("voice");
+          sel.replaceChildren();
+          if (!enVoices.length) {
+            sel.add(new Option(loaded || !synth ? "没有英语语音" : "正在加载语音…", ""));
+            sel.disabled = true;
+            return;
+          }
+          enVoices.forEach((v) => sel.add(new Option(describeVoice(v), v.voiceURI)));
+          sel.disabled = false;
+          sel.value = voice.voiceURI;
+          $("noVoice").hidden = true;
+        }
+        $("voice").onchange = (e) => {
+          voice = enVoices.find((v) => v.voiceURI === e.target.value) || voice;
+          store.set(KEY_VOICE, voice.voiceURI);
+          stop();
+        };
+        $("noVoiceClose").onclick = () => ($("noVoice").hidden = true);
+        if (synth) {
+          pickVoice();
+          synth.onvoiceschanged = pickVoice;
+        } else showVoice(true);
+
+        const SPEEDS = [
+          { rate: 0.75, label: "较慢" },
+          { rate: 1, label: "正常" },
+        ];
+        const savedSpeed = parseInt(store.get(KEY_RATE) ?? "1", 10);
+        if (SPEEDS[savedSpeed]) speed = savedSpeed;
+        const showSpeed = () => (rateBtn.textContent = "语速：" + SPEEDS[speed].label);
+        showSpeed();
+        rateBtn.onclick = () => {
+          speed = (speed + 1) % SPEEDS.length;
+          showSpeed();
+          store.set(KEY_RATE, String(speed));
+        };
+
+        function clearMarks() {
+          document.querySelectorAll(".speaking").forEach((e) => e.classList.remove("speaking"));
+        }
+        function stop() {
+          if (synth) synth.cancel();
+          clearMarks();
+          reading = false;
+          readBtn.textContent = "朗读本页";
+        }
+        // items: [{ text, el? }]
+        function speak(items) {
+          if (!synth) {
+            toast("这个浏览器不支持朗读，请换用 Chrome、Edge 或 Safari。");
+            return false;
+          }
+          stop();
+          if (!voice) pickVoice();
+          // 系统报告了声音、但没有英语的：不交给默认声音硬念。
+          // 声音列表为空（Chrome 首次加载、部分 WebView）时无法判断，照常交给引擎
+          if (!voice && synth.getVoices().length) {
+            $("noVoice").hidden = false;
+            return false;
+          }
+          items.forEach(({ text, el }, idx) => {
+            const u = new SpeechSynthesisUtterance(text);
+            if (voice) {
+              u.voice = voice;
+              u.lang = voice.lang;
+            } else u.lang = "en-US";
+            u.rate = SPEEDS[speed].rate;
+            u.onstart = () => {
+              clearMarks();
+              if (el) el.classList.add("speaking");
+            };
+            u.onend = u.onerror = () => {
+              if (el) el.classList.remove("speaking");
+              if (idx === items.length - 1) {
+                reading = false;
+                readBtn.textContent = "朗读本页";
+              }
+            };
+            synth.speak(u);
+          });
+          return true;
+        }
+        const textOf = (el) => el.textContent.replace(/\s+/g, " ").trim();
+
+        // 页面缩放：内容放不下 16:9 画面时整页等比缩小字号
+        const mobile = window.matchMedia("(max-width: 760px)");
+        function fitSlide(s) {
+          s.style.fontSize = "";
+          if (mobile.matches) return;
+          let size = parseFloat(getComputedStyle(s).fontSize);
+          for (let i = 0; i < 40 && s.scrollHeight > s.clientHeight + 1; i++) {
+            size *= 0.96;
+            s.style.fontSize = size + "px";
+          }
+        }
+        let fitQueued = false;
+        const refit = () => {
+          if (fitQueued) return;
+          fitQueued = true;
+          requestAnimationFrame(() => {
+            fitQueued = false;
+            fitSlide(slides[cur]);
+          });
+        };
+        window.addEventListener("resize", refit);
+        if (document.fonts) document.fonts.ready.then(refit);
+        document.addEventListener("toggle", refit, true);
+
+        function go(n) {
+          n = Math.max(0, Math.min(slides.length - 1, n));
+          stop();
+          slides[cur].classList.remove("on");
+          cur = n;
+          const s = slides[cur];
+          s.classList.add("on");
+          fitSlide(s);
+          $("chip").innerHTML = "<b>" + s.dataset.sec + "</b>";
+          $("count").textContent = cur + 1 + " / " + slides.length;
+          $("prog").style.width = ((cur + 1) / slides.length) * 100 + "%";
+          $("prev").disabled = cur === 0;
+          $("next").disabled = cur === slides.length - 1;
+          try {
+            history.replaceState(null, "", "#p" + (cur + 1));
+          } catch {}
+          store.set(KEY_PAGE, String(cur));
+          if (mobile.matches) window.scrollTo(0, 0);
+        }
+
+        $("prev").onclick = () => go(cur - 1);
+        $("next").onclick = () => go(cur + 1);
+        readBtn.onclick = () => {
+          if (reading) return stop();
+          const list = [...slides[cur].querySelectorAll("i")].map((el) => ({
+            text: textOf(el),
+            el,
+          }));
+          if (!list.length) return toast("这一页没有要朗读的英文。");
+          if (speak(list)) {
+            reading = true;
+            readBtn.textContent = "停止";
+          }
+        };
+
+        // 听写：按单词比对，忽略大小写和标点
+        const words = (s) =>
+          s
+            .toLowerCase()
+            .replace(/[^a-z0-9' ]+/g, " ")
+            .split(/\s+/)
+            .filter(Boolean);
+        function check(box) {
+          const want = box.dataset.text;
+          const got = words(box.querySelector("input").value);
+          const res = box.querySelector(".res");
+          const pool = [...got];
+          let hit = 0;
+          res.replaceChildren();
+          want.split(" ").forEach((w, i) => {
+            const k = words(w)[0];
+            const j = pool.indexOf(k);
+            const span = document.createElement("span");
+            if (j >= 0) {
+              pool.splice(j, 1);
+              hit++;
+              span.className = "ok";
+            } else span.className = "miss";
+            span.textContent = w;
+            res.append(span, " ");
+          });
+          const sc = document.createElement("span");
+          sc.className = "score";
+          sc.textContent = hit + " / " + want.split(" ").length + " 词";
+          res.append(sc);
+          refit();
+        }
+
+        $("stage").addEventListener("click", (e) => {
+          const el = e.target.closest(".slide i");
+          if (el) return void speak([{ text: textOf(el), el }]);
+          const g = e.target.closest("[data-goto]");
+          if (g) return go(slides.indexOf($(g.dataset.goto)));
+          const say = e.target.closest("[data-say]");
+          if (say) return void speak([{ text: say.dataset.say }]);
+          const box = e.target.closest(".dict");
+          if (box && e.target.closest(".mini.primary")) {
+            speak([{ text: box.dataset.text }]);
+            box.querySelector("input").focus();
+          } else if (box && e.target.closest(".chk")) check(box);
+        });
+        $("stage").addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && e.target.matches(".slide i")) {
+            e.preventDefault();
+            speak([{ text: textOf(e.target), el: e.target }]);
+          } else if (e.key === "Enter" && e.target.matches(".dict input")) {
+            check(e.target.closest(".dict"));
+          }
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.target.closest && e.target.closest("input, select, textarea")) return;
+          if (e.target.closest && e.target.closest("button, i, a, summary")) {
+            if (e.key === " " || e.key === "Enter") return;
+          }
+          if (["ArrowRight", "PageDown", " "].includes(e.key)) {
+            e.preventDefault();
+            go(cur + 1);
+          } else if (["ArrowLeft", "PageUp"].includes(e.key)) {
+            e.preventDefault();
+            go(cur - 1);
+          } else if (e.key === "Home") go(0);
+          else if (e.key === "End") go(slides.length - 1);
+        });
+
+        let sx = null,
+          sy = null;
+        $("stage").addEventListener(
+          "touchstart",
+          (e) => {
+            sx = e.touches[0].clientX;
+            sy = e.touches[0].clientY;
+          },
+          { passive: true },
+        );
+        $("stage").addEventListener(
+          "touchend",
+          (e) => {
+            if (sx === null) return;
+            const dx = e.changedTouches[0].clientX - sx,
+              dy = e.changedTouches[0].clientY - sy;
+            sx = null;
+            if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(cur + (dx < 0 ? 1 : -1));
+          },
+          { passive: true },
+        );
+
+        const fromHash = /^#p(\d+)$/.exec(location.hash);
+        const start = fromHash
+          ? parseInt(fromHash[1], 10) - 1
+          : parseInt(store.get(KEY_PAGE) || "0", 10);
+        go(Number.isFinite(start) ? start : 0);
+      })();
+    </script>
+  </body>
+</html>

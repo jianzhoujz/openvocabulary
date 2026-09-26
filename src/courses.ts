@@ -45,3 +45,13 @@ export const COURSES: Course[] = [
     summary: "六个任务的结构和范文、扣分清单、全程路线",
   },
 ];
+
+/** 英语课件：独立页面，自带样式和脚本，不属于上面的法语系列 */
+export const ENGLISH_COURSES: Course[] = [
+  {
+    href: "pte-core-4h.html",
+    level: "CLB 9",
+    title: "PTE Core 四小时冲刺",
+    summary: "听 82 · 读 78 · 说 84 · 写 88：计分规律、口语写作模板、听写练习",
+  },
+];

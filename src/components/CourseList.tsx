@@ -1,18 +1,41 @@
 import { ChevronRight } from "lucide-react";
 
-import { COURSES } from "@/courses";
+import { type Course, COURSES, ENGLISH_COURSES } from "@/courses";
 
-/** 首页最下面的法语四小时系列课件入口，链到 public/ 下的独立页面 */
+/** 首页最下面的课件入口，链到 public/ 下的独立页面 */
 export function CourseList() {
   return (
+    <>
+      <CourseGroup
+        title="法语四小时课件"
+        summary="从零基础到 TCF Canada NCLC 7，每册约 4 小时，幻灯片形式"
+        courses={COURSES}
+      />
+      <CourseGroup
+        title="英语四小时课件"
+        summary="雅思 6.5 起步，PTE Core 冲刺 CLB 9，幻灯片形式"
+        courses={ENGLISH_COURSES}
+      />
+    </>
+  );
+}
+
+function CourseGroup({
+  title,
+  summary,
+  courses,
+}: {
+  title: string;
+  summary: string;
+  courses: Course[];
+}) {
+  return (
     <section className="mt-8">
-      <h2 className="text-lg font-semibold">法语四小时课件</h2>
-      <p className="text-muted-foreground mt-1 text-sm">
-        从零基础到 TCF Canada NCLC 7，每册约 4 小时，幻灯片形式
-      </p>
+      <h2 className="text-lg font-semibold">{title}</h2>
+      <p className="text-muted-foreground mt-1 text-sm">{summary}</p>
 
       <ol className="bg-card mt-3 divide-y rounded-xl border">
-        {COURSES.map((course, i) => (
+        {courses.map((course, i) => (
           <li key={course.href}>
             <a
               href={`${import.meta.env.BASE_URL}${course.href}`}
