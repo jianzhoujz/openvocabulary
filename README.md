@@ -136,18 +136,20 @@ src/
 法语用 ‿ 标联诵。
 
 词典数据来自 [open-dict-data/ipa-dict](https://github.com/open-dict-data/ipa-dict)（MIT）：
-英语取 `en_US`（通用美音，音系上最接近加拿大英语），法语取 `fr_FR`。
-ipa-dict 也有 `fr_QC`，但那是窄式转写，带双元音化和塞擦化
-（`cordialement` 记成 /kɑɔ̯ʁd͡zjalmæ̃/），对照学习不便；
-魁北克特有的**词汇**已经由词表的 `CANADA` 模块覆盖。想换成魁北克读音，
-改 `scripts/build-ipa.ts` 里 `JOBS` 的 `dict` 字段即可。
+英语取 `en_US`（通用美音，音系上最接近加拿大英语）。
+
+法语以**标准加拿大法语**为准（魁北克受过教育的人、Radio-Canada 播音的读法）。
+ipa-dict 的 `fr_QC` 记的是魁北克口语音（fête /fat/、père /paʁ/、table /tab/），
+拿来备考会把俗语口音当标准，所以底子仍取 `fr_FR`，再由 `toCanadianStandard()`
+补上加拿大仍区分、法国已合并的音位：â → /ɑ/，闭音节 ê / aî → /ɛː/（/ɛ̃/ 与 /œ̃/
+`fr_FR` 本来就分）。塞擦化（tu [t͡sy]）等自动音变宽式音标不标，写在「发音规则」速查页。
 
 产物 `vocab/tools/ipa-{en,fr}.tsv` 提交进仓库，**可以手工修正**。`vp run build:ipa`
 需要联网，日常构建不依赖它。
 
 **朗读**用浏览器自带的语音合成（Web Speech API），词条和例句各有一个喇叭按钮，
 设置里可以打开「翻面时自动朗读」。声音优先选 `en-CA` / `fr-CA`，没有再退回
-`en-US` / `fr-FR`。看义猜词模式下翻面前不显示音标、也没有朗读按钮——那等于直接给答案。
+`en-US` / `fr-FR`；卡片和速查页上会显示当前用的声音，可以切换。看义猜词模式下翻面前不显示音标、也没有朗读按钮——那等于直接给答案。
 
 ## 数据来源
 

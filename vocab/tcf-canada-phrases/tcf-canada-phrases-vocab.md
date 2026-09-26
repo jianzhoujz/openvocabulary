@@ -21,8 +21,8 @@
 | mon projet, c'est de | expr. | my plan is to | 我的计划是 | 谈未来 | Mon projet, c'est de m'installer au Québec. |
 | avoir envie de | expr. | to feel like / to want to | 想要 | 口语常用，胜过 vouloir | J'ai envie de découvrir une nouvelle culture. |
 | Pour répondre à votre question | expr. | To answer your question | 回答您的问题 | 争取思考时间的缓冲句 | Pour répondre à votre question, je dirais que oui. |
-| Si je comprends bien | expr. | If I understand correctly | 如果我没理解错 | 没听清时的救命句 | Si je comprends bien, vous voulez savoir pourquoi ? |
-| Pourriez-vous répéter, s'il vous plaît ? | expr. | Could you repeat that, please? | 能请您重复一遍吗 | 没听懂时用，不扣分反而显得自然 | Excusez-moi, pourriez-vous répéter, s'il vous plaît ? |
+| Si je comprends bien | expr. | If I understand correctly | 如果我没理解错 | 没听清时的救命句 | Si je comprends bien, vous voulez savoir pourquoi? |
+| Pourriez-vous répéter, s'il vous plaît? | expr. | Could you repeat that, please? | 能请您重复一遍吗 | 没听懂时用，不扣分反而显得自然 | Excusez-moi, pourriez-vous répéter, s'il vous plaît? |
 
 ## EO2 · Expression orale Tâche 2 角色扮演与互动
 
@@ -31,33 +31,33 @@
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
 | Je voudrais avoir des renseignements sur | expr. | I would like information about | 我想了解关于……的信息 | Tâche 2 角色扮演开场必用 | Je voudrais avoir des renseignements sur vos cours de français. |
-| Est-ce que vous pourriez me dire… | expr. | Could you tell me… | 您能告诉我……吗 | 礼貌提问万能框架 | Est-ce que vous pourriez me dire combien ça coûte ? |
+| Est-ce que vous pourriez me dire… | expr. | Could you tell me… | 您能告诉我……吗 | 礼貌提问万能框架 | Est-ce que vous pourriez me dire combien ça coûte? |
 | J'aimerais savoir si | expr. | I would like to know whether | 我想知道是否 | 后接直陈式 | J'aimerais savoir si le logement est meublé. |
-| Quels sont les horaires ? | expr. | What are the opening hours? | 营业时间是几点 | Tâche 2 高频必问项 | Quels sont les horaires d'ouverture ? |
-| Combien ça coûte ? / Quel est le tarif ? | expr. | How much does it cost? | 多少钱/费用是多少 | tarif 更正式 | Quel est le tarif mensuel ? |
-| Est-ce qu'il y a des frais supplémentaires ? | expr. | Are there any extra charges? | 有额外费用吗 | 租房购物高频 | Est-ce qu'il y a des frais supplémentaires ? |
-| Est-ce qu'il faut réserver à l'avance ? | expr. | Do I need to book in advance? | 需要提前预约吗 | 服务场景高频 | Est-ce qu'il faut réserver à l'avance ? |
-| Qu'est-ce que vous me conseillez ? | expr. | What do you recommend? | 您建议我怎么做 | 把球踢回给考官，拖时间且自然 | Qu'est-ce que vous me conseillez dans mon cas ? |
-| Y a-t-il une autre possibilité ? | expr. | Is there another option? | 还有别的选择吗 | 推进对话 | Y a-t-il une autre possibilité, si celle-ci ne convient pas ? |
+| Quels sont les horaires? | expr. | What are the opening hours? | 营业时间是几点 | Tâche 2 高频必问项 | Quels sont les horaires d'ouverture? |
+| Combien ça coûte? / Quel est le tarif? | expr. | How much does it cost? | 多少钱/费用是多少 | tarif 更正式 | Quel est le tarif mensuel? |
+| Est-ce qu'il y a des frais supplémentaires? | expr. | Are there any extra charges? | 有额外费用吗 | 租房购物高频 | Est-ce qu'il y a des frais supplémentaires? |
+| Est-ce qu'il faut réserver à l'avance? | expr. | Do I need to book in advance? | 需要提前预约吗 | 服务场景高频 | Est-ce qu'il faut réserver à l'avance? |
+| Qu'est-ce que vous me conseillez? | expr. | What do you recommend? | 您建议我怎么做 | 把球踢回给考官，拖时间且自然 | Qu'est-ce que vous me conseillez dans mon cas? |
+| Y a-t-il une autre possibilité? | expr. | Is there another option? | 还有别的选择吗 | 推进对话 | Y a-t-il une autre possibilité, si celle-ci ne convient pas? |
 
 ### 提议协商
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| Ça vous convient ? / Est-ce que ça vous irait ? | expr. | Does that work for you? | 这样行吗 | 提议后确认，互动分关键 | On se voit samedi, ça vous convient ? |
+| Ça vous convient? / Est-ce que ça vous irait? | expr. | Does that work for you? | 这样行吗 | 提议后确认，互动分关键 | On se voit samedi, ça vous convient? |
 | Je vous propose de | expr. | I suggest that we | 我建议我们 | 后接动词原形 | Je vous propose de commencer par une visite. |
-| Et si on…（+ 未完成过去时） | expr. | What if we… | 我们要不要…… | 超地道提议句型 | Et si on se retrouvait devant la station ? |
-| Ce serait possible de | expr. | Would it be possible to | 有可能……吗 | 条件式礼貌请求 | Ce serait possible de reporter le rendez-vous ? |
-| Ça ne vous dérange pas si | expr. | Do you mind if | 您介意我……吗 | 礼貌程度高 | Ça ne vous dérange pas si j'arrive un peu plus tard ? |
+| Et si on…（+ 未完成过去时） | expr. | What if we… | 我们要不要…… | 超地道提议句型 | Et si on se retrouvait devant la station? |
+| Ce serait possible de | expr. | Would it be possible to | 有可能……吗 | 条件式礼貌请求 | Ce serait possible de reporter le rendez-vous? |
+| Ça ne vous dérange pas si | expr. | Do you mind if | 您介意我……吗 | 礼貌程度高 | Ça ne vous dérange pas si j'arrive un peu plus tard? |
 | Je préférerais plutôt | expr. | I would rather | 我更愿意 | 表达偏好，条件式 | Je préférerais plutôt le matin. |
 | On pourrait peut-être | expr. | We could perhaps | 我们也许可以 | 温和提议 | On pourrait peut-être partager les frais. |
-| Ça marche ! / C'est entendu. | expr. | That works! / Agreed. | 行/说定了 | 口语成交表达 | Ça marche, à samedi alors ! |
+| Ça marche! / C'est entendu. | expr. | That works! / Agreed. | 行/说定了 | 口语成交表达 | Ça marche, à samedi alors! |
 
 ### 接受拒绝
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| Volontiers ! / Avec plaisir ! | expr. | Gladly! / With pleasure! | 乐意之至 | 接受邀请的地道回答 | Avec plaisir, je viendrai. |
+| Volontiers! / Avec plaisir! | expr. | Gladly! / With pleasure! | 乐意之至 | 接受邀请的地道回答 | Avec plaisir, je viendrai. |
 | Ça me convient parfaitement | expr. | That suits me perfectly | 完全合适 | 接受提议 | Ça me convient parfaitement. |
 | Je suis désolé(e), mais je ne peux pas | expr. | I am sorry, but I cannot | 抱歉我不能 | 礼貌拒绝基本句 | Je suis désolé, mais je ne peux pas ce jour-là. |
 | Malheureusement, j'ai déjà quelque chose de prévu | expr. | Unfortunately I already have plans | 不巧我已有安排 | 万能拒绝理由 | Malheureusement, j'ai déjà quelque chose de prévu. |
@@ -172,7 +172,7 @@
 |---|---|---|---|---|---|
 | Je t'écris pour te parler de | expr. | I am writing to tell you about | 我写信是想跟你说 | 非正式开头，tu 形式 | Je t'écris pour te parler de mon déménagement. |
 | Je vous écris afin de | expr. | I am writing in order to | 我写信是为了 | 正式版，afin de 接原形 | Je vous écris afin de signaler un problème. |
-| J'espère que tu vas bien | expr. | I hope you are well | 希望你一切都好 | 非正式垫句 | Salut Paul, j'espère que tu vas bien ! |
+| J'espère que tu vas bien | expr. | I hope you are well | 希望你一切都好 | 非正式垫句 | Salut Paul, j'espère que tu vas bien! |
 | Je me permets de vous contacter au sujet de | expr. | I am taking the liberty of contacting you about | 冒昧就……联系您 | 最正式的开头，高分 | Je me permets de vous contacter au sujet de l'annonce parue hier. |
 | Suite à notre conversation | expr. | Further to our conversation | 接我们之前的谈话 | 承接前文 | Suite à notre conversation de mardi, voici les détails. |
 
@@ -180,10 +180,10 @@
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| Pourriez-vous me faire savoir | expr. | Could you let me know | 能否告知我 | 条件式礼貌请求 | Pourriez-vous me faire savoir si la place est encore libre ? |
+| Pourriez-vous me faire savoir | expr. | Could you let me know | 能否告知我 | 条件式礼貌请求 | Pourriez-vous me faire savoir si la place est encore libre? |
 | Je vous serais reconnaissant(e) de | expr. | I would be grateful if you would | 如蒙……不胜感激 | 最高级别礼貌，后接原形 | Je vous serais reconnaissant de bien vouloir répondre rapidement. |
 | Je vous prie de bien vouloir | expr. | I kindly ask you to | 恳请您 | 正式书面请求 | Je vous prie de bien vouloir examiner ma demande. |
-| Serait-il possible de | expr. | Would it be possible to | 是否可以 | 试探性请求 | Serait-il possible d'obtenir un remboursement ? |
+| Serait-il possible de | expr. | Would it be possible to | 是否可以 | 试探性请求 | Serait-il possible d'obtenir un remboursement? |
 | J'aimerais que + 虚拟式 | expr. | I would like … to | 我希望…… | aimer que 后必须虚拟式，考点 | J'aimerais que vous me rappeliez demain. |
 
 ### Tâche1-道歉
@@ -217,8 +217,8 @@
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
 | Bien à toi / Bien à vous | expr. | Best wishes | 祝好 | 偏熟识 | Bien à toi, Jian |
-| Je vous prie d'agréer mes salutations distinguées | expr. | Yours faithfully | 顺致崇高敬意 | 最正式的法式落款，整句背下 | Je vous prie d'agréer, Madame, mes salutations distinguées. |
-| À bientôt ! / Bises | expr. | See you soon! / Hugs | 回头见/亲亲 | 朋友之间，bises 只对熟人 | À bientôt, Jian |
+| Je vous prie d'agréer mes salutations distinguées | expr. | Yours faithfully | 顺致崇高敬意 | 最正式的书信落款，整句背下；魁北克公文也常写 Veuillez agréer… | Je vous prie d'agréer, Madame, mes salutations distinguées. |
+| À bientôt! / Bisous | expr. | See you soon! / Hugs and kisses | 回头见/亲亲 | 朋友之间用；魁北克信尾多写 bisous，法国多写 bises | À bientôt, Jian |
 
 ### Tâche2-叙事
 
@@ -252,7 +252,7 @@
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| la fin de semaine | n.f. | weekend | 周末 | 魁北克不说 week-end，TCF 听力常出现 | On se voit la fin de semaine prochaine ? |
+| la fin de semaine | n.f. | weekend | 周末 | 魁北克不说 week-end，TCF 听力常出现 | On se voit la fin de semaine prochaine? |
 
 ### 机构
 
@@ -336,7 +336,7 @@
 | la date limite / l'échéance | n.f. | deadline | 截止日期 | respecter une échéance | Nous devons respecter l'échéance du 15 mai. |
 | l'ordre du jour | n.m. | agenda | 议程 | 会议固定搭配 | Voici l'ordre du jour de la réunion. |
 | le compte rendu | n.m. | minutes / report | 纪要/汇报 | Tâche 2 明确要求的文体 | Je vous envoie le compte rendu de la réunion. |
-| remplacer quelqu'un | v. | to cover for someone | 代班 | 同事互助场景 | Peux-tu me remplacer samedi ? |
+| remplacer quelqu'un | v. | to cover for someone | 代班 | 同事互助场景 | Peux-tu me remplacer samedi? |
 | le mode hybride | n.m. | hybrid model | 混合办公 | 疫情后热词 | Nous fonctionnons en mode hybride. |
 | l'horaire flexible | n.m. | flexible hours | 弹性工时 | 福利协商 | L'horaire flexible facilite la conciliation travail-famille. |
 | la conciliation travail-famille | n.f. | work-life balance | 工作与家庭平衡 | 魁北克高频社会议题表述 | La conciliation travail-famille reste un défi. |
@@ -357,7 +357,7 @@
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| la caution / le dépôt de garantie | n.f./n.m. | security deposit | 押金 | 注意魁北克法律限制押金 | La caution correspond à un mois de loyer. |
+| la caution / le dépôt de garantie | n.f./n.m. | security deposit | 押金 | 魁北克法律禁止房东收押金，只能预收第一个月房租；在其他省和法国常见 | Au Québec, le propriétaire ne peut pas exiger de dépôt de garantie. |
 | meublé / non meublé | adj. | furnished / unfurnished | 带家具/不带家具 | 租房广告必读 | L'appartement est entièrement meublé. |
 | un quatre et demi | n.m. | two-bedroom apartment | 两室一厅 | 魁北克独有房型计数法，听力必懂 | Nous louons un quatre et demi à Montréal. |
 | visiter un appartement | v. | to view an apartment | 看房 | 不是 visit 旅游义 | J'aimerais visiter l'appartement cette semaine. |
@@ -494,7 +494,7 @@
 | la bourse d'études | n.f. | scholarship | 奖学金 | 资助 | Elle a obtenu une bourse d'études. |
 | la formation continue | n.f. | continuing education | 继续教育 | 成人学习 | La formation continue est offerte le soir. |
 | le décrochage scolaire | n.m. | school dropout | 辍学 | 魁北克社会议题高频 | Le décrochage scolaire touche surtout les garçons. |
-| l'uniforme scolaire | n.m. | school uniform | 校服 | Tâche 3 实考议题 | Faut-il imposer l'uniforme scolaire ? |
+| l'uniforme scolaire | n.m. | school uniform | 校服 | Tâche 3 实考议题 | Faut-il imposer l'uniforme scolaire? |
 | l'enseignement à distance | n.m. | distance learning | 远程教学 | 疫情后议题 | L'enseignement à distance a ses limites. |
 
 ## SOCIETE · 主题：社会议题与家庭
@@ -558,7 +558,7 @@
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| essayer / la cabine d'essayage | v./n.f. | to try on / fitting room | 试穿/试衣间 | 购物对话 | Puis-je essayer cette veste ? |
+| essayer / la cabine d'essayage | v./n.f. | to try on / fitting room | 试穿/试衣间 | 购物对话 | Puis-je essayer cette veste? |
 | en solde / les soldes | loc./n.m.pl. | on sale / sales | 打折中/打折季 | 购物高频 | Ces bottes sont en solde. |
 
 ### 餐饮
@@ -597,7 +597,7 @@
 | décider de + 原形 | v. | to decide to | 决定 | 介词 de | Nous avons décidé de déménager. |
 | essayer de + 原形 | v. | to try to | 尝试 | 介词 de | J'ai essayé de vous joindre hier. |
 | commencer à / finir de | v. | to start / to finish | 开始/结束 | 介词不同，易错 | J'ai commencé à apprendre le français en 2024. |
-| penser à / penser de | v. | to think about / to think of | 想到/认为 | à 是想起，de 是评价，考点 | Que pensez-vous de cette idée ? |
+| penser à / penser de | v. | to think about / to think of | 想到/认为 | à 是想起，de 是评价，考点 | Que pensez-vous de cette idée? |
 | manquer de / manquer à | v. | to lack / to be missed by | 缺乏/被想念 | 两种用法差别大 | La ville manque de logements abordables. |
 | s'attendre à | v. | to expect | 预期 | 介词 à | Je ne m'attendais pas à une telle réponse. |
 | s'habituer à | v. | to get used to | 习惯于 | 新移民话题高频 | Je me suis habitué au climat canadien. |
@@ -706,7 +706,7 @@
 | 过去分词性数配合 | gram. | past participle agreement | 过去分词配合 | 用 être 时与主语配合；用 avoir 时只与前置直接宾语配合 | Les documents que j'ai envoyés sont arrivés. |
 | futur simple | gram. | simple future | 简单将来时 | 原形 + ai/as/a/ons/ez/ont。书面用，口语可用 futur proche | Je vous enverrai les documents demain. |
 | futur proche | gram. | near future | 最近将来时 | aller + 原形。口语更自然，EO 可多用 | Je vais déménager le mois prochain. |
-| conditionnel présent | gram. | present conditional | 条件式现在时 | 词干同 futur + imparfait 词尾。表礼貌与假设，EO2 必用 | Je voudrais des renseignements. Ce serait possible ? |
+| conditionnel présent | gram. | present conditional | 条件式现在时 | 词干同 futur + imparfait 词尾。表礼貌与假设，EO2 必用 | Je voudrais des renseignements. Ce serait possible? |
 | si + imparfait, conditionnel | gram. | if-clause type 2 | 假设句型二 | si 从句绝不用条件式，这是高频错误 | Si j'avais plus de temps, je suivrais un cours. |
 | si + présent, futur | gram. | if-clause type 1 | 假设句型一 | 真实条件 | Si vous acceptez, je viendrai demain. |
 
@@ -1318,12 +1318,12 @@
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| le menu du jour / le spécial du jour | n.m. | daily special | 今日特餐 | 加拿大餐厅常说 spécial du jour | Quel est le spécial du jour ? |
+| le menu du jour / le spécial du jour | n.m. | daily special | 今日特餐 | 加拿大餐厅常说 spécial du jour | Quel est le spécial du jour? |
 | la table pour deux | n.f. | table for two | 双人桌 | 订位场景 | Une table pour deux, s'il vous plaît. |
-| à emporter / sur place | loc. | takeout / eat in | 外带/堂食 | 点餐必问 | C'est pour emporter ou pour manger ici ? |
+| à emporter / sur place | loc. | takeout / eat in | 外带/堂食 | 点餐必问 | C'est pour emporter ou pour manger ici? |
 | la livraison à domicile | n.f. | home delivery | 送餐上门 | 现代消费 | La livraison à domicile coûte cinq dollars. |
 | le pourboire de 15 pour cent | n.m. | 15 percent tip | 15% 小费 | 北美惯例，结账必备 | Le pourboire de 15 pour cent est la norme. |
-| sans gluten / sans lactose | loc. | gluten-free / lactose-free | 无麸质/无乳糖 | 饮食需求 | Avez-vous des options sans gluten ? |
+| sans gluten / sans lactose | loc. | gluten-free / lactose-free | 无麸质/无乳糖 | 饮食需求 | Avez-vous des options sans gluten? |
 | l'intolérance alimentaire | n.f. | food intolerance | 食物不耐受 | 与 allergie 区分 | Je souffre d'une intolérance au lactose. |
 | le produit local / de saison | n.m. | local / seasonal produce | 本地/时令产品 | 环保饮食议题 | Acheter des produits locaux réduit l'empreinte carbone. |
 
@@ -1355,12 +1355,12 @@
 |---|---|---|---|---|---|
 | la fin de semaine prochaine | loc. | next weekend | 下周末 | 魁北克说法 | On se voit la fin de semaine prochaine. |
 | en avant-midi / en après-midi | loc. | in the morning / afternoon | 上午/下午 | 魁北克特有的 avant-midi | Je suis libre en avant-midi. |
-| à quelle heure | loc. | at what time | 几点 | 约时间基础 | À quelle heure vous convient le mieux ? |
+| à quelle heure | loc. | at what time | 几点 | 约时间基础 | À quelle heure vous convient le mieux? |
 | dans une semaine / il y a une semaine | loc. | in a week / a week ago | 一周后/一周前 | 时间方向易混 | Je vous rappellerai dans une semaine. |
 | d'ici la fin du mois | loc. | by the end of the month | 月底之前 | 期限表达 | Je vous répondrai d'ici la fin du mois. |
 | dès que possible | loc. | as soon as possible | 尽快 | 催促表达 | Rappelez-moi dès que possible. |
 | à l'avance / d'avance | loc. | in advance | 提前 | 预订场景 | Il faut réserver deux semaines à l'avance. |
-| en semaine / le week-end | loc. | on weekdays / at the weekend | 工作日/周末 | 魁北克更常说 la fin de semaine | Je travaille en semaine seulement. |
+| en semaine / en fin de semaine | loc. | on weekdays / on the weekend | 工作日/周末 | 魁北克说 fin de semaine，法国说 le week-end | Je travaille en semaine et je me repose en fin de semaine. |
 | toutes les deux semaines | loc. | every two weeks | 每两周 | 加拿大也说 aux deux semaines | La paie se fait aux deux semaines. |
 | à partir de maintenant | loc. | from now on | 从现在起 | 变化通知 | À partir de maintenant, tout se fait en ligne. |
 

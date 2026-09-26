@@ -229,7 +229,7 @@ const sheet: Sheet = {
             ["不带冠词的职业、国籍", "[[il est]]", "Il est médecin."],
             ["重读代词、人名", "[[c'est]]", "C'est moi. C'est Paul."],
             ["形容词，指具体的人或物", "[[il est]] / [[elle est]]", "Elle est belle, ta robe."],
-            ["形容词，泛指一件事", "[[c'est]]", "C'est beau, Paris!"],
+            ["形容词，泛指一件事", "[[c'est]]", "C'est beau, Montréal!"],
           ],
         },
         {

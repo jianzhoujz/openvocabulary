@@ -1,5 +1,6 @@
 # ipa-fr.tsv —— 由 scripts/build-ipa.ts 生成，可手工修正
 # 数据源：open-dict-data/ipa-dict fr_FR（MIT）
+# 已按标准加拿大法语调整：â → /ɑ/，闭音节 ê / aî → /ɛː/（见 toCanadianStandard）
 # 只收能归约成单个词的条目，多词语块手写在 ipa-fr-manual.tsv
 # 格式：<词条><TAB><音标>，词条须与 _src.psv 第 3 列完全一致
 dénonce	/denɔ̃s/
@@ -130,7 +131,7 @@ la monnaie	/mɔnɛ/
 demander	/dəmɑ̃de/
 le formulaire	/fɔʁmylɛʁ/
 le renouvellement / renouveler	/ʁənuvɛlmɑ̃/ / /ʁənuvle/
-être	/ɛtʁ/
+être	/ɛːtʁ/
 avoir	/avwaʁ/
 aller	/ale/
 faire	/fɛʁ/
@@ -138,7 +139,7 @@ pouvoir	/puvwaʁ/
 vouloir	/vulwaʁ/
 devoir	/dəvwaʁ/
 savoir	/savwaʁ/
-connaître	/kɔnɛtʁ/
+connaître	/kɔnɛːtʁ/
 venir	/vəniʁ/
 prendre	/pʁɑ̃dʁ/
 mettre	/mɛtʁ/
@@ -240,7 +241,7 @@ la transparence	/tʁɑ̃spaʁɑ̃s/
 l'équité	/ekite/
 l'accessibilité	/aksesibilite/
 les données / les chiffres	/dɔne/ / /ʃifʁ/
-une enquête / un sondage	/ɑ̃kɛt/ / /sɔ̃daʒ/
+une enquête / un sondage	/ɑ̃kɛːt/ / /sɔ̃daʒ/
 le taux	/to/
 la proportion / la part	/pʁɔpɔʁsjɔ̃/ / /paʁ/
 représenter	/ʁəpʁezɑ̃te/

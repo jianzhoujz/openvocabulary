@@ -150,9 +150,9 @@ const sheet: Sheet = {
           head: ["问法", "例句", "场合"],
           fr: [1],
           rows: [
-            ["只把句尾语调扬上去", "Tu parles français ?", "最口语、最常用"],
-            ["句首加 Est-ce que", "Est-ce que tu parles français ?", "标准，什么场合都行"],
-            ["主语和动词倒装", "Parles-tu français ?", "书面、正式"],
+            ["只把句尾语调扬上去", "Tu parles français?", "最口语、最常用"],
+            ["句首加 Est-ce que", "Est-ce que tu parles français?", "标准，什么场合都行"],
+            ["主语和动词倒装", "Parles-tu français?", "书面、正式"],
           ],
         },
         {

@@ -18,7 +18,7 @@ const sheet: Sheet = {
           head: ["后面是", "在 / 去", "从……来"],
           fr: [1, 2],
           rows: [
-            ["城市", "à Paris", "de Paris"],
+            ["城市", "à Montréal", "de Montréal"],
             ["阴性国家", "en France", "de France"],
             ["元音开头的国家", "en Iran", "d'Iran"],
             ["阳性国家", "au Canada", "du Canada"],
@@ -68,11 +68,15 @@ const sheet: Sheet = {
           fr: [0, 1],
           rows: [
             ["en voiture", "à pied"],
-            ["en bus", "à vélo"],
+            ["en autobus", "à vélo"],
             ["en train", "à moto"],
             ["en avion", "à cheval"],
             ["en métro", ""],
           ],
+        },
+        {
+          kind: "tip",
+          text: "魁北克说 [[en autobus]]、口语也说 [[en auto]]；法国说 en bus、en voiture。",
         },
       ],
     },

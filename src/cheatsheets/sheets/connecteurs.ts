@@ -128,7 +128,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "说将来的事，[[quand]] 后面也要用将来时：[[Quand je serai à Paris, je t'appellerai.]] 中文说“等我到了巴黎”，法语却要说“当我将在巴黎”。",
+          text: "说将来的事，[[quand]] 后面也要用将来时：[[Quand je serai à Québec, je t'appellerai.]] 中文说“等我到了魁北克城”，法语却要说“当我将在魁北克城”。",
         },
       ],
     },

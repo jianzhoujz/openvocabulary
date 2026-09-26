@@ -80,7 +80,8 @@ export function SettingsDialog({ open, onOpenChange }: Props) {
         <div>
           <div className="text-sm font-medium">朗读声音</div>
           <p className="text-muted-foreground mt-0.5 mb-2 text-xs">
-            发音由声音决定。在线声音由浏览器联网合成，通常更自然；离线声音装在系统里，断网也能用
+            发音由声音决定，默认优先加拿大口音。在线声音由浏览器联网合成，通常更自然；离线声音装在系统里，断网也能用。
+            列表里没有加拿大法语时，可以改用 Edge，或在 Windows 语音设置里添加「法语（加拿大）」
           </p>
           <div className="flex flex-col gap-2">
             {["en", "fr"].map((lang) => (

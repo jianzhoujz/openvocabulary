@@ -57,6 +57,11 @@ const sheet: Sheet = {
             { fr: "soixante-douze", zh: "72 = 60 + 12" },
             { fr: "quatre-vingt-cinq", zh: "85 = 4 × 20 + 5" },
             { fr: "quatre-vingt-dix-neuf", zh: "99 = 4 × 20 + 19" },
+            {
+              fr: "Ça coûte 4,99 $.",
+              zh: "4.99 加元。加拿大法语把 $ 写在数字后面，小数点用逗号",
+              say: "Ça coûte quatre dollars quatre-vingt-dix-neuf.",
+            },
           ],
         },
         {

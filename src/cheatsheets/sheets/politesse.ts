@@ -4,7 +4,7 @@ const sheet: Sheet = {
   id: "politesse",
   title: "打招呼与礼貌用语",
   summary: "见面、道谢、道歉、告别",
-  lead: "语法还没学，这一页也能先用起来。法国人很看重这些小礼节：进门不说 [[Bonjour]]，后面说得再好也会被当成没礼貌。",
+  lead: "语法还没学，这一页也能先用起来。法语区（魁北克也一样）很看重这些小礼节：进门不说 [[Bonjour]]，后面说得再好也会被当成没礼貌。",
   sections: [
     {
       title: "1. 见面",
@@ -17,13 +17,18 @@ const sheet: Sheet = {
             ["Bonjour", "白天，对谁都行，最安全"],
             ["Bonsoir", "傍晚以后见面时说"],
             ["Salut", "朋友、同学之间，见面和告别都能用"],
-            ["Coucou", "很熟的人、家人，带点亲昵"],
+            ["Allô", "魁北克口语里的“嗨”，接电话也说"],
+            ["Coucou", "很熟的人、家人，带点亲昵（法国更常用）"],
             ["Enchanté / Enchantée", "初次见面：幸会。女性说话者写 Enchantée，读音一样"],
           ],
         },
         {
           kind: "tip",
           text: "进商店、上公交、问路之前先说 [[Bonjour, madame.]] 或 [[Bonjour, monsieur.]]，这是法语里最重要的一条礼貌规则。",
+        },
+        {
+          kind: "tip",
+          text: "魁北克人用 tu 比法国随意得多，同事之间、店员对顾客也常说 tu。对方先用 tu，你跟着用就行；面试、办事、写信仍然用 vous。",
         },
       ],
     },
@@ -49,7 +54,7 @@ const sheet: Sheet = {
             ["Ça va, et toi?", "还行，你呢？"],
             ["Pas mal.", "还不错"],
             ["Comme ci, comme ça.", "马马虎虎"],
-            ["Bof.", "不怎么样（口语）"],
+            ["Bof.", "不怎么样（口语，法国更常用）"],
           ],
         },
         {
@@ -96,6 +101,7 @@ const sheet: Sheet = {
           fr: [0],
           rows: [
             ["De rien.", "不客气，最常用"],
+            ["Bienvenue!", "不客气，魁北克特有，天天听到"],
             ["Je vous en prie.", "不客气，正式"],
             ["Avec plaisir.", "乐意效劳"],
             ["Il n'y a pas de quoi.", "没什么"],
@@ -159,9 +165,10 @@ const sheet: Sheet = {
             ["À bientôt!", "回头见"],
             ["À demain!", "明天见"],
             ["À tout à l'heure!", "一会儿见（当天还会再见）"],
-            ["À plus!", "回见（口语，年轻人常说）"],
+            ["À plus tard!", "回头见"],
+            ["À tantôt!", "一会儿见（魁北克说法，当天还会再见）"],
             ["Bonne journée! / Bonne soirée!", "祝你今天 / 今晚愉快"],
-            ["Bon week-end!", "周末愉快"],
+            ["Bonne fin de semaine!", "周末愉快。魁北克说 fin de semaine，法国说 Bon week-end"],
             ["Bonne nuit!", "晚安，睡前才说"],
           ],
         },

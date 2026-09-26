@@ -6,10 +6,14 @@
  *
  * 数据源 open-dict-data/ipa-dict（MIT）：
  *   英语用 en_US（通用美音，音系上最接近加拿大英语）
- *   法语用 fr_FR（标准法语）。ipa-dict 也有 fr_QC，但那是窄式转写，
- *   带双元音化和塞擦化（cordialement 记成 /kɑɔ̯ʁd͡zjalmæ̃/），
- *   对照学习用不便；魁北克特有的词汇已经由词表的 CANADA 模块覆盖。
- *   想换成魁北克读音，把下面 JOBS 里的 dict 改成 "fr_QC" 即可。
+ *   法语以**标准加拿大法语**为准（魁北克受教育者的标准音，Radio-Canada 播音即此）。
+ *   ipa-dict 的 fr_QC 不能直接用：它记的是魁北克口语音（fête /fat/、père /paʁ/、
+ *   table /tab/），带双元音化和塞擦化，拿来备考会把俗语口音当标准。
+ *   所以底子用 fr_FR，再由 toCanadianStandard() 补上加拿大标准音保留、而法国已经
+ *   合并掉的音位对立：â → /ɑ/（pâte ≠ patte），闭音节里的 ê / aî → /ɛː/（fête ≠ faite）。
+ *   /ɛ̃/ ≠ /œ̃/（brin ≠ brun）fr_FR 本来就分，不用改。
+ *   t、d 在 i、u 前的塞擦化（tu [t͡sy]）、闭音节高元音松化（petite [pət͡sɪt]）是
+ *   自动音变，宽式音标不标，规则写在语法速查的「发音规则」页。
  *
  * **只给能归约成单个词的条目标音标。** 多词语块一律跳过：逐词拼接出来的音标
  * 每个词都带主重音、法语还丢了联诵（`met en avant` 实际读 /mɛt‿ɑ̃navɑ̃/ 而不是
@@ -40,6 +44,8 @@ type Job = {
   termCol: number;
   /** 查词前剥掉的冠词等前缀——词典按裸词收录 */
   strip: RegExp;
+  /** 按标准加拿大法语调整音标，见 toCanadianStandard */
+  canadian?: boolean;
 };
 
 const JOBS: Job[] = [
@@ -59,6 +65,7 @@ const JOBS: Job[] = [
     ],
     termCol: 2,
     strip: /^(le|la|les|un|une|des|du)\s+|^l'/i,
+    canadian: true,
   },
 ];
 
@@ -79,6 +86,31 @@ async function loadDict(name: string): Promise<Map<string, string>> {
     if (ipa && !map.has(word)) map.set(word, ipa);
   }
   return map;
+}
+
+const FR_VOWELS = "aeiouyéèêâîôûàùëïüœæ";
+
+/**
+ * fr_FR 的音标 → 标准加拿大法语的宽式音标，只动法国已合并、加拿大仍区分的两处。
+ * 对不上的（多个 a 却只有一个 â）原样返回，交给人工在 manual 表里写。
+ * 已经在 ipa-fr-manual.tsv 手写的条目以手写为准，这里只管自动生成的单词。
+ */
+export function toCanadianStandard(word: string, ipa: string): string {
+  let out = ipa;
+  // ê / aî 落在最后一个音节、且后面有辅音收尾：fête /fɛːt/、être /ɛːtʁ/；arrêt /aʁɛ/ 是开音节不变
+  if (new RegExp(`(ê|aî)[^${FR_VOWELS}]*e?s?$`).test(word)) {
+    // 鼻化元音的基字母（ɑ ɔ ɛ œ）已在排除列表里，不用单独排除鼻化符
+    out = out.replace(/ɛ(?!ː)(?=[^aeiouyɛɔøœəɑ ‿/]+\/?$)/u, "ɛː");
+  }
+  if (word.includes("â")) {
+    // 只数单独的 a，ɑ̃ 这种带鼻化符（U+0303）的不算
+    const plain = [...out.matchAll(/a(?!̃)/gu)];
+    if (plain.length === 1) {
+      const i = plain[0].index;
+      out = out.slice(0, i) + "ɑ" + out.slice(i + 1);
+    }
+  }
+  return out;
 }
 
 /** 归约成单个待查的词；null 表示这条不适合标音标 */
@@ -121,7 +153,8 @@ for (const job of JOBS) {
     // 并列变体逐个查，任一查不到就整条放弃，免得音标和词条对不上
     const parts = term.split(" / ").map((variant) => {
       const word = reduceToWord(variant, job.strip);
-      return word ? dict.get(word) : undefined;
+      const ipa = word ? dict.get(word) : undefined;
+      return ipa && job.canadian ? toCanadianStandard(word!, ipa) : ipa;
     });
     if (parts.some((part) => !part)) continue;
 
@@ -132,6 +165,9 @@ for (const job of JOBS) {
   const header = [
     `# ${job.out} —— 由 scripts/build-ipa.ts 生成，可手工修正`,
     `# 数据源：open-dict-data/ipa-dict ${job.dict}（MIT）`,
+    ...(job.canadian
+      ? ["# 已按标准加拿大法语调整：â → /ɑ/，闭音节 ê / aî → /ɛː/（见 toCanadianStandard）"]
+      : []),
     `# 只收能归约成单个词的条目，多词语块手写在 ${job.out.replace(".tsv", "-manual.tsv")}`,
     `# 格式：<词条><TAB><音标>，词条须与 _src.psv 第 ${job.termCol + 1} 列完全一致`,
   ].join("\n");

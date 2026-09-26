@@ -2,9 +2,10 @@
 # build:ipa 不会覆盖这份表。收录词典查不到的单词（省音、连字符词、缩写、魁北克词）和所有多词语块
 # 短语按实际读法转写，‿ 标联诵（les‿enfants /lez‿ɑ̃fɑ̃/）；单词表里的名词沿用 ipa-fr.tsv 惯例不带冠词，短语表带冠词
 # 占位符写成 …
+# 以标准加拿大法语为准：区分 /a/–/ɑ/（relâche /ʁəlɑʃ/）、/ɛ/–/ɛː/（tempête /tɑ̃pɛːt/）、/ɛ̃/–/œ̃/；塞擦化等自动音变不标
 # 格式：<词条><TAB><音标>，词条须与 _src.psv 第 3 列完全一致
 la piastre / la piasse	/pjastʁ/ / /pjas/
-bienvenue !	/bjɛ̃vəny/
+bienvenue!	/bjɛ̃vəny/
 Bonjour-hi	/bɔ̃ʒuʁ haj/
 le CLSC	/seɛlɛsse/
 la RAMQ	/ʁamk/
@@ -20,7 +21,7 @@ le déneigement	/deneʒmɑ̃/
 la poutine	/putin/
 l'interculturalisme / le multiculturalisme	/ɛ̃tɛʁkyltyʁalism/ / /myltikyltyʁalism/
 l'itinérance	/itineʁɑ̃s/
-le bien-être	/bjɛ̃nɛtʁ/
+le bien-être	/bjɛ̃nɛːtʁ/
 s'inscrire / l'inscription	/sɛ̃skʁiʁ/ / /ɛ̃skʁipsjɔ̃/
 le diplôme / diplômé(e)	/diplom/ / /diplome/
 le vivre-ensemble	/vivʁɑ̃sɑ̃bl/
@@ -100,31 +101,31 @@ mon projet, c'est de	/mɔ̃ pʁɔʒɛ sɛ də/
 avoir envie de	/avwaʁ ɑ̃vi də/
 Pour répondre à votre question	/puʁ ʁepɔ̃dʁ a vɔtʁ kɛstjɔ̃/
 Si je comprends bien	/si ʒə kɔ̃pʁɑ̃ bjɛ̃/
-Pourriez-vous répéter, s'il vous plaît ?	/puʁje vu ʁepete sil vu plɛ/
+Pourriez-vous répéter, s'il vous plaît?	/puʁje vu ʁepete sil vu plɛ/
 Je voudrais avoir des renseignements sur	/ʒə vudʁɛ‿avwaʁ de ʁɑ̃sɛɲmɑ̃ syʁ/
 Est-ce que vous pourriez me dire…	/ɛs kə vu puʁje mə diʁ …/
 J'aimerais savoir si	/ʒɛmʁɛ savwaʁ si/
-Quels sont les horaires ?	/kɛl sɔ̃ lez‿ɔʁɛʁ/
-Combien ça coûte ? / Quel est le tarif ?	/kɔ̃bjɛ̃ sa kut/ / /kɛl ɛ lə taʁif/
-Est-ce qu'il y a des frais supplémentaires ?	/ɛs kil ja de fʁɛ syplemɑ̃tɛʁ/
-Est-ce qu'il faut réserver à l'avance ?	/ɛs kil fo ʁezɛʁve a lavɑ̃s/
-Qu'est-ce que vous me conseillez ?	/kɛs kə vu mə kɔ̃seje/
-Y a-t-il une autre possibilité ?	/i a til yn otʁ pɔsibilite/
-Ça vous convient ? / Est-ce que ça vous irait ?	/sa vu kɔ̃vjɛ̃/ / /ɛs kə sa vuz‿iʁɛ/
+Quels sont les horaires?	/kɛl sɔ̃ lez‿ɔʁɛʁ/
+Combien ça coûte? / Quel est le tarif?	/kɔ̃bjɛ̃ sa kut/ / /kɛl ɛ lə taʁif/
+Est-ce qu'il y a des frais supplémentaires?	/ɛs kil ja de fʁɛ syplemɑ̃tɛʁ/
+Est-ce qu'il faut réserver à l'avance?	/ɛs kil fo ʁezɛʁve a lavɑ̃s/
+Qu'est-ce que vous me conseillez?	/kɛs kə vu mə kɔ̃seje/
+Y a-t-il une autre possibilité?	/i a til yn otʁ pɔsibilite/
+Ça vous convient? / Est-ce que ça vous irait?	/sa vu kɔ̃vjɛ̃/ / /ɛs kə sa vuz‿iʁɛ/
 Je vous propose de	/ʒə vu pʁɔpoz də/
 Et si on…（+ 未完成过去时）	/e si ɔ̃ …/
 Ce serait possible de	/sə səʁɛ pɔsibl də/
 Ça ne vous dérange pas si	/sa nə vu deʁɑ̃ʒ pa si/
 Je préférerais plutôt	/ʒə pʁefeʁəʁɛ plyto/
-On pourrait peut-être	/ɔ̃ puʁɛ pøtɛtʁ/
-Ça marche ! / C'est entendu.	/sa maʁʃ/ / /sɛt‿ɑ̃tɑ̃dy/
-Volontiers ! / Avec plaisir !	/vɔlɔ̃tje/ / /avɛk pleziʁ/
+On pourrait peut-être	/ɔ̃ puʁɛ pøtɛːtʁ/
+Ça marche! / C'est entendu.	/sa maʁʃ/ / /sɛt‿ɑ̃tɑ̃dy/
+Volontiers! / Avec plaisir!	/vɔlɔ̃tje/ / /avɛk pleziʁ/
 Ça me convient parfaitement	/sa mə kɔ̃vjɛ̃ paʁfɛtmɑ̃/
 Je suis désolé(e), mais je ne peux pas	/ʒə sɥi dezɔle mɛ ʒə nə pø pa/
 Malheureusement, j'ai déjà quelque chose de prévu	/malœʁøzmɑ̃ ʒe deʒa kɛlkə ʃoz də pʁevy/
 Ça m'arrangerait plutôt	/sa maʁɑ̃ʒʁɛ plyto/
 Je vais y réfléchir	/ʒə vɛ i ʁefleʃiʁ/
-Ça m'embête un peu	/sa mɑ̃bɛt œ̃ pø/
+Ça m'embête un peu	/sa mɑ̃bɛːt œ̃ pø/
 Je suis vraiment déçu(e)	/ʒə sɥi vʁɛmɑ̃ desy/
 Je vous remercie infiniment	/ʒə vu ʁəmɛʁsi ɛ̃finimɑ̃/
 Ce n'est pas grave	/sə nɛ pa gʁav/
@@ -162,12 +163,12 @@ Certes … mais	/sɛʁt … mɛ/
 Il est vrai que … cependant	/il ɛ vʁɛ kə … səpɑ̃dɑ̃/
 En revanche / Par contre	/ɑ̃ ʁəvɑ̃ʃ/ / /paʁ kɔ̃tʁ/
 Bien que + 虚拟式	/bjɛ̃ kə …/
-Même si + 直陈式	/mɛm si …/
+Même si + 直陈式	/mɛːm si …/
 Malgré + 名词	/malgʁe …/
 Par conséquent / Ainsi	/paʁ kɔ̃sekɑ̃/ / /ɛ̃si/
 C'est pourquoi	/sɛ puʁkwa/
 Étant donné que	/etɑ̃ dɔne kə/
-Grâce à / À cause de	/gʁas a/ / /a koz də/
+Grâce à / À cause de	/gʁɑs a/ / /a koz də/
 avoir des répercussions sur	/avwaʁ de ʁepɛʁkysjɔ̃ syʁ/
 En conclusion / Pour conclure	/ɑ̃ kɔ̃klyzjɔ̃/ / /puʁ kɔ̃klyʁ/
 En somme / En définitive	/ɑ̃ sɔm/ / /ɑ̃ definitiv/
@@ -200,7 +201,7 @@ N'hésite pas à me contacter	/nezit pa a mə kɔ̃takte/
 Je reste à votre disposition	/ʒə ʁɛst a vɔtʁ dispozisjɔ̃/
 Bien à toi / Bien à vous	/bjɛ̃n‿a twa/ / /bjɛ̃n‿a vu/
 Je vous prie d'agréer mes salutations distinguées	/ʒə vu pʁi dagʁee me salytasjɔ̃ distɛ̃ge/
-À bientôt ! / Bises	/a bjɛ̃to/ / /biz/
+À bientôt! / Bisous	/a bjɛ̃to/ / /bizu/
 Il y a quelques mois	/il ja kɛlkə mwa/
 Au début / Au bout de	/o deby/ / /o bu də/
 Ce jour-là	/sə ʒuʁ la/
@@ -231,7 +232,7 @@ le congé parental	/lə kɔ̃ʒe paʁɑ̃tal/
 les allocations familiales	/lez‿alɔkasjɔ̃ familjal/
 la déclaration de revenus	/la deklaʁasjɔ̃ də ʁəvəny/
 le salaire minimum	/lə salɛʁ minimɔm/
-la tempête de neige	/la tɑ̃pɛt də nɛʒ/
+la tempête de neige	/la tɑ̃pɛːt də nɛʒ/
 la pelle à neige	/la pɛl a nɛʒ/
 les pneus d'hiver	/le pnø divɛʁ/
 le facteur vent / le refroidissement éolien	/lə faktœʁ vɑ̃/ / /lə ʁəfʁwadismɑ̃ eɔljɛ̃/
@@ -315,7 +316,7 @@ l'assurance habitation / automobile	/lasyʁɑ̃s abitasjɔ̃/ / /lasyʁɑ̃s ot�
 faire une réclamation	/fɛʁ yn ʁeklamasjɔ̃/
 le transport en commun	/lə tʁɑ̃spɔʁ ɑ̃ kɔmœ̃/
 le tarif / le titre de transport	/lə taʁif/ / /lə titʁ də tʁɑ̃spɔʁ/
-le retard / être en retard	/lə ʁətaʁ/ / /ɛtʁ ɑ̃ ʁətaʁ/
+le retard / être en retard	/lə ʁətaʁ/ / /ɛːtʁ ɑ̃ ʁətaʁ/
 accessible aux personnes à mobilité réduite	/aksesibl o pɛʁsɔn a mɔbilite ʁedɥit/
 le permis de conduire	/lə pɛʁmi də kɔ̃dɥiʁ/
 l'excès de vitesse	/lɛksɛ də vitɛs/
@@ -362,7 +363,7 @@ essayer / la cabine d'essayage	/eseje/ / /la kabin desɛjaʒ/
 en solde / les soldes	/ɑ̃ sɔld/ / /le sɔld/
 la réservation / réserver une table	/la ʁezɛʁvasjɔ̃/ / /ʁezɛʁve yn tabl/
 l'entrée / le plat principal / le dessert	/lɑ̃tʁe/ / /lə pla pʁɛ̃sipal/ / /lə desɛʁ/
-l'allergie / être allergique à	/lalɛʁʒi/ / /ɛtʁ alɛʁʒik a/
+l'allergie / être allergique à	/lalɛʁʒi/ / /ɛːtʁ alɛʁʒik a/
 il fait froid / doux / humide	/il fɛ fʁwa/ / /il fɛ du/ / /il fɛ ymid/
 l'avertissement météorologique	/lavɛʁtismɑ̃ meteɔʁɔlɔʒik/
 faire du bénévolat / du sport / de la randonnée	/fɛʁ dy benevɔla/ / /fɛʁ dy spɔʁ/ / /fɛʁ də la ʁɑ̃dɔne/
@@ -398,7 +399,7 @@ sous réserve de	/su ʁezɛʁv də/
 dans les plus brefs délais	/dɑ̃ le ply bʁɛf delɛ/
 prière de	/pʁijɛʁ də/
 entrer en vigueur	/ɑ̃tʁe ɑ̃ vigœʁ/
-être en vigueur	/ɛtʁ ɑ̃ vigœʁ/
+être en vigueur	/ɛːtʁ ɑ̃ vigœʁ/
 à louer / à vendre	/a lwe/ / /a vɑ̃dʁ/
 libre immédiatement	/libʁ imedjatmɑ̃/
 tout inclus / tout compris	/tut‿ɛ̃kly/ / /tu kɔ̃pʁi/
@@ -414,7 +415,7 @@ la pièce justificative	/la pjɛs ʒystifikativ/
 la pièce d'identité	/la pjɛs didɑ̃tite/
 la preuve de résidence	/la pʁœv də ʁezidɑ̃s/
 le délai de traitement	/lə delɛ də tʁɛtmɑ̃/
-être admissible à	/ɛtʁ admisibl a/
+être admissible à	/ɛːtʁ admisibl a/
 échoir / la date d'expiration	/eʃwaʁ/ / /la dat dɛkspiʁasjɔ̃/
 les frais de dossier	/le fʁɛ də dosje/
 le reçu / l'accusé de réception	/lə ʁəsy/ / /lakyze də ʁesɛpsjɔ̃/
@@ -426,7 +427,7 @@ tenir à + 原形	/təniʁ a …/
 -yer 动词	/je/
 passé composé	/pase kɔ̃poze/
 PC vs imparfait	/pese/ vs /ɛ̃paʁfɛ/
-être 作助动词	/ɛtʁ/
+être 作助动词	/ɛːtʁ/
 futur simple	/fytyʁ sɛ̃pl/
 futur proche	/fytyʁ pʁɔʃ/
 conditionnel présent	/kɔ̃disjɔnɛl pʁezɑ̃/
@@ -457,7 +458,7 @@ sans précédent	/sɑ̃ pʁesedɑ̃/
 l'avis / le point de vue	/lavi/ / /lə pwɛ̃ də vy/
 soutenir / défendre une idée	/sutniʁ yn‿ide/ / /defɑ̃dʁ yn‿ide/
 contester / remettre en question	/kɔ̃tɛste/ / /ʁəmɛtʁ ɑ̃ kɛstjɔ̃/
-reconnaître que	/ʁəkɔnɛtʁ kə/
+reconnaître que	/ʁəkɔnɛːtʁ kə/
 se méfier de	/sə mefje də/
 remédier à	/ʁəmedje a/
 encourager / inciter à	/ɑ̃kuʁaʒe/ / /ɛ̃site a/
@@ -476,7 +477,7 @@ globalement / dans l'ensemble	/glɔbalmɑ̃/ / /dɑ̃ lɑ̃sɑ̃bl/
 s'adapter à / l'adaptation	/sadapte a/ / /ladaptasjɔ̃/
 s'impliquer dans	/sɛ̃plike dɑ̃/
 faire preuve de	/fɛʁ pʁœv də/
-être conscient de	/ɛtʁ kɔ̃sjɑ̃ də/
+être conscient de	/ɛːtʁ kɔ̃sjɑ̃ də/
 se sentir + adj.	/sə sɑ̃tiʁ …/
 le sentiment d'appartenance	/lə sɑ̃timɑ̃ dapaʁtənɑ̃s/
 prendre l'initiative	/pʁɑ̃dʁ linisjativ/
@@ -516,7 +517,7 @@ faire la lessive	/fɛʁ la lesiv/
 sortir les poubelles	/sɔʁtiʁ le pubɛl/
 passer l'aspirateur	/pase laspiʁatœʁ/
 la facture d'électricité	/la faktyʁ delɛktʁisite/
-l'enquête de crédit	/lɑ̃kɛt də kʁedi/
+l'enquête de crédit	/lɑ̃kɛːt də kʁedi/
 la reconduction du bail	/la ʁəkɔ̃dyksjɔ̃ dy baj/
 l'augmentation de loyer	/lɔgmɑ̃tasjɔ̃ də lwaje/
 l'avis de résiliation	/lavi də ʁeziljasjɔ̃/
@@ -537,9 +538,9 @@ la réaction allergique	/la ʁeaksjɔ̃ alɛʁʒik/
 la commotion cérébrale	/la kɔmɔsjɔ̃ seʁebʁal/
 la réanimation cardiorespiratoire (RCR)	/la ʁeanimasjɔ̃ kaʁdjoʁɛspiʁatwaʁ/ / /ɛʁseɛʁ/
 le coup de chaleur	/lə ku də ʃalœʁ/
-l'aîné / la personne âgée	/lene/ / /la pɛʁsɔn aʒe/
+l'aîné / la personne âgée	/lene/ / /la pɛʁsɔn ɑʒe/
 les soins à domicile	/le swɛ̃z‿a dɔmisil/
-la résidence pour personnes âgées	/la ʁezidɑ̃s puʁ pɛʁsɔnz‿aʒe/
+la résidence pour personnes âgées	/la ʁezidɑ̃s puʁ pɛʁsɔnz‿ɑʒe/
 le handicap / en situation de handicap	/lə ɑ̃dikap/ / /ɑ̃ sitɥasjɔ̃ də ɑ̃dikap/
 le calendrier de vaccination	/lə kalɑ̃dʁije də vaksinasjɔ̃/
 le suivi de grossesse	/lə sɥivi də gʁosɛs/
@@ -598,7 +599,7 @@ la visite guidée	/la vizit gide/
 le stationnement incitatif	/lə stasjɔnmɑ̃ ɛ̃sitatif/
 la société de transport	/la sɔsjete də tʁɑ̃spɔʁ/
 la carte OPUS	/la kaʁt ɔpys/
-la semaine de relâche	/la səmɛn də ʁəlaʃ/
+la semaine de relâche	/la səmɛn də ʁəlɑʃ/
 la journée pédagogique	/la ʒuʁne pedagɔʒik/
 la collation des grades	/la kɔlasjɔ̃ de gʁad/
 le plan de cours	/lə plɑ̃ də kuʁ/
@@ -656,7 +657,7 @@ la pension alimentaire	/la pɑ̃sjɔ̃ alimɑ̃tɛʁ/
 le conjoint de fait	/lə kɔ̃ʒwɛ̃ də fɛ/
 la natalité / le taux de natalité	/la natalite/ / /lə to də natalite/
 l'espérance de vie	/lɛspeʁɑ̃s də vi/
-le troisième âge	/lə tʁwazjɛm‿aʒ/
+le troisième âge	/lə tʁwazjɛm‿ɑʒ/
 l'organisme sans but lucratif (OSBL)	/lɔʁganism sɑ̃ byt lykʁatif/ / /oɛsbeɛl/
 la collecte de fonds	/la kɔlɛkt də fɔ̃/
 le don / faire un don	/lə dɔ̃/ / /fɛʁ œ̃ dɔ̃/
@@ -732,7 +733,7 @@ sans gluten / sans lactose	/sɑ̃ glytɛn/ / /sɑ̃ laktoz/
 l'intolérance alimentaire	/lɛ̃tɔleʁɑ̃s alimɑ̃tɛʁ/
 le produit local / de saison	/lə pʁɔdɥi lɔkal/ / /lə pʁɔdɥi də sɛzɔ̃/
 la prévision météorologique	/la pʁevizjɔ̃ meteɔʁɔlɔʒik/
-l'avertissement de tempête	/lavɛʁtismɑ̃ də tɑ̃pɛt/
+l'avertissement de tempête	/lavɛʁtismɑ̃ də tɑ̃pɛːt/
 moins vingt degrés	/mwɛ̃ vɛ̃ dəgʁe/
 la température ressentie	/la tɑ̃peʁatyʁ ʁəsɑ̃ti/
 la pluie verglaçante	/la plɥi vɛʁglasɑ̃t/
@@ -750,7 +751,7 @@ dans une semaine / il y a une semaine	/dɑ̃z‿yn səmɛn/ / /il ja yn səmɛn/
 d'ici la fin du mois	/disi la fɛ̃ dy mwa/
 dès que possible	/dɛ kə pɔsibl/
 à l'avance / d'avance	/a lavɑ̃s/ / /davɑ̃s/
-en semaine / le week-end	/ɑ̃ səmɛn/ / /lə wikɛnd/
+en semaine / en fin de semaine	/ɑ̃ səmɛn/ / /ɑ̃ fɛ̃ də səmɛn/
 toutes les deux semaines	/tut le dø səmɛn/
 à partir de maintenant	/a paʁtiʁ də mɛ̃tnɑ̃/
 le remboursement sans reçu	/lə ʁɑ̃buʁsəmɑ̃ sɑ̃ ʁəsy/

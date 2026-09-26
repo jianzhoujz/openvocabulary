@@ -4,7 +4,7 @@ const sheet: Sheet = {
   id: "prononciation",
   title: "发音规则",
   summary: "看到生词也能读出来",
-  lead: "法语的拼写和读音很有规律。记住下面五条，看到没见过的词也能读个八九不离十。带喇叭的地方都可以点，多听多跟读。",
+  lead: "法语的拼写和读音很有规律。记住下面几条，看到没见过的词也能读个八九不离十。读音以**标准加拿大法语**为准，带喇叭的地方都可以点，多听多跟读。",
   sections: [
     {
       title: "1. 词尾的辅音多半不读",
@@ -17,7 +17,7 @@ const sheet: Sheet = {
           kind: "examples",
           items: [
             { fr: "petit", zh: "小的（t 不读）" },
-            { fr: "Paris", zh: "巴黎（s 不读）" },
+            { fr: "trois", zh: "三（s 不读）" },
             { fr: "grand", zh: "大的（d 不读）" },
             { fr: "deux", zh: "二（x 不读）" },
             { fr: "chez", zh: "在……家（z 不读）" },
@@ -76,12 +76,13 @@ const sheet: Sheet = {
           rows: [
             ["an / en / am / em", "昂（鼻音）", "enfant, temps"],
             ["on / om", "翁（鼻音）", "bon, nom"],
-            ["in / im / ain / ein / un", "安（鼻音）", "vin, pain, un"],
+            ["in / im / ain / ein", "安（鼻音，嘴角拉开）", "vin, pain, plein"],
+            ["un / um", "嘴唇撮圆的鼻音", "un, brun, lundi"],
           ],
         },
         {
           kind: "tip",
-          text: "在法国，un 和 in 基本读成同一个音；魁北克口音里 un 的嘴唇更圆一些，两种都听得懂。",
+          text: "标准加拿大法语里 un 和 in 是两个音：[[brun]]（棕色）嘴唇撮圆，[[brin]]（一根）嘴角拉开。很多法国人已经不分，加拿大仍然区分。",
         },
         {
           kind: "tip",
@@ -134,6 +135,50 @@ const sheet: Sheet = {
             { fr: "université", zh: "大学：u-ni-ver-si-TÉ" },
             { fr: "Je voudrais un café.", zh: "我想要一杯咖啡。只有句末的 fé 稍重" },
           ],
+        },
+      ],
+    },
+    {
+      title: "6. 加拿大法语的发音特点",
+      blocks: [
+        {
+          kind: "p",
+          text: "本站以**标准加拿大法语**为准，也就是魁北克受过教育的人、Radio-Canada 播音员的读法。TCF Canada 接受各种标准口音，下面几点是它和法国法语最明显的不同，加拿大生活和听力里天天听到。",
+        },
+        {
+          kind: "p",
+          text: "**t、d 碰上 i、u 要“咬”一下**：t 读成近似“ts”，d 读成近似“dz”。这是自动的，音标里不标。",
+        },
+        {
+          kind: "examples",
+          items: [
+            { fr: "tu", zh: "你：≈ tsu（撅嘴）" },
+            { fr: "petit", zh: "小的：≈ pe-tsi" },
+            { fr: "dire", zh: "说：≈ dzire" },
+            { fr: "lundi", zh: "星期一：≈ lun-dzi" },
+          ],
+        },
+        {
+          kind: "p",
+          text: "**保留了法国已经合并的几组音**，音标里会标出来：",
+        },
+        {
+          kind: "table",
+          head: ["词", "读音", "对比"],
+          fr: [0],
+          rows: [
+            ["pâte", "/pɑt/，a 靠后、嘴张大", "[[patte]] /pat/ 爪子"],
+            ["fête", "/fɛːt/，拉长", "[[faite]] /fɛt/ 做好的"],
+            ["brun", "/bʁœ̃/，嘴唇撮圆", "[[brin]] /bʁɛ̃/ 一根"],
+          ],
+        },
+        {
+          kind: "p",
+          text: "**闭音节里的 i、u、ou 读得松一点**：[[petite]]、[[musique]]、[[route]]，嘴不用绷那么紧。",
+        },
+        {
+          kind: "tip",
+          text: "街头口语里还会听到 moi 读成“mwé”、fête 读成“fatte”，那是俗语口音。听懂就好，考试说话和写作都用标准音、标准拼写。",
         },
       ],
     },

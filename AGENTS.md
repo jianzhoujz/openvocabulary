@@ -116,6 +116,20 @@ vp run build:data           # 重新生成网页用的 .json
 - `public/data/` —— 刻意保持紧凑格式，被 `vp fmt` 美化后体积涨三成（273 KB → 368 KB）
 - `vocab/` —— `*-vocab.md` 是生成物；词表 README 里的分数对照表含转义竖线，重排有风险
 
+## 法语以标准加拿大法语为准
+
+用户备考 TCF Canada、移民加拿大。所有法语内容（词表、速查页、`public/french-4h.html`、
+朗读声音、音标）都以**标准加拿大法语**为准：魁北克受过教育的人、Radio-Canada 播音的
+那种，不是街头口语（joual），也不是法国法语。
+
+- **用词**：优先魁北克标准用词（courriel、fin de semaine、magasiner、cellulaire），
+  法国说法在 note 里注明“法国说……”
+- **排印**：按魁北克（OQLF）习惯，`? ! ;` 前**不留**空格，`:` 和 `« »` 内侧留空格。
+  改 `_src.psv` 第 3 列时，`ipa-fr*.tsv` 里的词条要同步改，否则音标静默匹配不上
+- **音标**：见 `scripts/build-ipa.ts` 的 `toCanadianStandard()`；**不要换成 ipa-dict 的
+  `fr_QC`**，那是口语窄式转写（fête /fat/）
+- **朗读**：`fr-CA` 声音优先，没有才退回 `fr-FR`
+
 ## 短语音标要手写，不要逐词拼接
 
 `scripts/build-ipa.ts` 只查单个词，刻意跳过多词条目。不要让它"顺手"把短语也拼出来——

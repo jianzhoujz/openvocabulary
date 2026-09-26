@@ -120,7 +120,7 @@ const sheet: Sheet = {
           kind: "table",
           head: ["代词", "代替什么", "例子"],
           rows: [
-            ["[[y]]", "à / en / dans + 地点或事物", "[[Je vais à Paris. → J'y vais.]]"],
+            ["[[y]]", "à / en / dans + 地点或事物", "[[Je vais à Montréal. → J'y vais.]]"],
             ["[[y]]", "à + 事物", "[[Tu penses à l'examen? → Oui, j'y pense.]]"],
             [
               "[[en]]",
@@ -128,12 +128,12 @@ const sheet: Sheet = {
               "[[Tu veux du café? → Oui, j'en veux.]]",
             ],
             ["[[en]]", "数量，数字留在后面", "[[J'ai deux enfants. → J'en ai deux.]]"],
-            ["[[en]]", "从某地来", "[[Tu viens de Lyon? → Oui, j'en viens.]]"],
+            ["[[en]]", "从某地来", "[[Tu viens de Toronto? → Oui, j'en viens.]]"],
           ],
         },
         {
           kind: "tip",
-          text: "说数量时 en 不能省：“我有两个”要说 [[J'en ai deux.]]，只说 J'ai deux 法国人听着像话没说完。",
+          text: "说数量时 en 不能省：“我有两个”要说 [[J'en ai deux.]]，只说 J'ai deux，母语者听着像话没说完。",
         },
       ],
     },

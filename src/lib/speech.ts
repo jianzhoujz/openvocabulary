@@ -180,10 +180,15 @@ export function voiceLabel(voice: SpeechSynthesisVoice): string {
 /** 没有目标语言声音时给用户的办法 */
 export function missingVoiceMessage(lang: string): string {
   const name = langName(lang);
+  // 推荐装首选口音（加拿大）的声音，Windows 语音设置里写作「法语（加拿大）」
+  const [base = lang, region = ""] = (LANG_PREFERENCE[lang]?.[0] ?? lang).split("-");
+  const regionName = REGION_NAMES[region.toUpperCase()] ?? "";
+  const accent = regionName + langName(base);
+  const winName = regionName ? `${name}（${regionName}）` : name;
   return (
     `这台设备没有${name}语音，用别的语言的声音会读错，所以没有朗读。` +
-    `用 Edge 或联网的 Chrome 打开一般自带${name}在线语音；` +
-    `Windows 也可以在「设置 → 时间和语言 → 语音」里添加${name}语音，装好后重启浏览器。`
+    `用 Edge 打开一般自带${accent}在线语音；` +
+    `Windows 也可以在「设置 → 时间和语言 → 语音」里添加「${winName}」语音，装好后重启浏览器。`
   );
 }
 

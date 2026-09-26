@@ -51,12 +51,12 @@
 | le déjeuner / le dîner / le souper | n.m. | breakfast / lunch / dinner | 早餐/午餐/晚餐 | 魁北克三餐名称整体前移一位，与法国不同，极易混 | On se retrouve pour le souper à 18 h. |
 | le char | n.m. | car | 车 | 魁北克口语，正式场合用 la voiture | Mon char est au garage. |
 | la job | n.f. | job | 工作 | 魁北克口语且是阴性，法国说 le boulot | J'ai trouvé une bonne job. |
-| le breuvage | n.m. | beverage | 饮料 | 魁北克用法，法国说 la boisson | Quel breuvage désirez-vous ? |
+| le breuvage | n.m. | beverage | 饮料 | 魁北克用法，法国说 la boisson | Quel breuvage désirez-vous? |
 | la traverse / le traversier | n.f./n.m. | crossing / ferry | 人行横道/渡轮 | 魁北克用 traversier，法国说 ferry | Nous prendrons le traversier pour Lévis. |
 | le cellulaire | n.m. | cell phone | 手机 | 魁北克说 cellulaire，法国说 portable | Éteignez votre cellulaire, s'il vous plaît. |
 | la piastre / la piasse | n.f. | dollar (slang) | 块钱 | 魁北克口语说钱 | Ça m'a coûté trente piasses. |
 | présentement | adv. | currently | 目前 | 魁北克常用，法国多说 actuellement | Je suis présentement en formation. |
-| bienvenue ! | expr. | you are welcome | 不客气 | 魁北克特有回应 merci，法国说 de rien | — Merci ! — Bienvenue ! |
+| bienvenue! | expr. | you are welcome | 不客气 | 魁北克特有回应 merci，法国说 de rien | — Merci! — Bienvenue! |
 | Bonjour-hi | expr. | Hello (bilingual greeting) | 蒙特利尔双语问候 | 蒙特利尔商店特有现象，社会议题 | À Montréal, on entend souvent « Bonjour-hi ». |
 
 ### 机构
@@ -94,7 +94,7 @@
 | le déneigement | n.m. | snow removal | 除雪 | 加拿大冬季核心词，市政服务 | Le déneigement des trottoirs relève de la ville. |
 | la poudrerie | n.f. | blowing snow | 吹雪 | 魁北克气象词，天气预报常见 | La poudrerie réduit la visibilité sur l'autoroute. |
 | le verglas | n.m. | freezing rain / black ice | 冻雨/地面结冰 | 加拿大冬季危险天气 | Attention au verglas ce matin. |
-| la tuque / les mitaines | n.f. | toque / mittens | 毛线帽/连指手套 | 魁北克特有说法 | N'oublie pas ta tuque, il fait froid ! |
+| la tuque / les mitaines | n.f. | toque / mittens | 毛线帽/连指手套 | 魁北克特有说法 | N'oublie pas ta tuque, il fait froid! |
 | la canicule | n.f. | heat wave | 酷暑 | 夏季对应词 | Une canicule est annoncée pour la semaine prochaine. |
 
 ### 文化生活
@@ -256,7 +256,7 @@
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
 | réserver / la réservation | v./n.f. | to book / booking | 预订 | EO2 角色扮演高频 | J'aimerais réserver une chambre pour deux nuits. |
-| annuler / l'annulation | v./n.f. | to cancel / cancellation | 取消 | 投诉与协商 | Puis-je annuler sans frais ? |
+| annuler / l'annulation | v./n.f. | to cancel / cancellation | 取消 | 投诉与协商 | Puis-je annuler sans frais? |
 | le vol / le décollage / l'atterrissage | n.m. | flight / takeoff / landing | 航班/起飞/降落 | 机场场景 | Notre vol est retardé de deux heures. |
 | la douane | n.f. | customs | 海关 | 入境场景 | Il faut déclarer les aliments à la douane. |
 
@@ -323,7 +323,7 @@
 |---|---|---|---|---|---|
 | l'épicerie / le supermarché | n.f./n.m. | grocery store / supermarket | 杂货店/超市 | 加拿大常说 épicerie | Je vais à l'épicerie après le travail. |
 | la caisse / le caissier | n.f./n.m. | checkout / cashier | 收银台/收银员 | CO 场景高频 | Passez à la caisse numéro trois. |
-| la taille / la pointure | n.f. | size (clothes) / size (shoes) | 尺码/鞋码 | 两者不能混用，考点 | Quelle est votre pointure ? |
+| la taille / la pointure | n.f. | size (clothes) / size (shoes) | 尺码/鞋码 | 两者不能混用，考点 | Quelle est votre pointure? |
 | la livraison / livrer | n.f./v. | delivery / to deliver | 配送 | 网购与投诉 | La livraison est gratuite à partir de 50 dollars. |
 | la commande / commander | n.f./v. | order / to order | 订单/下单 | 客服场景 | Ma commande n'est toujours pas arrivée. |
 
@@ -332,7 +332,7 @@
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
 | le menu / la carte | n.m./n.f. | set menu / à la carte menu | 套餐/菜单 | 两者含义不同，考点 | Nous prendrons le menu du jour. |
-| l'addition | n.f. | bill / check | 账单 | 餐厅场景固定词 | L'addition, s'il vous plaît ! |
+| l'addition | n.f. | bill / check | 账单 | 餐厅场景固定词 | L'addition, s'il vous plaît! |
 | la végétarien(ne) / végétalien(ne) | adj. | vegetarian / vegan | 素食的/纯素的 | 饮食议题 | Je suis végétarien depuis cinq ans. |
 
 ### 天气
@@ -346,7 +346,7 @@
 
 | français | 词性 | English | 中文 | 用法要点 | exemple |
 |---|---|---|---|---|---|
-| les loisirs | n.m.pl. | leisure activities | 休闲活动 | EO1 必问 | Quels sont vos loisirs ? |
+| les loisirs | n.m.pl. | leisure activities | 休闲活动 | EO1 必问 | Quels sont vos loisirs? |
 | la bibliothèque | n.f. | library | 图书馆 | 社区资源，非 librairie 书店 | La bibliothèque offre des ateliers gratuits. |
 
 ## VERBES · 高频动词与介词搭配
@@ -404,7 +404,7 @@
 | avoir | v. | to have | 有 | j'ai, tu as, il a, nous avons, vous avez, ils ont ; PC eu ; imp. j'avais ; fut. j'aurai ; subj. que j'aie | J'ai deux enfants. |
 | aller | v. | to go | 去 | je vais, tu vas, il va, nous allons, vous allez, ils vont ; fut. j'irai ; subj. que j'aille ; PC 用 être | Je vais au travail en autobus. |
 | faire | v. | to do / to make | 做 | je fais, nous faisons, vous faites, ils font ; PC fait ; fut. je ferai ; subj. que je fasse | Je fais du sport le matin. |
-| pouvoir | v. | to be able to | 能够 | je peux, il peut, nous pouvons, ils peuvent ; fut. je pourrai ; cond. je pourrais ; subj. que je puisse | Pourriez-vous m'aider ? |
+| pouvoir | v. | to be able to | 能够 | je peux, il peut, nous pouvons, ils peuvent ; fut. je pourrai ; cond. je pourrais ; subj. que je puisse | Pourriez-vous m'aider? |
 | vouloir | v. | to want | 想要 | je veux, il veut, nous voulons, ils veulent ; cond. je voudrais ; subj. que je veuille | Je voudrais réserver une place. |
 | devoir | v. | must / to owe | 必须 | je dois, il doit, nous devons, ils doivent ; cond. je devrais ; PC dû | Je dois partir maintenant. |
 | savoir | v. | to know (a fact) | 知道 | je sais, il sait, nous savons, ils savent ; subj. que je sache ; PC su | Je sais qu'il faut s'inscrire en ligne. |
@@ -458,7 +458,7 @@
 | -eur（事物/职业） | gram. | masculine ending | 阳性词尾 | le secteur, l'ordinateur, le travailleur — 但抽象名词 -eur 多为阴性 | Le secteur de la santé recrute. |
 | -oir | gram. | masculine ending | 阳性词尾 | le devoir, le pouvoir, le couloir, le trottoir | Le trottoir est glissant ce matin. |
 | -al / -ail | gram. | masculine ending | 阳性词尾 | le journal, le travail, le total — 复数 -aux | Le journal local a publié l'annonce. |
-| -if | gram. | masculine ending | 阳性词尾 | l'objectif, le tarif, le motif | Quel est le tarif mensuel ? |
+| -if | gram. | masculine ending | 阳性词尾 | l'objectif, le tarif, le motif | Quel est le tarif mensuel? |
 
 ### 阴性词尾
 
@@ -600,7 +600,7 @@
 | résoudre / la résolution | v./n.f. | to solve / resolution | 解决 | PC résolu | Ce problème sera résolu cette semaine. |
 | réduire / limiter | v. | to reduce / to limit | 减少/限制 | 政策动词 | Ces mesures visent à réduire la pollution. |
 | un compromis | n.m. | compromise | 折中方案 | Tâche 3 结论高频 | Il faudra trouver un compromis. |
-| une alternative | n.f. | alternative | 替代方案 | 注意法语是阴性 | Existe-t-il une alternative moins coûteuse ? |
+| une alternative | n.f. | alternative | 替代方案 | 注意法语是阴性 | Existe-t-il une alternative moins coûteuse? |
 
 ### 社会制度
 
@@ -670,7 +670,7 @@
 |---|---|---|---|---|---|
 | le client / la clientèle | n.m./n.f. | client / clientele | 客户/客户群 | 商务词 | La clientèle est très fidèle. |
 | la soumission | n.f. | quote / tender | 报价/投标 | 加拿大特有用词，法国说 le devis | Nous avons déposé une soumission hier. |
-| le devis | n.m. | estimate / quote | 估价单 | 维修与服务 | Pourriez-vous m'envoyer un devis ? |
+| le devis | n.m. | estimate / quote | 估价单 | 维修与服务 | Pourriez-vous m'envoyer un devis? |
 | la rentabilité | n.f. | profitability | 盈利能力 | 经营论述 | La rentabilité reste faible. |
 | négocier / la négociation | v./n.f. | to negotiate / negotiation | 谈判 | 商务与劳资双用 | Les négociations syndicales ont repris. |
 | le partenariat | n.m. | partnership | 合作关系 | 商务与社区双用 | Un partenariat a été conclu avec la ville. |
@@ -957,7 +957,7 @@
 |---|---|---|---|---|---|
 | planter / figer | v. | to crash / to freeze | 崩溃/死机 | 加拿大法语用 figer，法国说 planter | Mon ordinateur fige sans arrêt. |
 | la compatibilité | n.f. | compatibility | 兼容性 | 软硬件问题 | Le fichier pose un problème de compatibilité. |
-| le chargeur | n.m. | charger | 充电器 | 日常物品 | Peux-tu me prêter ton chargeur ? |
+| le chargeur | n.m. | charger | 充电器 | 日常物品 | Peux-tu me prêter ton chargeur? |
 | la réinitialisation | n.f. | factory reset | 恢复出厂设置 | 排障最后手段 | Une réinitialisation effacera toutes vos données. |
 
 ### 网络账户

@@ -11,26 +11,26 @@ EO1	自我介绍	depuis mon arrivée	loc.	since my arrival	自从我到这里	�
 EO1	自我介绍	mon projet, c'est de	expr.	my plan is to	我的计划是	谈未来	Mon projet, c'est de m'installer au Québec.
 EO1	自我介绍	avoir envie de	expr.	to feel like / to want to	想要	口语常用，胜过 vouloir	J'ai envie de découvrir une nouvelle culture.
 EO1	自我介绍	Pour répondre à votre question	expr.	To answer your question	回答您的问题	争取思考时间的缓冲句	Pour répondre à votre question, je dirais que oui.
-EO1	自我介绍	Si je comprends bien	expr.	If I understand correctly	如果我没理解错	没听清时的救命句	Si je comprends bien, vous voulez savoir pourquoi ?
-EO1	自我介绍	Pourriez-vous répéter, s'il vous plaît ?	expr.	Could you repeat that, please?	能请您重复一遍吗	没听懂时用，不扣分反而显得自然	Excusez-moi, pourriez-vous répéter, s'il vous plaît ?
+EO1	自我介绍	Si je comprends bien	expr.	If I understand correctly	如果我没理解错	没听清时的救命句	Si je comprends bien, vous voulez savoir pourquoi?
+EO1	自我介绍	Pourriez-vous répéter, s'il vous plaît?	expr.	Could you repeat that, please?	能请您重复一遍吗	没听懂时用，不扣分反而显得自然	Excusez-moi, pourriez-vous répéter, s'il vous plaît?
 EO2	提问-信息	Je voudrais avoir des renseignements sur	expr.	I would like information about	我想了解关于……的信息	Tâche 2 角色扮演开场必用	Je voudrais avoir des renseignements sur vos cours de français.
-EO2	提问-信息	Est-ce que vous pourriez me dire…	expr.	Could you tell me…	您能告诉我……吗	礼貌提问万能框架	Est-ce que vous pourriez me dire combien ça coûte ?
+EO2	提问-信息	Est-ce que vous pourriez me dire…	expr.	Could you tell me…	您能告诉我……吗	礼貌提问万能框架	Est-ce que vous pourriez me dire combien ça coûte?
 EO2	提问-信息	J'aimerais savoir si	expr.	I would like to know whether	我想知道是否	后接直陈式	J'aimerais savoir si le logement est meublé.
-EO2	提问-信息	Quels sont les horaires ?	expr.	What are the opening hours?	营业时间是几点	Tâche 2 高频必问项	Quels sont les horaires d'ouverture ?
-EO2	提问-信息	Combien ça coûte ? / Quel est le tarif ?	expr.	How much does it cost?	多少钱/费用是多少	tarif 更正式	Quel est le tarif mensuel ?
-EO2	提问-信息	Est-ce qu'il y a des frais supplémentaires ?	expr.	Are there any extra charges?	有额外费用吗	租房购物高频	Est-ce qu'il y a des frais supplémentaires ?
-EO2	提问-信息	Est-ce qu'il faut réserver à l'avance ?	expr.	Do I need to book in advance?	需要提前预约吗	服务场景高频	Est-ce qu'il faut réserver à l'avance ?
-EO2	提问-信息	Qu'est-ce que vous me conseillez ?	expr.	What do you recommend?	您建议我怎么做	把球踢回给考官，拖时间且自然	Qu'est-ce que vous me conseillez dans mon cas ?
-EO2	提问-信息	Y a-t-il une autre possibilité ?	expr.	Is there another option?	还有别的选择吗	推进对话	Y a-t-il une autre possibilité, si celle-ci ne convient pas ?
-EO2	提议协商	Ça vous convient ? / Est-ce que ça vous irait ?	expr.	Does that work for you?	这样行吗	提议后确认，互动分关键	On se voit samedi, ça vous convient ?
+EO2	提问-信息	Quels sont les horaires?	expr.	What are the opening hours?	营业时间是几点	Tâche 2 高频必问项	Quels sont les horaires d'ouverture?
+EO2	提问-信息	Combien ça coûte? / Quel est le tarif?	expr.	How much does it cost?	多少钱/费用是多少	tarif 更正式	Quel est le tarif mensuel?
+EO2	提问-信息	Est-ce qu'il y a des frais supplémentaires?	expr.	Are there any extra charges?	有额外费用吗	租房购物高频	Est-ce qu'il y a des frais supplémentaires?
+EO2	提问-信息	Est-ce qu'il faut réserver à l'avance?	expr.	Do I need to book in advance?	需要提前预约吗	服务场景高频	Est-ce qu'il faut réserver à l'avance?
+EO2	提问-信息	Qu'est-ce que vous me conseillez?	expr.	What do you recommend?	您建议我怎么做	把球踢回给考官，拖时间且自然	Qu'est-ce que vous me conseillez dans mon cas?
+EO2	提问-信息	Y a-t-il une autre possibilité?	expr.	Is there another option?	还有别的选择吗	推进对话	Y a-t-il une autre possibilité, si celle-ci ne convient pas?
+EO2	提议协商	Ça vous convient? / Est-ce que ça vous irait?	expr.	Does that work for you?	这样行吗	提议后确认，互动分关键	On se voit samedi, ça vous convient?
 EO2	提议协商	Je vous propose de	expr.	I suggest that we	我建议我们	后接动词原形	Je vous propose de commencer par une visite.
-EO2	提议协商	Et si on…（+ 未完成过去时）	expr.	What if we…	我们要不要……	超地道提议句型	Et si on se retrouvait devant la station ?
-EO2	提议协商	Ce serait possible de	expr.	Would it be possible to	有可能……吗	条件式礼貌请求	Ce serait possible de reporter le rendez-vous ?
-EO2	提议协商	Ça ne vous dérange pas si	expr.	Do you mind if	您介意我……吗	礼貌程度高	Ça ne vous dérange pas si j'arrive un peu plus tard ?
+EO2	提议协商	Et si on…（+ 未完成过去时）	expr.	What if we…	我们要不要……	超地道提议句型	Et si on se retrouvait devant la station?
+EO2	提议协商	Ce serait possible de	expr.	Would it be possible to	有可能……吗	条件式礼貌请求	Ce serait possible de reporter le rendez-vous?
+EO2	提议协商	Ça ne vous dérange pas si	expr.	Do you mind if	您介意我……吗	礼貌程度高	Ça ne vous dérange pas si j'arrive un peu plus tard?
 EO2	提议协商	Je préférerais plutôt	expr.	I would rather	我更愿意	表达偏好，条件式	Je préférerais plutôt le matin.
 EO2	提议协商	On pourrait peut-être	expr.	We could perhaps	我们也许可以	温和提议	On pourrait peut-être partager les frais.
-EO2	提议协商	Ça marche ! / C'est entendu.	expr.	That works! / Agreed.	行/说定了	口语成交表达	Ça marche, à samedi alors !
-EO2	接受拒绝	Volontiers ! / Avec plaisir !	expr.	Gladly! / With pleasure!	乐意之至	接受邀请的地道回答	Avec plaisir, je viendrai.
+EO2	提议协商	Ça marche! / C'est entendu.	expr.	That works! / Agreed.	行/说定了	口语成交表达	Ça marche, à samedi alors!
+EO2	接受拒绝	Volontiers! / Avec plaisir!	expr.	Gladly! / With pleasure!	乐意之至	接受邀请的地道回答	Avec plaisir, je viendrai.
 EO2	接受拒绝	Ça me convient parfaitement	expr.	That suits me perfectly	完全合适	接受提议	Ça me convient parfaitement.
 EO2	接受拒绝	Je suis désolé(e), mais je ne peux pas	expr.	I am sorry, but I cannot	抱歉我不能	礼貌拒绝基本句	Je suis désolé, mais je ne peux pas ce jour-là.
 EO2	接受拒绝	Malheureusement, j'ai déjà quelque chose de prévu	expr.	Unfortunately I already have plans	不巧我已有安排	万能拒绝理由	Malheureusement, j'ai déjà quelque chose de prévu.
@@ -91,13 +91,13 @@ EE	Tâche1-称呼	Salut + 名字	expr.	Hi + name	嗨，……	写给朋友，Tâ
 EE	Tâche1-称呼	Bonjour à tous	expr.	Hello everyone	大家好	写给群体（同事、邻居）	Bonjour à tous,
 EE	Tâche1-开头	Je t'écris pour te parler de	expr.	I am writing to tell you about	我写信是想跟你说	非正式开头，tu 形式	Je t'écris pour te parler de mon déménagement.
 EE	Tâche1-开头	Je vous écris afin de	expr.	I am writing in order to	我写信是为了	正式版，afin de 接原形	Je vous écris afin de signaler un problème.
-EE	Tâche1-开头	J'espère que tu vas bien	expr.	I hope you are well	希望你一切都好	非正式垫句	Salut Paul, j'espère que tu vas bien !
+EE	Tâche1-开头	J'espère que tu vas bien	expr.	I hope you are well	希望你一切都好	非正式垫句	Salut Paul, j'espère que tu vas bien!
 EE	Tâche1-开头	Je me permets de vous contacter au sujet de	expr.	I am taking the liberty of contacting you about	冒昧就……联系您	最正式的开头，高分	Je me permets de vous contacter au sujet de l'annonce parue hier.
 EE	Tâche1-开头	Suite à notre conversation	expr.	Further to our conversation	接我们之前的谈话	承接前文	Suite à notre conversation de mardi, voici les détails.
-EE	Tâche1-请求	Pourriez-vous me faire savoir	expr.	Could you let me know	能否告知我	条件式礼貌请求	Pourriez-vous me faire savoir si la place est encore libre ?
+EE	Tâche1-请求	Pourriez-vous me faire savoir	expr.	Could you let me know	能否告知我	条件式礼貌请求	Pourriez-vous me faire savoir si la place est encore libre?
 EE	Tâche1-请求	Je vous serais reconnaissant(e) de	expr.	I would be grateful if you would	如蒙……不胜感激	最高级别礼貌，后接原形	Je vous serais reconnaissant de bien vouloir répondre rapidement.
 EE	Tâche1-请求	Je vous prie de bien vouloir	expr.	I kindly ask you to	恳请您	正式书面请求	Je vous prie de bien vouloir examiner ma demande.
-EE	Tâche1-请求	Serait-il possible de	expr.	Would it be possible to	是否可以	试探性请求	Serait-il possible d'obtenir un remboursement ?
+EE	Tâche1-请求	Serait-il possible de	expr.	Would it be possible to	是否可以	试探性请求	Serait-il possible d'obtenir un remboursement?
 EE	Tâche1-请求	J'aimerais que + 虚拟式	expr.	I would like … to	我希望……	aimer que 后必须虚拟式，考点	J'aimerais que vous me rappeliez demain.
 EE	Tâche1-道歉	Je suis vraiment désolé(e) de	expr.	I am truly sorry for	我为……深感抱歉	后接原形或过去不定式	Je suis vraiment désolé de ne pas avoir répondu plus tôt.
 EE	Tâche1-道歉	Veuillez m'excuser pour	expr.	Please excuse me for	请原谅我……	正式道歉，veuillez 是命令式	Veuillez m'excuser pour ce retard.
@@ -111,8 +111,8 @@ EE	Tâche1-结尾	Dans l'attente de votre réponse	expr.	Looking forward to your
 EE	Tâche1-结尾	N'hésite pas à me contacter	expr.	Do not hesitate to contact me	随时联系我	非正式结尾	N'hésite pas à me contacter si tu as des questions.
 EE	Tâche1-结尾	Je reste à votre disposition	expr.	I remain at your disposal	随时为您效劳	正式结尾高分	Je reste à votre disposition pour tout renseignement complémentaire.
 EE	Tâche1-落款	Bien à toi / Bien à vous	expr.	Best wishes	祝好	偏熟识	Bien à toi, Jian
-EE	Tâche1-落款	Je vous prie d'agréer mes salutations distinguées	expr.	Yours faithfully	顺致崇高敬意	最正式的法式落款，整句背下	Je vous prie d'agréer, Madame, mes salutations distinguées.
-EE	Tâche1-落款	À bientôt ! / Bises	expr.	See you soon! / Hugs	回头见/亲亲	朋友之间，bises 只对熟人	À bientôt, Jian
+EE	Tâche1-落款	Je vous prie d'agréer mes salutations distinguées	expr.	Yours faithfully	顺致崇高敬意	最正式的书信落款，整句背下；魁北克公文也常写 Veuillez agréer…	Je vous prie d'agréer, Madame, mes salutations distinguées.
+EE	Tâche1-落款	À bientôt! / Bisous	expr.	See you soon! / Hugs and kisses	回头见/亲亲	朋友之间用；魁北克信尾多写 bisous，法国多写 bises	À bientôt, Jian
 EE	Tâche2-叙事	Il y a quelques mois	loc.	A few months ago	几个月前	Tâche 2 叙事开头	Il y a quelques mois, j'ai vécu une expérience marquante.
 EE	Tâche2-叙事	Au début / Au bout de	loc.	At first / After (a period)	起初/经过……之后	时间推进	Au bout de trois semaines, tout allait mieux.
 EE	Tâche2-叙事	Ce jour-là	loc.	That day	那天	叙事中定位时间	Ce jour-là, il neigeait énormément.
@@ -129,7 +129,7 @@ EE	通用	tenir compte de	expr.	to take into account	考虑到	正式搭配	Il f
 EE	通用	avoir recours à	expr.	to resort to	求助于	书面高分	De plus en plus de gens ont recours au télétravail.
 EE	通用	permettre de + 原形	v.	to make it possible to	使得可以	万能句型	Cette mesure permet de réduire les coûts.
 EE	通用	empêcher de + 原形	v.	to prevent from	阻止	与 permettre 成对	Le bruit m'empêche de dormir.
-CANADA	加法差异	la fin de semaine	n.f.	weekend	周末	魁北克不说 week-end，TCF 听力常出现	On se voit la fin de semaine prochaine ?
+CANADA	加法差异	la fin de semaine	n.f.	weekend	周末	魁北克不说 week-end，TCF 听力常出现	On se voit la fin de semaine prochaine?
 CANADA	机构	Service Canada	n.pr.	Service Canada	加拿大服务部	办 NAS、assurance-emploi	Je me suis rendu à un bureau de Service Canada.
 CANADA	机构	la commission scolaire / le centre de services scolaire	n.f./n.m.	school board	教育局	魁北克 2020 年改名，两种说法都可能听到	Le centre de services scolaire a annoncé une journée pédagogique.
 CANADA	移民身份	la résidence permanente	n.f.	permanent residence	永久居留	移民核心词	J'ai obtenu ma résidence permanente l'an dernier.
@@ -171,7 +171,7 @@ TRAVAIL	日常职场	la charge de travail	n.f.	workload	工作量	协商与抱�
 TRAVAIL	日常职场	la date limite / l'échéance	n.f.	deadline	截止日期	respecter une échéance	Nous devons respecter l'échéance du 15 mai.
 TRAVAIL	日常职场	l'ordre du jour	n.m.	agenda	议程	会议固定搭配	Voici l'ordre du jour de la réunion.
 TRAVAIL	日常职场	le compte rendu	n.m.	minutes / report	纪要/汇报	Tâche 2 明确要求的文体	Je vous envoie le compte rendu de la réunion.
-TRAVAIL	日常职场	remplacer quelqu'un	v.	to cover for someone	代班	同事互助场景	Peux-tu me remplacer samedi ?
+TRAVAIL	日常职场	remplacer quelqu'un	v.	to cover for someone	代班	同事互助场景	Peux-tu me remplacer samedi?
 TRAVAIL	日常职场	le mode hybride	n.m.	hybrid model	混合办公	疫情后热词	Nous fonctionnons en mode hybride.
 TRAVAIL	日常职场	l'horaire flexible	n.m.	flexible hours	弹性工时	福利协商	L'horaire flexible facilite la conciliation travail-famille.
 TRAVAIL	日常职场	la conciliation travail-famille	n.f.	work-life balance	工作与家庭平衡	魁北克高频社会议题表述	La conciliation travail-famille reste un défi.
@@ -180,7 +180,7 @@ TRAVAIL	职场问题	la discrimination à l'embauche	n.f.	hiring discrimination	
 TRAVAIL	职场问题	l'épuisement professionnel	n.m.	burnout	职业倦怠	魁北克正式说法，避免英语 burn-out	L'épuisement professionnel est en hausse.
 TRAVAIL	职场问题	la santé et la sécurité au travail	n.f.	occupational health and safety	职业健康与安全	加拿大法定术语	La formation en santé et sécurité au travail est obligatoire.
 TRAVAIL	职场问题	la pénurie de main-d'œuvre	n.f.	labour shortage	劳动力短缺	加拿大当前头号经济议题	La pénurie de main-d'œuvre touche tous les secteurs.
-LOGEMENT	租房	la caution / le dépôt de garantie	n.f./n.m.	security deposit	押金	注意魁北克法律限制押金	La caution correspond à un mois de loyer.
+LOGEMENT	租房	la caution / le dépôt de garantie	n.f./n.m.	security deposit	押金	魁北克法律禁止房东收押金，只能预收第一个月房租；在其他省和法国常见	Au Québec, le propriétaire ne peut pas exiger de dépôt de garantie.
 LOGEMENT	租房	meublé / non meublé	adj.	furnished / unfurnished	带家具/不带家具	租房广告必读	L'appartement est entièrement meublé.
 LOGEMENT	租房	un quatre et demi	n.m.	two-bedroom apartment	两室一厅	魁北克独有房型计数法，听力必懂	Nous louons un quatre et demi à Montréal.
 LOGEMENT	租房	visiter un appartement	v.	to view an apartment	看房	不是 visit 旅游义	J'aimerais visiter l'appartement cette semaine.
@@ -239,7 +239,7 @@ EDUCATION	学制	les frais de scolarité	n.m.pl.	tuition fees	学费	永远复�
 EDUCATION	学制	la bourse d'études	n.f.	scholarship	奖学金	资助	Elle a obtenu une bourse d'études.
 EDUCATION	学制	la formation continue	n.f.	continuing education	继续教育	成人学习	La formation continue est offerte le soir.
 EDUCATION	学制	le décrochage scolaire	n.m.	school dropout	辍学	魁北克社会议题高频	Le décrochage scolaire touche surtout les garçons.
-EDUCATION	学制	l'uniforme scolaire	n.m.	school uniform	校服	Tâche 3 实考议题	Faut-il imposer l'uniforme scolaire ?
+EDUCATION	学制	l'uniforme scolaire	n.m.	school uniform	校服	Tâche 3 实考议题	Faut-il imposer l'uniforme scolaire?
 EDUCATION	学制	l'enseignement à distance	n.m.	distance learning	远程教学	疫情后议题	L'enseignement à distance a ses limites.
 SOCIETE	社会议题	la classe moyenne	n.f.	middle class	中产阶级	经济议题	La classe moyenne est fragilisée par l'inflation.
 SOCIETE	社会议题	l'égalité des chances	n.f.	equal opportunity	机会平等	高分搭配	L'école doit garantir l'égalité des chances.
@@ -270,7 +270,7 @@ NUMERIQUE	数字生活	la protection des données	n.f.	data protection	数据保
 NUMERIQUE	数字生活	la désinformation / les fausses nouvelles	n.f.	disinformation / fake news	虚假信息	魁北克说 fausses nouvelles	La désinformation se propage vite en ligne.
 NUMERIQUE	数字生活	le temps d'écran	n.m.	screen time	屏幕使用时间	健康与教育议题	Le temps d'écran des adolescents inquiète les parents.
 NUMERIQUE	数字生活	la fracture numérique	n.f.	digital divide	数字鸿沟	社会议题高分词	La fracture numérique touche les aînés et les régions.
-QUOTIDIEN	购物	essayer / la cabine d'essayage	v./n.f.	to try on / fitting room	试穿/试衣间	购物对话	Puis-je essayer cette veste ?
+QUOTIDIEN	购物	essayer / la cabine d'essayage	v./n.f.	to try on / fitting room	试穿/试衣间	购物对话	Puis-je essayer cette veste?
 QUOTIDIEN	购物	en solde / les soldes	loc./n.m.pl.	on sale / sales	打折中/打折季	购物高频	Ces bottes sont en solde.
 QUOTIDIEN	餐饮	la réservation / réserver une table	n.f./v.	reservation / to book a table	订位	EO2 角色扮演高频	J'aimerais réserver une table pour six personnes.
 QUOTIDIEN	餐饮	l'entrée / le plat principal / le dessert	n.f./n.m.	starter / main course / dessert	前菜/主菜/甜点	注意 entrée 在法语是前菜	En entrée, je prendrai une soupe.
@@ -287,7 +287,7 @@ VERBES	动介搭配	arriver à + 原形	v.	to manage to	做得到	口语版 réu
 VERBES	动介搭配	décider de + 原形	v.	to decide to	决定	介词 de	Nous avons décidé de déménager.
 VERBES	动介搭配	essayer de + 原形	v.	to try to	尝试	介词 de	J'ai essayé de vous joindre hier.
 VERBES	动介搭配	commencer à / finir de	v.	to start / to finish	开始/结束	介词不同，易错	J'ai commencé à apprendre le français en 2024.
-VERBES	动介搭配	penser à / penser de	v.	to think about / to think of	想到/认为	à 是想起，de 是评价，考点	Que pensez-vous de cette idée ?
+VERBES	动介搭配	penser à / penser de	v.	to think about / to think of	想到/认为	à 是想起，de 是评价，考点	Que pensez-vous de cette idée?
 VERBES	动介搭配	manquer de / manquer à	v.	to lack / to be missed by	缺乏/被想念	两种用法差别大	La ville manque de logements abordables.
 VERBES	动介搭配	s'attendre à	v.	to expect	预期	介词 à	Je ne m'attendais pas à une telle réponse.
 VERBES	动介搭配	s'habituer à	v.	to get used to	习惯于	新移民话题高频	Je me suis habitué au climat canadien.
@@ -348,7 +348,7 @@ CONJUG	时态用法	être 作助动词	gram.	être as auxiliary	用 être 的复
 CONJUG	时态用法	过去分词性数配合	gram.	past participle agreement	过去分词配合	用 être 时与主语配合；用 avoir 时只与前置直接宾语配合	Les documents que j'ai envoyés sont arrivés.
 CONJUG	时态用法	futur simple	gram.	simple future	简单将来时	原形 + ai/as/a/ons/ez/ont。书面用，口语可用 futur proche	Je vous enverrai les documents demain.
 CONJUG	时态用法	futur proche	gram.	near future	最近将来时	aller + 原形。口语更自然，EO 可多用	Je vais déménager le mois prochain.
-CONJUG	时态用法	conditionnel présent	gram.	present conditional	条件式现在时	词干同 futur + imparfait 词尾。表礼貌与假设，EO2 必用	Je voudrais des renseignements. Ce serait possible ?
+CONJUG	时态用法	conditionnel présent	gram.	present conditional	条件式现在时	词干同 futur + imparfait 词尾。表礼貌与假设，EO2 必用	Je voudrais des renseignements. Ce serait possible?
 CONJUG	时态用法	si + imparfait, conditionnel	gram.	if-clause type 2	假设句型二	si 从句绝不用条件式，这是高频错误	Si j'avais plus de temps, je suivrais un cours.
 CONJUG	时态用法	si + présent, futur	gram.	if-clause type 1	假设句型一	真实条件	Si vous acceptez, je viendrai demain.
 CONJUG	虚拟式	subjonctif présent	gram.	present subjunctive	虚拟式现在时	词干取 ils 形式去 -ent，加 e/es/e/ions/iez/ent	Il faut que je finisse ce rapport.
@@ -646,12 +646,12 @@ QUOTIDIEN	购物	la caisse libre-service	n.f.	self-checkout	自助结账	加拿�
 QUOTIDIEN	购物	faire la file / la queue	expr.	to queue	排队	加拿大说 faire la file	Il faut faire la file à l'entrée.
 QUOTIDIEN	购物	le sac réutilisable	n.m.	reusable bag	环保袋	加拿大已禁塑料袋	N'oubliez pas vos sacs réutilisables.
 QUOTIDIEN	购物	la garantie prolongée	n.f.	extended warranty	延长保修	销售常推销	La garantie prolongée n'en vaut pas toujours la peine.
-QUOTIDIEN	餐饮	le menu du jour / le spécial du jour	n.m.	daily special	今日特餐	加拿大餐厅常说 spécial du jour	Quel est le spécial du jour ?
+QUOTIDIEN	餐饮	le menu du jour / le spécial du jour	n.m.	daily special	今日特餐	加拿大餐厅常说 spécial du jour	Quel est le spécial du jour?
 QUOTIDIEN	餐饮	la table pour deux	n.f.	table for two	双人桌	订位场景	Une table pour deux, s'il vous plaît.
-QUOTIDIEN	餐饮	à emporter / sur place	loc.	takeout / eat in	外带/堂食	点餐必问	C'est pour emporter ou pour manger ici ?
+QUOTIDIEN	餐饮	à emporter / sur place	loc.	takeout / eat in	外带/堂食	点餐必问	C'est pour emporter ou pour manger ici?
 QUOTIDIEN	餐饮	la livraison à domicile	n.f.	home delivery	送餐上门	现代消费	La livraison à domicile coûte cinq dollars.
 QUOTIDIEN	餐饮	le pourboire de 15 pour cent	n.m.	15 percent tip	15% 小费	北美惯例，结账必备	Le pourboire de 15 pour cent est la norme.
-QUOTIDIEN	餐饮	sans gluten / sans lactose	loc.	gluten-free / lactose-free	无麸质/无乳糖	饮食需求	Avez-vous des options sans gluten ?
+QUOTIDIEN	餐饮	sans gluten / sans lactose	loc.	gluten-free / lactose-free	无麸质/无乳糖	饮食需求	Avez-vous des options sans gluten?
 QUOTIDIEN	餐饮	l'intolérance alimentaire	n.f.	food intolerance	食物不耐受	与 allergie 区分	Je souffre d'une intolérance au lactose.
 QUOTIDIEN	餐饮	le produit local / de saison	n.m.	local / seasonal produce	本地/时令产品	环保饮食议题	Acheter des produits locaux réduit l'empreinte carbone.
 QUOTIDIEN	天气	la prévision météorologique	n.f.	weather forecast	天气预报	CO 广播题高频	Selon les prévisions météorologiques, il neigera demain.
@@ -668,12 +668,12 @@ QUOTIDIEN	休闲	le centre sportif / l'aréna	n.m.	sports centre / arena	体育�
 QUOTIDIEN	休闲	l'inscription en ligne	n.f.	online registration	在线报名	活动流程	L'inscription en ligne ouvre le 15 août.
 QUOTIDIEN	时间约定	la fin de semaine prochaine	loc.	next weekend	下周末	魁北克说法	On se voit la fin de semaine prochaine.
 QUOTIDIEN	时间约定	en avant-midi / en après-midi	loc.	in the morning / afternoon	上午/下午	魁北克特有的 avant-midi	Je suis libre en avant-midi.
-QUOTIDIEN	时间约定	à quelle heure	loc.	at what time	几点	约时间基础	À quelle heure vous convient le mieux ?
+QUOTIDIEN	时间约定	à quelle heure	loc.	at what time	几点	约时间基础	À quelle heure vous convient le mieux?
 QUOTIDIEN	时间约定	dans une semaine / il y a une semaine	loc.	in a week / a week ago	一周后/一周前	时间方向易混	Je vous rappellerai dans une semaine.
 QUOTIDIEN	时间约定	d'ici la fin du mois	loc.	by the end of the month	月底之前	期限表达	Je vous répondrai d'ici la fin du mois.
 QUOTIDIEN	时间约定	dès que possible	loc.	as soon as possible	尽快	催促表达	Rappelez-moi dès que possible.
 QUOTIDIEN	时间约定	à l'avance / d'avance	loc.	in advance	提前	预订场景	Il faut réserver deux semaines à l'avance.
-QUOTIDIEN	时间约定	en semaine / le week-end	loc.	on weekdays / at the weekend	工作日/周末	魁北克更常说 la fin de semaine	Je travaille en semaine seulement.
+QUOTIDIEN	时间约定	en semaine / en fin de semaine	loc.	on weekdays / on the weekend	工作日/周末	魁北克说 fin de semaine，法国说 le week-end	Je travaille en semaine et je me repose en fin de semaine.
 QUOTIDIEN	时间约定	toutes les deux semaines	loc.	every two weeks	每两周	加拿大也说 aux deux semaines	La paie se fait aux deux semaines.
 QUOTIDIEN	时间约定	à partir de maintenant	loc.	from now on	从现在起	变化通知	À partir de maintenant, tout se fait en ligne.
 QUOTIDIEN	购物	le remboursement sans reçu	n.m.	refund without receipt	无收据退款	零售政策争议点	Le remboursement sans reçu est refusé ici.

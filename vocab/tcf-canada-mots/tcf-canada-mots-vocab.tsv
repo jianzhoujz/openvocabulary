@@ -12,12 +12,12 @@ CANADA	加法差异	le dépanneur	n.m.	convenience store	便利店	魁北克独�
 CANADA	加法差异	le déjeuner / le dîner / le souper	n.m.	breakfast / lunch / dinner	早餐/午餐/晚餐	魁北克三餐名称整体前移一位，与法国不同，极易混	On se retrouve pour le souper à 18 h.
 CANADA	加法差异	le char	n.m.	car	车	魁北克口语，正式场合用 la voiture	Mon char est au garage.
 CANADA	加法差异	la job	n.f.	job	工作	魁北克口语且是阴性，法国说 le boulot	J'ai trouvé une bonne job.
-CANADA	加法差异	le breuvage	n.m.	beverage	饮料	魁北克用法，法国说 la boisson	Quel breuvage désirez-vous ?
+CANADA	加法差异	le breuvage	n.m.	beverage	饮料	魁北克用法，法国说 la boisson	Quel breuvage désirez-vous?
 CANADA	加法差异	la traverse / le traversier	n.f./n.m.	crossing / ferry	人行横道/渡轮	魁北克用 traversier，法国说 ferry	Nous prendrons le traversier pour Lévis.
 CANADA	加法差异	le cellulaire	n.m.	cell phone	手机	魁北克说 cellulaire，法国说 portable	Éteignez votre cellulaire, s'il vous plaît.
 CANADA	加法差异	la piastre / la piasse	n.f.	dollar (slang)	块钱	魁北克口语说钱	Ça m'a coûté trente piasses.
 CANADA	加法差异	présentement	adv.	currently	目前	魁北克常用，法国多说 actuellement	Je suis présentement en formation.
-CANADA	加法差异	bienvenue !	expr.	you are welcome	不客气	魁北克特有回应 merci，法国说 de rien	— Merci ! — Bienvenue !
+CANADA	加法差异	bienvenue!	expr.	you are welcome	不客气	魁北克特有回应 merci，法国说 de rien	— Merci! — Bienvenue!
 CANADA	加法差异	Bonjour-hi	expr.	Hello (bilingual greeting)	蒙特利尔双语问候	蒙特利尔商店特有现象，社会议题	À Montréal, on entend souvent « Bonjour-hi ».
 CANADA	机构	le CLSC	n.m.	local community health centre	社区健康服务中心	魁北克医疗体系入口，听力必考缩写	Je dois prendre rendez-vous au CLSC.
 CANADA	机构	la RAMQ	n.f.	Quebec health insurance board	魁北克医保局	发放 carte soleil 医保卡	Ma carte de la RAMQ expire en mars.
@@ -35,7 +35,7 @@ CANADA	社会福利	le REER / le CELI	n.m.	RRSP / TFSA	注册退休储蓄计划/
 CANADA	冬季生活	le déneigement	n.m.	snow removal	除雪	加拿大冬季核心词，市政服务	Le déneigement des trottoirs relève de la ville.
 CANADA	冬季生活	la poudrerie	n.f.	blowing snow	吹雪	魁北克气象词，天气预报常见	La poudrerie réduit la visibilité sur l'autoroute.
 CANADA	冬季生活	le verglas	n.m.	freezing rain / black ice	冻雨/地面结冰	加拿大冬季危险天气	Attention au verglas ce matin.
-CANADA	冬季生活	la tuque / les mitaines	n.f.	toque / mittens	毛线帽/连指手套	魁北克特有说法	N'oublie pas ta tuque, il fait froid !
+CANADA	冬季生活	la tuque / les mitaines	n.f.	toque / mittens	毛线帽/连指手套	魁北克特有说法	N'oublie pas ta tuque, il fait froid!
 CANADA	冬季生活	la canicule	n.f.	heat wave	酷暑	夏季对应词	Une canicule est annoncée pour la semaine prochaine.
 CANADA	文化生活	la poutine	n.f.	poutine	肉汁奶酪薯条	魁北克国菜	La poutine est un plat emblématique du Québec.
 CANADA	文化生活	le pourboire	n.m.	tip	小费	北美必须给，通常 15 到 20 个百分点	Le pourboire n'est pas inclus dans l'addition.
@@ -97,7 +97,7 @@ TRANSPORT	驾车	la contravention / le constat	n.f./n.m.	ticket / fine	罚单	�
 TRANSPORT	驾车	le covoiturage	n.m.	carpooling / ridesharing	拼车	环保与省钱议题，EO2 角色扮演考过	Le covoiturage réduit les coûts et la pollution.
 TRANSPORT	驾车	les embouteillages / la congestion	n.m.pl./n.f.	traffic jams / congestion	交通拥堵	城市议题	Les embouteillages sont terribles aux heures de pointe.
 TRANSPORT	出行	réserver / la réservation	v./n.f.	to book / booking	预订	EO2 角色扮演高频	J'aimerais réserver une chambre pour deux nuits.
-TRANSPORT	出行	annuler / l'annulation	v./n.f.	to cancel / cancellation	取消	投诉与协商	Puis-je annuler sans frais ?
+TRANSPORT	出行	annuler / l'annulation	v./n.f.	to cancel / cancellation	取消	投诉与协商	Puis-je annuler sans frais?
 TRANSPORT	出行	le vol / le décollage / l'atterrissage	n.m.	flight / takeoff / landing	航班/起飞/降落	机场场景	Notre vol est retardé de deux heures.
 TRANSPORT	出行	la douane	n.f.	customs	海关	入境场景	Il faut déclarer les aliments à la douane.
 EDUCATION	学制	l'université / la faculté	n.f.	university / faculty	大学/院系	高等教育	Elle étudie à l'Université de Montréal.
@@ -124,15 +124,15 @@ NUMERIQUE	数字生活	la fraude / l'hameçonnage	n.f./n.m.	fraud / phishing	诈
 NUMERIQUE	数字生活	l'automatisation	n.f.	automation	自动化	就业议题	L'automatisation menace certains emplois.
 QUOTIDIEN	购物	l'épicerie / le supermarché	n.f./n.m.	grocery store / supermarket	杂货店/超市	加拿大常说 épicerie	Je vais à l'épicerie après le travail.
 QUOTIDIEN	购物	la caisse / le caissier	n.f./n.m.	checkout / cashier	收银台/收银员	CO 场景高频	Passez à la caisse numéro trois.
-QUOTIDIEN	购物	la taille / la pointure	n.f.	size (clothes) / size (shoes)	尺码/鞋码	两者不能混用，考点	Quelle est votre pointure ?
+QUOTIDIEN	购物	la taille / la pointure	n.f.	size (clothes) / size (shoes)	尺码/鞋码	两者不能混用，考点	Quelle est votre pointure?
 QUOTIDIEN	购物	la livraison / livrer	n.f./v.	delivery / to deliver	配送	网购与投诉	La livraison est gratuite à partir de 50 dollars.
 QUOTIDIEN	购物	la commande / commander	n.f./v.	order / to order	订单/下单	客服场景	Ma commande n'est toujours pas arrivée.
 QUOTIDIEN	餐饮	le menu / la carte	n.m./n.f.	set menu / à la carte menu	套餐/菜单	两者含义不同，考点	Nous prendrons le menu du jour.
-QUOTIDIEN	餐饮	l'addition	n.f.	bill / check	账单	餐厅场景固定词	L'addition, s'il vous plaît !
+QUOTIDIEN	餐饮	l'addition	n.f.	bill / check	账单	餐厅场景固定词	L'addition, s'il vous plaît!
 QUOTIDIEN	餐饮	la végétarien(ne) / végétalien(ne)	adj.	vegetarian / vegan	素食的/纯素的	饮食议题	Je suis végétarien depuis cinq ans.
 QUOTIDIEN	天气	la météo / les prévisions	n.f.	weather / forecast	天气/预报	CO 广播题高频	Selon la météo, il va neiger demain.
 QUOTIDIEN	天气	la pluie / la neige / le vent	n.f./n.m.	rain / snow / wind	雨/雪/风	基础天气词	La neige commencera en soirée.
-QUOTIDIEN	休闲	les loisirs	n.m.pl.	leisure activities	休闲活动	EO1 必问	Quels sont vos loisirs ?
+QUOTIDIEN	休闲	les loisirs	n.m.pl.	leisure activities	休闲活动	EO1 必问	Quels sont vos loisirs?
 QUOTIDIEN	休闲	la bibliothèque	n.f.	library	图书馆	社区资源，非 librairie 书店	La bibliothèque offre des ateliers gratuits.
 VERBES	高频动词	constater	v.	to observe / to note	发现/注意到	书面高分	J'ai constaté une erreur sur ma facture.
 VERBES	高频动词	signaler	v.	to report / to flag	反映/报告	投诉高分动词	Je souhaite signaler un problème récurrent.
@@ -157,7 +157,7 @@ CONJUG	核心不规则	être	v.	to be	是	je suis, tu es, il est, nous sommes, v
 CONJUG	核心不规则	avoir	v.	to have	有	j'ai, tu as, il a, nous avons, vous avez, ils ont ; PC eu ; imp. j'avais ; fut. j'aurai ; subj. que j'aie	J'ai deux enfants.
 CONJUG	核心不规则	aller	v.	to go	去	je vais, tu vas, il va, nous allons, vous allez, ils vont ; fut. j'irai ; subj. que j'aille ; PC 用 être	Je vais au travail en autobus.
 CONJUG	核心不规则	faire	v.	to do / to make	做	je fais, nous faisons, vous faites, ils font ; PC fait ; fut. je ferai ; subj. que je fasse	Je fais du sport le matin.
-CONJUG	核心不规则	pouvoir	v.	to be able to	能够	je peux, il peut, nous pouvons, ils peuvent ; fut. je pourrai ; cond. je pourrais ; subj. que je puisse	Pourriez-vous m'aider ?
+CONJUG	核心不规则	pouvoir	v.	to be able to	能够	je peux, il peut, nous pouvons, ils peuvent ; fut. je pourrai ; cond. je pourrais ; subj. que je puisse	Pourriez-vous m'aider?
 CONJUG	核心不规则	vouloir	v.	to want	想要	je veux, il veut, nous voulons, ils veulent ; cond. je voudrais ; subj. que je veuille	Je voudrais réserver une place.
 CONJUG	核心不规则	devoir	v.	must / to owe	必须	je dois, il doit, nous devons, ils doivent ; cond. je devrais ; PC dû	Je dois partir maintenant.
 CONJUG	核心不规则	savoir	v.	to know (a fact)	知道	je sais, il sait, nous savons, ils savent ; subj. que je sache ; PC su	Je sais qu'il faut s'inscrire en ligne.
@@ -189,7 +189,7 @@ GENRE	阳性词尾	-isme	gram.	masculine ending	阳性词尾	le tourisme, le bil
 GENRE	阳性词尾	-eur（事物/职业）	gram.	masculine ending	阳性词尾	le secteur, l'ordinateur, le travailleur — 但抽象名词 -eur 多为阴性	Le secteur de la santé recrute.
 GENRE	阳性词尾	-oir	gram.	masculine ending	阳性词尾	le devoir, le pouvoir, le couloir, le trottoir	Le trottoir est glissant ce matin.
 GENRE	阳性词尾	-al / -ail	gram.	masculine ending	阳性词尾	le journal, le travail, le total — 复数 -aux	Le journal local a publié l'annonce.
-GENRE	阳性词尾	-if	gram.	masculine ending	阳性词尾	l'objectif, le tarif, le motif	Quel est le tarif mensuel ?
+GENRE	阳性词尾	-if	gram.	masculine ending	阳性词尾	l'objectif, le tarif, le motif	Quel est le tarif mensuel?
 GENRE	阴性词尾	-tion / -sion	gram.	feminine ending	阴性词尾	la situation, la formation, la décision, la pension — 几乎无例外，覆盖极多抽象名词	La formation dure six mois.
 GENRE	阴性词尾	-té / -tié	gram.	feminine ending	阴性词尾	la société, la qualité, la citoyenneté, l'amitié — 例外：le côté, l'été	La qualité du service laisse à désirer.
 GENRE	阴性词尾	-ure	gram.	feminine ending	阴性词尾	la culture, la nature, la structure, la signature	La signature du bail est prévue demain.
@@ -274,7 +274,7 @@ ABSTRAIT	问题解决	surmonter	v.	to overcome	克服	与 obstacle/difficulté �
 ABSTRAIT	问题解决	résoudre / la résolution	v./n.f.	to solve / resolution	解决	PC résolu	Ce problème sera résolu cette semaine.
 ABSTRAIT	问题解决	réduire / limiter	v.	to reduce / to limit	减少/限制	政策动词	Ces mesures visent à réduire la pollution.
 ABSTRAIT	问题解决	un compromis	n.m.	compromise	折中方案	Tâche 3 结论高频	Il faudra trouver un compromis.
-ABSTRAIT	问题解决	une alternative	n.f.	alternative	替代方案	注意法语是阴性	Existe-t-il une alternative moins coûteuse ?
+ABSTRAIT	问题解决	une alternative	n.f.	alternative	替代方案	注意法语是阴性	Existe-t-il une alternative moins coûteuse?
 ABSTRAIT	社会制度	la politique	n.f.	policy / politics	政策/政治	与 le politique 政治家 区分	La politique du logement doit changer.
 ABSTRAIT	社会制度	la loi / la réglementation	n.f.	law / regulation	法律/法规	制度基础词	Une nouvelle loi protège les locataires.
 ABSTRAIT	社会制度	la subvention	n.f.	subsidy / grant	补贴	政策工具	Une subvention est offerte aux familles.
@@ -312,7 +312,7 @@ TRAVAIL	办公日常	le dossier	n.m.	file / case	文件夹/案卷	办公与行�
 TRAVAIL	办公日常	classer / archiver	v.	to file / to archive	归档	文件管理	Tous les contrats sont archivés en ligne.
 TRAVAIL	客户业务	le client / la clientèle	n.m./n.f.	client / clientele	客户/客户群	商务词	La clientèle est très fidèle.
 TRAVAIL	客户业务	la soumission	n.f.	quote / tender	报价/投标	加拿大特有用词，法国说 le devis	Nous avons déposé une soumission hier.
-TRAVAIL	客户业务	le devis	n.m.	estimate / quote	估价单	维修与服务	Pourriez-vous m'envoyer un devis ?
+TRAVAIL	客户业务	le devis	n.m.	estimate / quote	估价单	维修与服务	Pourriez-vous m'envoyer un devis?
 TRAVAIL	客户业务	la rentabilité	n.f.	profitability	盈利能力	经营论述	La rentabilité reste faible.
 TRAVAIL	客户业务	négocier / la négociation	v./n.f.	to negotiate / negotiation	谈判	商务与劳资双用	Les négociations syndicales ont repris.
 TRAVAIL	客户业务	le partenariat	n.m.	partnership	合作关系	商务与社区双用	Un partenariat a été conclu avec la ville.
@@ -413,7 +413,7 @@ ENVIRO	自然资源	l'hydroélectricité	n.f.	hydroelectricity	水力发电	魁�
 ENVIRO	社区行动	la surconsommation	n.f.	overconsumption	过度消费	社会批判	La surconsommation est au cœur du problème.
 NUMERIQUE	设备故障	planter / figer	v.	to crash / to freeze	崩溃/死机	加拿大法语用 figer，法国说 planter	Mon ordinateur fige sans arrêt.
 NUMERIQUE	设备故障	la compatibilité	n.f.	compatibility	兼容性	软硬件问题	Le fichier pose un problème de compatibilité.
-NUMERIQUE	设备故障	le chargeur	n.m.	charger	充电器	日常物品	Peux-tu me prêter ton chargeur ?
+NUMERIQUE	设备故障	le chargeur	n.m.	charger	充电器	日常物品	Peux-tu me prêter ton chargeur?
 NUMERIQUE	设备故障	la réinitialisation	n.f.	factory reset	恢复出厂设置	排障最后手段	Une réinitialisation effacera toutes vos données.
 NUMERIQUE	网络账户	se désabonner	v.	to unsubscribe	取消订阅	邮件与服务	Je me suis désabonné de leur infolettre.
 NUMERIQUE	网络账户	l'infolettre	n.f.	newsletter	电子简讯	魁北克用词，避免英语 newsletter	Abonnez-vous à notre infolettre.
