@@ -2012,14 +2012,13 @@
           // 离线的高级音质排在标准音质前
           const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 8 : 16);
           const score = (v) => region(v) + (v.localService ? 4 : 0) + (2 - qualityRank(v));
-          // iOS 会把同一个声音报两遍（名字、口音、音质全一样），只留一个
+          // 同一个声音报两遍（voiceURI 完全相同）才合并；同名不同标识的都留着，显示时附上标识
           const seen = new Set();
           frVoices = fr
             .sort((a, b) => score(a) - score(b))
             .filter((v) => {
-              const key = [v.name, v.lang, v.localService, qualityRank(v)].join("|");
-              if (seen.has(key)) return false;
-              seen.add(key);
+              if (seen.has(v.voiceURI)) return false;
+              seen.add(v.voiceURI);
               return true;
             });
           const saved = store.get("fr4h-voice");
@@ -2055,7 +2054,12 @@
             sel.title = "";
             return;
           }
-          frVoices.forEach((v) => sel.add(new Option(describeVoice(v), v.voiceURI)));
+          // 显示文字撞车时（iOS 上两个一样的 Amélie）附上完整 voiceURI 区分
+          const labels = frVoices.map(describeVoice);
+          frVoices.forEach((v, i) => {
+            const dup = labels.filter((l) => l === labels[i]).length > 1;
+            sel.add(new Option(dup ? labels[i] + " · " + v.voiceURI : labels[i], v.voiceURI));
+          });
           sel.disabled = false;
           sel.value = voice.voiceURI;
           sel.title = voice.name + "（" + voice.lang + "）";

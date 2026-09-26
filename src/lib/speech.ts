@@ -141,16 +141,16 @@ export function voicesFor(lang: string): SpeechSynthesisVoice[] {
       (i < 0 ? prefs.length : i) * 8 + (v.localService === false ? 0 : 4) + (2 - qualityRank(v))
     );
   };
-  // iOS 会把同一个声音报两遍（名字、口音、音质全一样），列表里只留一个
+  // 同一个声音被报两遍（voiceId 完全相同）才合并。名字相同、标识不同的不合并——
+  // 那可能是不同音质的两个声音，由 voiceLabels() 附上标识区分
   const seen = new Set<string>();
   return currentVoices()
     .filter((v) => v.lang.toLowerCase().startsWith(lang))
     .sort((a, b) => rank(a) - rank(b))
     .filter((v) => {
-      const d = describeVoice(v);
-      const key = `${d.name}|${v.lang}|${d.online}|${d.quality}`;
-      if (seen.has(key)) return false;
-      seen.add(key);
+      const id = voiceId(v);
+      if (seen.has(id)) return false;
+      seen.add(id);
       return true;
     });
 }
@@ -200,6 +200,19 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
 export function voiceLabel(voice: SpeechSynthesisVoice): string {
   const d = describeVoice(voice);
   return [d.name, d.accent, d.online ? "在线" : "离线", d.quality].filter(Boolean).join(" · ");
+}
+
+/**
+ * 一组声音的显示文字。iOS 上会有名字、口音、音质都一样的两个 Amélie，
+ * 光看文字分不出来，这时把完整的 voiceURI 附在后面，既能区分也方便排查。
+ */
+export function voiceLabels(list: SpeechSynthesisVoice[]): Map<string, string> {
+  const base = new Map(list.map((v) => [voiceId(v), voiceLabel(v)]));
+  const count = new Map<string, number>();
+  for (const label of base.values()) count.set(label, (count.get(label) ?? 0) + 1);
+  return new Map(
+    [...base].map(([id, label]) => [id, (count.get(label) ?? 0) > 1 ? `${label} · ${id}` : label]),
+  );
 }
 
 /** 没有目标语言声音时给用户的办法 */

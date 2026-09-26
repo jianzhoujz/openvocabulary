@@ -652,7 +652,7 @@ describe("音标与朗读", () => {
     expect((lastUtterance!.voice as { voiceURI: string }).voiceURI).toBe("fr-paul");
   });
 
-  it("iOS 重复报告的同一个声音只列一次，不同音质分开标出来", async () => {
+  it("同一个声音报两遍只列一次；同名不同标识的两个声音都列出，并附上标识区分", async () => {
     const amelie = (voiceURI: string, name = "Amélie") => ({
       lang: "fr-CA",
       name,
@@ -661,7 +661,8 @@ describe("音标与朗读", () => {
     });
     stubSpeech(undefined, [
       amelie("com.apple.voice.compact.fr-CA.Amelie"),
-      amelie("com.apple.voice.compact.fr-CA.Amelie#2"),
+      amelie("com.apple.voice.compact.fr-CA.Amelie"),
+      amelie("com.apple.speech.synthesis.voice.Amelie"),
       amelie("com.apple.voice.enhanced.fr-CA.Amelie", "Amélie (Enhanced)"),
       {
         lang: "fr-FR",
@@ -677,7 +678,8 @@ describe("音标与朗读", () => {
     const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
     expect(options.map((o) => o.text)).toEqual([
       "Amélie (Enhanced) · 加拿大法语 · 离线",
-      "Amélie · 加拿大法语 · 离线",
+      "Amélie · 加拿大法语 · 离线 · com.apple.voice.compact.fr-CA.Amelie",
+      "Amélie · 加拿大法语 · 离线 · com.apple.speech.synthesis.voice.Amelie",
       "Thomas · 法国法语 · 离线",
     ]);
   });
