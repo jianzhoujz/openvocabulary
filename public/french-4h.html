@@ -511,9 +511,24 @@
         align-self: flex-start;
       }
       .voice {
-        font-size: 12px;
+        font: inherit;
+        font-size: 13px;
+        color: var(--ink);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 10px;
+        max-width: min(20em, 100%);
+        text-overflow: ellipsis;
+        cursor: pointer;
+      }
+      .voice:disabled {
         color: var(--muted);
-        white-space: nowrap;
+        cursor: default;
+      }
+      .voice:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
       }
       .toast {
         position: fixed;
@@ -1601,7 +1616,7 @@
       <button class="btn" id="prev" aria-label="上一页">← 上一页</button>
       <span class="count" id="count"></span>
       <div class="progress" aria-hidden="true"><div id="prog"></div></div>
-      <span class="voice" id="voice"></span>
+      <select class="voice" id="voice" aria-label="朗读用的声音"></select>
       <button class="btn" id="rate" title="切换朗读速度">语速：最慢</button>
       <button class="btn primary" id="readAll">朗读本页</button>
       <button class="btn" id="next" aria-label="下一页">下一页 →</button>
@@ -1620,6 +1635,7 @@
         const synth = window.speechSynthesis;
         let cur = 0,
           voice = null,
+          frVoices = [],
           speed = 0,
           reading = false,
           toastTimer;
@@ -1940,29 +1956,48 @@
           if (!synth) return;
           const vs = synth.getVoices();
           const fr = vs.filter((v) => /^fr/i.test(v.lang));
-          voice =
-            fr.find(
-              (v) =>
-                /fr[-_]FR/i.test(v.lang) &&
-                /google|natural|online|amélie|amelie|thomas|denise|henri/i.test(v.name),
-            ) ||
-            fr.find((v) => /fr[-_]FR/i.test(v.lang)) ||
-            fr[0] ||
-            null;
+          // 排序：法国法语在前，同一地区里在线（通常更自然）在前
+          const score = (v) => (/fr[-_]FR/i.test(v.lang) ? 0 : 2) + (v.localService ? 1 : 0);
+          frVoices = fr.sort((a, b) => score(a) - score(b));
+          const saved = store.get("fr4h-voice");
+          voice = frVoices.find((v) => v.voiceURI === saved) || frVoices[0] || null;
           showVoice(vs.length > 0);
         }
-        // 在翻页栏显示当前用的是哪个声音。声音列表还没加载完时（Chrome 首次为空）先不下结论
-        function showVoice(loaded) {
-          const label = $("voice");
-          if (voice) {
-            label.textContent = "语音：" + voice.name.replace(/^(Microsoft|Google)\s+/, "");
-            label.title = voice.name + "（" + voice.lang + "）";
-            $("noVoice").hidden = true;
-          } else {
-            label.textContent = loaded || !synth ? "没有法语语音" : "";
-            label.title = "";
-          }
+        const REGIONS = { FR: "法国", CA: "加拿大", BE: "比利时", CH: "瑞士" };
+        // 声音名去掉厂商前缀和“- French (France)”这类后缀，地区和在线／离线单独标出来
+        function describeVoice(v) {
+          const name =
+            v.name
+              .replace(/^(Microsoft|Google)\s+/, "")
+              .replace(/\s+-\s+.*$/, "")
+              .replace(/\s*(Online|\(Natural\))/g, "")
+              .trim() || v.name;
+          const region = REGIONS[v.lang.split(/[-_]/)[1]?.toUpperCase()] || v.lang;
+          return name + " · " + region + "法语 · " + (v.localService ? "离线" : "在线");
         }
+        // 在翻页栏列出本机可用的法语声音，可以切换。
+        // localService 为 false 的是浏览器联网合成的声音（Edge 的 Online、Chrome 的 Google）
+        function showVoice(loaded) {
+          const sel = $("voice");
+          sel.replaceChildren();
+          if (!frVoices.length) {
+            sel.add(new Option(loaded || !synth ? "没有法语语音" : "正在加载语音…", ""));
+            sel.disabled = true;
+            sel.title = "";
+            return;
+          }
+          frVoices.forEach((v) => sel.add(new Option(describeVoice(v), v.voiceURI)));
+          sel.disabled = false;
+          sel.value = voice.voiceURI;
+          sel.title = voice.name + "（" + voice.lang + "）";
+          $("noVoice").hidden = true;
+        }
+        $("voice").onchange = (e) => {
+          voice = frVoices.find((v) => v.voiceURI === e.target.value) || voice;
+          e.target.title = voice.name + "（" + voice.lang + "）";
+          store.set("fr4h-voice", voice.voiceURI);
+          stop();
+        };
         $("noVoiceClose").onclick = () => {
           $("noVoice").hidden = true;
         };
