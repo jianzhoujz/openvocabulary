@@ -1522,7 +1522,7 @@
       <button class="btn" id="prev" aria-label="上一页">← 上一页</button>
       <span class="count" id="count"></span>
       <div class="progress" aria-hidden="true"><div id="prog"></div></div>
-      <button class="btn" id="rate" aria-pressed="false" title="切换朗读速度">慢速</button>
+      <button class="btn" id="rate" title="切换朗读速度">语速：最慢</button>
       <button class="btn primary" id="readAll">朗读本页</button>
       <button class="btn" id="next" aria-label="下一页">下一页 →</button>
     </nav>
@@ -1540,7 +1540,7 @@
         const synth = window.speechSynthesis;
         let cur = 0,
           voice = null,
-          slow = false,
+          speed = 0,
           reading = false,
           toastTimer;
 
@@ -1619,7 +1619,7 @@
             const u = new SpeechSynthesisUtterance(el.dataset.say || el.textContent);
             u.lang = "fr-FR";
             if (voice) u.voice = voice;
-            u.rate = slow ? 0.7 : 0.95;
+            u.rate = SPEEDS[speed].rate;
             u.onstart = () => {
               clearMarks();
               el.classList.add("speaking");
@@ -1673,15 +1673,23 @@
           reading = true;
           readBtn.textContent = "停止";
         };
-        rateBtn.onclick = () => {
-          slow = !slow;
-          rateBtn.setAttribute("aria-pressed", String(slow));
-          store.set("fr4h-slow", slow ? "1" : "0");
+        // 默认最慢；0.5 以下浏览器语音会明显失真，所以不再往下调
+        const SPEEDS = [
+          { rate: 0.5, label: "最慢" },
+          { rate: 0.75, label: "较慢" },
+          { rate: 1, label: "正常" },
+        ];
+        const showSpeed = () => {
+          rateBtn.textContent = "语速：" + SPEEDS[speed].label;
         };
-        if (store.get("fr4h-slow") === "1") {
-          slow = true;
-          rateBtn.setAttribute("aria-pressed", "true");
-        }
+        rateBtn.onclick = () => {
+          speed = (speed + 1) % SPEEDS.length;
+          showSpeed();
+          store.set("fr4h-rate", String(speed));
+        };
+        const savedSpeed = parseInt(store.get("fr4h-rate") || "0", 10);
+        if (SPEEDS[savedSpeed]) speed = savedSpeed;
+        showSpeed();
 
         $("stage").addEventListener("click", (e) => {
           const el = e.target.closest("i");
