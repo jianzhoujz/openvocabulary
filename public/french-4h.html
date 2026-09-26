@@ -595,13 +595,16 @@
       <ul>
         <li>
           <b>最省事：</b>用 Microsoft Edge 打开本页，它自带加拿大法语在线语音（Sylvie、Antoine
-          等）。 Chrome 联网时也有“Google français”，但那是法国口音。
+          等）。 Chrome 的在线语音只有一个“Google français”，是法国口音。
         </li>
         <li>
           <b>Windows：</b>设置 → 时间和语言 → 语音 → 添加语音 →
-          选“法语（加拿大）”，装好后重启浏览器。
+          选“法语（加拿大）”，装好后重启浏览器。Edge 能用上，Chrome 不一定认得。
         </li>
-        <li><b>手机：</b>iPhone 自带法语语音；安卓在系统的“文字转语音”设置里下载法语语音包。</li>
+        <li>
+          <b>手机：</b>iPhone 在“设置 → 辅助功能 → 朗读内容 → 声音 →
+          法语”里下载加拿大法语声音，增强音质更自然；安卓在系统的“文字转语音”设置里下载法语语音包。
+        </li>
       </ul>
       <button class="btn" id="noVoiceClose">知道了</button>
     </aside>
@@ -2005,25 +2008,41 @@
           if (!synth) return;
           const vs = synth.getVoices();
           const fr = vs.filter((v) => /^fr/i.test(v.lang));
-          // 排序：加拿大法语优先，其次法国法语；同一地区里在线（通常更自然）在前
-          const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 2 : 4);
-          const score = (v) => region(v) + (v.localService ? 1 : 0);
-          frVoices = fr.sort((a, b) => score(a) - score(b));
+          // 排序：加拿大法语优先，其次法国法语；同一地区里在线（通常更自然）在前，
+          // 离线的高级音质排在标准音质前
+          const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 8 : 16);
+          const score = (v) => region(v) + (v.localService ? 4 : 0) + (2 - qualityRank(v));
+          // iOS 会把同一个声音报两遍（名字、口音、音质全一样），只留一个
+          const seen = new Set();
+          frVoices = fr
+            .sort((a, b) => score(a) - score(b))
+            .filter((v) => {
+              const key = [v.name, v.lang, v.localService, qualityRank(v)].join("|");
+              if (seen.has(key)) return false;
+              seen.add(key);
+              return true;
+            });
           const saved = store.get("fr4h-voice");
           voice = frVoices.find((v) => v.voiceURI === saved) || frVoices[0] || null;
           showVoice(vs.length > 0);
         }
+        // 苹果系统同一个声音有几种音质，名字一样，只能从 voiceURI 看出来。0 标准，1 增强，2 高级
+        function qualityRank(v) {
+          const id = v.voiceURI + " " + v.name;
+          if (/premium|高级/i.test(id)) return 2;
+          if (/enhanced|增强|优化/i.test(id)) return 1;
+          return 0;
+        }
         const REGIONS = { FR: "法国", CA: "加拿大", BE: "比利时", CH: "瑞士" };
-        // 声音名去掉厂商前缀和“- French (France)”这类后缀，地区和在线／离线单独标出来
+        // 声音名原样显示，后面补上口音、在线／离线，以及名字里看不出来的音质
         function describeVoice(v) {
-          const name =
-            v.name
-              .replace(/^(Microsoft|Google)\s+/, "")
-              .replace(/\s+-\s+.*$/, "")
-              .replace(/\s*(Online|\(Natural\))/g, "")
-              .trim() || v.name;
           const region = REGIONS[v.lang.split(/[-_]/)[1]?.toUpperCase()] || v.lang;
-          return name + " · " + region + "法语 · " + (v.localService ? "离线" : "在线");
+          const quality = /\((enhanced|premium|增强|高级|优化)\)/i.test(v.name)
+            ? ""
+            : ["", "增强", "高级"][qualityRank(v)];
+          return [v.name, region + "法语", v.localService ? "离线" : "在线", quality]
+            .filter(Boolean)
+            .join(" · ");
         }
         // 在翻页栏列出本机可用的法语声音，可以切换。
         // localService 为 false 的是浏览器联网合成的声音（Edge 的 Online、Chrome 的 Google）

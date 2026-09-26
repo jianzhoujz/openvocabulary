@@ -628,8 +628,12 @@ describe("音标与朗读", () => {
     render(<App />);
     await screen.findByRole("heading", { level: 1, name: "冠词" });
 
-    // 按 fr-CA 优先，同地区在线的在前
-    expect(screen.getByText("Sylvie · 加拿大法语 · 在线", { selector: "span" })).toBeTruthy();
+    // 按 fr-CA 优先，同地区在线的在前；名字原样显示
+    expect(
+      screen.getByText("Microsoft Sylvie Online (Natural) - French (Canada) · 加拿大法语 · 在线", {
+        selector: "span",
+      }),
+    ).toBeTruthy();
   });
 
   it("换了声音，下一次朗读就用新声音，并记进设置", async () => {
@@ -640,10 +644,42 @@ describe("音标与朗读", () => {
 
     fireEvent.change(screen.getByLabelText("法语朗读声音"), { target: { value: "fr-paul" } });
     expect(useStore.getState().settings.voices.fr).toBe("fr-paul");
-    expect(screen.getByText("Paul · 法国法语 · 离线", { selector: "span" })).toBeTruthy();
+    expect(
+      screen.getByText("Microsoft Paul - French (France) · 法国法语 · 离线", { selector: "span" }),
+    ).toBeTruthy();
 
     fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
     expect((lastUtterance!.voice as { voiceURI: string }).voiceURI).toBe("fr-paul");
+  });
+
+  it("iOS 重复报告的同一个声音只列一次，不同音质分开标出来", async () => {
+    const amelie = (voiceURI: string, name = "Amélie") => ({
+      lang: "fr-CA",
+      name,
+      voiceURI,
+      localService: true,
+    });
+    stubSpeech(undefined, [
+      amelie("com.apple.voice.compact.fr-CA.Amelie"),
+      amelie("com.apple.voice.compact.fr-CA.Amelie#2"),
+      amelie("com.apple.voice.enhanced.fr-CA.Amelie", "Amélie (Enhanced)"),
+      {
+        lang: "fr-FR",
+        name: "Thomas",
+        voiceURI: "com.apple.voice.compact.fr-FR.Thomas",
+        localService: true,
+      },
+    ]);
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
+    expect(options.map((o) => o.text)).toEqual([
+      "Amélie (Enhanced) · 加拿大法语 · 离线",
+      "Amélie · 加拿大法语 · 离线",
+      "Thomas · 法国法语 · 离线",
+    ]);
   });
 
   it("系统没有法语声音时不拿别的语言的声音硬读，而是说清楚原因", async () => {

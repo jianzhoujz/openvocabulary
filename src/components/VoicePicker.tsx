@@ -1,7 +1,7 @@
 import { ChevronDown, TriangleAlert, Volume2 } from "lucide-react";
 
 import { useVoice } from "@/hooks/useVoice";
-import { describeVoice, langName, voiceLabel } from "@/lib/speech";
+import { langName, voiceLabel } from "@/lib/speech";
 import { cn } from "@/lib/utils";
 
 /**
@@ -42,7 +42,6 @@ export function VoicePicker({
     ) : null;
   }
 
-  const d = describeVoice(voice);
   return (
     <label
       className={cn(
@@ -53,9 +52,7 @@ export function VoicePicker({
       onClick={(e) => e.stopPropagation()}
     >
       <Volume2 className="size-3.5 shrink-0" />
-      <span className="truncate">
-        {d.name} · {d.accent} · {d.online ? "在线" : "离线"}
-      </span>
+      <span className="truncate">{voiceLabel(voice)}</span>
       {options.length > 1 && <ChevronDown className="size-3.5 shrink-0" />}
       <select
         aria-label={`${langName(lang)}朗读声音`}

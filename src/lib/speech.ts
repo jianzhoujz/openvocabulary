@@ -136,11 +136,34 @@ export function voicesFor(lang: string): SpeechSynthesisVoice[] {
   const prefs = LANG_PREFERENCE[lang] ?? [];
   const rank = (v: SpeechSynthesisVoice) => {
     const i = prefs.indexOf(v.lang.replace("_", "-"));
-    return (i < 0 ? prefs.length : i) * 2 + (v.localService === false ? 0 : 1);
+    // 地区 > 在线 > 音质：同一口音里在线的在前，离线的高级音质排在标准音质前
+    return (
+      (i < 0 ? prefs.length : i) * 8 + (v.localService === false ? 0 : 4) + (2 - qualityRank(v))
+    );
   };
+  // iOS 会把同一个声音报两遍（名字、口音、音质全一样），列表里只留一个
+  const seen = new Set<string>();
   return currentVoices()
     .filter((v) => v.lang.toLowerCase().startsWith(lang))
-    .sort((a, b) => rank(a) - rank(b));
+    .sort((a, b) => rank(a) - rank(b))
+    .filter((v) => {
+      const d = describeVoice(v);
+      const key = `${d.name}|${v.lang}|${d.online}|${d.quality}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+/**
+ * 苹果系统的同一个声音有几种音质，名字一样，只能从 voiceURI（…compact / enhanced /
+ * premium…）或名字后缀「(Enhanced)」看出来。0 标准，1 增强，2 高级
+ */
+function qualityRank(voice: SpeechSynthesisVoice): number {
+  const id = `${voice.voiceURI} ${voice.name}`;
+  if (/premium|高级/i.test(id)) return 2;
+  if (/enhanced|增强|优化/i.test(id)) return 1;
+  return 0;
 }
 
 /** 用户选过就用选的那个（还在的话），否则按推荐顺序取第一个 */
@@ -154,27 +177,29 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
   name: string;
   accent: string;
   online: boolean;
+  /** 苹果系统声音的音质档：「增强」「高级」，标准音质为空 */
+  quality: string;
 } {
   const [base = "", region = ""] = voice.lang.split(/[-_]/);
-  const name =
-    voice.name
-      .replace(/^(Microsoft|Google)\s+/, "")
-      .replace(/\s+-\s+.*$/, "")
-      .replace(/\s*(Online|\(Natural\))/g, "")
-      .trim() || voice.name;
+  // 名字原样显示，不做简化：用户要靠完整名字分辨「Microsoft Sylvie Online (Natural)」这类声音
+  const name = voice.name;
   const regionName = REGION_NAMES[region.toUpperCase()];
   return {
     name,
     accent: regionName ? regionName + langName(base.toLowerCase()) : voice.lang,
     // localService 为 false 是浏览器联网合成的声音，朗读的文字会发到它的服务器
     online: voice.localService === false,
+    // 名字里已经写了 (Enhanced) 之类的，就不再重复标
+    quality: /\((enhanced|premium|增强|高级|优化)\)/i.test(voice.name)
+      ? ""
+      : ["", "增强", "高级"][qualityRank(voice)],
   };
 }
 
-/** 一行文字：「Sylvie · 加拿大法语 · 在线」 */
+/** 一行文字：「Microsoft Sylvie Online (Natural) - French (Canada) · 加拿大法语 · 在线」 */
 export function voiceLabel(voice: SpeechSynthesisVoice): string {
   const d = describeVoice(voice);
-  return `${d.name} · ${d.accent} · ${d.online ? "在线" : "离线"}`;
+  return [d.name, d.accent, d.online ? "在线" : "离线", d.quality].filter(Boolean).join(" · ");
 }
 
 /** 没有目标语言声音时给用户的办法 */
@@ -187,8 +212,9 @@ export function missingVoiceMessage(lang: string): string {
   const winName = regionName ? `${name}（${regionName}）` : name;
   return (
     `这台设备没有${name}语音，用别的语言的声音会读错，所以没有朗读。` +
-    `用 Edge 打开一般自带${accent}在线语音；` +
-    `Windows 也可以在「设置 → 时间和语言 → 语音」里添加「${winName}」语音，装好后重启浏览器。`
+    `电脑上用 Edge 打开，自带${accent}在线语音（Chrome 的在线语音没有加拿大口音）；` +
+    `iPhone 在「设置 → 辅助功能 → 朗读内容 → 声音」里下载「${winName}」声音；` +
+    `Windows 可在「设置 → 时间和语言 → 语音」里添加「${winName}」，Edge 能用上，Chrome 不一定认。`
   );
 }
 
