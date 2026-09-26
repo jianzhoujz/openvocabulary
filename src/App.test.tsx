@@ -733,24 +733,6 @@ describe("音标与朗读", () => {
     expect(lastUtterance!.lang).toBe("fr-FR");
   });
 
-  it("实测会把单词读成英语的 Thierry、Sylvie 不做默认，读对的 Antoine、Jean 排前面", async () => {
-    const edge = (name: string) => ({
-      lang: "fr-CA",
-      name: `Microsoft ${name} Online (Natural) - French (Canada)`,
-      voiceURI: name,
-      localService: false,
-    });
-    stubSpeech(undefined, ["Thierry", "Antoine", "Jean", "Sylvie"].map(edge));
-    window.location.hash = "#/grammar/articles";
-    render(<App />);
-    await screen.findByRole("heading", { level: 1, name: "冠词" });
-
-    const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
-    expect(options.map((o) => o.value)).toEqual(["Antoine", "Jean", "Thierry", "Sylvie"]);
-    expect(options[2].text).toContain("单词可能读成英语");
-    expect(options[0].text).not.toContain("英语");
-  });
-
   it("系统没有法语声音时不拿别的语言的声音硬读，而是说清楚原因", async () => {
     stubSpeech(undefined, VOICES.slice(0, 1));
     window.location.hash = "#/grammar/articles";

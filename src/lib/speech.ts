@@ -139,7 +139,7 @@ export function voicesFor(lang: string): SpeechSynthesisVoice[] {
     // 地区 > 单语 > 在线 > 音质：多语言声音会自己猜语言，排到同口音的最后
     return (
       (i < 0 ? prefs.length : i) * 16 +
-      (guessesLanguage(v) ? 8 : 0) +
+      (isMultilingual(v) ? 8 : 0) +
       (v.localService === false ? 0 : 4) +
       (3 - qualityRank(v))
     );
@@ -184,21 +184,12 @@ function qualityLabel(voice: SpeechSynthesisVoice): string {
 }
 
 /**
- * 会自己猜文本语言、不认 utterance.lang 的声音。整句法语猜得准，table、grand 这种
- * 英法同形的单词常被判成英语，而且每次结果不一定一样。网页没有参数能关掉，只能不默认选它们。
- *
- * - 名字带 Multilingual 的 Edge 在线声音（Vivienne、Remy 等）：设计上就是自动识别语言
- * - Edge 的 Thierry、Sylvie（fr-CA）：用户 2026-09-26 实测把 grand 读成英语；
- *   同一批的 Antoine、Jean 读对了。是实测结论，不是文档，后续实测有变化就改这张表
+ * Edge 名字带 Multilingual 的在线声音（Vivienne、Remy 等）设计上就是自动识别文本语言，
+ * 不认 utterance.lang：整句法语猜得准，table、grand 这种英法同形的单词常被判成英语。
+ * 按名字里的通用标识判断，不按具体声音名列清单——清单只反映某台设备某次实测，会过时。
  */
-const GUESSES_LANGUAGE = [/multilingual/i, /^Microsoft (Thierry|Sylvie) Online/i];
-
 export function isMultilingual(voice: SpeechSynthesisVoice): boolean {
   return /multilingual/i.test(voice.name);
-}
-
-export function guessesLanguage(voice: SpeechSynthesisVoice): boolean {
-  return GUESSES_LANGUAGE.some((re) => re.test(voice.name));
 }
 
 /** 用户选过就用选的那个（还在的话），否则按推荐顺序取第一个 */
@@ -214,7 +205,7 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
   online: boolean;
   /** 苹果系统声音的音质：精简 / 标准 / 增强 / 高级；看不出来的为空 */
   quality: string;
-  /** 会自己猜语言的声音的提醒，见 guessesLanguage；其他声音为空 */
+  /** 多语言声音的提醒，见 isMultilingual；其他声音为空 */
   warning: string;
 } {
   const [base = "", region = ""] = voice.lang.split(/[-_]/);
@@ -227,11 +218,7 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
     // localService 为 false 是浏览器联网合成的声音，朗读的文字会发到它的服务器
     online: voice.localService === false,
     quality: qualityLabel(voice),
-    warning: isMultilingual(voice)
-      ? "多语言，单词可能读成英语"
-      : guessesLanguage(voice)
-        ? "单词可能读成英语"
-        : "",
+    warning: isMultilingual(voice) ? "多语言，单词可能读成英语" : "",
   };
 }
 
