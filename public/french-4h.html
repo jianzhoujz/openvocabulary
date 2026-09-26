@@ -258,6 +258,36 @@
         color: var(--ink);
         border-bottom-color: var(--mark);
       }
+      /* 带中文释义的法语：法语在上，释义小字在下 */
+      i.g {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        border-bottom: none;
+        line-height: 1.35;
+        padding-bottom: 0.1em;
+      }
+      i.g.short {
+        align-items: center;
+      }
+      i.g .w {
+        border-bottom: 1.5px dotted currentColor;
+      }
+      i.g:hover .w {
+        border-bottom-style: solid;
+      }
+      i.g .zh {
+        font-family: var(--sans);
+        font-size: 0.66em;
+        font-weight: 400;
+        color: var(--muted);
+        line-height: 1.3;
+        margin-top: 0.15em;
+      }
+      i.g.speaking .w {
+        border-bottom-color: var(--mark);
+      }
 
       .tbl {
         overflow-x: auto;
@@ -526,7 +556,7 @@
             秒的自我介绍。英语会帮你很多，所以这门课只讲法语<b>和英语不一样</b>的地方。
           </p>
           <div class="howto">
-            <span>点<i>蓝色的法语</i>听发音</span>
+            <span>点蓝色的法语（比如 <i>Bonjour</i>）听发音，下面的小字是中文意思</span>
             <span><b>朗读本页</b>：把这一页的法语按顺序读一遍</span>
             <span><kbd>←</kbd> <kbd>→</kbd> 翻页，手机上左右滑动</span>
           </div>
@@ -909,9 +939,9 @@
             <div class="block">
               <h3>à 和 de 遇到 le、les 要合并</h3>
               <ul class="plain">
-                <li>à + le = <i>au</i>　<i>Je vais au cinéma.</i></li>
-                <li>à + les = <i>aux</i></li>
-                <li>de + le = <i>du</i>　<i>le livre du professeur</i></li>
+                <li>à + le = <i data-zh="到／在">au</i>　<i>Je vais au cinéma.</i></li>
+                <li>à + les = <i data-zh="到／在（复数）">aux</i></li>
+                <li>de + le = <i data-zh="的／从">du</i>　<i>le livre du professeur</i></li>
                 <li>la 不变：<i>Je vais à la plage.</i></li>
               </ul>
             </div>
@@ -1203,9 +1233,9 @@
             <div class="block">
               <h3>把 pas 换掉，意思跟着变</h3>
               <ul class="plain">
-                <li><i>Je ne bois jamais de café.</i>　从不</li>
-                <li><i>Je ne fume plus.</i>　不再</li>
-                <li><i>Je ne comprends rien.</i>　什么都不</li>
+                <li><i data-zh="我从不喝咖啡。">Je ne bois jamais de café.</i>　从不</li>
+                <li><i data-zh="我不再抽烟了。">Je ne fume plus.</i>　不再</li>
+                <li><i data-zh="我什么都听不懂。">Je ne comprends rien.</i>　什么都不</li>
               </ul>
             </div>
           </div>
@@ -1219,9 +1249,12 @@
             <div class="block">
               <h3>一个问题，三种说法</h3>
               <ul class="plain">
-                <li><i>Tu parles français ?</i>　句尾语调上扬，最常用</li>
-                <li><i>Est-ce que tu parles français ?</i>　加 Est-ce que，最稳妥</li>
-                <li><i>Parles-tu français ?</i>　倒装，比较书面</li>
+                <li><i data-zh="你说法语吗？">Tu parles français ?</i>　句尾语调上扬，最常用</li>
+                <li>
+                  <i data-zh="你说法语吗？">Est-ce que tu parles français ?</i>　加 Est-ce
+                  que，最稳妥
+                </li>
+                <li><i data-zh="你说法语吗？">Parles-tu français ?</i>　倒装，比较书面</li>
               </ul>
             </div>
             <div class="tbl">
@@ -1559,10 +1592,291 @@
           },
         };
 
+        // 法语下方的中文释义。后面已经紧跟中文解释的（“　”+ 汉字）不重复标注；
+        // 写了 data-zh 的以 data-zh 为准。
+        const ZH = {
+          "Le français en quatre heures": "四小时学法语",
+          petit: "小的",
+          Paris: "巴黎",
+          trois: "三",
+          beaucoup: "很多",
+          parler: "说",
+          avec: "和……一起",
+          bonjour: "你好",
+          neuf: "九；新的",
+          animal: "动物",
+          France: "法国",
+          table: "桌子",
+          rouge: "红色的",
+          hôtel: "酒店",
+          homme: "男人",
+          histoire: "历史；故事",
+          tu: "你",
+          rue: "街道",
+          du: "一些（阳性）",
+          vous: "您；你们",
+          jour: "天",
+          moi: "我（重读）",
+          voiture: "汽车",
+          eau: "水",
+          chaud: "热的",
+          beau: "美的",
+          lait: "牛奶",
+          mère: "母亲",
+          fête: "节日",
+          deux: "二",
+          bleu: "蓝色的",
+          chat: "猫",
+          chocolat: "巧克力",
+          montagne: "山",
+          champagne: "香槟",
+          qui: "谁",
+          quatre: "四",
+          enfant: "孩子",
+          temps: "时间；天气",
+          bon: "好的",
+          nom: "名字",
+          maison: "房子",
+          vin: "葡萄酒",
+          pain: "面包",
+          jardin: "花园",
+          toi: "你（重读）",
+          café: "咖啡；咖啡馆",
+          merci: "谢谢",
+          je: "我",
+          orange: "橙子",
+          ça: "这个",
+          garçon: "男孩",
+          restaurant: "餐厅",
+          université: "大学",
+          "les amis": "朋友们",
+          "vous avez": "你们有",
+          "un hôtel": "一家酒店",
+          "C'est un ami.": "这是一个朋友。",
+          été: "夏天",
+          très: "很",
+          forêt: "森林",
+          à: "在；到",
+          a: "有",
+          français: "法语；法国的",
+          Bonjour: "你好",
+          "Bonjour !": "你好！",
+          Pardon: "对不起",
+          "Et toi ?": "你呢？",
+          "Bonjour, madame. Comment allez-vous ?": "您好，女士。您好吗？",
+          "Très bien, merci. Et vous ?": "很好，谢谢。您呢？",
+          "Bien, merci.": "挺好，谢谢。",
+          "Salut ! Ça va ?": "嗨！还好吗？",
+          "Oui, ça va. Et toi ?": "嗯，还好。你呢？",
+          "Ça va. À plus !": "还行。回头见！",
+          "la table": "桌子",
+          "la nation": "国家；民族",
+          "la liberté": "自由",
+          "la voiture": "汽车",
+          "le moment": "时刻",
+          "le fromage": "奶酪",
+          "le bateau": "船",
+          "le livre": "书",
+          "les livres": "书（复数）",
+          "les bateaux": "船（复数）",
+          "un animal": "一只动物",
+          "des animaux": "一些动物",
+          "la plage": "海滩",
+          "l'eau": "水",
+          le: "定冠词（阳性）",
+          la: "定冠词（阴性）",
+          les: "定冠词（复数）",
+          un: "一（阳性）",
+          une: "一（阴性）",
+          des: "一些（复数）",
+          "de la": "一些（阴性）",
+          "J'aime le café.": "我喜欢咖啡。",
+          "J'ai un frère et une sœur.": "我有一个哥哥（弟弟）和一个姐姐（妹妹）。",
+          "Je mange du pain.": "我吃面包。",
+          "Je bois de l'eau.": "我喝水。",
+          "Je mange de la soupe.": "我喝汤。",
+          "l'ami": "朋友",
+          "l'école": "学校",
+          "l'hôtel": "酒店",
+          "Je vais au cinéma.": "我去电影院。",
+          "le livre du professeur": "老师的书",
+          "Je vais à la plage.": "我去海滩。",
+          "à Paris": "在巴黎",
+          "à Shanghai": "在上海",
+          "en France": "在法国",
+          "en Chine": "在中国",
+          "au Japon": "在日本",
+          "aux États-Unis": "在美国",
+          "j'": "我",
+          il: "他",
+          elle: "她",
+          on: "人们；我们",
+          nous: "我们",
+          ils: "他们",
+          elles: "她们",
+          "On y va !": "咱们走吧！",
+          "je suis": "我是",
+          "tu es": "你是",
+          "il est": "他是",
+          "nous sommes": "我们是",
+          "vous êtes": "你们是",
+          "ils sont": "他们是",
+          "j'ai": "我有",
+          "tu as": "你有",
+          "il a": "他有",
+          "nous avons": "我们有",
+          "ils ont": "他们有",
+          "Je suis étudiant.": "我是学生。",
+          "Elle est chinoise.": "她是中国人。",
+          "Nous avons un chat.": "我们有一只猫。",
+          "je parle": "我说",
+          "tu parles": "你说",
+          "il parle": "他说",
+          "nous parlons": "我们说",
+          "vous parlez": "你们说",
+          "ils parlent": "他们说",
+          "J'habite à Shanghai.": "我住在上海。",
+          "Tu aimes le thé ?": "你喜欢茶吗？",
+          "Nous travaillons ici.": "我们在这里工作。",
+          "Ils regardent la télé.": "他们在看电视。",
+          "je vais": "我去",
+          "tu vas": "你去",
+          "il va": "他去",
+          "nous allons": "我们去",
+          "vous allez": "你们去",
+          "ils vont": "他们去",
+          "je fais": "我做",
+          "tu fais": "你做",
+          "il fait": "他做",
+          "nous faisons": "我们做",
+          "vous faites": "你们做",
+          "ils font": "他们做",
+          "je veux": "我想要",
+          "tu veux": "你想要",
+          "il veut": "他想要",
+          "nous voulons": "我们想要",
+          "vous voulez": "你们想要",
+          "ils veulent": "他们想要",
+          "Je vais à Paris.": "我去巴黎。",
+          "Je fais du sport.": "我做运动。",
+          "Je voudrais un café, s'il vous plaît.": "请给我一杯咖啡。",
+          "J'ai vingt-cinq ans.": "我 25 岁。",
+          "J'ai faim.": "我饿了。",
+          "J'ai soif.": "我渴了。",
+          "J'ai froid.": "我冷。",
+          "Il fait beau.": "天气很好。",
+          "Il y a un café ici.": "这里有一家咖啡馆。",
+          "Je ne comprends pas.": "我不明白。",
+          "Vous pouvez répéter, s'il vous plaît ?": "请您再说一遍好吗？",
+          "Je ne parle pas français.": "我不说法语。",
+          "Je n'aime pas le café.": "我不喜欢咖啡。",
+          "J'ai un chat.": "我有一只猫。",
+          "Je n'ai pas de chat.": "我没有猫。",
+          "Je sais pas.": "我不知道。",
+          "Qui est-ce ?": "这是谁？",
+          "Qu'est-ce que c'est ?": "这是什么？",
+          "Où est la gare ?": "火车站在哪儿？",
+          "Quand est-ce que tu arrives ?": "你什么时候到？",
+          "Comment tu t'appelles ?": "你叫什么名字？",
+          "Pourquoi tu apprends le français ?": "你为什么学法语？",
+          "Combien ça coûte ?": "这个多少钱？",
+          "Quel âge as-tu ?": "你多大了？",
+          "un livre intéressant": "一本有趣的书",
+          "une robe rouge": "一条红裙子",
+          "le vin blanc": "白葡萄酒",
+          "un petit café": "一杯小咖啡",
+          "un bon restaurant": "一家好餐厅",
+          "une belle maison": "一栋漂亮的房子",
+          "une vieille ville": "一座古城",
+          petite: "小的（阴性）",
+          petits: "小的（阳性复数）",
+          petites: "小的（阴性复数）",
+          chinois: "中国人；中文",
+          chinoise: "中国人（阴性）",
+          "mon père": "我的父亲",
+          "ma mère": "我的母亲",
+          "mes parents": "我的父母",
+          "ton livre": "你的书",
+          "ta voiture": "你的车",
+          "tes amis": "你的朋友们",
+          "son frère": "他／她的兄弟",
+          "sa sœur": "他／她的姐妹",
+          "ses enfants": "他／她的孩子们",
+          "notre maison": "我们的房子",
+          "nos amis": "我们的朋友们",
+          "votre nom": "您的名字",
+          "vos billets": "你们的票",
+          "leur fils": "他们的儿子",
+          "leurs enfants": "他们的孩子们",
+          "sa mère": "他／她的母亲",
+          "mon amie": "我的（女性）朋友",
+          cinq: "五",
+          six: "六",
+          sept: "七",
+          huit: "八",
+          dix: "十",
+          onze: "十一",
+          douze: "十二",
+          treize: "十三",
+          quatorze: "十四",
+          quinze: "十五",
+          seize: "十六",
+          "dix-sept": "十七",
+          "dix-huit": "十八",
+          "dix-neuf": "十九",
+          vingt: "二十",
+          "vingt et un": "二十一",
+          trente: "三十",
+          quarante: "四十",
+          cinquante: "五十",
+          soixante: "六十",
+          "soixante-dix": "七十",
+          "quatre-vingts": "八十",
+          "quatre-vingt-dix": "九十",
+          "quatre-vingt-dix-sept": "九十七",
+          "Je vais manger.": "我要去吃饭了。",
+          "Ce soir, je vais regarder un film.": "今晚我要看一部电影。",
+          "Demain, nous allons visiter le Louvre.": "明天我们要去参观卢浮宫。",
+          "J'ai mangé.": "我吃过了。",
+          "Hier, j'ai regardé un film.": "昨天我看了一部电影。",
+          "J'ai fait du sport.": "我做过运动了。",
+          fait: "做了",
+          vu: "看见了",
+          pris: "拿了",
+          "Je suis allé(e) à Paris.": "我去过巴黎。",
+          "Elle est arrivée hier.": "她昨天到的。",
+          "Bonjour ! Je m'appelle Li Ming.": "你好！我叫李明。",
+          "Je suis chinois et j'habite à Shanghai.": "我是中国人，住在上海。",
+          "J'ai vingt-huit ans.": "我 28 岁。",
+          "Je parle chinois et anglais, et j'apprends le français.": "我说中文和英语，正在学法语。",
+          "J'aime la musique, mais je n'aime pas le sport.": "我喜欢音乐，但不喜欢运动。",
+          "Le week-end dernier, j'ai regardé un film.": "上周末我看了一部电影。",
+          "Demain, je vais travailler.": "明天我要上班。",
+          "Et vous, comment vous appelez-vous ?": "您呢，您叫什么名字？",
+          "J'ai un frère.": "我有一个兄弟。",
+          "Bon courage !": "加油！",
+        };
+        const hasGlossAfter = (el) => {
+          const n = el.nextSibling;
+          return n && n.nodeType === 3 && /^　[一-鿿]/.test(n.textContent);
+        };
         document.querySelectorAll(".slide i").forEach((el) => {
           el.tabIndex = 0;
           el.setAttribute("role", "button");
           el.title = "点击朗读";
+          const text = el.textContent.replace(/\s+/g, " ").trim();
+          const zh = el.dataset.zh ?? (hasGlossAfter(el) ? null : ZH[text]);
+          if (!zh) return;
+          if (!el.dataset.say) el.dataset.say = text;
+          const w = document.createElement("span");
+          w.className = "w";
+          w.textContent = text;
+          const z = document.createElement("span");
+          z.className = "zh";
+          z.textContent = zh;
+          el.replaceChildren(w, z);
+          el.classList.add("g");
+          if (text.length <= 14) el.classList.add("short");
         });
 
         function toast(msg, ms = 4000) {
