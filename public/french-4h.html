@@ -488,6 +488,33 @@
         min-width: 4.5em;
         text-align: center;
       }
+      .novoice {
+        max-width: 1400px;
+        width: 100%;
+        margin-inline: auto;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 12px 16px;
+        border: 1px solid var(--mark);
+        border-radius: 10px;
+        background: var(--mark-soft);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      .novoice ul {
+        margin: 0;
+        padding-left: 1.2em;
+      }
+      .novoice .btn {
+        align-self: flex-start;
+      }
+      .voice {
+        font-size: 12px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
       .toast {
         position: fixed;
         left: 50%;
@@ -543,6 +570,25 @@
       <div class="brand">法语四小时<span>Le français en quatre heures</span></div>
       <div class="chip" id="chip"></div>
     </header>
+
+    <aside class="novoice" id="noVoice" hidden>
+      <div>
+        <b>这台设备没有法语语音，所以暂时不朗读。</b>
+        没有法语语音时，浏览器会用中文或英语的声音去念，<em>table</em>
+        这类词就会被读成英语，跟着学会学错。可以这样解决：
+      </div>
+      <ul>
+        <li>
+          <b>最省事：</b>用 Microsoft Edge 打开本页，它自带法语在线语音。Chrome
+          联网时一般也有“Google français”。
+        </li>
+        <li>
+          <b>Windows：</b>设置 → 时间和语言 → 语音 → 添加语音 → 选“法语（法国）”，装好后重启浏览器。
+        </li>
+        <li><b>手机：</b>iPhone 自带法语语音；安卓在系统的“文字转语音”设置里下载法语语音包。</li>
+      </ul>
+      <button class="btn" id="noVoiceClose">知道了</button>
+    </aside>
 
     <main class="stage-wrap">
       <div class="stage" id="stage">
@@ -1555,6 +1601,7 @@
       <button class="btn" id="prev" aria-label="上一页">← 上一页</button>
       <span class="count" id="count"></span>
       <div class="progress" aria-hidden="true"><div id="prog"></div></div>
+      <span class="voice" id="voice"></span>
       <button class="btn" id="rate" title="切换朗读速度">语速：最慢</button>
       <button class="btn primary" id="readAll">朗读本页</button>
       <button class="btn" id="next" aria-label="下一页">下一页 →</button>
@@ -1902,10 +1949,28 @@
             fr.find((v) => /fr[-_]FR/i.test(v.lang)) ||
             fr[0] ||
             null;
+          showVoice(vs.length > 0);
         }
+        // 在翻页栏显示当前用的是哪个声音。声音列表还没加载完时（Chrome 首次为空）先不下结论
+        function showVoice(loaded) {
+          const label = $("voice");
+          if (voice) {
+            label.textContent = "语音：" + voice.name.replace(/^(Microsoft|Google)\s+/, "");
+            label.title = voice.name + "（" + voice.lang + "）";
+            $("noVoice").hidden = true;
+          } else {
+            label.textContent = loaded || !synth ? "没有法语语音" : "";
+            label.title = "";
+          }
+        }
+        $("noVoiceClose").onclick = () => {
+          $("noVoice").hidden = true;
+        };
         if (synth) {
           pickVoice();
           synth.onvoiceschanged = pickVoice;
+        } else {
+          showVoice(true);
         }
 
         function clearMarks() {
@@ -1921,13 +1986,15 @@
         function speak(list) {
           if (!synth) {
             toast("这个浏览器不支持朗读，请换用 Chrome、Edge 或 Safari。");
-            return;
+            return false;
           }
           stop();
+          if (!voice) pickVoice();
+          // 没有法语声音时浏览器会退回系统默认声音（常见是中文或英语），
+          // 按那种语言的规则念法语，table 会被读成英语。宁可不读也不教错。
           if (!voice) {
-            pickVoice();
-            if (!voice && synth.getVoices().length)
-              toast("没有找到法语语音，发音可能不准。可以在系统设置里添加法语语音包。", 6000);
+            $("noVoice").hidden = false;
+            return false;
           }
           list.forEach((el, idx) => {
             const u = new SpeechSynthesisUtterance(el.dataset.say || el.textContent);
@@ -1947,6 +2014,7 @@
             };
             synth.speak(u);
           });
+          return true;
         }
 
         function go(n) {
@@ -1981,11 +2049,10 @@
             toast("这一页没有法语。");
             return;
           }
-          reading = true;
-          readBtn.textContent = "停止";
-          speak(list);
-          reading = true;
-          readBtn.textContent = "停止";
+          if (speak(list)) {
+            reading = true;
+            readBtn.textContent = "停止";
+          }
         };
         // 默认最慢；0.5 以下浏览器语音会明显失真，所以不再往下调
         const SPEEDS = [
