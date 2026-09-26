@@ -129,6 +129,18 @@ vp run build:data           # 重新生成网页用的 .json
 `vocab/tools/ipa-{en,fr}.tsv` 是生成物但**允许手工修正**，改词表时不要整表重跑覆盖掉人工改动，
 先确认没有手工条目。
 
+## 朗读：发音由声音决定，不由 `lang` 决定
+
+`utterance.lang = "fr-FR"` 只是挑声音的提示。系统里没有法语声音时，浏览器会不报错地
+退回默认声音（中文 Windows 上是 Huihui 这类中文声音），按那种语言的规则念，法语
+`table` 会被读成英语。所以 `src/lib/speech.ts` 在「系统报告了声音、但没有目标语言的」
+时直接报错不读，**不要为了“总能出声”把这个拦截去掉**。声音列表为空时（Chrome 首次、
+部分 WebView）无法判断，照常交给引擎。
+
+界面上用 `VoicePicker` 摆出当前声音（名字 · 口音 · 在线/离线），用户选的存在
+`settings.voices`。`localService === false` 是浏览器联网合成的声音（Edge 的 Online、
+Chrome 的 Google），朗读的文字会发到对方服务器。
+
 ## 分享图片时只放 `files`
 
 `navigator.share()` 的 payload 里**不要同时带 `text` 或 `title`**。微信、QQ 这类接收方

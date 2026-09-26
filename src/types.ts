@@ -70,6 +70,8 @@ export type Settings = {
   theme: "light" | "dark";
   /** 朗读语速，传给 SpeechSynthesisUtterance.rate，1 为引擎默认语速 */
   speechRate: number;
+  /** 每种语言选定的朗读声音（"en" / "fr" → voiceId）。没选的按推荐顺序挑 */
+  voices: Record<string, string>;
 };
 
 /** 选词表页用的轻量元信息，来自 public/data/index.json */

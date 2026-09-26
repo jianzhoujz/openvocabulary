@@ -9,6 +9,9 @@
  * - iOS 上所有浏览器都是 WKWebView，但各家配置的 AVAudioSession 不同：
  *   有的会被侧边静音拨片静掉、有的不会。`speak()` 照常 resolve，只是没声音，
  *   所以要有一个「接受了请求但迟迟没 start」的看门狗，不然用户只看到按钮没反应
+ * - `utterance.lang` 只是挑声音的提示，**决定发音规则的是声音本身**。系统里没有
+ *   目标语言的声音时，引擎会不声不响地退回默认声音（中文 Windows 上是中文声音），
+ *   按那种语言的规则念，法语 table 会被读成英语。所以宁可报错也不用别的语言的声音
  */
 const LANG_PREFERENCE: Record<string, string[]> = {
   // 目标是加拿大考试，优先加拿大口音，没有再退回美音 / 法国法语
@@ -45,7 +48,26 @@ const DEFAULT_RATE = 0.5;
 /** 点了没声音时，多久算「引擎吞了这次请求」 */
 const START_TIMEOUT_MS = 2000;
 
+const LANG_NAMES: Record<string, string> = { en: "英语", fr: "法语" };
+const REGION_NAMES: Record<string, string> = {
+  CA: "加拿大",
+  US: "美国",
+  GB: "英国",
+  AU: "澳大利亚",
+  IN: "印度",
+  IE: "爱尔兰",
+  NZ: "新西兰",
+  FR: "法国",
+  BE: "比利时",
+  CH: "瑞士",
+};
+
+export function langName(lang: string): string {
+  return LANG_NAMES[lang] ?? lang;
+}
+
 let voices: SpeechSynthesisVoice[] = [];
+const voiceListeners = new Set<() => void>();
 let watchdog: ReturnType<typeof setTimeout> | undefined;
 
 function clearWatchdog(): void {
@@ -72,32 +94,113 @@ export function primeVoices(): () => void {
     } catch {
       voices = [];
     }
+    voiceListeners.forEach((fn) => fn());
   };
   load();
   window.speechSynthesis.addEventListener("voiceschanged", load);
   return () => window.speechSynthesis.removeEventListener("voiceschanged", load);
 }
 
-/** 按 en-CA → en-US → en-GB → 任意 en 的顺序挑一个声音 */
-function pickVoice(lang: string): SpeechSynthesisVoice | undefined {
-  if (voices.length === 0) voices = window.speechSynthesis.getVoices();
+/** 声音列表加载或变化时通知。给 React 的 useSyncExternalStore 用 */
+export function subscribeVoices(fn: () => void): () => void {
+  voiceListeners.add(fn);
+  return () => voiceListeners.delete(fn);
+}
 
-  for (const tag of LANG_PREFERENCE[lang] ?? []) {
-    const exact = voices.find((v) => v.lang.replace("_", "-") === tag);
-    if (exact) return exact;
+/** 声音的稳定标识。测试替身和个别浏览器没有 voiceURI，退回用名字 */
+export function voiceId(voice: SpeechSynthesisVoice): string {
+  return voice.voiceURI || voice.name;
+}
+
+function currentVoices(): SpeechSynthesisVoice[] {
+  if (voices.length === 0 && speechSupported()) {
+    try {
+      voices = window.speechSynthesis.getVoices();
+    } catch {
+      voices = [];
+    }
   }
-  return voices.find((v) => v.lang.toLowerCase().startsWith(lang));
+  return voices;
+}
+
+/** 系统有没有报告任何声音。一个都没有时（加载中，或某些 WebView）不能断定缺哪种语言 */
+export function voicesLoaded(): boolean {
+  return currentVoices().length > 0;
+}
+
+/**
+ * 某种语言可用的全部声音，按推荐顺序：先按 LANG_PREFERENCE 的地区顺序，
+ * 同一地区里在线声音在前（Edge 的 Natural、Chrome 的 Google 声音通常比系统自带的自然）
+ */
+export function voicesFor(lang: string): SpeechSynthesisVoice[] {
+  const prefs = LANG_PREFERENCE[lang] ?? [];
+  const rank = (v: SpeechSynthesisVoice) => {
+    const i = prefs.indexOf(v.lang.replace("_", "-"));
+    return (i < 0 ? prefs.length : i) * 2 + (v.localService === false ? 0 : 1);
+  };
+  return currentVoices()
+    .filter((v) => v.lang.toLowerCase().startsWith(lang))
+    .sort((a, b) => rank(a) - rank(b));
+}
+
+/** 用户选过就用选的那个（还在的话），否则按推荐顺序取第一个 */
+export function pickVoice(lang: string, preferred?: string): SpeechSynthesisVoice | undefined {
+  const list = voicesFor(lang);
+  return (preferred && list.find((v) => voiceId(v) === preferred)) || list[0];
+}
+
+/** 给人看的声音信息：名字、哪国口音、在线还是离线 */
+export function describeVoice(voice: SpeechSynthesisVoice): {
+  name: string;
+  accent: string;
+  online: boolean;
+} {
+  const [base = "", region = ""] = voice.lang.split(/[-_]/);
+  const name =
+    voice.name
+      .replace(/^(Microsoft|Google)\s+/, "")
+      .replace(/\s+-\s+.*$/, "")
+      .replace(/\s*(Online|\(Natural\))/g, "")
+      .trim() || voice.name;
+  const regionName = REGION_NAMES[region.toUpperCase()];
+  return {
+    name,
+    accent: regionName ? regionName + langName(base.toLowerCase()) : voice.lang,
+    // localService 为 false 是浏览器联网合成的声音，朗读的文字会发到它的服务器
+    online: voice.localService === false,
+  };
+}
+
+/** 一行文字：「Sylvie · 加拿大法语 · 在线」 */
+export function voiceLabel(voice: SpeechSynthesisVoice): string {
+  const d = describeVoice(voice);
+  return `${d.name} · ${d.accent} · ${d.online ? "在线" : "离线"}`;
+}
+
+/** 没有目标语言声音时给用户的办法 */
+export function missingVoiceMessage(lang: string): string {
+  const name = langName(lang);
+  return (
+    `这台设备没有${name}语音，用别的语言的声音会读错，所以没有朗读。` +
+    `用 Edge 或联网的 Chrome 打开一般自带${name}在线语音；` +
+    `Windows 也可以在「设置 → 时间和语言 → 语音」里添加${name}语音，装好后重启浏览器。`
+  );
 }
 
 /** 排查信息：能不能挑到声音、系统给了多少个声音 */
 function diagnostics(lang: string, voice: SpeechSynthesisVoice | undefined): string {
   const list = voices.length === 0 ? "系统没报告任何声音" : `系统有 ${voices.length} 个声音`;
-  return `${list} · ${lang} 用的是 ${voice ? `${voice.name}（${voice.lang}）` : "引擎默认声音"}`;
+  const used = voice
+    ? `${voice.name}（${voice.lang}，${voice.localService === false ? "在线" : "离线"}）`
+    : "引擎默认声音";
+  return `${list} · ${lang} 用的是 ${used}`;
 }
 
 type SpeakHandlers = {
   /** 语速，1 为引擎默认。不传用 DEFAULT_RATE */
   rate?: number;
+  /** 用户选定的声音（voiceId）。不传或已经不在了就按推荐顺序挑 */
+  voice?: string;
   /** 念完、或者出错收尾时都会调一次，用来复位「正在朗读」状态 */
   onSettled?: () => void;
   onError?: (failure: SpeechFailure) => void;
@@ -105,7 +208,7 @@ type SpeakHandlers = {
 
 /** 朗读一段文本。lang 用 "en" / "fr" 这样的基础语言码 */
 export function speak(text: string, lang: string, handlers: SpeakHandlers = {}): void {
-  const { rate = DEFAULT_RATE, onSettled, onError } = handlers;
+  const { rate = DEFAULT_RATE, voice: preferred, onSettled, onError } = handlers;
 
   const fail = (failure: SpeechFailure) => {
     clearWatchdog();
@@ -131,8 +234,13 @@ export function speak(text: string, lang: string, handlers: SpeakHandlers = {}):
     window.speechSynthesis.cancel();
   }
 
+  const voice = pickVoice(lang, preferred);
+  if (!voice && voicesLoaded()) {
+    fail({ message: missingVoiceMessage(lang), detail: diagnostics(lang, voice) });
+    return;
+  }
+
   const utterance = new SpeechSynthesisUtterance(text);
-  const voice = pickVoice(lang);
   if (voice) utterance.voice = voice;
   utterance.lang = voice?.lang ?? LANG_PREFERENCE[lang]?.[0] ?? lang;
   utterance.rate = rate;

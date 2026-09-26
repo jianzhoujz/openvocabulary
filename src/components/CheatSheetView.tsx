@@ -7,6 +7,7 @@ import { closeSheet, openSheet } from "@/cheatsheets/route";
 import type { Block, Rich, Sheet } from "@/cheatsheets/types";
 import { SpeechRateButton, ThemeToggle } from "@/components/HeaderControls";
 import { SpeechErrorToast } from "@/components/SpeechErrorToast";
+import { VoicePicker } from "@/components/VoicePicker";
 import { Button } from "@/components/ui/button";
 import { useSpeech } from "@/hooks/useSpeech";
 import { cn } from "@/lib/utils";
@@ -244,11 +245,14 @@ export function CheatSheetView({ id }: { id: string }) {
 
       {state === "ready" && sheet && (
         <article>
-          {index >= 0 && (
-            <div className="text-muted-foreground pt-4 text-xs tabular-nums">
-              第 {index + 1} 篇 / 共 {SHEETS.length} 篇
-            </div>
-          )}
+          <div className="text-muted-foreground flex items-center gap-3 pt-4 text-xs">
+            {index >= 0 && (
+              <span className="shrink-0 tabular-nums">
+                第 {index + 1} 篇 / 共 {SHEETS.length} 篇
+              </span>
+            )}
+            {supported && <VoicePicker lang="fr" className="ml-auto" />}
+          </div>
           <h1 className="pt-1 text-2xl font-semibold tracking-tight">{sheet.title}</h1>
           <p className="text-muted-foreground mt-3 leading-relaxed">
             <RichText text={sheet.lead} say={speak} />

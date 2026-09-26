@@ -394,13 +394,30 @@ describe("音标与朗读", () => {
     }
   }
 
-  function stubSpeech(speak?: (u: FakeUtterance) => void) {
+  /** 模仿 Edge：一个系统自带的英语声音，一个在线、一个离线的法语声音 */
+  const VOICES = [
+    { lang: "en-CA", name: "Test Voice", voiceURI: "en-test", localService: true },
+    {
+      lang: "fr-CA",
+      name: "Microsoft Sylvie Online (Natural) - French (Canada)",
+      voiceURI: "fr-sylvie",
+      localService: false,
+    },
+    {
+      lang: "fr-FR",
+      name: "Microsoft Paul - French (France)",
+      voiceURI: "fr-paul",
+      localService: true,
+    },
+  ];
+
+  function stubSpeech(speak?: (u: FakeUtterance) => void, voices = VOICES) {
     spoken.length = 0;
     lastUtterance = null;
     vi.stubGlobal("speechSynthesis", {
       speaking: false,
       pending: false,
-      getVoices: () => [{ lang: "en-CA", name: "Test Voice" }],
+      getVoices: () => voices,
       speak: (u: FakeUtterance) => {
         lastUtterance = u;
         spoken.push(u.text);
@@ -603,6 +620,42 @@ describe("音标与朗读", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "返回首页" }));
     expect(await screen.findByText("选一个词表开始")).toBeTruthy();
+  });
+
+  it("速查页摆出当前朗读用的声音：名字、口音、在线还是离线", async () => {
+    stubSpeech();
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    // 按 fr-CA 优先，同地区在线的在前
+    expect(screen.getByText("Sylvie · 加拿大法语 · 在线", { selector: "span" })).toBeTruthy();
+  });
+
+  it("换了声音，下一次朗读就用新声音，并记进设置", async () => {
+    stubSpeech();
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    fireEvent.change(screen.getByLabelText("法语朗读声音"), { target: { value: "fr-paul" } });
+    expect(useStore.getState().settings.voices.fr).toBe("fr-paul");
+    expect(screen.getByText("Paul · 法国法语 · 离线", { selector: "span" })).toBeTruthy();
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
+    expect((lastUtterance!.voice as { voiceURI: string }).voiceURI).toBe("fr-paul");
+  });
+
+  it("系统没有法语声音时不拿别的语言的声音硬读，而是说清楚原因", async () => {
+    stubSpeech(undefined, VOICES.slice(0, 1));
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    expect(screen.getByText("没有法语语音")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
+    expect(spoken).toEqual([]);
+    expect(screen.getByRole("alert").textContent).toContain("这台设备没有法语语音");
   });
 
   it("翻速查页不算学习时长", async () => {

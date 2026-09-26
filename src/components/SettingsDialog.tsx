@@ -1,6 +1,8 @@
 import { PanelDialog } from "@/components/PanelDialog";
+import { VoicePicker } from "@/components/VoicePicker";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { speechSupported } from "@/lib/speech";
 import { SPEECH_RATES, useStore } from "@/store";
 
 type Props = {
@@ -73,6 +75,25 @@ export function SettingsDialog({ open, onOpenChange }: Props) {
           ))}
         </ToggleGroup>
       </div>
+
+      {speechSupported() && (
+        <div>
+          <div className="text-sm font-medium">朗读声音</div>
+          <p className="text-muted-foreground mt-0.5 mb-2 text-xs">
+            发音由声音决定。在线声音由浏览器联网合成，通常更自然；离线声音装在系统里，断网也能用
+          </p>
+          <div className="flex flex-col gap-2">
+            {["en", "fr"].map((lang) => (
+              <div key={lang} className="flex items-center gap-3 text-sm">
+                <span className="text-muted-foreground w-8 shrink-0">
+                  {lang === "en" ? "英语" : "法语"}
+                </span>
+                <VoicePicker lang={lang} className="min-w-0 flex-1 text-sm" fallback />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div>
         <div className="text-sm font-medium">新词节流</div>

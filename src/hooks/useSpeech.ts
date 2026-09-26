@@ -13,6 +13,7 @@ import { useStore } from "@/store";
 export function useSpeech(lang: string) {
   const [supported] = useState(speechSupported);
   const rate = useStore((s) => s.settings.speechRate);
+  const preferred = useStore((s) => s.settings.voices[lang]);
   const [speaking, setSpeaking] = useState(false);
   const [failure, setFailure] = useState<SpeechFailure | null>(null);
 
@@ -31,11 +32,12 @@ export function useSpeech(lang: string) {
       setSpeaking(true);
       speak(text, lang, {
         rate,
+        voice: preferred,
         onSettled: () => setSpeaking(false),
         onError: quiet ? undefined : setFailure,
       });
     },
-    [lang, rate],
+    [lang, rate, preferred],
   );
 
   const dismissFailure = useCallback(() => setFailure(null), []);

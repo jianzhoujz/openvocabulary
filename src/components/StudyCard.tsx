@@ -2,6 +2,7 @@ import { Volume2 } from "lucide-react";
 import { useEffect } from "react";
 
 import { SpeechErrorToast } from "@/components/SpeechErrorToast";
+import { VoicePicker } from "@/components/VoicePicker";
 import { useFitWords } from "@/hooks/useFitWords";
 import { useSpeech } from "@/hooks/useSpeech";
 import { cn } from "@/lib/utils";
@@ -113,6 +114,7 @@ export function StudyCard({
             {card.section}
           </span>
           <span className="truncate">{sectionLabel}</span>
+          {supported && <VoicePicker lang={deck.lang} className="ml-auto max-w-[55%]" />}
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto py-6">

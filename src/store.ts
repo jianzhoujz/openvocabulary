@@ -16,6 +16,7 @@ export const DEFAULT_SETTINGS: Settings = {
   autoSpeak: true,
   theme: "light",
   speechRate: 0.5,
+  voices: {},
 };
 
 /** 朗读语速档位。各家引擎对同一个 rate 的实际快慢不一样，所以只给相对档位 */
