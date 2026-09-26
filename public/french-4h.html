@@ -1,0 +1,1740 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <style>
+      body {
+        margin: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+      [hidden] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <title>法语四小时</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap"
+    />
+    <style>
+      :root {
+        --bg: #eef0f5;
+        --surface: #fbfbfd;
+        --ink: #1a1f3a;
+        --muted: #5b6179;
+        --line: #d9dce7;
+        --accent: #2446c7;
+        --accent-soft: #e3e8fb;
+        --mark: #b87a0b;
+        --mark-soft: #fbefd2;
+        --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        --serif: "Noto Serif SC", "Songti SC", "SimSun", serif;
+        --fr: "Literata", Georgia, "Times New Roman", serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          color-scheme: dark;
+          --bg: #0e1120;
+          --surface: #171b2e;
+          --ink: #e7e9f4;
+          --muted: #9ba1bb;
+          --line: #2a3050;
+          --accent: #93a8ff;
+          --accent-soft: #232c52;
+          --mark: #e9b54c;
+          --mark-soft: #3a3018;
+        }
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0e1120;
+        --surface: #171b2e;
+        --ink: #e7e9f4;
+        --muted: #9ba1bb;
+        --line: #2a3050;
+        --accent: #93a8ff;
+        --accent-soft: #232c52;
+        --mark: #e9b54c;
+        --mark-soft: #3a3018;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        padding-inline: 16px;
+        box-sizing: border-box;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-block: 12px 10px;
+        max-width: 1400px;
+        width: 100%;
+        margin-inline: auto;
+      }
+      .brand {
+        font-family: var(--serif);
+        font-weight: 900;
+        font-size: 17px;
+        letter-spacing: 0.02em;
+      }
+      .brand span {
+        font-family: var(--fr);
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 14px;
+        margin-left: 8px;
+      }
+      .chip {
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .chip b {
+        color: var(--accent);
+        font-weight: 500;
+      }
+
+      .stage-wrap {
+        flex: 1;
+        min-height: 0;
+        display: grid;
+        place-items: center;
+      }
+      .stage {
+        container-type: inline-size;
+        position: relative;
+        width: min(100%, calc((100dvh - 132px) * 16 / 9));
+        aspect-ratio: 16/9;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        padding: 4.6cqw 6cqw 4cqw;
+        overflow: auto;
+        display: none;
+        flex-direction: column;
+        gap: 1.6cqw;
+        font-size: clamp(14px, 1.62cqw, 26px);
+        line-height: 1.6;
+      }
+      .slide.on {
+        display: flex;
+        animation: in 0.28s ease-out;
+      }
+      @keyframes in {
+        from {
+          opacity: 0.4;
+          transform: translateX(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .slide.on {
+          animation: none;
+        }
+      }
+
+      .eyebrow {
+        font-size: 0.78em;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--serif);
+        margin: 0;
+        text-wrap: balance;
+        line-height: 1.25;
+      }
+      h2 {
+        font-size: clamp(22px, 3.1cqw, 50px);
+        font-weight: 900;
+      }
+      h3 {
+        font-size: 1.08em;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      p {
+        margin: 0;
+      }
+      .lead {
+        color: var(--muted);
+        max-width: 44em;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 0.9em;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(13em, 1fr));
+        gap: 1.4em 2.2em;
+        align-content: start;
+      }
+      .cols.two {
+        grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+      }
+      .block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35em;
+      }
+      ul.plain {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35em;
+      }
+      .hl {
+        color: var(--mark);
+        font-weight: 700;
+      }
+      .key {
+        background: var(--mark-soft);
+        padding: 0.05em 0.35em;
+        border-radius: 4px;
+      }
+
+      /* speakable French */
+      i {
+        font-style: normal;
+        font-family: var(--fr);
+        color: var(--accent);
+        cursor: pointer;
+        border-bottom: 1.5px dotted currentColor;
+        border-radius: 3px;
+        padding: 0 0.08em;
+        transition: background 0.15s;
+      }
+      i:hover {
+        background: var(--accent-soft);
+        border-bottom-style: solid;
+      }
+      i:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      i.speaking {
+        background: var(--mark-soft);
+        color: var(--ink);
+        border-bottom-color: var(--mark);
+      }
+
+      .tbl {
+        overflow-x: auto;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-variant-numeric: tabular-nums;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 0.42em 0.8em 0.42em 0;
+        border-bottom: 1px solid var(--line);
+        vertical-align: top;
+      }
+      th {
+        font-size: 0.8em;
+        font-weight: 500;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      /* cover */
+      .cover {
+        justify-content: center;
+        gap: 2.2cqw;
+      }
+      .cover h1 {
+        font-size: clamp(34px, 6.6cqw, 110px);
+        font-weight: 900;
+        letter-spacing: 0.01em;
+      }
+      .cover .fr-title {
+        font-family: var(--fr);
+        font-size: clamp(18px, 2.6cqw, 42px);
+        color: var(--accent);
+      }
+      .howto {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6em 2em;
+        color: var(--muted);
+        font-size: 0.92em;
+        border-top: 1px solid var(--line);
+        padding-top: 1.2em;
+        max-width: 52em;
+      }
+      kbd {
+        font-family: var(--sans);
+        font-size: 0.85em;
+        border: 1px solid var(--line);
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        padding: 0 0.4em;
+        background: var(--bg);
+      }
+
+      /* route */
+      .route {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        gap: 0 2.4em;
+      }
+      .route button {
+        all: unset;
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 2.2em 6.2em 1fr;
+        gap: 0.6em;
+        align-items: baseline;
+        padding: 0.55em 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .route button:hover .t {
+        color: var(--accent);
+      }
+      .route button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .route .n {
+        font-family: var(--fr);
+        font-weight: 600;
+        color: var(--accent);
+      }
+      .route .tm {
+        font-size: 0.85em;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* section divider */
+      .divider {
+        justify-content: center;
+        gap: 1.4cqw;
+        background: linear-gradient(var(--accent-soft), var(--accent-soft)) left/1.1cqw 100%
+          no-repeat;
+      }
+      .divider .big {
+        font-family: var(--fr);
+        font-weight: 600;
+        font-size: clamp(48px, 11cqw, 180px);
+        line-height: 0.9;
+        color: var(--accent);
+      }
+      .divider h2 {
+        font-size: clamp(26px, 4.4cqw, 72px);
+      }
+      .divider .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em 2em;
+        color: var(--muted);
+      }
+
+      /* script sentences */
+      .script {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        font-size: 1.12em;
+      }
+      .script i {
+        line-height: 1.5;
+      }
+      .dialog {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.4em 0.9em;
+        align-items: baseline;
+      }
+      .dialog .who {
+        font-size: 0.8em;
+        color: var(--muted);
+      }
+
+      /* bottom bar */
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-block: 10px 14px;
+        max-width: 1400px;
+        width: 100%;
+        margin-inline: auto;
+        flex-wrap: wrap;
+      }
+      .btn {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 999px;
+        padding: 7px 14px;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1.2;
+      }
+      .btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .btn.primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--surface);
+      }
+      .btn.primary:hover {
+        color: var(--surface);
+        filter: brightness(1.08);
+      }
+      .btn[aria-pressed="true"] {
+        background: var(--mark-soft);
+        border-color: var(--mark);
+        color: var(--ink);
+      }
+      .progress {
+        flex: 1;
+        min-width: 80px;
+        height: 4px;
+        background: var(--line);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      .progress div {
+        height: 100%;
+        background: var(--accent);
+        width: 0;
+        transition: width 0.25s;
+      }
+      .count {
+        font-size: 13px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        min-width: 4.5em;
+        text-align: center;
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+        transform: translateX(-50%);
+        max-width: min(92vw, 560px);
+        background: var(--ink);
+        color: var(--surface);
+        padding: 10px 16px;
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 760px) {
+        html,
+        body {
+          height: auto;
+        }
+        .stage-wrap {
+          display: block;
+        }
+        .stage {
+          width: 100%;
+          aspect-ratio: auto;
+        }
+        .slide {
+          position: static;
+          min-height: 70vh;
+          padding: 22px 18px 26px;
+          gap: 14px;
+          font-size: 15px;
+        }
+        .chip {
+          display: none;
+        }
+        .route button {
+          grid-template-columns: 2em 5.6em 1fr;
+        }
+        .bar {
+          position: sticky;
+          bottom: 0;
+          background: var(--bg);
+          padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        }
+        .btn {
+          padding: 7px 11px;
+        }
+      }
+    </style>
+
+    <header class="top">
+      <div class="brand">法语四小时<span>Le français en quatre heures</span></div>
+      <div class="chip" id="chip"></div>
+    </header>
+
+    <main class="stage-wrap">
+      <div class="stage" id="stage">
+        <!-- 封面 -->
+        <section class="slide cover" data-sec="开始">
+          <div class="eyebrow">零基础 · 中文母语 · 有英语底子</div>
+          <h1>4 小时法语入门</h1>
+          <p class="fr-title"><i>Le français en quatre heures</i></p>
+          <p class="lead">
+            学完以后：能把大部分法语单词读出来，能用现在时、否定句和疑问句说简单的句子，能做一段 30
+            秒的自我介绍。英语会帮你很多，所以这门课只讲法语<b>和英语不一样</b>的地方。
+          </p>
+          <div class="howto">
+            <span>点<i>蓝色的法语</i>听发音</span>
+            <span><b>朗读本页</b>：把这一页的法语按顺序读一遍</span>
+            <span><kbd>←</kbd> <kbd>→</kbd> 翻页，手机上左右滑动</span>
+          </div>
+        </section>
+
+        <!-- 路线 -->
+        <section class="slide" data-sec="开始">
+          <div class="eyebrow">课程安排</div>
+          <h2>8 节课，从读音到开口</h2>
+          <div class="route">
+            <button data-goto="s1">
+              <span class="n">1</span><span class="tm">0:00–0:35</span
+              ><span class="t">发音：看到就能读</span>
+            </button>
+            <button data-goto="s2">
+              <span class="n">2</span><span class="tm">0:35–0:50</span
+              ><span class="t">打招呼与礼貌用语</span>
+            </button>
+            <button data-goto="s3">
+              <span class="n">3</span><span class="tm">0:50–1:30</span
+              ><span class="t">名词的阴阳性与冠词</span>
+            </button>
+            <button data-goto="s4">
+              <span class="n">4</span><span class="tm">1:30–2:30</span
+              ><span class="t">动词核心 ★ 最重要</span>
+            </button>
+            <button data-goto="s5">
+              <span class="n">5</span><span class="tm">2:30–3:05</span
+              ><span class="t">否定句与疑问句</span>
+            </button>
+            <button data-goto="s6">
+              <span class="n">6</span><span class="tm">3:05–3:35</span
+              ><span class="t">形容词、物主和数字</span>
+            </button>
+            <button data-goto="s7">
+              <span class="n">7</span><span class="tm">3:35–3:50</span
+              ><span class="t">过去和将来</span>
+            </button>
+            <button data-goto="s8">
+              <span class="n">8</span><span class="tm">3:50–4:00</span
+              ><span class="t">结业：自我介绍</span>
+            </button>
+          </div>
+          <p class="note">点任意一行跳到那一节。中间累了就在第 4 节前后休息 10 分钟。</p>
+        </section>
+
+        <!-- ============ 1 发音 ============ -->
+        <section class="slide divider" id="s1" data-sec="第 1 节 · 发音">
+          <div class="big">1</div>
+          <h2>发音：看到就能读</h2>
+          <div class="meta">
+            <span>0:00–0:35</span><span>法语拼写虽然长，但比英语规则得多</span>
+          </div>
+          <p class="lead">这一节最值得花时间。规则记住了，以后遇到生词也能读出来。</p>
+        </section>
+
+        <section class="slide" data-sec="第 1 节 · 发音">
+          <div class="eyebrow">规则一</div>
+          <h2>写出来的字母，很多不读</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>词尾的辅音一般不读</h3>
+              <ul class="plain">
+                <li><i>petit</i>　<i>Paris</i>　<i>trois</i>　<i>beaucoup</i></li>
+                <li><i>parler</i>　<span class="note">动词词尾 -er 的 r 也不读</span></li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>
+                只有 <span class="hl">C R F L</span> 常读（记 <span class="key">CaReFuL</span>）
+              </h3>
+              <ul class="plain">
+                <li><i>avec</i>　<i>bonjour</i>　<i>neuf</i>　<i>animal</i></li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>词尾的 e 不读</h3>
+              <ul class="plain">
+                <li><i>France</i>　<i>table</i>　<i>rouge</i></li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>h 永远不读</h3>
+              <ul class="plain">
+                <li><i>hôtel</i>　<i>homme</i>　<i>histoire</i></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 1 节 · 发音">
+          <div class="eyebrow">规则二</div>
+          <h2>字母组合：借拼音来记</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>写法</th>
+                <th>读音</th>
+                <th>接近</th>
+                <th>例词</th>
+              </tr>
+              <tr>
+                <td>u</td>
+                <td>[y]</td>
+                <td>拼音 ü</td>
+                <td><i>tu</i>　<i>rue</i>　<i>du</i></td>
+              </tr>
+              <tr>
+                <td>ou</td>
+                <td>[u]</td>
+                <td>拼音 u</td>
+                <td><i>vous</i>　<i>rouge</i>　<i>jour</i></td>
+              </tr>
+              <tr>
+                <td>oi</td>
+                <td>[wa]</td>
+                <td>拼音 wa</td>
+                <td><i>moi</i>　<i>trois</i>　<i>voiture</i></td>
+              </tr>
+              <tr>
+                <td>au / eau</td>
+                <td>[o]</td>
+                <td>拼音 o</td>
+                <td><i>eau</i>　<i>chaud</i>　<i>beau</i></td>
+              </tr>
+              <tr>
+                <td>ai / è / ê</td>
+                <td>[ɛ]</td>
+                <td>拼音 ie 里的 e</td>
+                <td><i>lait</i>　<i>mère</i>　<i>fête</i></td>
+              </tr>
+              <tr>
+                <td>eu</td>
+                <td>[ø]</td>
+                <td>拼音 e，嘴唇撮圆</td>
+                <td><i>deux</i>　<i>bleu</i></td>
+              </tr>
+              <tr>
+                <td>ch</td>
+                <td>[ʃ]</td>
+                <td>拼音 sh</td>
+                <td><i>chat</i>　<i>chocolat</i></td>
+              </tr>
+              <tr>
+                <td>gn</td>
+                <td>[ɲ]</td>
+                <td>“尼”</td>
+                <td><i>montagne</i>　<i>champagne</i></td>
+              </tr>
+              <tr>
+                <td>qu</td>
+                <td>[k]</td>
+                <td>拼音 k</td>
+                <td><i>qui</i>　<i>quatre</i></td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 1 节 · 发音">
+          <div class="eyebrow">规则三</div>
+          <h2>鼻化元音和三个辅音</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>鼻化元音：气从鼻子出来，舌根不碰上颚</h3>
+              <ul class="plain">
+                <li>an / en → [ɑ̃]　<i>enfant</i>　<i>France</i>　<i>temps</i></li>
+                <li>on → [ɔ̃]　<i>bon</i>　<i>nom</i>　<i>maison</i></li>
+                <li>in / ain → [ɛ̃]　<i>vin</i>　<i>pain</i>　<i>jardin</i></li>
+              </ul>
+              <p class="note">不要真的发出 n 或 ng 的尾音。</p>
+            </div>
+            <div class="block">
+              <h3>辅音</h3>
+              <ul class="plain">
+                <li><b>p t k 不送气</b>，接近拼音 b d g：<i>Paris</i>　<i>toi</i>　<i>café</i></li>
+                <li><b>r</b> 是小舌音，像轻轻漱口：<i>rouge</i>　<i>merci</i></li>
+                <li><b>j / 在 e、i 前的 g</b>，像英语 measure 里的 s：<i>je</i>　<i>orange</i></li>
+                <li>
+                  <b>在 e、i 前的 c</b> 和 <b>ç</b> 读 s：<i>merci</i>　<i>ça</i>　<i>garçon</i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 1 节 · 发音">
+          <div class="eyebrow">规则四</div>
+          <h2>重音、联诵和字母上的符号</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>重音落在最后一个音节，其余音节读得平均</h3>
+              <p><i>restaurant</i>　<i>université</i>　<i>chocolat</i></p>
+              <h3 style="margin-top: 0.6em">联诵：尾辅音和下一个词开头的元音连读</h3>
+              <p><i>les amis</i>　<i>vous avez</i>　<i>un hôtel</i>　<i>C'est un ami.</i></p>
+            </div>
+            <div class="block">
+              <h3>符号</h3>
+              <ul class="plain">
+                <li><b>é</b> 读 [e]，嘴角往两边拉：<i>café</i>　<i>été</i></li>
+                <li><b>è ê</b> 读 [ɛ]，嘴张得更开：<i>très</i>　<i>forêt</i></li>
+                <li><b>à ù</b> 读音不变，只用来区分意思：<i>à</i> 和 <i>a</i></li>
+                <li><b>ç</b> 读 s：<i>français</i></li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">练习：点“朗读本页”，每听一个就跟读一遍。</p>
+        </section>
+
+        <!-- ============ 2 礼貌 ============ -->
+        <section class="slide divider" id="s2" data-sec="第 2 节 · 打招呼">
+          <div class="big">2</div>
+          <h2>打招呼与礼貌用语</h2>
+          <div class="meta"><span>0:35–0:50</span><span>先背下来，马上就用得上</span></div>
+          <p class="lead"><i>Bonjour !</i> 是法国人最看重的一句话。进商店、上公交，先说它。</p>
+        </section>
+
+        <section class="slide" data-sec="第 2 节 · 打招呼">
+          <div class="eyebrow">常用表达</div>
+          <h2>15 句开口就能用的话</h2>
+          <div class="cols">
+            <div class="block">
+              <h3>见面</h3>
+              <ul class="plain">
+                <li><i>Bonjour</i>　你好（白天）</li>
+                <li><i>Bonsoir</i>　晚上好</li>
+                <li><i>Salut</i>　嗨（朋友之间）</li>
+                <li><i data-say="Enchanté">Enchanté(e)</i>　幸会</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>寒暄</h3>
+              <ul class="plain">
+                <li><i>Ça va ?</i>　还好吗？</li>
+                <li><i>Ça va bien, merci.</i>　挺好，谢谢</li>
+                <li><i>Et toi ?</i> / <i>Et vous ?</i>　你呢？</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>礼貌</h3>
+              <ul class="plain">
+                <li><i>Merci beaucoup</i>　非常感谢</li>
+                <li><i>De rien</i>　不客气</li>
+                <li><i>S'il vous plaît</i>　请</li>
+                <li><i>Pardon</i> / <i>Excusez-moi</i>　对不起／劳驾</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>告别</h3>
+              <ul class="plain">
+                <li><i>Au revoir</i>　再见</li>
+                <li><i>À bientôt</i>　回头见</li>
+                <li><i>Bonne journée</i>　祝你今天愉快</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 2 节 · 打招呼">
+          <div class="eyebrow">tu 还是 vous</div>
+          <h2>对陌生人用 vous，对朋友用 tu</h2>
+          <p class="lead">
+            <i>vous</i> 相当于“您”，同时也是“你们”。拿不准的时候一律用 <i>vous</i>，不会出错。
+          </p>
+          <div class="cols two">
+            <div class="block">
+              <h3>对店员、长辈（vous）</h3>
+              <div class="dialog">
+                <span class="who">A</span><i>Bonjour, madame. Comment allez-vous ?</i>
+                <span class="who">B</span><i>Très bien, merci. Et vous ?</i>
+                <span class="who">A</span><i>Bien, merci.</i>
+              </div>
+            </div>
+            <div class="block">
+              <h3>对朋友（tu）</h3>
+              <div class="dialog">
+                <span class="who">A</span><i>Salut ! Ça va ?</i> <span class="who">B</span
+                ><i>Oui, ça va. Et toi ?</i> <span class="who">A</span><i>Ça va. À plus !</i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 3 名词冠词 ============ -->
+        <section class="slide divider" id="s3" data-sec="第 3 节 · 名词与冠词">
+          <div class="big">3</div>
+          <h2>名词的阴阳性与冠词</h2>
+          <div class="meta"><span>0:50–1:30</span><span>英语里没有的新概念</span></div>
+          <p class="lead">每个名词都分阳性或阴性，放在前面的冠词要跟着变。</p>
+        </section>
+
+        <section class="slide" data-sec="第 3 节 · 名词与冠词">
+          <div class="eyebrow">阴阳性</div>
+          <h2>背单词时连冠词一起背</h2>
+          <p class="lead">
+            要背 <i>la table</i>，不要只背 <i>table</i>。桌子为什么是阴性，没有道理可讲。
+          </p>
+          <div class="cols two">
+            <div class="block">
+              <h3>多为阴性的词尾</h3>
+              <p>-tion　-té　-ette　-ure</p>
+              <p><i>la nation</i>　<i>la liberté</i>　<i>la voiture</i></p>
+            </div>
+            <div class="block">
+              <h3>多为阳性的词尾</h3>
+              <p>-ment　-age　-eau　-isme</p>
+              <p><i>le moment</i>　<i>le fromage</i>　<i>le bateau</i></p>
+            </div>
+            <div class="block">
+              <h3>复数一般加 s，但 s 不读</h3>
+              <p><i>le livre</i> → <i>les livres</i></p>
+              <p class="note">单复数听起来一样，要靠冠词分辨。</p>
+            </div>
+            <div class="block">
+              <h3>两个常见的特殊复数</h3>
+              <p><i>le bateau</i> → <i>les bateaux</i></p>
+              <p><i>un animal</i> → <i>des animaux</i></p>
+            </div>
+          </div>
+          <p class="note">
+            上面的词尾规律例外不少（比如 <i>la plage</i>、<i>l'eau</i> 都是阴性），只能当作参考。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 3 节 · 名词与冠词">
+          <div class="eyebrow">冠词</div>
+          <h2>三种冠词</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th></th>
+                <th>阳性</th>
+                <th>阴性</th>
+                <th>复数</th>
+                <th>例句</th>
+              </tr>
+              <tr>
+                <td>定冠词（the）</td>
+                <td><i>le</i></td>
+                <td><i>la</i></td>
+                <td><i>les</i></td>
+                <td><i>J'aime le café.</i></td>
+              </tr>
+              <tr>
+                <td>不定冠词（a）</td>
+                <td><i>un</i></td>
+                <td><i>une</i></td>
+                <td><i>des</i></td>
+                <td><i>J'ai un frère et une sœur.</i></td>
+              </tr>
+              <tr>
+                <td>部分冠词（some）</td>
+                <td><i>du</i></td>
+                <td><i>de la</i></td>
+                <td><i>des</i></td>
+                <td><i>Je mange du pain.</i></td>
+              </tr>
+            </table>
+          </div>
+          <div class="cols two">
+            <div class="block">
+              <h3>和英语不同 ①：名词前几乎都要有冠词</h3>
+              <p>英语说 I like coffee，法语说 <i>J'aime le café.</i>（泛指用 le/la/les）</p>
+            </div>
+            <div class="block">
+              <h3>和英语不同 ②：吃的、喝的用部分冠词</h3>
+              <p><i>Je bois de l'eau.</i>　<i>Je mange de la soupe.</i></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 3 节 · 名词与冠词">
+          <div class="eyebrow">省音、缩合和地名</div>
+          <h2>冠词的几种变形</h2>
+          <div class="cols">
+            <div class="block">
+              <h3>元音或 h 前省音</h3>
+              <p><i>l'ami</i>　<i>l'école</i>　<i>l'hôtel</i></p>
+            </div>
+            <div class="block">
+              <h3>à 和 de 遇到 le、les 要合并</h3>
+              <ul class="plain">
+                <li>à + le = <i>au</i>　<i>Je vais au cinéma.</i></li>
+                <li>à + les = <i>aux</i></li>
+                <li>de + le = <i>du</i>　<i>le livre du professeur</i></li>
+                <li>la 不变：<i>Je vais à la plage.</i></li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>城市用 à，国家看阴阳性</h3>
+              <ul class="plain">
+                <li><i>à Paris</i>　<i>à Shanghai</i></li>
+                <li><i>en France</i>　<i>en Chine</i>（阴性）</li>
+                <li><i>au Japon</i>（阳性）</li>
+                <li><i>aux États-Unis</i>（复数）</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>留意“假朋友”</h3>
+              <ul class="plain">
+                <li><i>la librairie</i>　书店，不是图书馆</li>
+                <li><i>actuellement</i>　目前，不是“实际上”</li>
+                <li><i>attendre</i>　等待，不是“参加”</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 4 动词 ============ -->
+        <section class="slide divider" id="s4" data-sec="第 4 节 · 动词核心">
+          <div class="big">4</div>
+          <h2>动词核心 ★</h2>
+          <div class="meta"><span>1:30–2:30</span><span>整门课最重要的一小时</span></div>
+          <p class="lead">
+            英语动词只在 he/she 后面加个 s，法语动词随主语变成 6 种形式，这叫<b>变位</b>。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 动词核心">
+          <div class="eyebrow">主语代词</div>
+          <h2>我、你、他</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th></th>
+                <th>单数</th>
+                <th>复数</th>
+              </tr>
+              <tr>
+                <td>第一人称</td>
+                <td><i>je</i>　我（元音前写成 <i>j'</i>）</td>
+                <td><i>nous</i>　我们</td>
+              </tr>
+              <tr>
+                <td>第二人称</td>
+                <td><i>tu</i>　你</td>
+                <td><i>vous</i>　你们／您</td>
+              </tr>
+              <tr>
+                <td>第三人称</td>
+                <td><i>il</i>　他　<i>elle</i>　她　<i>on</i>　人们／我们</td>
+                <td><i>ils</i>　他们　<i>elles</i>　她们</td>
+              </tr>
+            </table>
+          </div>
+          <div class="cols two">
+            <div class="block">
+              <h3>口语里 on 基本就是“我们”</h3>
+              <p><i>On y va !</i>　咱们走吧！它跟 il 用同一种变位，比 nous 省事。</p>
+            </div>
+            <div class="block">
+              <h3>男女混合的一群人用 ils</h3>
+              <p>只有全是女性时才用 <i>elles</i>。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 动词核心">
+          <div class="eyebrow">必背</div>
+          <h2>être（是）和 avoir（有）</h2>
+          <div class="cols two">
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th colspan="2">être 是</th>
+                </tr>
+                <tr>
+                  <td><i>je suis</i></td>
+                  <td><i>nous sommes</i></td>
+                </tr>
+                <tr>
+                  <td><i>tu es</i></td>
+                  <td><i>vous êtes</i></td>
+                </tr>
+                <tr>
+                  <td><i>il est</i></td>
+                  <td><i>ils sont</i></td>
+                </tr>
+              </table>
+            </div>
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th colspan="2">avoir 有</th>
+                </tr>
+                <tr>
+                  <td><i>j'ai</i></td>
+                  <td><i>nous avons</i></td>
+                </tr>
+                <tr>
+                  <td><i>tu as</i></td>
+                  <td><i>vous avez</i></td>
+                </tr>
+                <tr>
+                  <td><i>il a</i></td>
+                  <td><i>ils ont</i></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="script">
+            <i>Je suis étudiant.</i>
+            <i>Elle est chinoise.</i>
+            <i>Nous avons un chat.</i>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 动词核心">
+          <div class="eyebrow">规则动词</div>
+          <h2>-er 动词：一套规律管九成</h2>
+          <div class="cols two">
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th colspan="2">parler 说</th>
+                </tr>
+                <tr>
+                  <td><i>je parle</i></td>
+                  <td><i>nous parlons</i></td>
+                </tr>
+                <tr>
+                  <td><i>tu parles</i></td>
+                  <td><i>vous parlez</i></td>
+                </tr>
+                <tr>
+                  <td><i>il parle</i></td>
+                  <td><i>ils parlent</i></td>
+                </tr>
+              </table>
+            </div>
+            <div class="block">
+              <h3>去掉 -er，按人称加词尾</h3>
+              <p>-e　-es　-e　-ons　-ez　-ent</p>
+              <p>
+                <span class="key">关键</span>
+                <b>je / tu / il / ils</b> 四个形式读音完全相同，-es、-ent 都不发音。口语里只需要记 3
+                种读音。
+              </p>
+            </div>
+          </div>
+          <div class="script">
+            <i>J'habite à Shanghai.</i>
+            <i>Tu aimes le thé ?</i>
+            <i>Nous travaillons ici.</i>
+            <i>Ils regardent la télé.</i>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 动词核心">
+          <div class="eyebrow">高频不规则动词</div>
+          <h2>aller、faire、vouloir</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th></th>
+                <th>aller 去</th>
+                <th>faire 做</th>
+                <th>vouloir 想要</th>
+              </tr>
+              <tr>
+                <td>je</td>
+                <td><i>je vais</i></td>
+                <td><i>je fais</i></td>
+                <td><i>je veux</i></td>
+              </tr>
+              <tr>
+                <td>tu</td>
+                <td><i>tu vas</i></td>
+                <td><i>tu fais</i></td>
+                <td><i>tu veux</i></td>
+              </tr>
+              <tr>
+                <td>il / elle / on</td>
+                <td><i>il va</i></td>
+                <td><i>il fait</i></td>
+                <td><i>il veut</i></td>
+              </tr>
+              <tr>
+                <td>nous</td>
+                <td><i>nous allons</i></td>
+                <td><i>nous faisons</i></td>
+                <td><i>nous voulons</i></td>
+              </tr>
+              <tr>
+                <td>vous</td>
+                <td><i>vous allez</i></td>
+                <td><i>vous faites</i></td>
+                <td><i>vous voulez</i></td>
+              </tr>
+              <tr>
+                <td>ils / elles</td>
+                <td><i>ils vont</i></td>
+                <td><i>ils font</i></td>
+                <td><i>ils veulent</i></td>
+              </tr>
+            </table>
+          </div>
+          <p>
+            <i>Je vais à Paris.</i>　<i>Je fais du sport.</i>　<i
+              >Je voudrais un café, s'il vous plaît.</i
+            >（更礼貌的“我想要”，整句背下来）
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 动词核心">
+          <div class="eyebrow">和英语不一样</div>
+          <h2>这些意思，法语用 avoir 或 faire</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>英语</th>
+                <th>法语</th>
+                <th>字面意思</th>
+              </tr>
+              <tr>
+                <td>I am 25.</td>
+                <td><i>J'ai vingt-cinq ans.</i></td>
+                <td>我有 25 年</td>
+              </tr>
+              <tr>
+                <td>I'm hungry.</td>
+                <td><i>J'ai faim.</i></td>
+                <td>我有饿</td>
+              </tr>
+              <tr>
+                <td>I'm thirsty.</td>
+                <td><i>J'ai soif.</i></td>
+                <td>我有渴</td>
+              </tr>
+              <tr>
+                <td>I'm cold.</td>
+                <td><i>J'ai froid.</i></td>
+                <td>我有冷</td>
+              </tr>
+              <tr>
+                <td>The weather is nice.</td>
+                <td><i>Il fait beau.</i></td>
+                <td>它做好天</td>
+              </tr>
+              <tr>
+                <td>There is a café here.</td>
+                <td><i>Il y a un café ici.</i></td>
+                <td>il y a = there is / are</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ 5 否定疑问 ============ -->
+        <section class="slide divider" id="s5" data-sec="第 5 节 · 否定与疑问">
+          <div class="big">5</div>
+          <h2>否定句与疑问句</h2>
+          <div class="meta"><span>2:30–3:05</span><span>会说“不”，会提问，就能聊起来</span></div>
+          <p class="lead">
+            先把这两句背熟：<i>Je ne comprends pas.</i>　<i
+              >Vous pouvez répéter, s'il vous plaît ?</i
+            >
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 5 节 · 否定与疑问">
+          <div class="eyebrow">否定</div>
+          <h2>ne … pas 像夹子，夹住动词</h2>
+          <div class="script">
+            <i>Je ne parle pas français.</i>
+            <i>Je n'aime pas le café.</i>
+          </div>
+          <div class="cols two">
+            <div class="block">
+              <h3>否定句里 un / une / des 变成 de</h3>
+              <p><i>J'ai un chat.</i> → <i>Je n'ai pas de chat.</i></p>
+              <p class="note">le / la / les 不变。</p>
+            </div>
+            <div class="block">
+              <h3>把 pas 换掉，意思跟着变</h3>
+              <ul class="plain">
+                <li><i>Je ne bois jamais de café.</i>　从不</li>
+                <li><i>Je ne fume plus.</i>　不再</li>
+                <li><i>Je ne comprends rien.</i>　什么都不</li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">口语里常把 ne 省掉：<i>Je sais pas.</i></p>
+        </section>
+
+        <section class="slide" data-sec="第 5 节 · 否定与疑问">
+          <div class="eyebrow">疑问</div>
+          <h2>三种问法和 8 个疑问词</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>一个问题，三种说法</h3>
+              <ul class="plain">
+                <li><i>Tu parles français ?</i>　句尾语调上扬，最常用</li>
+                <li><i>Est-ce que tu parles français ?</i>　加 Est-ce que，最稳妥</li>
+                <li><i>Parles-tu français ?</i>　倒装，比较书面</li>
+              </ul>
+            </div>
+            <div class="tbl">
+              <table>
+                <tr>
+                  <td><i>Qui est-ce ?</i></td>
+                  <td>谁</td>
+                </tr>
+                <tr>
+                  <td><i>Qu'est-ce que c'est ?</i></td>
+                  <td>什么</td>
+                </tr>
+                <tr>
+                  <td><i>Où est la gare ?</i></td>
+                  <td>哪里</td>
+                </tr>
+                <tr>
+                  <td><i>Quand est-ce que tu arrives ?</i></td>
+                  <td>什么时候</td>
+                </tr>
+                <tr>
+                  <td><i>Comment tu t'appelles ?</i></td>
+                  <td>怎样</td>
+                </tr>
+                <tr>
+                  <td><i>Pourquoi tu apprends le français ?</i></td>
+                  <td>为什么</td>
+                </tr>
+                <tr>
+                  <td><i>Combien ça coûte ?</i></td>
+                  <td>多少</td>
+                </tr>
+                <tr>
+                  <td><i>Quel âge as-tu ?</i></td>
+                  <td>哪个／什么</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 6 形容词 数字 ============ -->
+        <section class="slide divider" id="s6" data-sec="第 6 节 · 形容词与数字">
+          <div class="big">6</div>
+          <h2>形容词、物主和数字</h2>
+          <div class="meta"><span>3:05–3:35</span><span>名词会说了，再给它加上修饰</span></div>
+          <p class="lead">形容词和“我的、你的”都要跟着名词变阴阳性和单复数。</p>
+        </section>
+
+        <section class="slide" data-sec="第 6 节 · 形容词与数字">
+          <div class="eyebrow">形容词</div>
+          <h2>多数放在名词后面</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>一般放在后面</h3>
+              <p><i>un livre intéressant</i>　<i>une robe rouge</i>　<i>le vin blanc</i></p>
+              <h3 style="margin-top: 0.6em">短小常用的放在前面</h3>
+              <p>大小、好坏、美丑、新老：</p>
+              <p>
+                <i>un petit café</i>　<i>un bon restaurant</i>　<i>une belle maison</i>　<i
+                  >une vieille ville</i
+                >
+              </p>
+            </div>
+            <div class="block">
+              <h3>要和名词配合：阴性加 e，复数加 s</h3>
+              <div class="tbl">
+                <table>
+                  <tr>
+                    <th></th>
+                    <th>单数</th>
+                    <th>复数</th>
+                  </tr>
+                  <tr>
+                    <td>阳性</td>
+                    <td><i>petit</i></td>
+                    <td><i>petits</i></td>
+                  </tr>
+                  <tr>
+                    <td>阴性</td>
+                    <td><i>petite</i></td>
+                    <td><i>petites</i></td>
+                  </tr>
+                </table>
+              </div>
+              <p class="note">
+                听一下：<i>petit</i> 的 t 不读，<i>petite</i> 的 t 要读出来。国籍也一样：<i
+                  >chinois</i
+                >
+                → <i>chinoise</i>。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 6 节 · 形容词与数字">
+          <div class="eyebrow">物主形容词</div>
+          <h2>“我的”跟着东西变，不跟着人变</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th></th>
+                <th>阳性单数</th>
+                <th>阴性单数</th>
+                <th>复数</th>
+              </tr>
+              <tr>
+                <td>我的</td>
+                <td><i>mon père</i></td>
+                <td><i>ma mère</i></td>
+                <td><i>mes parents</i></td>
+              </tr>
+              <tr>
+                <td>你的</td>
+                <td><i>ton livre</i></td>
+                <td><i>ta voiture</i></td>
+                <td><i>tes amis</i></td>
+              </tr>
+              <tr>
+                <td>他的／她的</td>
+                <td><i>son frère</i></td>
+                <td><i>sa sœur</i></td>
+                <td><i>ses enfants</i></td>
+              </tr>
+              <tr>
+                <td>我们的</td>
+                <td colspan="2"><i>notre maison</i></td>
+                <td><i>nos amis</i></td>
+              </tr>
+              <tr>
+                <td>你们的／您的</td>
+                <td colspan="2"><i>votre nom</i></td>
+                <td><i>vos billets</i></td>
+              </tr>
+              <tr>
+                <td>他们的</td>
+                <td colspan="2"><i>leur fils</i></td>
+                <td><i>leurs enfants</i></td>
+              </tr>
+            </table>
+          </div>
+          <p class="note">
+            <i>sa mère</i> 既可以是“他的妈妈”，也可以是“她的妈妈”，别被英语的 his / her
+            带偏。阴性词以元音开头时用 mon：<i>mon amie</i>。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 6 节 · 形容词与数字">
+          <div class="eyebrow">数字</div>
+          <h2>1 到 20 靠背，70 以后做算术</h2>
+          <p>
+            <i>un</i> <i>deux</i> <i>trois</i> <i>quatre</i> <i>cinq</i> <i>six</i> <i>sept</i>
+            <i>huit</i> <i>neuf</i> <i>dix</i>
+          </p>
+          <p>
+            <i>onze</i> <i>douze</i> <i>treize</i> <i>quatorze</i> <i>quinze</i> <i>seize</i>
+            <i>dix-sept</i> <i>dix-huit</i> <i>dix-neuf</i> <i>vingt</i>
+          </p>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>数字</th>
+                <th>法语</th>
+                <th>算法</th>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td><i>vingt et un</i></td>
+                <td>20 和 1</td>
+              </tr>
+              <tr>
+                <td>30 · 40 · 50 · 60</td>
+                <td><i>trente</i> <i>quarante</i> <i>cinquante</i> <i>soixante</i></td>
+                <td>正常</td>
+              </tr>
+              <tr>
+                <td>70</td>
+                <td><i>soixante-dix</i></td>
+                <td>60 + 10</td>
+              </tr>
+              <tr>
+                <td>80</td>
+                <td><i>quatre-vingts</i></td>
+                <td>4 × 20</td>
+              </tr>
+              <tr>
+                <td>90</td>
+                <td><i>quatre-vingt-dix</i></td>
+                <td>4 × 20 + 10</td>
+              </tr>
+              <tr>
+                <td>97</td>
+                <td><i>quatre-vingt-dix-sept</i></td>
+                <td>4 × 20 + 10 + 7</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ 7 过去将来 ============ -->
+        <section class="slide divider" id="s7" data-sec="第 7 节 · 过去和将来">
+          <div class="big">7</div>
+          <h2>过去和将来</h2>
+          <div class="meta"><span>3:35–3:50</span><span>两个结构，日常够用</span></div>
+          <p class="lead">都是“助动词 + 另一个动词”，你已经会的 aller 和 avoir 这时就用上了。</p>
+        </section>
+
+        <section class="slide" data-sec="第 7 节 · 过去和将来">
+          <div class="eyebrow">两种时态</div>
+          <h2>“要去做”和“做过了”</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>最近将来时 = aller + 动词原形</h3>
+              <div class="script">
+                <i>Je vais manger.</i>
+                <i>Ce soir, je vais regarder un film.</i>
+                <i>Demain, nous allons visiter le Louvre.</i>
+              </div>
+            </div>
+            <div class="block">
+              <h3>复合过去时 = avoir + 过去分词</h3>
+              <div class="script">
+                <i>J'ai mangé.</i>
+                <i>Hier, j'ai regardé un film.</i>
+                <i>J'ai fait du sport.</i>
+              </div>
+              <p class="note">
+                -er 动词把 -er 换成 -é。常见不规则：faire → <i>fait</i>，voir → <i>vu</i>，prendre →
+                <i>pris</i>。
+              </p>
+            </div>
+          </div>
+          <div class="block">
+            <h3>表示移动的动词用 être，过去分词和主语配合</h3>
+            <p>
+              <i data-say="Je suis allé à Paris.">Je suis allé(e) à Paris.</i>　<i
+                >Elle est arrivée hier.</i
+              >　<span class="note">这类动词还有 venir、partir、rester 等</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ 8 结业 ============ -->
+        <section class="slide divider" id="s8" data-sec="第 8 节 · 结业">
+          <div class="big">8</div>
+          <h2>结业：自我介绍</h2>
+          <div class="meta"><span>3:50–4:00</span><span>把前面所有内容串起来</span></div>
+          <p class="lead">先跟着朗读听几遍，再遮住屏幕，把括号里的信息换成你自己的，大声说出来。</p>
+        </section>
+
+        <section class="slide" data-sec="第 8 节 · 结业">
+          <div class="eyebrow">示范</div>
+          <h2>30 秒自我介绍</h2>
+          <div class="script">
+            <i>Bonjour ! Je m'appelle Li Ming.</i>
+            <i>Je suis chinois et j'habite à Shanghai.</i>
+            <i>J'ai vingt-huit ans.</i>
+            <i>Je parle chinois et anglais, et j'apprends le français.</i>
+            <i>J'aime la musique, mais je n'aime pas le sport.</i>
+            <i>Le week-end dernier, j'ai regardé un film.</i>
+            <i>Demain, je vais travailler.</i>
+            <i>Et vous, comment vous appelez-vous ?</i>
+          </div>
+          <p class="note">
+            每一句都对应前面的一节：être、avoir、-er 动词、否定、过去时、将来时、疑问句。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 8 节 · 结业">
+          <div class="eyebrow">自测与下一步</div>
+          <h2>学完了，检查一下</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>能做到就算过关</h3>
+              <ul class="plain">
+                <li>□ 不看提示读出 <i>beaucoup</i>、<i>maison</i>、<i>les amis</i></li>
+                <li>□ 说出 être 和 avoir 的 6 个变位</li>
+                <li>□ 把 <i>J'ai un frère.</i> 改成否定句</li>
+                <li>□ 用三种方式问“你说法语吗”</li>
+                <li>□ 不看屏幕说完自我介绍</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>接下来</h3>
+              <ul class="plain">
+                <li>1. 每天背 20 个词，连冠词一起背</li>
+                <li>2. 背熟 être、avoir、aller、faire 和另外几个不规则动词的现在时</li>
+                <li>3. 先不学宾语代词（le / lui / y / en），等现在时说顺了再学</li>
+              </ul>
+              <p style="margin-top: 0.8em"><i>Bon courage !</i>　加油！</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <nav class="bar" aria-label="翻页">
+      <button class="btn" id="prev" aria-label="上一页">← 上一页</button>
+      <span class="count" id="count"></span>
+      <div class="progress" aria-hidden="true"><div id="prog"></div></div>
+      <button class="btn" id="rate" aria-pressed="false" title="切换朗读速度">慢速</button>
+      <button class="btn primary" id="readAll">朗读本页</button>
+      <button class="btn" id="next" aria-label="下一页">下一页 →</button>
+    </nav>
+    <div class="toast" id="toast" hidden></div>
+
+    <script>
+      (() => {
+        const slides = [...document.querySelectorAll(".slide")];
+        const $ = (id) => document.getElementById(id);
+        const chip = $("chip"),
+          count = $("count"),
+          prog = $("prog"),
+          readBtn = $("readAll"),
+          rateBtn = $("rate");
+        const synth = window.speechSynthesis;
+        let cur = 0,
+          voice = null,
+          slow = false,
+          reading = false,
+          toastTimer;
+
+        const store = {
+          get(k) {
+            try {
+              return localStorage.getItem(k);
+            } catch {
+              return null;
+            }
+          },
+          set(k, v) {
+            try {
+              localStorage.setItem(k, v);
+            } catch {}
+          },
+        };
+
+        document.querySelectorAll(".slide i").forEach((el) => {
+          el.tabIndex = 0;
+          el.setAttribute("role", "button");
+          el.title = "点击朗读";
+        });
+
+        function toast(msg, ms = 4000) {
+          const t = $("toast");
+          t.textContent = msg;
+          t.hidden = false;
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            t.hidden = true;
+          }, ms);
+        }
+
+        function pickVoice() {
+          if (!synth) return;
+          const vs = synth.getVoices();
+          const fr = vs.filter((v) => /^fr/i.test(v.lang));
+          voice =
+            fr.find(
+              (v) =>
+                /fr[-_]FR/i.test(v.lang) &&
+                /google|natural|online|amélie|amelie|thomas|denise|henri/i.test(v.name),
+            ) ||
+            fr.find((v) => /fr[-_]FR/i.test(v.lang)) ||
+            fr[0] ||
+            null;
+        }
+        if (synth) {
+          pickVoice();
+          synth.onvoiceschanged = pickVoice;
+        }
+
+        function clearMarks() {
+          document.querySelectorAll("i.speaking").forEach((e) => e.classList.remove("speaking"));
+        }
+        function stop() {
+          if (synth) synth.cancel();
+          clearMarks();
+          reading = false;
+          readBtn.textContent = "朗读本页";
+        }
+
+        function speak(list) {
+          if (!synth) {
+            toast("这个浏览器不支持朗读，请换用 Chrome、Edge 或 Safari。");
+            return;
+          }
+          stop();
+          if (!voice) {
+            pickVoice();
+            if (!voice && synth.getVoices().length)
+              toast("没有找到法语语音，发音可能不准。可以在系统设置里添加法语语音包。", 6000);
+          }
+          list.forEach((el, idx) => {
+            const u = new SpeechSynthesisUtterance(el.dataset.say || el.textContent);
+            u.lang = "fr-FR";
+            if (voice) u.voice = voice;
+            u.rate = slow ? 0.7 : 0.95;
+            u.onstart = () => {
+              clearMarks();
+              el.classList.add("speaking");
+            };
+            u.onend = u.onerror = () => {
+              el.classList.remove("speaking");
+              if (idx === list.length - 1) {
+                reading = false;
+                readBtn.textContent = "朗读本页";
+              }
+            };
+            synth.speak(u);
+          });
+        }
+
+        function go(n) {
+          n = Math.max(0, Math.min(slides.length - 1, n));
+          stop();
+          slides[cur].classList.remove("on");
+          cur = n;
+          const s = slides[cur];
+          s.classList.add("on");
+          s.scrollTop = 0;
+          chip.innerHTML = "<b>" + s.dataset.sec + "</b>";
+          count.textContent = cur + 1 + " / " + slides.length;
+          prog.style.width = ((cur + 1) / slides.length) * 100 + "%";
+          $("prev").disabled = cur === 0;
+          $("next").disabled = cur === slides.length - 1;
+          try {
+            history.replaceState(null, "", "#p" + (cur + 1));
+          } catch {}
+          store.set("fr4h-page", String(cur));
+          if (window.innerWidth <= 760) window.scrollTo(0, 0);
+        }
+
+        $("prev").onclick = () => go(cur - 1);
+        $("next").onclick = () => go(cur + 1);
+        readBtn.onclick = () => {
+          if (reading) {
+            stop();
+            return;
+          }
+          const list = [...slides[cur].querySelectorAll("i")];
+          if (!list.length) {
+            toast("这一页没有法语。");
+            return;
+          }
+          reading = true;
+          readBtn.textContent = "停止";
+          speak(list);
+          reading = true;
+          readBtn.textContent = "停止";
+        };
+        rateBtn.onclick = () => {
+          slow = !slow;
+          rateBtn.setAttribute("aria-pressed", String(slow));
+          store.set("fr4h-slow", slow ? "1" : "0");
+        };
+        if (store.get("fr4h-slow") === "1") {
+          slow = true;
+          rateBtn.setAttribute("aria-pressed", "true");
+        }
+
+        $("stage").addEventListener("click", (e) => {
+          const el = e.target.closest("i");
+          if (el) {
+            speak([el]);
+            return;
+          }
+          const g = e.target.closest("[data-goto]");
+          if (g) go(slides.indexOf(document.getElementById(g.dataset.goto)));
+        });
+        $("stage").addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && e.target.matches(".slide i")) {
+            e.preventDefault();
+            speak([e.target]);
+          }
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.target.closest && e.target.closest("button, i")) {
+            if (e.key === " " || e.key === "Enter") return;
+          }
+          if (["ArrowRight", "PageDown", " "].includes(e.key)) {
+            e.preventDefault();
+            go(cur + 1);
+          } else if (["ArrowLeft", "PageUp"].includes(e.key)) {
+            e.preventDefault();
+            go(cur - 1);
+          } else if (e.key === "Home") go(0);
+          else if (e.key === "End") go(slides.length - 1);
+        });
+
+        let sx = null,
+          sy = null;
+        $("stage").addEventListener(
+          "touchstart",
+          (e) => {
+            sx = e.touches[0].clientX;
+            sy = e.touches[0].clientY;
+          },
+          { passive: true },
+        );
+        $("stage").addEventListener("touchend", (e) => {
+          if (sx === null) return;
+          const dx = e.changedTouches[0].clientX - sx,
+            dy = e.changedTouches[0].clientY - sy;
+          if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(cur + (dx < 0 ? 1 : -1));
+          sx = null;
+        });
+
+        const m = /^#p(\d+)$/.exec(location.hash);
+        const saved = parseInt(store.get("fr4h-page") || "0", 10);
+        slides[0].classList.add("on");
+        go(m ? parseInt(m[1], 10) - 1 : isNaN(saved) ? 0 : saved);
+      })();
+    </script>
+  </body>
+</html>
