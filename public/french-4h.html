@@ -2010,8 +2010,13 @@
           const fr = vs.filter((v) => /^fr/i.test(v.lang));
           // 排序：加拿大法语优先，其次法国法语；同一地区里在线（通常更自然）在前，
           // 离线的高级音质排在标准音质前
-          const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 8 : 16);
-          const score = (v) => region(v) + (v.localService ? 4 : 0) + (3 - qualityRank(v));
+          // 多语言声音会自己猜语言，排到同口音的最后
+          const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 16 : 32);
+          const score = (v) =>
+            region(v) +
+            (isMultilingual(v) ? 8 : 0) +
+            (v.localService ? 4 : 0) +
+            (3 - qualityRank(v));
           // 同一个声音报两遍（voiceURI 完全相同）才合并；同名不同标识的都留着，显示时附上标识
           const seen = new Set();
           frVoices = fr
@@ -2042,11 +2047,22 @@
             ) || /增强|高级/.test(v.name);
           return known ? ["精简", "标准", "增强", "高级"][qualityRank(v)] : "";
         }
+        // Edge 名字带 Multilingual 的声音不按指定语言读，而是自己猜：table、grand 这种
+        // 英法同形的单词常被判成英语，而且每次不一定一样
+        function isMultilingual(v) {
+          return /multilingual/i.test(v.name);
+        }
         const REGIONS = { FR: "法国", CA: "加拿大", BE: "比利时", CH: "瑞士" };
         // 声音名原样显示，后面补上口音、在线／离线，以及名字里看不出来的音质
         function describeVoice(v) {
           const region = REGIONS[v.lang.split(/[-_]/)[1]?.toUpperCase()] || v.lang;
-          return [v.name, region + "法语", v.localService ? "离线" : "在线", qualityLabel(v)]
+          return [
+            v.name,
+            region + "法语",
+            v.localService ? "离线" : "在线",
+            qualityLabel(v),
+            isMultilingual(v) ? "多语言，单词可能读成英语" : "",
+          ]
             .filter(Boolean)
             .join(" · ");
         }
@@ -2113,8 +2129,9 @@
           }
           list.forEach((el, idx) => {
             const u = new SpeechSynthesisUtterance(el.dataset.say || el.textContent);
-            u.lang = "fr-CA";
+            // lang 跟所选声音一致；写死 fr-CA 会和法国法语的声音互相矛盾
             if (voice) u.voice = voice;
+            u.lang = voice ? voice.lang : "fr-CA";
             u.rate = SPEEDS[speed].rate;
             u.onstart = () => {
               clearMarks();

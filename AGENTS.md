@@ -155,6 +155,10 @@ vp run build:data           # 重新生成网页用的 .json
 `settings.voices`。`localService === false` 是浏览器联网合成的声音（Edge 的 Online、
 Chrome 的 Google），朗读的文字会发到对方服务器。
 
+Edge 名字带 **Multilingual** 的声音（Vivienne、Remy 等）**不认 `lang`**，自己猜文本语言，
+table、grand 这类英法同形的单词会被随机读成英语。它们排在同口音最后、界面上标出提醒，
+不要为了“音色更好”把它们调成默认。`utterance.lang` 始终取所选声音的 `lang`，不要写死。
+
 ## 分享图片时只放 `files`
 
 `navigator.share()` 的 payload 里**不要同时带 `text` 或 `title`**。微信、QQ 这类接收方

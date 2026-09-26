@@ -703,6 +703,36 @@ describe("音标与朗读", () => {
     ]);
   });
 
+  it("Edge 的多语言声音排到同口音最后并标出提醒，朗读时 lang 跟声音一致", async () => {
+    stubSpeech(undefined, [
+      {
+        lang: "fr-FR",
+        name: "Microsoft Vivienne Multilingual Online (Natural) - French (France)",
+        voiceURI: "vivienne",
+        localService: false,
+      },
+      {
+        lang: "fr-FR",
+        name: "Microsoft Denise Online (Natural) - French (France)",
+        voiceURI: "denise",
+        localService: false,
+      },
+    ]);
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
+    expect(options.map((o) => o.text)).toEqual([
+      "Microsoft Denise Online (Natural) - French (France) · 法国法语 · 在线",
+      "Microsoft Vivienne Multilingual Online (Natural) - French (France) · 法国法语 · 在线 · 多语言，单词可能读成英语",
+    ]);
+
+    fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
+    expect((lastUtterance!.voice as { voiceURI: string }).voiceURI).toBe("denise");
+    expect(lastUtterance!.lang).toBe("fr-FR");
+  });
+
   it("系统没有法语声音时不拿别的语言的声音硬读，而是说清楚原因", async () => {
     stubSpeech(undefined, VOICES.slice(0, 1));
     window.location.hash = "#/grammar/articles";

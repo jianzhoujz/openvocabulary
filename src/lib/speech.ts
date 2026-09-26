@@ -136,9 +136,12 @@ export function voicesFor(lang: string): SpeechSynthesisVoice[] {
   const prefs = LANG_PREFERENCE[lang] ?? [];
   const rank = (v: SpeechSynthesisVoice) => {
     const i = prefs.indexOf(v.lang.replace("_", "-"));
-    // 地区 > 在线 > 音质：同一口音里在线的在前，离线的按音质从高到低
+    // 地区 > 单语 > 在线 > 音质：多语言声音会自己猜语言，排到同口音的最后
     return (
-      (i < 0 ? prefs.length : i) * 8 + (v.localService === false ? 0 : 4) + (3 - qualityRank(v))
+      (i < 0 ? prefs.length : i) * 16 +
+      (isMultilingual(v) ? 8 : 0) +
+      (v.localService === false ? 0 : 4) +
+      (3 - qualityRank(v))
     );
   };
   // 同一个声音被报两遍（voiceId 完全相同）才合并。名字相同、标识不同的不合并——
@@ -180,6 +183,15 @@ function qualityLabel(voice: SpeechSynthesisVoice): string {
   return known ? QUALITY_LABELS[qualityRank(voice)] : "";
 }
 
+/**
+ * Edge 名字带 Multilingual 的在线声音（Vivienne、Remy 等）不按 utterance.lang 读，
+ * 而是自己猜文本的语言。整句法语猜得准，table、grand 这种英法同形的单词常被判成
+ * 英语，而且每次结果不一定一样。所以不默认选它，并在界面上提醒。
+ */
+export function isMultilingual(voice: SpeechSynthesisVoice): boolean {
+  return /multilingual/i.test(voice.name);
+}
+
 /** 用户选过就用选的那个（还在的话），否则按推荐顺序取第一个 */
 export function pickVoice(lang: string, preferred?: string): SpeechSynthesisVoice | undefined {
   const list = voicesFor(lang);
@@ -193,6 +205,8 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
   online: boolean;
   /** 苹果系统声音的音质：精简 / 标准 / 增强 / 高级；看不出来的为空 */
   quality: string;
+  /** 多语言声音的提醒，见 isMultilingual；其他声音为空 */
+  warning: string;
 } {
   const [base = "", region = ""] = voice.lang.split(/[-_]/);
   // 名字原样显示，不做简化：用户要靠完整名字分辨「Microsoft Sylvie Online (Natural)」这类声音
@@ -204,13 +218,16 @@ export function describeVoice(voice: SpeechSynthesisVoice): {
     // localService 为 false 是浏览器联网合成的声音，朗读的文字会发到它的服务器
     online: voice.localService === false,
     quality: qualityLabel(voice),
+    warning: isMultilingual(voice) ? "多语言，单词可能读成英语" : "",
   };
 }
 
 /** 一行文字：「Microsoft Sylvie Online (Natural) - French (Canada) · 加拿大法语 · 在线」 */
 export function voiceLabel(voice: SpeechSynthesisVoice): string {
   const d = describeVoice(voice);
-  return [d.name, d.accent, d.online ? "在线" : "离线", d.quality].filter(Boolean).join(" · ");
+  return [d.name, d.accent, d.online ? "在线" : "离线", d.quality, d.warning]
+    .filter(Boolean)
+    .join(" · ");
 }
 
 /**
