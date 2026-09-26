@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>法语四小时 · TCF 听力与阅读</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap"
+    />
+    <link rel="stylesheet" href="course/deck.css" />
+  </head>
+  <body data-deck="fr4h-5">
+    <header class="top">
+      <div class="brand">法语四小时 · 第 5 册<span>Compréhension orale et écrite</span></div>
+      <div class="chip" id="chip"></div>
+    </header>
+
+    <main class="stage-wrap">
+      <div class="stage" id="stage">
+        <!-- 封面 -->
+        <section class="slide cover" data-sec="开始">
+          <div class="eyebrow">第 5 册 · 应试 · 学到第 3 册就可以先看一遍</div>
+          <h1>TCF 听力与阅读</h1>
+          <p class="fr-title"><i data-zh="听力理解与阅读理解">Compréhension orale et écrite</i></p>
+          <p class="lead">
+            学完以后：知道两科各考什么、NCLC 7
+            要拿哪些分；会用“先读题、找同义替换、排除干扰项”的方法做题；听得懂加拿大口音里常见的口语现象。
+          </p>
+          <div class="howto">
+            <span>点蓝色的法语听发音，下面的小字是中文意思</span>
+            <span><b>朗读本页</b>：示范题可以当听力材料用</span>
+            <span><kbd>←</kbd> <kbd>→</kbd> 翻页，手机上左右滑动</span>
+            <span>考试格式以报名时的官方说明为准</span>
+          </div>
+        </section>
+
+        <!-- 路线 -->
+        <section class="slide" data-sec="开始">
+          <div class="eyebrow">课程安排</div>
+          <h2>8 节课，把会的变成分数</h2>
+          <div class="route">
+            <button data-goto="s1">
+              <span class="n">1</span><span class="tm">0:00–0:25</span
+              ><span class="t">考试全貌和分数目标</span>
+            </button>
+            <button data-goto="s2">
+              <span class="n">2</span><span class="tm">0:25–1:00</span
+              ><span class="t">听力：题型和做题流程</span>
+            </button>
+            <button data-goto="s3">
+              <span class="n">3</span><span class="tm">1:00–1:40</span
+              ><span class="t">听力：耳朵的难点</span>
+            </button>
+            <button data-goto="s4">
+              <span class="n">4</span><span class="tm">1:40–2:10</span
+              ><span class="t">听力实战：两道示范题</span>
+            </button>
+            <button data-goto="s5">
+              <span class="n">5</span><span class="tm">2:10–2:45</span
+              ><span class="t">阅读：题型和时间分配</span>
+            </button>
+            <button data-goto="s6">
+              <span class="n">6</span><span class="tm">2:45–3:20</span
+              ><span class="t">同义替换 ★</span>
+            </button>
+            <button data-goto="s7">
+              <span class="n">7</span><span class="tm">3:20–3:45</span
+              ><span class="t">陷阱清单</span>
+            </button>
+            <button data-goto="s8">
+              <span class="n">8</span><span class="tm">3:45–4:00</span
+              ><span class="t">备考计划</span>
+            </button>
+          </div>
+          <p class="note">第 6 节的同义替换，听力和阅读都用得上，是这一册最值钱的一节。</p>
+        </section>
+
+        <!-- ============ 1 全貌 ============ -->
+        <section class="slide divider" id="s1" data-sec="第 1 节 · 考试全貌">
+          <div class="big">1</div>
+          <h2>考试全貌和分数目标</h2>
+          <div class="meta"><span>0:00–0:25</span><span>先知道终点在哪</span></div>
+          <p class="lead">四科分开计分，移民局要求每一科都达到 NCLC 7。</p>
+        </section>
+
+        <section class="slide" data-sec="第 1 节 · 考试全貌">
+          <div class="eyebrow">四科</div>
+          <h2>两科选择题，两科主观题</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>科目</th>
+                <th>形式</th>
+                <th>时长</th>
+                <th>满分</th>
+                <th>NCLC 7</th>
+                <th>NCLC 8</th>
+                <th>NCLC 9</th>
+              </tr>
+              <tr>
+                <td>听力 <i data-zh="听力理解">compréhension orale</i></td>
+                <td>39 道选择题</td>
+                <td>35 分钟</td>
+                <td>699</td>
+                <td><b>458–502</b></td>
+                <td>503–522</td>
+                <td>523–548</td>
+              </tr>
+              <tr>
+                <td>阅读 <i data-zh="阅读理解">compréhension écrite</i></td>
+                <td>39 道选择题</td>
+                <td>60 分钟</td>
+                <td>699</td>
+                <td><b>453–498</b></td>
+                <td>499–523</td>
+                <td>524–548</td>
+              </tr>
+              <tr>
+                <td>写作 <i data-zh="书面表达">expression écrite</i></td>
+                <td>3 篇</td>
+                <td>60 分钟</td>
+                <td>20</td>
+                <td><b>10–11</b></td>
+                <td>12–13</td>
+                <td>14–15</td>
+              </tr>
+              <tr>
+                <td>口语 <i data-zh="口头表达">expression orale</i></td>
+                <td>3 个任务</td>
+                <td>约 12 分钟</td>
+                <td>20</td>
+                <td><b>10–11</b></td>
+                <td>12–13</td>
+                <td>14–15</td>
+              </tr>
+            </table>
+          </div>
+          <div class="box warn">
+            <p>
+              <b>四科取最低的那一科。</b>三科到 8、一科到 6，按 6
+              算。所以备考时哪科弱先补哪科，别在强项上冲高分。
+            </p>
+          </div>
+          <p class="note">
+            分数对照来自加拿大移民局（IRCC），换算标准可能调整，报名前请再核对一次。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 1 节 · 考试全貌">
+          <div class="eyebrow">选择题怎么计分</div>
+          <h2>从易到难排列，越往后越值钱</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>三个事实</h3>
+              <ul class="plain">
+                <li>① 题目按难度从 A1 排到 C2，后面的题分值更高</li>
+                <li>② 答错不扣分：<b>每一题都要选</b>，不会就猜</li>
+                <li>③ 听力每段录音只放一遍，不能回头</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>NCLC 7 大约等于 B2 的下沿</h3>
+              <ul class="plain">
+                <li>A1–A2 的题：几乎全对，一题都别丢</li>
+                <li>B1 的题：大部分对</li>
+                <li>B2 的题：对一部分就够</li>
+                <li>C1–C2 的题：看一眼，没把握就猜，时间留给前面</li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">
+            所以最划算的是：前面的简单题靠第 1–3 册的基本功稳稳拿下，中段靠这一册的方法多拿几题。
+          </p>
+        </section>
+
+        <!-- ============ 2 听力题型 ============ -->
+        <section class="slide divider" id="s2" data-sec="第 2 节 · 听力题型">
+          <div class="big">2</div>
+          <h2>听力：题型和做题流程</h2>
+          <div class="meta"><span>0:25–1:00</span><span>39 题，35 分钟，只放一遍</span></div>
+          <p class="lead">录音开始前的几秒钟最宝贵：先把题目和选项看完，带着问题去听。</p>
+        </section>
+
+        <section class="slide" data-sec="第 2 节 · 听力题型">
+          <div class="eyebrow">题型</div>
+          <h2>越往后，录音越长，答案越藏得深</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>级别</th>
+                <th>录音内容</th>
+                <th>通常问什么</th>
+              </tr>
+              <tr>
+                <td>A1–A2</td>
+                <td>短对话、广播通知、电话留言、看图选择</td>
+                <td>数字、时间、地点、谁、做什么</td>
+              </tr>
+              <tr>
+                <td>B1</td>
+                <td>日常对话、电台短讯、服务咨询</td>
+                <td>目的、原因、下一步怎么做</td>
+              </tr>
+              <tr>
+                <td>B2</td>
+                <td>采访、新闻报道、讲座片段</td>
+                <td>主要观点、说话人的态度、隐含意思</td>
+              </tr>
+              <tr>
+                <td>C1–C2</td>
+                <td>辩论、专家访谈，语速快</td>
+                <td>论证逻辑、语气、言外之意</td>
+              </tr>
+            </table>
+          </div>
+          <div class="box">
+            <h3>每一题的流程</h3>
+            <ol class="steps">
+              <li>录音前读题和四个选项，圈出问的是什么：人、时间、地点、原因、态度</li>
+              <li>预测答案类型：要听数字，还是要听观点</li>
+              <li>听的时候盯住关键信息，<b>录音里原样出现的词常常是干扰项</b></li>
+              <li>没听清就排除明显不对的，选一个，立刻看下一题</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 2 节 · 听力题型">
+          <div class="eyebrow">B2 必备</div>
+          <h2>态度题：说话人是什么心情</h2>
+          <p class="lead">B2 以上常问“说话人对这件事的态度”，选项全是形容词。这 12 个要秒认。</p>
+          <div class="cols">
+            <div class="block">
+              <h3>正面</h3>
+              <ul class="plain">
+                <li><i data-zh="满意的">satisfait</i></li>
+                <li><i data-zh="支持的">favorable</i></li>
+                <li><i data-zh="热情的">enthousiaste</i></li>
+                <li><i data-zh="放心的">rassuré</i></li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>负面</h3>
+              <ul class="plain">
+                <li><i data-zh="不满的">mécontent</i></li>
+                <li><i data-zh="失望的">déçu</i></li>
+                <li><i data-zh="担心的">inquiet</i></li>
+                <li><i data-zh="恼火的">agacé</i></li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>中间、保留</h3>
+              <ul class="plain">
+                <li><i data-zh="怀疑的">sceptique</i></li>
+                <li><i data-zh="有保留的、不情愿的">réticent</i></li>
+                <li><i data-zh="无所谓的">indifférent</i></li>
+                <li><i data-zh="惊讶的">surpris</i></li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">
+            态度往往藏在 <i data-zh="可是">mais</i>、<i data-zh="说实话">honnêtement</i>、<i
+              data-zh="我本来以为……"
+              >je m'attendais à…</i
+            >
+            后面，听到这些词就竖起耳朵。
+          </p>
+        </section>
+
+        <!-- ============ 3 听辨难点 ============ -->
+        <section class="slide divider" id="s3" data-sec="第 3 节 · 听辨难点">
+          <div class="big">3</div>
+          <h2>听力：耳朵的难点</h2>
+          <div class="meta"><span>1:00–1:40</span><span>不是不懂，是没听出来</span></div>
+          <p class="lead">
+            很多题错在“这个词我认识，但是没认出来”。数字、口语里的缩读、加拿大口音，是三个最常见的原因。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 3 节 · 听辨难点">
+          <div class="eyebrow">数字</div>
+          <h2>边听边记，别在脑子里换算</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>70–99 用算式记</h3>
+              <p>
+                听到 <i data-zh="97">quatre-vingt-dix-sept</i>，纸上直接写“4×20+10+7”，听完再算。
+              </p>
+              <h3 style="margin-top: 0.6em">价格读两段</h3>
+              <p>
+                39,95 $ 读作
+                <i data-zh="39.95 加元">trente-neuf dollars quatre-vingt-quinze</i>，也常省掉
+                dollars：<i data-zh="39.95">trente-neuf quatre-vingt-quinze</i>。
+              </p>
+            </div>
+            <div class="block">
+              <h3>容易听混的几对</h3>
+              <ul class="plain">
+                <li><i data-zh="16">seize</i> ↔ <i data-zh="6">six</i></li>
+                <li><i data-zh="13">treize</i> ↔ <i data-zh="30">trente</i></li>
+                <li><i data-zh="2 点">deux heures</i> ↔ <i data-zh="12 点">douze heures</i></li>
+                <li><i data-zh="80">quatre-vingts</i> ↔ <i data-zh="90">quatre-vingt-dix</i></li>
+              </ul>
+              <p class="note">
+                录音里常会自我更正：<i data-zh="星期二……不对，星期三。"
+                  >Mardi… non, pardon, mercredi.</i
+                >
+                答案是更正后的那个。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 3 节 · 听辨难点">
+          <div class="eyebrow">口语缩读</div>
+          <h2>写出来和读出来不一样</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>课本写法</th>
+                <th>口语里常听到</th>
+                <th>意思</th>
+              </tr>
+              <tr>
+                <td>je suis</td>
+                <td><i data-say="chu">« chu »</i></td>
+                <td>我是</td>
+              </tr>
+              <tr>
+                <td>il y a</td>
+                <td><i data-say="y a">« y a »</i></td>
+                <td>有</td>
+              </tr>
+              <tr>
+                <td>tu es</td>
+                <td><i data-say="t'es">« t'es »</i></td>
+                <td>你是</td>
+              </tr>
+              <tr>
+                <td>je ne sais pas</td>
+                <td><i data-say="je sais pas">« j'sais pas »</i></td>
+                <td>我不知道（ne 被省掉）</td>
+              </tr>
+              <tr>
+                <td>il dit</td>
+                <td><i data-say="i dit">« i dit »</i></td>
+                <td>他说（辅音前 il 的 l 不读）</td>
+              </tr>
+            </table>
+          </div>
+          <p class="note">
+            ne 被省掉以后，否定只剩一个 pas。听到 pas、jamais、plus 就是否定句，别漏。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 3 节 · 听辨难点">
+          <div class="eyebrow">加拿大口语：听懂就好，自己别用</div>
+          <h2>对话题里会出现的魁北克说法</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>语法小词</h3>
+              <ul class="plain">
+                <li>
+                  问句里多一个 tu：<i data-zh="远吗？">C'est-tu loin?</i>　<i data-zh="你要咖啡吗？"
+                    >Tu veux-tu du café?</i
+                  >
+                </li>
+                <li>
+                  <i data-zh="然后；而且">pis</i> = puis　<i data-zh="好吧；嗯">ben</i> = bien
+                </li>
+                <li>
+                  <i data-zh="是啊">ouin</i> = oui　<i data-zh="一点也不">pantoute</i> = pas du tout
+                </li>
+                <li><i data-zh="挺好的，没问题">C'est correct.</i> = ça va, d'accord</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>词汇</h3>
+              <ul class="plain">
+                <li><i data-zh="无聊的，没意思">C'est plate.</i> = c'est ennuyeux</li>
+                <li><i data-zh="很难做到……">avoir de la misère à</i> = avoir du mal à</li>
+                <li><i data-zh="女朋友">ma blonde</i>　<i data-zh="男朋友">mon chum</i></li>
+                <li><i data-zh="汽车（口语）">un char</i>　<i data-zh="逛街购物">magasiner</i></li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">
+            考试录音以标准法语为主，这些词偶尔出现在日常对话题里。认得它们能多拿一两题；考试说话、写作用第
+            1–4 册的标准说法。
+          </p>
+        </section>
+
+        <!-- ============ 4 听力实战 ============ -->
+        <section class="slide divider" id="s4" data-sec="第 4 节 · 听力实战">
+          <div class="big">4</div>
+          <h2>听力实战：两道示范题</h2>
+          <div class="meta"><span>1:40–2:10</span><span>先遮住文字，只听</span></div>
+          <p class="lead">
+            用法：先读题和选项，再点<b>朗读本页</b>只听一遍（语速调到“正常”），选完再看原文和解析。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 听力实战">
+          <div class="eyebrow">示范题 1 · A2 · 广播通知</div>
+          <h2>火车几点开？</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>题目</h3>
+              <ul class="plain">
+                <li>A. 16 h 25</li>
+                <li>B. 16 h 45</li>
+                <li>C. 17 h 05</li>
+                <li>D. 14 h 45</li>
+              </ul>
+              <h3 style="margin-top: 0.6em">录音</h3>
+              <div class="script">
+                <i data-zh="女士们先生们，开往魁北克城的 74 次列车将晚点 20 分钟出发。"
+                  >Mesdames et messieurs, le train numéro soixante-quatorze à destination de Québec
+                  partira avec un retard de vingt minutes.</i
+                >
+                <i data-zh="发车时间改为 16:45，3 号站台。"
+                  >Le départ est maintenant prévu à seize heures quarante-cinq, voie trois.</i
+                >
+              </div>
+            </div>
+            <div class="box">
+              <h3>解析：答案 B</h3>
+              <p>录音里一共有 74、20、16:45、3 四个数字，只有一个是“几点”。</p>
+              <p>
+                C 是给自以为要“再加 20 分钟”的人准备的：<i data-zh="现在计划">maintenant prévu</i>
+                说的已经是新时间。
+              </p>
+              <p>D 是把 seize（16）听成 quatorze（14）的人会选的。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 4 节 · 听力实战">
+          <div class="eyebrow">示范题 2 · B1–B2 · 朋友对话</div>
+          <h2>她觉得新公寓怎么样？</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>题目</h3>
+              <ul class="plain">
+                <li>A. 非常完美</li>
+                <li>B. 以这个价钱来说太小了</li>
+                <li>C. 她想换个街区</li>
+                <li>D. 离地铁太远</li>
+              </ul>
+              <h3 style="margin-top: 0.6em">录音</h3>
+              <div class="dialog">
+                <span class="who">A</span
+                ><i data-zh="那么，新公寓你喜欢吗？">Alors, ton nouvel appartement, ça te plaît?</i>
+                <span class="who">B</span
+                ><i data-zh="嗯，街区很棒，而且离地铁近。"
+                  >Ben, le quartier est super, pis c'est proche du métro.</i
+                >
+                <span class="who">B</span
+                ><i data-zh="不过说实话，我付这个价钱，本来以为会大一些。"
+                  >Mais honnêtement, pour le prix que je paie, je m'attendais à quelque chose de
+                  plus grand.</i
+                >
+              </div>
+            </div>
+            <div class="box">
+              <h3>解析：答案 B</h3>
+              <p>C、D 用了录音里的原词 quartier、métro，但意思说反了，是典型干扰项。</p>
+              <p>
+                态度在 <i>Mais honnêtement</i> 后面：“这个价钱本来以为会更大” = 性价比不高 = 选项
+                B。原文没有“太小”这个词，靠的是同义替换。
+              </p>
+              <p class="note">ben、pis 是上一节的魁北克口语小词。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 5 阅读 ============ -->
+        <section class="slide divider" id="s5" data-sec="第 5 节 · 阅读">
+          <div class="big">5</div>
+          <h2>阅读：题型和时间分配</h2>
+          <div class="meta"><span>2:10–2:45</span><span>39 题，60 分钟</span></div>
+          <p class="lead">阅读能回头看，所以输赢在时间：简单题做快，把时间留给中段。</p>
+        </section>
+
+        <section class="slide" data-sec="第 5 节 · 阅读">
+          <div class="eyebrow">题型和时间</div>
+          <h2>从告示到论说文</h2>
+          <div class="cols two">
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th>级别</th>
+                  <th>文本</th>
+                  <th>每题用时</th>
+                </tr>
+                <tr>
+                  <td>A1–A2</td>
+                  <td>告示、广告、时刻表、短邮件</td>
+                  <td>≤ 1 分钟</td>
+                </tr>
+                <tr>
+                  <td>B1</td>
+                  <td>通知、规章、信件、短新闻</td>
+                  <td>1.5 分钟</td>
+                </tr>
+                <tr>
+                  <td>B2</td>
+                  <td>评论、报告、访谈</td>
+                  <td>2 分钟</td>
+                </tr>
+                <tr>
+                  <td>C1–C2</td>
+                  <td>论说文、文学性文本</td>
+                  <td>剩下的时间，不会就猜</td>
+                </tr>
+              </table>
+            </div>
+            <div class="box">
+              <h3>每一题的流程</h3>
+              <ol class="steps">
+                <li>先读问题和选项，别先读全文</li>
+                <li>带着关键词回原文定位</li>
+                <li>只精读定位句和前后各一句</li>
+                <li>逐个对照选项：意思相同才对，<b>词相同不算</b></li>
+              </ol>
+            </div>
+          </div>
+          <p class="note">最后留 1 分钟检查有没有空着的题。空着一定零分，猜还有四分之一的机会。</p>
+        </section>
+
+        <section class="slide" data-sec="第 5 节 · 阅读">
+          <div class="eyebrow">主旨题</div>
+          <h2>这篇文章想干什么？</h2>
+          <p class="lead">B1 以上常问文章的目的或作者的意图，选项是一组动词。</p>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>动词</th>
+                <th>意思</th>
+                <th>文本里的信号</th>
+              </tr>
+              <tr>
+                <td><i>informer</i></td>
+                <td>告知</td>
+                <td>日期、地点、规定，没有评价</td>
+              </tr>
+              <tr>
+                <td><i>convaincre</i></td>
+                <td>说服</td>
+                <td>il faut, nous devons, 论据 + 例子</td>
+              </tr>
+              <tr>
+                <td><i>dénoncer</i></td>
+                <td>揭露、谴责</td>
+                <td>inacceptable, scandale, 否定性评价</td>
+              </tr>
+              <tr>
+                <td><i>mettre en garde</i></td>
+                <td>提醒注意风险</td>
+                <td>attention, risque, danger, évitez</td>
+              </tr>
+              <tr>
+                <td><i>conseiller</i></td>
+                <td>给建议</td>
+                <td>命令式、vous devriez, il est recommandé de</td>
+              </tr>
+            </table>
+          </div>
+          <div class="box">
+            <p>
+              <b>最后几道文学题</b>里会出现简单过去时，只要认得：<i data-zh="他是（简单过去时）"
+                >il fut</i
+              >
+              = il a été，<i data-zh="他有">il eut</i> = il a eu，<i data-zh="她去了">elle alla</i>
+              = elle est allée，<i data-zh="他们做了">ils firent</i>
+              = ils ont fait。
+            </p>
+          </div>
+        </section>
+
+        <!-- ============ 6 同义替换 ============ -->
+        <section class="slide divider" id="s6" data-sec="第 6 节 · 同义替换">
+          <div class="big">6</div>
+          <h2>同义替换 ★</h2>
+          <div class="meta"><span>2:45–3:20</span><span>出题人的基本功，也是你的基本功</span></div>
+          <p class="lead">
+            正确选项几乎从不照抄原文，而是换个说法。干扰项反过来：照抄原文的词，意思却不对。
+          </p>
+        </section>
+
+        <section class="slide" data-sec="第 6 节 · 同义替换">
+          <div class="eyebrow">原文 → 正确选项</div>
+          <h2>日期、价格和规定的换说法</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>原文</th>
+                <th>选项里的说法</th>
+              </tr>
+              <tr>
+                <td>
+                  <i data-zh="商店 12 月 24 日至 26 日关门。"
+                    >Le magasin sera fermé du 24 au 26 décembre.</i
+                  >
+                </td>
+                <td><i data-zh="它三天不营业。">Il n'ouvrira pas pendant trois jours.</i></td>
+              </tr>
+              <tr>
+                <td><i data-zh="报名免费。">L'inscription est gratuite.</i></td>
+                <td><i data-zh="报名不用付钱。">Il n'y a rien à payer pour s'inscrire.</i></td>
+              </tr>
+              <tr>
+                <td><i data-zh="最晚 3 月 15 日">au plus tard le 15 mars</i></td>
+                <td><i data-zh="3 月 16 日之前">avant le 16 mars</i></td>
+              </tr>
+              <tr>
+                <td><i data-zh="不建议……">Il est déconseillé de…</i></td>
+                <td><i data-zh="建议不要……">On recommande de ne pas…</i></td>
+              </tr>
+            </table>
+          </div>
+          <p class="note">日期、价格、规定类的替换多出现在 A2–B1 的告示和通知题里。</p>
+        </section>
+
+        <section class="slide" data-sec="第 6 节 · 同义替换">
+          <div class="eyebrow">原文 → 正确选项（续）</div>
+          <h2>限制、数量和评价的换说法</h2>
+          <div class="tbl">
+            <table>
+              <tr>
+                <th>原文</th>
+                <th>选项里的说法</th>
+              </tr>
+              <tr>
+                <td><i data-zh="我只有十分钟。">Je n'ai que dix minutes.</i></td>
+                <td><i data-zh="我只有十分钟。">J'ai seulement dix minutes.</i></td>
+              </tr>
+              <tr>
+                <td><i data-zh="动物不得入内。">Les animaux ne sont pas admis.</i></td>
+                <td><i data-zh="禁止带动物。">Les animaux sont interdits.</i></td>
+              </tr>
+              <tr>
+                <td><i data-zh="参加人数翻了一番。">Le nombre de participants a doublé.</i></td>
+                <td><i data-zh="参加的人多了一倍。">Il y a deux fois plus de participants.</i></td>
+              </tr>
+              <tr>
+                <td>
+                  <i data-zh="由于缺乏资金，项目暂停。">Faute de moyens, le projet est suspendu.</i>
+                </td>
+                <td>
+                  <i data-zh="项目因为缺钱停了。">Le projet est arrêté par manque d'argent.</i>
+                </td>
+              </tr>
+              <tr>
+                <td><i data-zh="……并不少见。">Il n'est pas rare que…</i></td>
+                <td><i data-zh="经常会……">Il arrive souvent que…</i></td>
+              </tr>
+              <tr>
+                <td><i data-zh="这一点也不奇怪。">Cela n'a rien d'étonnant.</i></td>
+                <td><i data-zh="这是可以预料的。">C'était prévisible.</i></td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 6 节 · 同义替换">
+          <div class="eyebrow">怎么练</div>
+          <h2>把“换说法”变成习惯</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>做题时</h3>
+              <ul class="plain">
+                <li>选项里出现原文原词：先怀疑它，再核对意思</li>
+                <li>正确选项常把动词换成名词，或把肯定换成否定的否定</li>
+                <li>
+                  <i data-zh="增长">augmenter</i> ≈ <i data-zh="上涨">la hausse</i>，<i
+                    data-zh="减少"
+                    >diminuer</i
+                  >
+                  ≈ <i data-zh="下降">la baisse</i>，<i data-zh="禁止的">interdit</i> ≈
+                  <i data-zh="不允许的">pas autorisé</i>
+                </li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>平时练</h3>
+              <ul class="plain">
+                <li>每做完一套题，把正确选项和原文对应的那句抄在一起</li>
+                <li>积累到 50 组，出题套路基本就见全了</li>
+                <li>第 4 册的名词化，正是出题人最常用的换法</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 7 陷阱 ============ -->
+        <section class="slide divider" id="s7" data-sec="第 7 节 · 陷阱清单">
+          <div class="big">7</div>
+          <h2>陷阱清单</h2>
+          <div class="meta"><span>3:20–3:45</span><span>听力阅读通用</span></div>
+          <p class="lead">懂了意思还选错，多半掉进下面这几个坑。</p>
+        </section>
+
+        <section class="slide" data-sec="第 7 节 · 陷阱清单">
+          <div class="eyebrow">八个坑</div>
+          <h2>看到这些词，放慢速度</h2>
+          <div class="cols two">
+            <div class="block">
+              <ul class="plain">
+                <li>
+                  <b>① 限制不是否定</b>：<i data-zh="他只喝茶。">Il ne boit que du thé.</i>
+                  他<b>只</b>喝茶，不是不喝
+                </li>
+                <li><b>② 条件式 = 没证实</b>：<i data-zh="据说会关闭。">L'usine fermerait.</i></li>
+                <li>
+                  <b>③ 转折后才是重点</b>：mais、cependant、pourtant 后面的话才是作者真正的意思
+                </li>
+                <li>
+                  <b>④ 双重否定 = 肯定</b>：<i data-zh="并非不可能">pas impossible</i> = 有可能
+                </li>
+              </ul>
+            </div>
+            <div class="block">
+              <ul class="plain">
+                <li>
+                  <b>⑤ 部分和全部</b>：<i data-zh="某些">certains</i>　<i data-zh="大部分"
+                    >la plupart</i
+                  >　<i data-zh="所有">tous</i>　<i data-zh="没有一个">aucun</i>
+                </li>
+                <li>
+                  <b>⑥ 时间词</b>：<i data-zh="从……起">dès</i> 从……起　<i data-zh="到……为止"
+                    >d'ici</i
+                  >
+                  到……之前　<i data-zh="前一天">la veille</i>
+                </li>
+                <li><b>⑦ 代词指代</b>：le、en、y、cela 指的是前面哪个名词，要回原文找</li>
+                <li>
+                  <b>⑧ 例外</b>：<i data-zh="除了……">sauf</i>　<i data-zh="除了……之外">à part</i>
+                  后面的东西不适用前面的规则
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 8 备考 ============ -->
+        <section class="slide divider" id="s8" data-sec="第 8 节 · 备考计划">
+          <div class="big">8</div>
+          <h2>备考计划</h2>
+          <div class="meta"><span>3:45–4:00</span><span>方法有了，剩下的是量</span></div>
+          <p class="lead">听力和阅读的分数，和你听过、读过的真实材料的量几乎成正比。</p>
+        </section>
+
+        <section class="slide" data-sec="第 8 节 · 备考计划">
+          <div class="eyebrow">每天怎么练</div>
+          <h2>材料和节奏</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>听（每天 20–30 分钟）</h3>
+              <ul class="plain">
+                <li>Radio-Canada 的新闻和 OHdio 播客：标准加拿大法语</li>
+                <li>TV5MONDE 的学法语栏目：按级别分，每段带练习题</li>
+                <li>RFI 的简易法语新闻：法国口音，语速慢，适合 B1 起步</li>
+                <li>方法：先盲听一遍 → 看文本 → 再听一遍 → 跟读难句</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>读（每天 15–20 分钟）</h3>
+              <ul class="plain">
+                <li>Radio-Canada 网站、La Presse、Le Devoir 的短新闻</li>
+                <li>魁北克政府网站 Québec.ca 的办事说明：通知和规章正是阅读题的文体</li>
+                <li>生词进本站词表的 TRAVAIL、LOGEMENT、SANTE、ARGENT 模块</li>
+              </ul>
+            </div>
+          </div>
+          <div class="box">
+            <p>
+              <b>最后 6 周</b
+              >：每周做一套完整模拟题，严格计时。错题分三类记：不认识的词、没找到定位句、被干扰项骗了。哪类最多，下周就专门补哪类。
+            </p>
+          </div>
+        </section>
+
+        <section class="slide" data-sec="第 8 节 · 备考计划">
+          <div class="eyebrow">自测与下一步</div>
+          <h2>学完了，检查一下</h2>
+          <div class="cols two">
+            <div class="block">
+              <h3>能做到就算过关</h3>
+              <ul class="plain">
+                <li>□ 说出四科各自 NCLC 7 的分数线</li>
+                <li>□ 听一遍示范题 1，不看文字就能写下全部数字</li>
+                <li>
+                  □ 听懂 <i data-zh="远吗？">C'est-tu loin?</i> 和
+                  <i data-zh="一点也不">pantoute</i>
+                </li>
+                <li>□ 给出 5 组同义替换，不看屏幕</li>
+                <li>□ 解释 <i data-zh="他只喝茶。">Il ne boit que du thé.</i> 为什么不是否定</li>
+              </ul>
+            </div>
+            <div class="block">
+              <h3>接下来</h3>
+              <ul class="plain">
+                <li>1. 马上做一套模拟题，测出起点</li>
+                <li>2. 按上一页的节奏每天练，每两周测一次</li>
+                <li>3. 第 6 册讲写作和口语：它们是 NCLC 7 最常卡住的两科</li>
+              </ul>
+              <p style="margin-top: 0.8em"><i>Bon courage!</i>　加油！</p>
+            </div>
+          </div>
+          <nav data-series aria-label="系列课程"></nav>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      window.DECK_ZH = {
+        "Mais honnêtement": "不过说实话",
+        "Bon courage!": "加油！",
+      };
+    </script>
+    <script src="course/deck.js"></script>
+  </body>
+</html>

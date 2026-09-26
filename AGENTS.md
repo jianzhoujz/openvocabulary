@@ -118,7 +118,7 @@ vp run build:data           # 重新生成网页用的 .json
 
 ## 法语以标准加拿大法语为准
 
-用户备考 TCF Canada、移民加拿大。所有法语内容（词表、速查页、`public/french-4h.html`、
+用户备考 TCF Canada、移民加拿大。所有法语内容（词表、速查页、`public/french-4h*.html`、
 朗读声音、音标）都以**标准加拿大法语**为准：魁北克受过教育的人、Radio-Canada 播音的
 那种，不是街头口语（joual），也不是法国法语。
 
@@ -188,6 +188,17 @@ vp test --run   # 全部单测与界面测试
 `**…**` 是强调；表格里整列都是法语时用 `fr` 列号，不必逐格写 `[[ ]]`。
 
 速查页**刻意不接 `useStudyClock`**：翻资料不算学习时长，别为了“统一”把它加上。
+
+## 法语四小时课件
+
+`public/french-4h.html`、`french-4h-2.html` … `french-4h-6.html` 是六册独立的幻灯片页面（不走 React），
+从零基础排到 TCF Canada NCLC 7。样式和脚本共用 `public/course/deck.css`、`deck.js`：翻页、点读、
+选声音、没有法语语音时不朗读、放不下时整页缩字号都在那里，**不要把它们再抄回某一册里**。
+
+- 每册只写幻灯片和可选的 `window.DECK_ZH`（法语 → 中文释义），也可以在 `<i>` 上直接写 `data-zh`
+- 增删一册要同时改 `deck.js` 的 `SERIES` 和 `src/courses.ts` 的 `COURSES`（首页最下面的入口），顺序一致，有测试核对
+- 声音和语速的 localStorage 键全系列共用（沿用第 1 册的 `fr4h-voice`、`fr4h-rate`），页码按 `<body data-deck>` 各记各的
+- 幻灯片不滚动，放不下就缩字号。加内容后逐页看一遍，缩得太小就拆成两页，别塞
 
 ## 打卡日志的两条约束
 
