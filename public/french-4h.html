@@ -295,6 +295,11 @@
       .tbl {
         overflow-x: auto;
       }
+      /* 幻灯片是纵向 flex：子元素默认会被压扁，带 overflow 的表格被压扁后会自己出滚动条。
+         不许压，放不下就让整页超出，交给 fitSlide() 缩字号 */
+      .slide > * {
+        flex-shrink: 0;
+      }
       table {
         border-collapse: collapse;
         width: 100%;
@@ -730,69 +735,81 @@
         <section class="slide" data-sec="第 1 节 · 发音">
           <div class="eyebrow">规则二</div>
           <h2>字母组合：借拼音来记</h2>
-          <div class="tbl">
-            <table>
-              <tr>
-                <th>写法</th>
-                <th>读音</th>
-                <th>接近</th>
-                <th>例词</th>
-              </tr>
-              <tr>
-                <td>u</td>
-                <td>[y]</td>
-                <td>拼音 ü</td>
-                <td><i>tu</i>　<i>rue</i>　<i>du</i></td>
-              </tr>
-              <tr>
-                <td>ou</td>
-                <td>[u]</td>
-                <td>拼音 u</td>
-                <td><i>vous</i>　<i>rouge</i>　<i>jour</i></td>
-              </tr>
-              <tr>
-                <td>oi</td>
-                <td>[wa]</td>
-                <td>拼音 wa</td>
-                <td><i>moi</i>　<i>trois</i>　<i>voiture</i></td>
-              </tr>
-              <tr>
-                <td>au / eau</td>
-                <td>[o]</td>
-                <td>拼音 o</td>
-                <td><i>eau</i>　<i>chaud</i>　<i>beau</i></td>
-              </tr>
-              <tr>
-                <td>ai / è / ê</td>
-                <td>[ɛ]</td>
-                <td>拼音 ie 里的 e</td>
-                <td><i>lait</i>　<i>mère</i>　<i>fête</i></td>
-              </tr>
-              <tr>
-                <td>eu</td>
-                <td>[ø]</td>
-                <td>拼音 e，嘴唇撮圆</td>
-                <td><i>deux</i>　<i>bleu</i></td>
-              </tr>
-              <tr>
-                <td>ch</td>
-                <td>[ʃ]</td>
-                <td>拼音 sh</td>
-                <td><i>chat</i>　<i>chocolat</i></td>
-              </tr>
-              <tr>
-                <td>gn</td>
-                <td>[ɲ]</td>
-                <td>“尼”</td>
-                <td><i>montagne</i>　<i>champagne</i></td>
-              </tr>
-              <tr>
-                <td>qu</td>
-                <td>[k]</td>
-                <td>拼音 k</td>
-                <td><i>qui</i>　<i>quatre</i></td>
-              </tr>
-            </table>
+          <div class="cols two">
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th>写法</th>
+                  <th>读音</th>
+                  <th>接近</th>
+                  <th>例词</th>
+                </tr>
+                <tr>
+                  <td>u</td>
+                  <td>[y]</td>
+                  <td>拼音 ü</td>
+                  <td><i>tu</i>　<i>rue</i>　<i>du</i></td>
+                </tr>
+                <tr>
+                  <td>ou</td>
+                  <td>[u]</td>
+                  <td>拼音 u</td>
+                  <td><i>vous</i>　<i>rouge</i>　<i>jour</i></td>
+                </tr>
+                <tr>
+                  <td>oi</td>
+                  <td>[wa]</td>
+                  <td>拼音 wa</td>
+                  <td><i>moi</i>　<i>trois</i>　<i>voiture</i></td>
+                </tr>
+                <tr>
+                  <td>au / eau</td>
+                  <td>[o]</td>
+                  <td>拼音 o</td>
+                  <td><i>eau</i>　<i>chaud</i>　<i>beau</i></td>
+                </tr>
+                <tr>
+                  <td>ai / è / ê</td>
+                  <td>[ɛ]</td>
+                  <td>拼音 ie 里的 e</td>
+                  <td><i>lait</i>　<i>mère</i>　<i>fête</i></td>
+                </tr>
+              </table>
+            </div>
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th>写法</th>
+                  <th>读音</th>
+                  <th>接近</th>
+                  <th>例词</th>
+                </tr>
+                <tr>
+                  <td>eu</td>
+                  <td>[ø]</td>
+                  <td>拼音 e，嘴唇撮圆</td>
+                  <td><i>deux</i>　<i>bleu</i></td>
+                </tr>
+                <tr>
+                  <td>ch</td>
+                  <td>[ʃ]</td>
+                  <td>拼音 sh</td>
+                  <td><i>chat</i>　<i>chocolat</i></td>
+                </tr>
+                <tr>
+                  <td>gn</td>
+                  <td>[ɲ]</td>
+                  <td>“尼”</td>
+                  <td><i>montagne</i>　<i>champagne</i></td>
+                </tr>
+                <tr>
+                  <td>qu</td>
+                  <td>[k]</td>
+                  <td>拼音 k</td>
+                  <td><i>qui</i>　<i>quatre</i></td>
+                </tr>
+              </table>
+            </div>
           </div>
         </section>
 
@@ -1519,52 +1536,56 @@
         <section class="slide" data-sec="第 6 节 · 形容词与数字">
           <div class="eyebrow">数字</div>
           <h2>1 到 20 靠背，70 以后做算术</h2>
-          <p>
-            <i>un</i> <i>deux</i> <i>trois</i> <i>quatre</i> <i>cinq</i> <i>six</i> <i>sept</i>
-            <i>huit</i> <i>neuf</i> <i>dix</i>
-          </p>
-          <p>
-            <i>onze</i> <i>douze</i> <i>treize</i> <i>quatorze</i> <i>quinze</i> <i>seize</i>
-            <i>dix-sept</i> <i>dix-huit</i> <i>dix-neuf</i> <i>vingt</i>
-          </p>
-          <div class="tbl">
-            <table>
-              <tr>
-                <th>数字</th>
-                <th>法语</th>
-                <th>算法</th>
-              </tr>
-              <tr>
-                <td>21</td>
-                <td><i>vingt et un</i></td>
-                <td>20 和 1</td>
-              </tr>
-              <tr>
-                <td>30 · 40 · 50 · 60</td>
-                <td><i>trente</i> <i>quarante</i> <i>cinquante</i> <i>soixante</i></td>
-                <td>正常</td>
-              </tr>
-              <tr>
-                <td>70</td>
-                <td><i>soixante-dix</i></td>
-                <td>60 + 10</td>
-              </tr>
-              <tr>
-                <td>80</td>
-                <td><i>quatre-vingts</i></td>
-                <td>4 × 20</td>
-              </tr>
-              <tr>
-                <td>90</td>
-                <td><i>quatre-vingt-dix</i></td>
-                <td>4 × 20 + 10</td>
-              </tr>
-              <tr>
-                <td>97</td>
-                <td><i>quatre-vingt-dix-sept</i></td>
-                <td>4 × 20 + 10 + 7</td>
-              </tr>
-            </table>
+          <div class="cols two">
+            <div class="block">
+              <p>
+                <i>un</i> <i>deux</i> <i>trois</i> <i>quatre</i> <i>cinq</i> <i>six</i> <i>sept</i>
+                <i>huit</i> <i>neuf</i> <i>dix</i>
+              </p>
+              <p>
+                <i>onze</i> <i>douze</i> <i>treize</i> <i>quatorze</i> <i>quinze</i> <i>seize</i>
+                <i>dix-sept</i> <i>dix-huit</i> <i>dix-neuf</i> <i>vingt</i>
+              </p>
+            </div>
+            <div class="tbl">
+              <table>
+                <tr>
+                  <th>数字</th>
+                  <th>法语</th>
+                  <th>算法</th>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td><i>vingt et un</i></td>
+                  <td>20 和 1</td>
+                </tr>
+                <tr>
+                  <td>30 · 40 · 50 · 60</td>
+                  <td><i>trente</i> <i>quarante</i> <i>cinquante</i> <i>soixante</i></td>
+                  <td>正常</td>
+                </tr>
+                <tr>
+                  <td>70</td>
+                  <td><i>soixante-dix</i></td>
+                  <td>60 + 10</td>
+                </tr>
+                <tr>
+                  <td>80</td>
+                  <td><i>quatre-vingts</i></td>
+                  <td>4 × 20</td>
+                </tr>
+                <tr>
+                  <td>90</td>
+                  <td><i>quatre-vingt-dix</i></td>
+                  <td>4 × 20 + 10</td>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td><i>quatre-vingt-dix-sept</i></td>
+                  <td>4 × 20 + 10 + 7</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </section>
 
@@ -2191,7 +2212,11 @@
           s.style.fontSize = "";
           if (mobile.matches) return;
           let size = parseFloat(getComputedStyle(s).fontSize);
-          for (let i = 0; i < 40 && s.scrollHeight > s.clientHeight + 1; i++) {
+          // 除了整页，也查页内能滚动的容器（表格外层）有没有被撑出滚动条
+          const overflows = () =>
+            s.scrollHeight > s.clientHeight + 1 ||
+            [...s.querySelectorAll(".tbl")].some((t) => t.scrollHeight > t.clientHeight + 1);
+          for (let i = 0; i < 40 && overflows(); i++) {
             size *= 0.96;
             s.style.fontSize = size + "px";
           }
