@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { takeHomeScroll } from "@/cheatsheets/route";
 import { CheatSheetList } from "@/components/CheatSheetList";
+import { CourseList } from "@/components/CourseList";
 import { ThemeToggle } from "@/components/HeaderControls";
 import { InstallHint } from "@/components/InstallHint";
 import { StatsPanel } from "@/components/StatsPanel";
@@ -102,6 +103,7 @@ export function DeckPicker() {
       <CheatSheetList />
       {decks && <StatsPanel decks={decks} />}
       {decks && <InstallHint />}
+      <CourseList />
     </div>
   );
 }
