@@ -399,8 +399,8 @@ describe("音标与朗读", () => {
     { lang: "en-CA", name: "Test Voice", voiceURI: "en-test", localService: true },
     {
       lang: "fr-CA",
-      name: "Microsoft Sylvie Online (Natural) - French (Canada)",
-      voiceURI: "fr-sylvie",
+      name: "Microsoft Antoine Online (Natural) - French (Canada)",
+      voiceURI: "fr-antoine",
       localService: false,
     },
     {
@@ -630,7 +630,7 @@ describe("音标与朗读", () => {
 
     // 按 fr-CA 优先，同地区在线的在前；名字原样显示
     expect(
-      screen.getByText("Microsoft Sylvie Online (Natural) - French (Canada) · 加拿大法语 · 在线", {
+      screen.getByText("Microsoft Antoine Online (Natural) - French (Canada) · 加拿大法语 · 在线", {
         selector: "span",
       }),
     ).toBeTruthy();
@@ -731,6 +731,24 @@ describe("音标与朗读", () => {
     fireEvent.click(screen.getByRole("button", { name: "朗读 au" }));
     expect((lastUtterance!.voice as { voiceURI: string }).voiceURI).toBe("denise");
     expect(lastUtterance!.lang).toBe("fr-FR");
+  });
+
+  it("实测会把单词读成英语的 Thierry、Sylvie 不做默认，读对的 Antoine、Jean 排前面", async () => {
+    const edge = (name: string) => ({
+      lang: "fr-CA",
+      name: `Microsoft ${name} Online (Natural) - French (Canada)`,
+      voiceURI: name,
+      localService: false,
+    });
+    stubSpeech(undefined, ["Thierry", "Antoine", "Jean", "Sylvie"].map(edge));
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    const options = [...(screen.getByLabelText("法语朗读声音") as HTMLSelectElement).options];
+    expect(options.map((o) => o.value)).toEqual(["Antoine", "Jean", "Thierry", "Sylvie"]);
+    expect(options[2].text).toContain("单词可能读成英语");
+    expect(options[0].text).not.toContain("英语");
   });
 
   it("系统没有法语声音时不拿别的语言的声音硬读，而是说清楚原因", async () => {

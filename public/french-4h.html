@@ -2014,7 +2014,7 @@
           const region = (v) => (/fr[-_]CA/i.test(v.lang) ? 0 : /fr[-_]FR/i.test(v.lang) ? 16 : 32);
           const score = (v) =>
             region(v) +
-            (isMultilingual(v) ? 8 : 0) +
+            (guessesLanguage(v) ? 8 : 0) +
             (v.localService ? 4 : 0) +
             (3 - qualityRank(v));
           // 同一个声音报两遍（voiceURI 完全相同）才合并；同名不同标识的都留着，显示时附上标识
@@ -2047,10 +2047,14 @@
             ) || /增强|高级/.test(v.name);
           return known ? ["精简", "标准", "增强", "高级"][qualityRank(v)] : "";
         }
-        // Edge 名字带 Multilingual 的声音不按指定语言读，而是自己猜：table、grand 这种
-        // 英法同形的单词常被判成英语，而且每次不一定一样
+        // 会自己猜文本语言、不认 lang 的声音：table、grand 这种英法同形的单词常被判成英语，
+        // 每次不一定一样。名字带 Multilingual 的是设计如此；Thierry、Sylvie 是实测
+        // （2026-09-26 读错 grand，同批的 Antoine、Jean 读对）
         function isMultilingual(v) {
           return /multilingual/i.test(v.name);
+        }
+        function guessesLanguage(v) {
+          return /multilingual/i.test(v.name) || /^Microsoft (Thierry|Sylvie) Online/i.test(v.name);
         }
         const REGIONS = { FR: "法国", CA: "加拿大", BE: "比利时", CH: "瑞士" };
         // 声音名原样显示，后面补上口音、在线／离线，以及名字里看不出来的音质
@@ -2061,7 +2065,11 @@
             region + "法语",
             v.localService ? "离线" : "在线",
             qualityLabel(v),
-            isMultilingual(v) ? "多语言，单词可能读成英语" : "",
+            isMultilingual(v)
+              ? "多语言，单词可能读成英语"
+              : guessesLanguage(v)
+                ? "单词可能读成英语"
+                : "",
           ]
             .filter(Boolean)
             .join(" · ");
