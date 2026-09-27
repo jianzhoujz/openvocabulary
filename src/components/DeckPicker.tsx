@@ -100,10 +100,10 @@ export function DeckPicker() {
         })}
       </div>
 
+      <CourseList />
       <CheatSheetList />
       {decks && <StatsPanel decks={decks} />}
       {decks && <InstallHint />}
-      <CourseList />
     </div>
   );
 }
