@@ -36,7 +36,7 @@ export const COURSES: Course[] = [
     href: "french-4h-5.html",
     level: "应试",
     title: "TCF 听力与阅读",
-    summary: "题型、分数线、同义替换、陷阱、加拿大口语听辨",
+    summary: "题型、分数线、同义替换、陷阱、连读听辨",
   },
   {
     href: "french-4h-6.html",
