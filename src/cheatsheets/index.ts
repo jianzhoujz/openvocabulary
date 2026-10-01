@@ -18,6 +18,11 @@ export const SHEETS: SheetMeta[] = [
     title: "介词：在哪儿、去哪儿、什么时候",
     summary: "à、en、au、chez，城市国家怎么搭",
   },
+  {
+    id: "prepositions-sons",
+    title: "常用介词：发音与用法",
+    summary: "à、de、en、avec……一个个读准、用对",
+  },
   { id: "etre-avoir", title: "être 与 avoir 入门", summary: "我你他，“是”和“有”" },
   { id: "present", title: "动词现在时", summary: "-er 动词和 9 个必背不规则动词" },
   { id: "conjugaison", title: "动词变位规律", summary: "三组动词、词尾和词干怎么变" },
