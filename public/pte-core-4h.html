@@ -2287,6 +2287,9 @@
 
         $("stage").addEventListener("click", (e) => {
           const el = e.target.closest(".slide i");
+          // 拖选、双击选词结束时也会派发 click；用户在选字复制、查词，别出声
+          const sel = window.getSelection();
+          if (el && sel && !sel.isCollapsed && sel.toString().trim()) return;
           if (el) return void speak([{ text: textOf(el), el }]);
           const g = e.target.closest("[data-goto]");
           if (g) return go(slides.indexOf($(g.dataset.goto)));

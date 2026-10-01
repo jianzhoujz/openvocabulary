@@ -492,6 +492,27 @@ describe("音标与朗读", () => {
     expect(lastUtterance!.rate).toBe(0.7);
   });
 
+  it("速查页的点读片段能选中复制：选字时不出声，键盘照样能读", async () => {
+    stubSpeech();
+    window.location.hash = "#/grammar/articles";
+    render(<App />);
+    await screen.findByRole("heading", { level: 1, name: "冠词" });
+
+    const au = screen.getByRole("button", { name: "朗读 au" });
+    expect(au.tagName).not.toBe("BUTTON");
+
+    // 拖选结束时浏览器也会派发 click
+    const range = document.createRange();
+    range.selectNodeContents(au);
+    window.getSelection()!.addRange(range);
+    fireEvent.click(au);
+    expect(lastUtterance).toBeNull();
+
+    window.getSelection()!.removeAllRanges();
+    fireEvent.keyDown(au, { key: "Enter" });
+    expect(lastUtterance!.text).toBe("au");
+  });
+
   it("浏览器不支持语音合成时不渲染朗读按钮", () => {
     vi.stubGlobal("speechSynthesis", undefined);
     seed(manual());

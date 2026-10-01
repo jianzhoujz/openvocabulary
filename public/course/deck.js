@@ -365,6 +365,9 @@
   $("stage").addEventListener("click", (e) => {
     const el = e.target.closest("i");
     if (el) {
+      // 拖选、双击选词结束时也会派发 click；用户在选字复制、查词，别出声
+      const sel = window.getSelection();
+      if (sel && !sel.isCollapsed && sel.toString().trim()) return;
       speak([el]);
       return;
     }

@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight, Loader2, Volume2 } from "lucide-react";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState, type KeyboardEvent } from "react";
 
 import { SHEETS, loadSheet } from "@/cheatsheets";
 import { parseRich, spoken } from "@/cheatsheets/rich";
@@ -10,12 +10,35 @@ import { SpeechErrorToast } from "@/components/SpeechErrorToast";
 import { VoicePicker } from "@/components/VoicePicker";
 import { Button } from "@/components/ui/button";
 import { useSpeech } from "@/hooks/useSpeech";
+import { hasSelection } from "@/lib/selection";
 import { cn } from "@/lib/utils";
 
 /** 朗读函数；浏览器不支持时为 null，所有喇叭都不渲染 */
 type Say = ((text: string) => void) | null;
 
 const hasLetters = (s: string) => /\p{L}/u.test(s);
+
+/**
+ * 点读区域的事件与可达性属性。
+ *
+ * 不用 <button>：按钮里的文字选不中（Firefox 完全不行，全局样式也禁了），
+ * 用户想复制、查词就没办法。改成可选中的元素，拖选或双击选词时不出声。
+ */
+function pressable(onPress: () => void) {
+  return {
+    role: "button",
+    tabIndex: 0,
+    onClick: () => {
+      if (!hasSelection()) onPress();
+    },
+    onKeyDown: (e: KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onPress();
+      }
+    },
+  } as const;
+}
 
 /** 行内一段可点读的法语：文字 + 小喇叭 */
 function Speakable({ show, text, say }: { show: string; text: string; say: Say }) {
@@ -27,16 +50,15 @@ function Speakable({ show, text, say }: { show: string; text: string; say: Say }
     );
   }
   return (
-    <button
-      type="button"
+    <span
       lang="fr"
       aria-label={`朗读 ${text}`}
-      onClick={() => say(text)}
-      className="hover:bg-accent active:bg-accent focus-visible:ring-ring/50 decoration-muted-foreground/50 -mx-0.5 rounded px-0.5 font-medium underline decoration-dotted underline-offset-4 transition-colors focus-visible:ring-[3px] focus-visible:outline-none"
+      {...pressable(() => say(text))}
+      className="hover:bg-accent active:bg-accent focus-visible:ring-ring/50 decoration-muted-foreground/50 -mx-0.5 rounded px-0.5 font-medium underline decoration-dotted underline-offset-4 transition-colors cursor-pointer select-text focus-visible:ring-[3px] focus-visible:outline-none"
     >
       {show}
       <Volume2 className="text-muted-foreground ml-0.5 inline size-3.5 align-[-0.125em]" />
-    </button>
+    </span>
   );
 }
 
@@ -119,14 +141,13 @@ function ExamplesBlock({ block, say }: { block: Extract<Block, { kind: "examples
           <li key={i}>
             {say ? (
               // 整行都是点击区，手机上比单独一个小喇叭好点
-              <button
-                type="button"
+              <div
                 aria-label={`朗读 ${text}`}
-                onClick={() => say(text)}
-                className="hover:bg-accent/50 active:bg-accent focus-visible:ring-ring/50 flex w-full items-start gap-3 px-3.5 py-2.5 text-left transition-colors first:rounded-t-xl last:rounded-b-xl focus-visible:ring-[3px] focus-visible:outline-none"
+                {...pressable(() => say(text))}
+                className="hover:bg-accent/50 active:bg-accent focus-visible:ring-ring/50 flex w-full cursor-pointer select-text items-start gap-3 px-3.5 py-2.5 text-left transition-colors first:rounded-t-xl last:rounded-b-xl focus-visible:ring-[3px] focus-visible:outline-none"
               >
                 {body}
-              </button>
+              </div>
             ) : (
               <div className="flex items-start gap-3 px-3.5 py-2.5">{body}</div>
             )}
