@@ -13,16 +13,7 @@ export const SHEETS: SheetMeta[] = [
   { id: "accents", title: "字母上的符号", summary: "é è ê ç 各管什么" },
   { id: "noms", title: "名词的阴阳性与单复数", summary: "le 还是 la，怎么加 s" },
   { id: "articles", title: "冠词", summary: "le / un / du 三种“帽子”怎么选" },
-  {
-    id: "prepositions",
-    title: "介词：在哪儿、去哪儿、什么时候",
-    summary: "à、en、au、chez，城市国家怎么搭",
-  },
-  {
-    id: "prepositions-sons",
-    title: "常用介词：发音与用法",
-    summary: "à、de、en、avec……一个个读准、用对",
-  },
+  { id: "prepositions", title: "介词", summary: "à、de、en、chez……怎么念、怎么选" },
   { id: "etre-avoir", title: "être 与 avoir 入门", summary: "我你他，“是”和“有”" },
   { id: "present", title: "动词现在时", summary: "-er 动词和 9 个必背不规则动词" },
   { id: "conjugaison", title: "动词变位规律", summary: "三组动词、词尾和词干怎么变" },
