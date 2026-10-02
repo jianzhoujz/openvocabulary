@@ -101,7 +101,7 @@ const sheet: Sheet = {
           fr: [0],
           rows: [
             ["De rien.", "不客气，最常用"],
-            ["Bienvenue!", "不客气，魁北克特有，天天听到"],
+            ["Bienvenue!", "不客气，魁北克特有，天天听到（照英语 You're welcome 直译来的）"],
             ["Je vous en prie.", "不客气，正式"],
             ["Avec plaisir.", "乐意效劳"],
             ["Il n'y a pas de quoi.", "没什么"],
@@ -109,7 +109,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "点东西、提要求一律用 [[Je voudrais…]]。直接说 Je veux 听起来像小孩在耍脾气。",
+          text: "点东西、提要求一律用 [[Je voudrais…]]。直接说 Je veux 听起来像小孩在耍脾气。两者的差别就是英语 I'd like 和 I want。",
         },
       ],
     },

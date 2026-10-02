@@ -48,7 +48,7 @@ const sheet: Sheet = {
             { fr: "J'**ai été** malade la semaine dernière.", zh: "我上周病了。" },
             {
               fr: "Tu **as** déjà **été** au Canada?",
-              zh: "你去过加拿大吗？口语里 être 也当“去过”",
+              zh: "你去过加拿大吗？口语里 être 也当“去过”，和英语 Have you been to Canada? 一样",
             },
           ],
         },
@@ -63,7 +63,7 @@ const sheet: Sheet = {
       blocks: [
         {
           kind: "p",
-          text: "描述过去的状态、背景、“那时候是……”。它是唯一不按“nous 形式去 -ons”公式来的动词，词干固定是 ét-。",
+          text: "描述过去的状态、背景、“那时候是……”，大致相当于英语的 was、used to be。它是唯一不按“nous 形式去 -ons”公式来的动词，词干固定是 ét-。",
         },
         {
           kind: "table",
@@ -116,7 +116,7 @@ const sheet: Sheet = {
       blocks: [
         {
           kind: "p",
-          text: "用于假设和委婉语气，词干同将来时，词尾同未完成过去时。",
+          text: "用于假设和委婉语气，相当于英语的 would be。词干同将来时，词尾同未完成过去时。",
         },
         {
           kind: "table",
@@ -134,7 +134,7 @@ const sheet: Sheet = {
             { fr: "Ce **serait** bien.", zh: "那样挺好的。" },
             {
               fr: "Si j'étais riche, je **serais** heureux.",
-              zh: "要是我有钱，我会很幸福。si + 未完成过去时，主句用条件式",
+              zh: "要是我有钱，我会很幸福。si + 未完成过去时，主句用条件式，和英语 If I were rich, I would be happy 同一个结构",
             },
           ],
         },
@@ -212,6 +212,10 @@ const sheet: Sheet = {
           ],
         },
         {
+          kind: "tip",
+          text: "[[être en train de]] 就是英语的 be + -ing：[[Je suis en train de manger.]] = I'm eating。[[être à moi]] 相当于 be mine、belong to me。",
+        },
+        {
           kind: "p",
           text: "另外，移动类动词（[[aller]]、[[venir]]、[[partir]]……）和所有自反动词的复合过去时，都用 être 当助动词，详见“过去和将来”一页。",
         },
@@ -231,6 +235,10 @@ const sheet: Sheet = {
             ["形容词，指具体的人或物", "[[il est]] / [[elle est]]", "Elle est belle, ta robe."],
             ["形容词，泛指一件事", "[[c'est]]", "C'est beau, Montréal!"],
           ],
+        },
+        {
+          kind: "tip",
+          text: "英语两种都说 He's a doctor、It's beautiful，法语要分 c'est 和 il est，所以这里没法照英语套。",
         },
         {
           kind: "tip",

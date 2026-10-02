@@ -21,6 +21,10 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
+          text: "[[est-ce que]] 本身没有意思，只是个“我要提问了”的记号，作用像英语的 do：Do you speak French? 倒装也和英语的 Are you…?、Can you…? 一样，主语和动词换位。",
+        },
+        {
+          kind: "tip",
           text: "倒装时如果动词以元音结尾、主语是 il / elle，中间加 -t- 好读：[[Parle-t-il français?]]、[[A-t-elle un chat?]]",
         },
       ],
@@ -30,17 +34,17 @@ const sheet: Sheet = {
       blocks: [
         {
           kind: "table",
-          head: ["疑问词", "意思", "例句"],
-          fr: [0, 2],
+          head: ["疑问词", "意思", "英语", "例句"],
+          fr: [0, 3],
           rows: [
-            ["qui", "谁", "Qui est-ce?"],
-            ["que / quoi", "什么", "Qu'est-ce que tu fais?"],
-            ["où", "哪里", "Où habitez-vous?"],
-            ["quand", "什么时候", "Quand est-ce que tu pars?"],
-            ["comment", "怎么、怎么样", "Comment allez-vous?"],
-            ["pourquoi", "为什么", "Pourquoi est-ce que tu apprends le français?"],
-            ["combien", "多少", "C'est combien?"],
-            ["quel / quelle", "哪个、什么", "Quelle heure est-il?"],
+            ["qui", "谁", "who", "Qui est-ce?"],
+            ["que / quoi", "什么", "what", "Qu'est-ce que tu fais?"],
+            ["où", "哪里", "where", "Où habitez-vous?"],
+            ["quand", "什么时候", "when", "Quand est-ce que tu pars?"],
+            ["comment", "怎么、怎么样", "how", "Comment allez-vous?"],
+            ["pourquoi", "为什么", "why", "Pourquoi est-ce que tu apprends le français?"],
+            ["combien", "多少", "how much / many", "C'est combien?"],
+            ["quel / quelle", "哪个、什么", "which / what", "Quelle heure est-il?"],
           ],
         },
         {
@@ -76,6 +80,10 @@ const sheet: Sheet = {
             { fr: "Tu ne viens pas? — **Si**, je viens!", zh: "你不来吗？——不，我来！" },
             { fr: "Tu ne viens pas? — **Non**, je ne viens pas.", zh: "你不来吗？——对，我不来。" },
           ],
+        },
+        {
+          kind: "tip",
+          text: "英语没有对应的词，只能说 Yes, I am! 再加重语气；法语有专门的 [[si]]。回答的逻辑和英语一样：**按事实答**，来就是 si，不来就是 non，不像中文那样先说“对 / 不对”。",
         },
       ],
     },

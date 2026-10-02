@@ -114,7 +114,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "星期和月份首字母都小写。日期直接用普通数字，只有 1 号要说 [[le premier]]。",
+          text: "星期和月份首字母都小写，英语要大写。日期直接用普通数字，只有 1 号要说 [[le premier]]（the first）；英语的 the 14th 法语说 [[le 14|le quatorze]]，不用序数词。",
         },
       ],
     },
@@ -126,9 +126,12 @@ const sheet: Sheet = {
           items: [
             { fr: "Quelle heure est-il?", zh: "几点了？" },
             { fr: "Il est trois heures.", zh: "3 点。" },
-            { fr: "Il est huit heures et quart.", zh: "8 点一刻（8:15）。" },
+            { fr: "Il est huit heures et quart.", zh: "8 点一刻（8:15），英语 quarter past eight" },
             { fr: "Il est midi et demi.", zh: "中午 12 点半。" },
-            { fr: "Il est dix heures moins le quart.", zh: "差一刻 10 点（9:45）。" },
+            {
+              fr: "Il est dix heures moins le quart.",
+              zh: "差一刻 10 点（9:45），英语 quarter to ten",
+            },
             {
               fr: "Le train part à 14 h 30.",
               zh: "火车 14:30 开。时刻表、预约都用 24 小时制",

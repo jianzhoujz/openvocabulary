@@ -17,6 +17,10 @@ const sheet: Sheet = {
             { fr: "Il **n'**est **pas** là.", zh: "他不在。ne 碰上元音写成 n'" },
           ],
         },
+        {
+          kind: "tip",
+          text: "英语否定要借助动词 do：I don't understand。法语不需要助动词，直接把 ne … pas 夹在动词两边：[[Je ne comprends pas.]]",
+        },
       ],
     },
     {
@@ -24,15 +28,19 @@ const sheet: Sheet = {
       blocks: [
         {
           kind: "table",
-          head: ["夹子", "意思", "例句"],
-          fr: [2],
+          head: ["夹子", "意思", "英语", "例句"],
+          fr: [3],
           rows: [
-            ["ne … jamais", "从不", "Je ne fume jamais."],
-            ["ne … plus", "不再", "Il n'habite plus ici."],
-            ["ne … rien", "什么也不", "Je ne vois rien."],
-            ["ne … personne", "谁也不", "Je ne connais personne."],
-            ["ne … pas encore", "还没", "Le magasin n'est pas encore ouvert."],
+            ["ne … jamais", "从不", "never", "Je ne fume jamais."],
+            ["ne … plus", "不再", "not anymore", "Il n'habite plus ici."],
+            ["ne … rien", "什么也不", "nothing", "Je ne vois rien."],
+            ["ne … personne", "谁也不", "nobody", "Je ne connais personne."],
+            ["ne … pas encore", "还没", "not yet", "Le magasin n'est pas encore ouvert."],
           ],
+        },
+        {
+          kind: "tip",
+          text: "英语 never、nothing、nobody 自己就是否定，再加 not 就成了错误的双重否定。法语正相反，[[jamais]]、[[rien]]、[[personne]] 都**必须配 ne**：[[Je ne vois rien.]] = I see nothing。",
         },
       ],
     },
@@ -46,6 +54,10 @@ const sheet: Sheet = {
             { fr: "Il ne boit pas **de** café.", zh: "他不喝咖啡。（肯定句：Il boit du café.）" },
             { fr: "Il n'y a pas **d'**eau.", zh: "没有水。元音前写成 d'" },
           ],
+        },
+        {
+          kind: "tip",
+          text: "这里的 de 相当于英语的 not any 或 no：I don't have a car / I have no car。",
         },
         {
           kind: "tip",

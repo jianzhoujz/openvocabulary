@@ -34,6 +34,10 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
+          text: "这些词尾很多和英语同形：nation、culture、différence、moment、tourisme，英语一看就认得，只是英语不分阴阳，法语要按词尾记。",
+        },
+        {
+          kind: "tip",
           text: "以 -e 结尾的词阴性居多，但例外不少：[[le livre]]、[[le musée]]、[[le problème]] 都是阳性。上表的常见例外也要记：-age 里的 [[la page]]、[[la plage]]、[[l'image]] 是阴性；-té 里的 [[l'été]]（夏天）、[[le côté]] 是阳性；-eau 里的 [[l'eau]]（水）、[[la peau]]（皮肤）是阴性。",
         },
       ],

@@ -49,6 +49,10 @@ const sheet: Sheet = {
             { fr: "Elle a **attendu** le bus.", zh: "她等了公交车。" },
           ],
         },
+        {
+          kind: "tip",
+          text: "形式像英语的现在完成时（have + 过去分词），用法却更宽：英语分 I ate 和 I have eaten，法语日常两个都说 [[J'ai mangé.]] 所以别看到 ai 就以为是“已经”，它就是普通的过去时。",
+        },
       ],
     },
     {
@@ -98,6 +102,10 @@ const sheet: Sheet = {
         {
           kind: "tip",
           text: "口诀：想象一座房子，人**进出**、**上下**、**来去**、**到达离开**、**留下**、**摔倒**，还有**生死**。它们的派生词 revenir、devenir、rentrer 也用 être。",
+        },
+        {
+          kind: "tip",
+          text: "英语一律用 have：I have gone、she has arrived。照搬英语说 J'ai allé 是典型错误，要说 [[Je suis allé.]]",
         },
         {
           kind: "tip",

@@ -26,6 +26,10 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
+          text: "英语只有两套：I 和 me。法语把英语的 me 拆成三种：介词后面、单独说的 [[moi]]（with me、me too），动词的直接宾语 [[me]]、[[le]]、[[la]]（see me、see her），带 to 的间接宾语 [[lui]]、[[leur]]（talk to him）。",
+        },
+        {
+          kind: "tip",
           text: "看着多，其实 **nous、vous 五列全一样**，me、te 也只在主语和重读两列不同。真正要记的是第三人称那几行。",
         },
         {
@@ -39,7 +43,7 @@ const sheet: Sheet = {
       blocks: [
         {
           kind: "p",
-          text: "[[on]] 动词跟 il 一样变，但意思常常是“我们”。说话时 on 比 nous 常用得多；它也可以泛指“人们、大家”。",
+          text: "[[on]] 动词跟 il 一样变，但意思常常是“我们”。说话时 on 比 nous 常用得多；它也可以泛指“人们、大家”，像英语泛指的 you、one、people。",
         },
         {
           kind: "examples",
@@ -69,7 +73,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "“我也是”说 [[Moi aussi.]]，“我也不”说 [[Moi non plus.]]。说成 Je aussi 是典型错误。",
+          text: "“我也是”说 [[Moi aussi.]]，“我也不”说 [[Moi non plus.]]。说成 Je aussi 是典型错误。英语正好一样：说 Me too、It's me、with me，不说 I too。**英语用 me 的这些地方，法语基本就是重读代词。**",
         },
       ],
     },
@@ -96,7 +100,7 @@ const sheet: Sheet = {
       blocks: [
         {
           kind: "p",
-          text: "代替 **à + 人**，“给他 / 对她 / 跟他们”。常见的动词：[[parler à]]、[[téléphoner à]]、[[dire à]]、[[donner à]]、[[demander à]]、[[écrire à]]。",
+          text: "代替 **à + 人**，“给他 / 对她 / 跟他们”，相当于英语的 to him、to her、to them。常见的动词：[[parler à]]、[[téléphoner à]]、[[dire à]]、[[donner à]]、[[demander à]]、[[écrire à]]。",
         },
         {
           kind: "examples",
@@ -133,7 +137,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "说数量时 en 不能省：“我有两个”要说 [[J'en ai deux.]]，只说 J'ai deux，母语者听着像话没说完。",
+          text: "说数量时 en 不能省：“我有两个”要说 [[J'en ai deux.]]，只说 J'ai deux，母语者听着像话没说完。英语可以说 I have two，法语的 en 相当于必须带上的 of them。",
         },
       ],
     },

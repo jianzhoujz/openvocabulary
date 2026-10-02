@@ -58,6 +58,10 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
+          text: "和英语长得一样的字母，读法常常不一样：ch 像英语 sh（英语的 chef、machine 就是从法语借的）；qu 只读 k，不像英语 queen 读 kw；h 永远不读，像英语 hour、honest 里的 h。",
+        },
+        {
+          kind: "tip",
           text: "u 和 ou 是最容易混的一对：[[tu]]（你）撅嘴说“一”，[[tout]]（全部）就是“乌”。",
         },
       ],
@@ -135,6 +139,10 @@ const sheet: Sheet = {
             { fr: "université", zh: "大学：u-ni-ver-si-TÉ" },
             { fr: "Je voudrais un café.", zh: "我想要一杯咖啡。只有句末的 fé 稍重" },
           ],
+        },
+        {
+          kind: "tip",
+          text: "和英语同形的词最容易带出英语重音：英语是 RES-tau-rant、u-ni-VER-si-ty，法语重音都在最后。读这类词时**故意别重读前面**。",
         },
       ],
     },

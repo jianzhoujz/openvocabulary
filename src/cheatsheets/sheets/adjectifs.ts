@@ -4,7 +4,7 @@ const sheet: Sheet = {
   id: "adjectifs",
   title: "形容词与物主",
   summary: "配合、位置、我的你的",
-  lead: "形容词要跟着名词变：**阴性加 e，复数加 s**。大部分放在名词**后面**，正好和中文相反。",
+  lead: "形容词要跟着名词变：**阴性加 e，复数加 s**。大部分放在名词**后面**，正好和中文、英语都相反。",
   sections: [
     {
       title: "1. 跟着名词变",
@@ -94,7 +94,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "son、sa 看的是**被拥有的东西**是阴是阳，不看主人是男是女：[[sa maison]] 可以是“他的房子”，也可以是“她的房子”。",
+          text: "son、sa 看的是**被拥有的东西**是阴是阳，不看主人是男是女：[[sa maison]] 可以是“他的房子”，也可以是“她的房子”。这和英语正好反过来：英语 his / her 看主人，法语 son / sa 看东西。",
         },
         {
           kind: "tip",
@@ -114,6 +114,10 @@ const sheet: Sheet = {
         {
           kind: "tip",
           text: "阳性名词以元音开头时，ce 变成 cet：[[cet homme]]、[[cet hôtel]]。",
+        },
+        {
+          kind: "tip",
+          text: "英语分 this 和 that，法语一个 ce 都管。真要分远近，在名词后加 -ci（this）、-là（that）：[[ce livre-ci]]、[[ce livre-là]]。",
         },
       ],
     },

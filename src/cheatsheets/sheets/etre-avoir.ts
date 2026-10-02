@@ -45,7 +45,7 @@ const sheet: Sheet = {
         {
           kind: "examples",
           items: [
-            { fr: "Je **suis** étudiant.", zh: "我是学生。职业前不加冠词" },
+            { fr: "Je **suis** étudiant.", zh: "我是学生。职业前不加冠词，英语要说 a student" },
             { fr: "Elle **est** canadienne.", zh: "她是加拿大人。" },
             { fr: "Nous **sommes** à Montréal.", zh: "我们在蒙特利尔。être 也表示“在”" },
             { fr: "**C'est** mon ami.", zh: "这是我的朋友。c'est = 这是" },
@@ -71,7 +71,10 @@ const sheet: Sheet = {
           items: [
             { fr: "J'**ai** une voiture.", zh: "我有一辆车。" },
             { fr: "Ils **ont** deux enfants.", zh: "他们有两个孩子。" },
-            { fr: "Il y **a** un problème.", zh: "有个问题。il y a = 有、存在" },
+            {
+              fr: "Il y **a** un problème.",
+              zh: "有个问题。il y a = 有、存在，相当于 there is / there are",
+            },
           ],
         },
         {
@@ -95,7 +98,7 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "说年龄只能用 avoir。“我 30 岁”说成 Je suis 30 ans 是初学者最常见的错误。",
+          text: "说年龄只能用 avoir。“我 30 岁”说成 Je suis 30 ans 是初学者最常见的错误。英语 I'm 30、I'm hungry、I'm cold 都用 be，**这几句不能照英语说**。",
         },
       ],
     },

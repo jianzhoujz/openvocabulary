@@ -115,7 +115,11 @@ const sheet: Sheet = {
         },
         {
           kind: "tip",
-          text: "法语现在时同时管“一般现在”和“正在进行”：[[Je mange.]] 既是“我吃饭”，也是“我正在吃饭”。",
+          text: "pouvoir、devoir 像英语的 can、must，后面直接跟原形。但英语 want to、like to 要带 to，法语 vouloir、aimer 什么都不带：[[Je veux partir.]] = I want to leave。",
+        },
+        {
+          kind: "tip",
+          text: "法语现在时同时管“一般现在”和“正在进行”：[[Je mange.]] 既是“我吃饭”（I eat），也是“我正在吃饭”（I'm eating）。法语没有 be + -ing 这种进行时，别说成 Je suis mangeant。",
         },
       ],
     },
